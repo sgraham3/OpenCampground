@@ -1,0 +1,12 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= link_to 'Finished', setup_countries_path, :class => 'link_btn' %>
+<div id="container" style="overflow: scroll; height: <%= (@option.disp_rows*2).to_s %>em">
+ <ul id="countries"> 
+  <% @countries.each do |s| %>
+      <li id="country_<%=s.id%>"><%= s.name %></li>
+  <% end %>
+</ul>
+</p>
+<%= javascript_tag "Position.includeScrollOffsets = true" %>
+<%= sortable_element :countries, :scroll => "'container'", :url => resort_setup_countries_path %>

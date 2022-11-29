@@ -1,0 +1,20 @@
+<% unless session[:top] == true; session[:top] = true %>
+<div id="copyright">
+Open Campground, Copyright &copy; 2007-2022 Norman K. Scherer.<br \>
+Open Campground comes with ABSOLUTELY NO WARRANTY; for details see the license button in the User's Manual or look in the Admin section of this software.
+This is free software and you are welcome to redistribute it under the conditions in the license.
+</div>
+<% end -%>
+<% if controller.action_name == 'list' %>
+       <b class="today_checkin"><%= I18n.t('reservation.CheckingInToday') %></b>
+       &nbsp;
+       <b class="late_checkin"><%= I18n.t('reservation.OverdueforCheckIn') %></b>
+<% elsif controller.action_name == 'in_park' %>
+       <b><%= I18n.t('reservation.Count') %>: <%= @count %></b>
+       &nbsp;
+       <b class="today_checkout"><%= I18n.t('reservation.CheckingOutToday') %></b>
+       &nbsp;
+       <b class="overstay"><%= I18n.t('reservation.OverstayingReservation') %></b>
+<% end %>
+<%= render :partial => 'shared/reservations' %>
+<%= will_paginate @reservations %>

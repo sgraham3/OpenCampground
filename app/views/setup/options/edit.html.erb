@@ -1,0 +1,667 @@
+<%= render :partial => 'setup/buttons' %>
+<% form_for :option, @option, :url => setup_option_path, :html => { :method => :put } do |f| %>
+  <%= f.error_messages %>
+
+<table>
+<tr>
+  <td align="right">
+      <label for="option_use_login">Use logins:</label>
+      <%= f.check_box 'use_login', {:onclick => "showhide('admin')"} %>
+  </td>
+  <td align="right">
+      <label for="option_use_autologin">Use autologin/remember me:</label>
+      <%= f.check_box 'use_autologin', {}, '1', '0' %>
+  </td>
+  <% if (@os != 'Windows_NT') && (ENV["SERVER_SOFTWARE"] =~ /Apache/) && Rails.env.production? %>
+    <td align="right">
+	<label for="option_use_ssl">Use browser secure sockets:</label>
+	<%= f.check_box 'use_ssl', {}, '1', '0' %>
+    </td>
+  <% end %>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_use_id">Display ID Number:</label>
+      <%= f.check_box 'use_id', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_find_by_id">Use Find by ID Number:</label>
+      <%= f.check_box 'find_by_id', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_rig_type">Display Rig Type:</label>
+      <%= f.check_box 'use_rig_type', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_slides">Display nr slides:</label>
+      <%= f.check_box 'use_slides', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_use_slides">Display vehicle license:</label>
+      <%= f.check_box 'use_license', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_length">Display rig length:</label>
+      <%= f.check_box 'use_length', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_disp_site_length">Display site length:</label>
+      <%= f.check_box 'disp_site_length', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_rig_age">Display rig age:</label>
+      <%= f.check_box 'use_rig_age', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_use_country">Display Country:</label>
+      <%= f.check_box 'use_country', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_adults">Display number of Adults:</label>
+      <%= f.check_box 'use_adults', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_children">Display number of Children:</label>
+      <%= f.check_box 'use_children', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_pets">Display number of Pets:</label>
+      <%= f.check_box 'use_pets', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_use_closed">Use Park Closed Dates:</label>
+      <%= f.check_box 'use_closed', {:onclick => "showhide('closed_dates')"}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_recommend">Display Recommendations:</label>
+      <%= f.check_box 'use_recommend', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_print">Display Print button:</label>
+      <%= f.check_box 'print', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_reserve_by_wk">Use Reserve by Week Number:</label>
+      <%= f.check_box 'use_reserve_by_wk', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_variable_rates">Use Variable Rates:</label>
+      <%= f.check_box 'variable_rates', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_seasonal">Use Seasonal Rates:</label>
+      <%= f.check_box 'use_seasonal', {:onclick => "showhide('season_dates')"}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_storage">Use Monthy Storage Rates:</label>
+      <%= f.check_box 'use_storage', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_checkout_time">Use Checkout Time:</label>
+      <%= f.check_box 'use_checkout_time', {:onclick => "showhide('checkout_time')"}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_use_2nd_address">Use second address line:</label>
+      <%= f.check_box 'use_2nd_address', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_override">Use Charges Override:</label>
+      <%= f.check_box 'use_override', {:onclick => "showhide('override')"} %>
+  </td>
+  <td align="right">
+      <label for="option_use_onetime_discount">Use One-time discount:</label>
+      <%= f.check_box 'use_onetime_discount', {:onclick => "showhide('onetime')"} %>
+  </td>
+  <td align="right">
+      <label for="option_list_payments">Show Payments in Lists:</label>
+      <%= f.check_box 'list_payments', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_inline_subtotal">Display in-line Subtotal:</label>
+      <%= f.check_box 'inline_subtotal', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_edit_archives">Allow Edit of Archives:</label>
+      <%= f.check_box 'edit_archives', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_confirm_email">Use Confirmation Emails:</label>
+      <%= f.check_box 'use_confirm_email', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_feedback">Use Feedback Emails:</label>
+      <%= f.check_box 'use_feedback', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_match_firstname">Auto filter on Firstname:</label>
+      <%= f.check_box 'match_firstname', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_match_city">Auto filter on City:</label>
+      <%= f.check_box 'match_city', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_tabs">Navigate by Tabs:</label>
+      <%= f.check_box 'tabs', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_show_available">Display Count of Available Sites:</label>
+      <%= f.check_box 'show_available', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_express">Use Express Reservation:</label>
+      <%= f.check_box 'express', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_discount">Use Discounts:</label>
+      <%= f.check_box 'use_discount', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_map">Display Park Map:</label>
+      <%= f.check_box 'use_map', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_addl">Use Additional Camper Field:</label>
+      <%= f.check_box 'use_addl', {}, '1', '0' %>
+  </td>
+</tr>
+<tr>
+  <td align="right">
+      <label for="option_use_variable_charge">Use Variable Charges</label>
+      <%= f.check_box 'use_variable_charge', {}, '1', '0' %>
+  </td>
+  <td align="right">
+      <label for="option_use_envelope">Use Window Envelope:</label>
+      <%= f.check_box 'use_envelope', {:onclick => "showhide('envelope')"}, '1', '0' %>
+  </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="3" style="font-size: large;font-weight: bold">Mandatory Camper Entries on a Reservation</td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_require_first">First Name:</label>
+      <%= f.check_box 'l_require_first', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_require_addr">Address:</label>
+      <%= f.check_box 'l_require_addr', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_require_city">City:</label>
+      <%= f.check_box 'l_require_city', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_require_state">State/Province:</label>
+      <%= f.check_box 'l_require_state', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_require_mailcode">Mail/Zip Code:</label>
+      <%= f.check_box 'l_require_mailcode', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_require_email">Email Address:</label>
+      <%= f.check_box 'l_require_email', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_require_phone">Phone Number:</label>
+      <%= f.check_box 'l_require_phone', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <% if @option.use_country %>
+      <td align="right">
+	<label for="l_option_require_country">Country:</label>
+	<%= f.check_box 'l_require_country', {}, '1', '0' %>
+      </td>
+    <% end %>
+    <% if @option.use_id %>
+      <td align="right">
+	<label for="option_require_id">Id Number:</label>
+	<%= f.check_box 'l_require_id', {}, '1', '0' %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+<% if @option.use_envelope? %>
+  <div id="envelope">
+<% else %>
+  <div id="envelope" style="display: none">
+<% end %> 
+    Top Margin:<%= f.text_field :margin_top, :size => '4' %>
+    Left Margin:<%= f.text_field :margin_left, :size => '4' %>
+    Bottom Margin:<%= f.text_field :margin_bottom, :size => '4' %>
+  </div>
+<br />
+<label for="option_use_remote_reservations">Use Remote Reservations:</label>
+<%= f.check_box 'use_remote_reservations', {:onclick => "showhide('remote')"} %>
+
+<% if @option.use_remote_reservations? %>
+  <div id="remote">
+<% else %>
+  <div id="remote" style="display: none">
+<% end %>
+  <table>
+  <tr>
+    <td align="center" colspan="3" style="font-size: large;font-weight: bold">Remote Reservation Options</td>
+  <tr>
+  <tr>
+    <td align="right">
+      Remote Reservations Require Payment
+      <input <%= @option.require_gateway ? 'checked="checked"' : '' %>  id="option_require_gateway" name="gateway" type="radio" value="require_gateway" />
+    </td>
+    <td align="right">
+      Remote Reservations Allow Payment
+      <input <%= @option.allow_gateway ? 'checked="checked"' : '' %>  id="option_allow_gateway" name="gateway" type="radio" value="allow_gateway" />
+    </td>
+    <td align="right">
+      Remote Reservations do not use Payment
+      <input <%= (@option.allow_gateway | @option.require_gateway) ? '' : 'checked="checked"' %>  id="option_no_gateway" name="gateway" type="radio" value="no_gateway" />
+    </td>
+  <tr>
+    <td align="right">
+      <label for="option_auto_checkin_remote">Auto Check-in Remote Reservations:</label>
+      <%= f.check_box 'auto_checkin_remote', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_remote_auto_accept">Auto Accept Remote Reservations:</label>
+      <%= f.check_box 'remote_auto_accept', {}, '1', '0' %>
+    </td>
+  </tr>
+    <tr>
+      <td align="right">
+	<label for="option_use_remote_res_email">Remote Reservation creation email:</label>
+	<%= f.check_box 'use_remote_res_email', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_res_confirm">Remote Reservation confirm email:</label>
+	<%= f.check_box 'use_remote_res_confirm', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_res_reject">Remote Reservation reject email:</label>
+	<%= f.check_box 'use_remote_res_reject', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_use_remote_adults">Display number of Adults on Remote:</label>
+	<%= f.check_box 'use_remote_adults', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_children">Display number of Children on Remote:</label>
+	<%= f.check_box 'use_remote_children', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_pets">Display number of Pets on Remote:</label>
+	<%= f.check_box 'use_remote_pets', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_use_remote_rig_type">Display Rig Type on Remote:</label>
+	<%= f.check_box 'use_remote_rig_type', {:onclick => "showhide('require_remote_rigtype')"}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_age">Display Rig Age on Remote:</label>
+	<%= f.check_box 'use_remote_age', {:onclick => "showhide('require_remote_age')"}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_slides">Display nr slides on Remote:</label>
+	<%= f.check_box 'use_remote_slides', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_remote_length">Display rig length on Remote:</label>
+	<%= f.check_box 'use_remote_length', {:onclick => "showhide('require_remote_length')"}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_disp_remote_length">Display Site Length on Remote:</label>
+	<%= f.check_box 'disp_remote_length', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_use_remote_sitetype">Display Site Type on Remote:</label>
+	<%= f.check_box 'use_remote_sitetype', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_remote_discount">Display Discounts on Remote:</label>
+	<%= f.check_box 'remote_discount', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_remote_recommendations">Display Recommenders on Remote:</label>
+	<%= f.check_box 'remote_recommendations', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_show_remote_available">Display Available on Remote:</label>
+	<%= f.check_box 'show_remote_available', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_use_remote_map">Display Park Map on Remote:</label>
+	<%= f.check_box 'use_remote_map', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" colspan="3" style="font-size: large;font-weight: bold">Mandatory Entries on a Remote Reservation</td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_require_first">First Name:</label>
+	<%= f.check_box 'require_first', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_require_addr">Address:</label>
+	<%= f.check_box 'require_addr', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_require_city">City:</label>
+	<%= f.check_box 'require_city', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_require_state">State/Province:</label>
+	<%= f.check_box 'require_state', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+	<label for="option_require_mailcode">Mail/Zip Code:</label>
+	<%= f.check_box 'require_mailcode', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_require_email">Email Address:</label>
+	<%= f.check_box 'require_email', {}, '1', '0' %>
+      </td>
+      <td align="right">
+	<label for="option_require_phone">Phone Number:</label>
+	<%= f.check_box 'require_phone', {}, '1', '0' %>
+      </td>
+    </tr>
+    <tr>
+      <% if @option.use_country %>
+	<td align="right">
+	  <label for="option_require_country">Country:</label>
+	  <%= f.check_box 'require_country', {}, '1', '0' %>
+	</td>
+      <% end %>
+      <% if @option.use_id %>
+	<td align="right">
+	  <label for="option_require_id">Id Number:</label>
+	  <%= f.check_box 'require_id', {}, '1', '0' %>
+	</td>
+      <% end %>
+      <% if Rigtype.count > 1 %>
+	<% if @option.use_remote_rig_type? %>
+	  <td align="right" id="require_remote_rigtype">
+	<% else %>
+	  <td align="right" id="require_remote_rigtype" style="display: none">
+	<% end %>
+	  <label for="option_require_rigtype">Rigtype:</label>
+	  <%= f.check_box 'require_rigtype', {}, '1', '0' %>
+	</td>
+      <% end %>
+      <% if @option.use_remote_length? %>
+	<td align="right" id="require_remote_length">
+      <% else %>
+	<td align="right" id="require_remote_length" style="display: none">
+      <% end %>
+	<label for="option_require_length">Length:</label>
+	<%= f.check_box 'require_length', {}, '1', '0' %>
+      </td>
+      <% if @option.use_remote_age? %>
+	<td align="right" id="require_remote_age">
+      <% else %>
+	<td align="right" id="require_remote_age" style="display: none">
+      <% end %>
+	<label for="option_require_age">Age:</label>
+	<%= f.check_box 'require_age', {}, '1', '0' %>
+      </td>
+    </tr>
+  </table>
+</div>
+<% if @option.use_login? %>
+  <table id="admin">
+<% else %>
+  <table id="admin" style="display: none">
+<% end %>
+  <caption style="font-size: large;font-weight: bold">Functions that a non-admin user can perform</caption>
+  <tr>
+    <td align="right">
+      <label for="option_all_backup">Do Backups:</label>
+      <%= f.check_box 'all_backup', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_manage_backup">Manage Backups:</label>
+      <%= f.check_box 'all_manage_backup', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_manage_logs">Manage Logs:</label>
+      <%= f.check_box 'all_manage_logs', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_manage_payments">Manage Payments:</label>
+      <%= f.check_box 'all_manage_payments', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_all_manage_measured">Manage Measured Extras:</label>
+      <%= f.check_box 'all_manage_measured', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_archives">Manage Archives:</label>
+      <%= f.check_box 'all_archives', {}, '1', '0' %>
+    </td>
+    <% if @option.edit_archives? %>
+      <td align="right" id="edit_archives">
+    <% else %>
+      <td align="right" id="edit_archives" style="display: none">
+    <% end %>
+      <label for="option_all_edit_archives">Edit Archives:</label>
+      <%= f.check_box 'all_edit_archives', {}, '1', '0' %>
+      </td>
+    <% if @option.use_override? %>
+      <td align="right" id="override">
+    <% else %>
+      <td align="right" id="override" style="display: none">
+    <% end %>
+	<label for="option_override_by_all">Override Charges:</label>
+	<%= f.check_box 'override_by_all', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <% if @option.use_onetime_discount? %>
+      <td align="right" id="onetime">
+    <% else %>
+      <td align="right" id="onetime" style="display: none">
+    <% end %>
+      <label for="option_all_onetime_discount">Give Onetime Discount:</label>
+      <%= f.check_box 'all_onetime_discount', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_checkin_rpt">Run Checkin Report:</label>
+      <%= f.check_box 'all_checkin_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_leave_rpt">Run Leaving Report:</label>
+      <%= f.check_box 'all_leave_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_arrival_rpt">Run Arrival Report:</label>
+      <%= f.check_box 'all_arrival_rpt', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_all_departure_rpt">Run Departure Report:</label>
+      <%= f.check_box 'all_departure_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_in_park_rpt">Run In-Park Report:</label>
+      <%= f.check_box 'all_in_park_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_space_sum_rpt">Run Space Summary Report:</label>
+      <%= f.check_box 'all_space_sum_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_occupancy_rpt">Run Occupancy Report:</label>
+      <%= f.check_box 'all_occupancy_rpt', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_all_campers_rpt">Run Campers Report:</label>
+      <%= f.check_box 'all_campers_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_transactions_rpt">Run Transactions Report:</label>
+      <%= f.check_box 'all_transactions_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_payments_rpt">Run Payments Report:</label>
+      <%= f.check_box 'all_payments_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_measured_rpt">Run Measured Extras Report:</label>
+      <%= f.check_box 'all_measured_rpt', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_all_recommend_rpt">Run Recommenders Report:</label>
+      <%= f.check_box 'all_recommend_rpt', {}, '1', '0' %>
+    </td>
+    <td align="right">
+      <label for="option_all_reservations_rpt">Run Reservations Report:</label>
+      <%= f.check_box 'all_reservations_rpt', {}, '1', '0' %>
+    </td>
+    <% if @integration.name == 'CardConnect' %>
+      <td align="right">
+	<label for="option_all_card_transactions_rpt">Run Credit Card Transactions Report:</label>
+	<%= f.check_box 'all_card_transactions_rpt', {}, '1', '0' %>
+      </td>
+    <% end %>
+    <td align="right">
+      <label for="option_all_updates">Do System Updates:</label>
+      <%= f.check_box 'all_updates', {}, '1', '0' %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      <label for="option_all_troubleshoot">Troubleshoot Reservations:</label>
+      <%= f.check_box 'all_troubleshoot', {}, '1', '0' %>
+    </td>
+  </tr>
+</table>
+<p>
+<div id=keep_reservations>
+  <label for="option_keep_reservations">Months to retain reservations:</label>
+  <%= f.text_field :keep_reservations, :size => '2' %>
+</div>
+<div id=languages>
+  <label for="option_locale">Default Locale:</label>
+  <%= f.select :locale, LANGUAGES %>
+</div>
+<% if @option.use_checkout_time? %>
+  <div id=checkout_time>
+<% else %>
+<div id=checkout_time style="display: none">
+<% end %>
+  <label for="option_checkout_time">Checkout Time:</label>
+  <%= f.time_select :checkout_time %>
+</div>
+<% if @option.use_seasonal? %>
+  <div id=season_dates>
+<% else %>
+  <div id=season_dates style="display: none">
+<% end %>
+  <label for="option_season_start">Season start date:</label>
+  <%= f.date_select :season_start, :start_year => Time.now.year - 1, :end_year => Time.now.year + 2 %>
+  <label for="option_season_end">Season end date:</label>
+  <%= f.date_select :season_end, :start_year => Time.now.year - 1, :end_year => Time.now.year + 2 %>
+</div>
+	
+<% if @option.use_closed? %>
+  <div id=closed_dates>
+<% else %>
+  <div id=closed_dates style="display: none">
+<% end %>
+  <label for="option_closed_start">Closure start date:</label>
+  <%= f.date_select :closed_start, :discard_year => true %>
+  <label for="option_closed_end">Closure end date:</label>
+  <%= f.date_select :closed_end, :discard_year => true %>
+</div>
+	
+<div id=vehicle_phone>
+    <label for="option_no_vehicles">Number of Vehicles licenses to Use:</label>
+     <%= f.radio_button 'no_vehicles', 0 %>None
+     <%= f.radio_button 'no_vehicles', 1 %>One
+     <%= f.radio_button 'no_vehicles', 2 %>Two<br />
+    <label for="option_no_phones">Number of Phone numbers to Use:</label>
+     <%= f.radio_button 'no_phones', 0 %>None
+     <%= f.radio_button 'no_phones', 1 %>One
+     <%= f.radio_button 'no_phones', 2 %>Two
+</div>
+<p>
+    <label for="option_rates_decimal">Decimal digits in rates:</label>
+    <%= f.select(:rates_decimal, [ 2, 3, 4, 5 ]) %>
+</p>
+<p>
+    <label for="option_disp_rows">Reservations to display per page:</label>
+    <%= f.text_field 'disp_rows', :size => '3' %>
+</p>
+<p>
+    <span style="font-weight: bold">Options for printouts:</span>
+    <label for="option_font_family">font_family:</label>
+    <%= f.select(:font_family, [ 'serif','sans-serif','monospace']) %>
+    <label for="option_font_size">font_size:</label>
+    <%= f.select(:font_size, [ 5, 6, 7, 8, 9, 10, 11 ]) %>
+</p>
+<p>
+    <span style="font-weight: bold">Options for Space Available display:</span>
+    <label for="option_font_size">font_size:</label>
+    <%= f.select(:sa_font_size, [  7, 8, 9, 10, 11, 12, 13 ]) %>
+    <label for="option_sa_columns">Days to Show:</label>
+    <%= f.text_field 'sa_columns', :size => '3' %>
+    <label for="option_lookback">Past Days to Show:</label>
+    <%= f.text_field 'lookback', :size => '3' %>
+</p>
+<p>
+<label for="option_header">Printed Page Heading</label>
+<%= f.text_area 'header', :cols => '40', :rows => '4' %>
+</p>
+<p>
+<label for="option_trailer">Printed Page Trailer</label>
+<%= f.text_area 'trailer', :cols => '60', :rows => '6' %>
+</p>
+  <p>
+  <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', setup_index_path %>

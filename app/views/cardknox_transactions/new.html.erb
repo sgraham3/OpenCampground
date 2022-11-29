@@ -1,0 +1,14 @@
+<% case @ck_transaction.process_mode
+   when CardTransaction::TermCard, CardTransaction::TermManual %>
+     <%= render :partial => 'verify' %>
+  <div>
+  <br/><%= button_to 'Cancel Payment', {:action => :show, :controller => :reservation, :reservation_id => @reservation_id} %>
+  </div>
+<% when CardTransaction::TokenRemote %>
+  <%= render :partial => 'remote_token' %>
+  <div>
+  <br/><%= button_to 'Cancel Payment', {:action => :show, :controller => :reservation, :reservation_id => @reservation_id} %>
+  </div>
+<% when CardTransaction::TokenLocal %>
+  <%= render :partial => 'local_token' %>
+<% end %>

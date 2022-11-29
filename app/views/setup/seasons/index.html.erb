@@ -1,0 +1,26 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'New season', new_setup_season_path, :method => :get %>
+<table border="1">
+  <tr>
+  <% for column in Season.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+  <% for season in @seasons %>
+    <tr>
+    <% for column in Season.content_columns %>
+      <td><%=h season.send(column.name) %></td>
+    <% end %>
+    <td><%= link_to 'Edit', edit_setup_season_path(season) %></td>
+    <% unless season.id == 1 %>
+      <td><%= link_to 'Delete', setup_season_path(season), :method => :delete,
+				  :confirm => "Are you sure you want to delete #{season.name}?"
+				  %></td>
+    <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

@@ -1,0 +1,48 @@
+<%= render :partial => 'setup/buttons' %>
+<%= render :partial => 'explain' %>
+<%= error_messages_for 'discount' %>
+<p>
+<%= button_to 'New discount', new_setup_discount_path, :method => :get %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_discount_path, :method => :get %>
+<table border="1">
+  <tr>
+  <th rowspan="2">Name</th><th rowspan="2">Duration</th><th rowspan="2">Percent</th><th colspan="4">Applies to </th><th rowspan="2">Amount<br/>Once</th><th colspan="3">Per</th><th colspan="7">Applies</th>
+  <th rowspan="2">Show<br/>on Remote</th> <th rowspan="2">Active</th>
+  </tr>
+  <tr>
+  <th>Daily</th><th>Weekly</th><th>Monthly</th><th>Seasonal</th><th>Day</th><th>Week</th><th>Month</th><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+  </tr>
+  <% for discount in @discounts %>
+  <tr>
+    <td><%= discount.name %></td>
+    <td> <%= "#{discount.duration} #{discount._duration_units}" if discount.duration > 0 %> </td>
+    <td><%= discount.discount_percent.to_s+"%" %></td>
+    <td><%= discount.disc_appl_daily %></td>
+    <td><%= discount.disc_appl_week %></td>
+    <td><%= discount.disc_appl_month %></td>
+    <td><%= discount.disc_appl_seasonal %></td>
+    <td><%= number_2_currency(discount.amount) %></td>
+    <td><%= number_2_currency(discount.amount_daily) %></td>
+    <td><%= number_2_currency(discount.amount_weekly) %></td>
+    <td><%= number_2_currency(discount.amount_monthly) %></td>
+    <td><%= discount.sunday %></td>
+    <td><%= discount.monday %></td>
+    <td><%= discount.tuesday %></td>
+    <td><%= discount.wednesday %></td>
+    <td><%= discount.thursday %></td>
+    <td><%= discount.friday %></td>
+    <td><%= discount.saturday %></td>
+    <td><%= discount.show_on_remote %></td>
+    <td><%= discount.active %></td>
+    <td><%= link_to 'Edit', edit_setup_discount_path(discount) %></td>
+    <% if discount.id != 1 %>
+      <td><%= link_to 'Delete', setup_discount_path(discount), 
+				:confirm => "Are you sure you want to delete #{discount.name}?",
+				:method => 'delete' %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

@@ -1,0 +1,5 @@
+<% if @reservation.editable? %>
+<div class="noprint" id="onetimedisc">
+<%= I18n.t('reservation.Onetime_Discount')%>: <b><%= in_place_editor_field_prompted :reservation, :onetime_formatted, {}, :size => 6 %></b>
+</div>
+<% end %>

@@ -1,0 +1,28 @@
+--- 
+creditcards_005: 
+  use_expiration: false
+  is_credit_card: true
+  id: "5"
+  validate_expiration: false
+  name: Discovery
+  validate_cc_number: true
+creditcards_004: 
+  name: Mastercard
+  id: "4"
+creditcards_003: 
+  name: Visa
+  id: "3"
+creditcards_002: 
+  use_expiration: false
+  is_credit_card: true
+  id: "2"
+  validate_expiration: false
+  name: Check
+  validate_cc_number: false
+creditcards_001: 
+  use_expiration: false
+  is_credit_card: false
+  id: "1"
+  validate_expiration: false
+  name: Cash
+  validate_cc_number: false

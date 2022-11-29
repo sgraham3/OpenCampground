@@ -1,0 +1,2 @@
+module Setup::SpaceHelper
+end

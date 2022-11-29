@@ -1,0 +1,3 @@
+module Maintenance::TroubleshootHelper
+
+end

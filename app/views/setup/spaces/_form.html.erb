@@ -1,0 +1,118 @@
+<%= error_messages_for 'space' %>
+
+<!--[form:space]-->
+<p><label for="space_name">Space name</label><br/>
+<%= text_field 'space', 'name', {:size => '24', :autocomplete => 'off', :style => "font-family: monospace"}  %></p>
+
+<table>
+  <tr>
+    <td><label for="space_power_15a">Power 15a</label></td>
+    <td><label for="space_power_30a">Power 30a</label></td>
+    <td><label for="space_power_50a">Power 50a</label></td>
+  </tr>
+
+  <tr>
+    <td>
+      <select id="space_power_15a" name="space[power_15a]">
+	<option value="false"<%= ' selected' unless @space.power_15a %> >False</option>
+	<option value="true" <%= ' selected' if     @space.power_15a %> >True </option>
+      </select>
+    </td>
+    <td>
+      <select id="space_power_30a" name="space[power_30a]">
+	<option value="false"<%= ' selected' unless @space.power_30a %> >False</option>
+	<option value="true" <%= ' selected' if     @space.power_30a %> >True </option>
+      </select>
+    </td>
+    <td>
+      <select id="space_power_50a" name="space[power_50a]">
+	<option value="false"<%= ' selected' unless @space.power_50a %> >False</option>
+	<option value="true" <%= ' selected' if     @space.power_50a %> >True </option>
+      </select>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><label for="space_water">Water</label></td>
+    <td><label for="space_sewer">Sewer</label></td>
+  </tr>
+
+  <tr>
+    <td>
+      <select id="space_water" name="space[water]">
+	<option value="false"<%= ' selected' unless @space.water %> >False</option>
+	<option value="true" <%= ' selected' if     @space.water %> >True </option>
+      </select>
+    </td>
+    <td>
+      <select id="space_sewer" name="space[sewer]">
+	<option value="false"<%= ' selected' unless @space.sewer %> >False</option>
+	<option value="true" <%= ' selected' if     @space.sewer %> >True </option>
+      </select>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td> Site type</td>
+    <td> Price class</td>
+    <% if @option.use_remote_reservations %>
+      <td> Remote Reservable</td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td>
+    <select name="space[sitetype_id]">
+      <% Sitetype.all.each do |sitetype| %>
+	<option value="<%= sitetype.id %>"
+	<%= ' selected' if sitetype.id == @space.sitetype_id %>>
+	<%= sitetype.name %>
+	</option>
+      <% end %>
+    </select>
+    </td>
+    <td>
+    <select name="space[price_id]">
+      <% Price.all.each do |price| %>
+	<option value="<%= price.id %>"
+	<%= ' selected' if price.id == @space.price_id %>>
+	<%= price.name %>
+	</option>
+      <% end %>
+    </select>
+    </td>
+    <% if @option.use_remote_reservations %>
+    <td>
+      <select id="remote_reservable" name="space[remote_reservable]">
+	<option value="false"<%= ' selected' unless @space.remote_reservable %> >False</option>
+	<option value="true" <%= ' selected' if     @space.remote_reservable %> >True </option>
+      </select>
+     </td>
+     <% end %>
+  </tr>
+</table>
+
+<p><label for="space_length">Length:</label><br/>
+<%= text_field 'space', 'length'  %></p>
+
+<p><label for="space_width">Width:</label><br/>
+<%= text_field 'space', 'width'  %></p>
+
+<% if  Extra.find_all_by_extra_type(Extra::MEASURED).size > 0 %>
+<p><label for="space_current">Current measured value:</label><br/>
+<%= text_field 'space', 'current'  %></p>
+<% end %>
+
+<p><label for="space_special_condition">Special condition</label><br/>
+<%= text_field 'space', 'special_condition'  %></p>
+
+<% unless controller.action_name == 'new' %>
+  <p><label for="space_active">Active?</label>
+  <%= check_box 'space', 'active', {}, '1', '0' %></p>
+<% end %>
+
+<!--[eoform:space]-->

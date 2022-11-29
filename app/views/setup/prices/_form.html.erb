@@ -1,0 +1,44 @@
+<%= error_messages_for 'price' %>
+
+<!--[form:price]-->
+<b>Season:</b> <%= @season.name %>
+<p><label for="price_name">Price class name:</label><br/>
+<%= text_field 'price', 'name'  %></p>
+
+<% if @option.variable_rates %>
+  <table>
+    <tr>
+      <td>Sunday</td> <td>Monday</td> <td>Tuesday</td> <td>Wednesday</td> <td>Thursday</td> <td>Friday</td> <td>Saturday</td>
+    </tr>
+    <tr>
+      <td><%= text_field 'rate', 'sunday', :size => 8 %></td>
+      <td><%= text_field 'rate', 'monday', :size => 8 %></td>
+      <td><%= text_field 'rate', 'tuesday', :size => 8 %></td>
+      <td><%= text_field 'rate', 'wednesday', :size => 8 %></td>
+      <td><%= text_field 'rate', 'thursday', :size => 8 %></td>
+      <td><%= text_field 'rate', 'friday', :size => 8 %></td>
+      <td><%= text_field 'rate', 'saturday', :size => 8 %></td>
+    </tr>
+  </table>
+<% else %>
+  <p><label for="rate_daily_rate">Daily rate:</label><br/>
+  <%= text_field 'rate', 'daily_rate', :size => 8  %></p>
+<% end %>
+
+<p><label for="rate_weekly_rate">Weekly rate:</label><br/>
+<%= text_field 'rate', 'weekly_rate', :size => 10  %></p>
+
+<p><label for="rate_monthly_rate">Monthly rate:</label><br/>
+<%= text_field 'rate', 'monthly_rate', :size => 12  %></p>
+
+<% if @option.use_seasonal == true %>
+  <p><label for="rate_seasonal_rate">Seasonal rate:</label><br/>
+  <%= text_field 'rate', 'seasonal_rate', :size => 14  %></p>
+<% end %>
+
+<% if @option.use_storage? %>
+  <p><label for="rate_monthly_storage">Monthly Storage rate:</label><br/>
+  <%= text_field 'rate', :monthly_storage, :size => 14  %></p>
+<% end %>
+<!--[eoform:price]-->
+

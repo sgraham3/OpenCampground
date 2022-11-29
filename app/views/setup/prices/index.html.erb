@@ -1,0 +1,9 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'New Price', new_setup_price_path, :method => :get %>
+<b>Click on prices to edit</b>
+<div id="prices">
+  <%= render(:partial => 'rate', :object => @rates) %>
+</div>  
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

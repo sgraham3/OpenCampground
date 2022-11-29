@@ -1,0 +1,33 @@
+<%= render :partial => 'shared/find_by_phone' %>
+<%= render :partial => 'shared/find_by_id' %>
+<label for="camper_last_name"><b><%= I18n.t('camper.FindByName') %>:</b></label>
+<%= text_field 'camper', 'last_name', {:autocomplete=>"off"}  %>
+<%= observe_field :camper_last_name,
+		  :frequency => 0.4,
+		  :update => 'campers',
+		  :url => {:controller => 'camper', :action => 'partial_update', :only_path => false},
+		  :with => "'camper_last_name='+encodeURIComponent(value)" %>
+<% if @option.match_firstname? %>
+  <label for="camper_first_name"><b><%= I18n.t('camper.First') %></b></label>
+  <%= text_field 'camper', 'first_name', {:autocomplete => 'off'} %>
+  <%= observe_field :camper_first_name,
+		    :frequency => 0.4,
+		    :update => 'campers',
+		    :url => {:action => 'partial_update_first', :only_path => false},
+		    :with => "'camper_first_name='+encodeURIComponent(value)" %>
+<% end %>
+<% if @option.match_city? %>
+  <label for="camper_city"><b><%= I18n.t('camper.City') %></b></label>
+  <%= text_field 'camper', 'city', {:autocomplete => 'off'}  %>
+  <%= observe_field :camper_city,
+		    :frequency => 0.4,
+		    :update => 'campers',
+		    :url => {:action => 'partial_update_city', :only_path => false},
+		    :with => "'camper_city='+encodeURIComponent(value)" %>
+<% end %>
+<%= set_focus_to_id 'camper_last_name' %>
+<hr>
+<br />
+<div id='campers'>
+  <%= render :partial => 'camper/campers' %>
+</div>

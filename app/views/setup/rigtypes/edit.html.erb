@@ -1,0 +1,9 @@
+<%= render :partial => 'explain' %>
+<% form_tag setup_rigtype_path, :method => :put, :id => @rigtype do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag 'Save' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', setup_rigtypes_path, :class => 'link_btn' %>

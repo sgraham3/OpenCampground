@@ -1,0 +1,106 @@
+<% if controller.action_name == 'space_selected' %>
+<% url = request.protocol + request.host_with_port + '/remote/abandon_remote' %>
+<meta http-equiv="refresh" content="1800; url=<%= url %>" />
+<% end %>
+<div id="explain">
+  <%= @prompt.body %>
+</div>
+<div id="action" style="padding-bottom: 30px">
+<% if @reservation %>
+  <%= error_messages_for 'reservation' %>
+  <div id="header">
+    <% if @option.header %>
+      <%= @option.header %>
+    <%end%>
+  </div>
+  <% if controller.action_name == 'confirmation' || controller.action_name == 'confirm_without_payment' %>
+    <div style="text-align: center;">
+      <b><%= I18n.t('titles.ResId', :reservation_id =>@reservation.id.to_s) %></b>
+    </div>
+    <% @static = true %>
+  <% else %>
+    <% @static = false %>
+  <%end%>
+  <%= render :partial => 'date' %>
+  <% if @reservation.camper_id? %>
+    <table>
+      <tr>
+	<td><%= I18n.t('camper.Last') %>:</td>
+	<td><b><%= h @reservation.camper.last_name %></b></td>
+	<td><%= I18n.t('camper.First') %>:</td>
+	<td><b><%= h @reservation.camper.first_name %></b></td>
+	<% if @option.use_id? %>
+	    <td><%= I18n.t('camper.ID') %>:</td>
+	    <td><b><%= h @reservation.camper.idnumber %></b></td>
+	<% end %>
+	<td><%= I18n.t('camper.Email') %>:</td>
+	<td><b><%= h @reservation.camper.email %></b></td>
+      </tr>
+    </table>
+  <%end%>
+
+  <table>
+  <tr>
+    <% if @option.use_remote_adults? %>
+      <td><%= I18n.t('reservation.Adults') %>: <b><%= if @static; @reservation.adults; else;in_place_editor_field_prompted :reservation, :adults;end %></b></td>
+    <% end %>
+    <% if @option.use_remote_pets? %>
+      <td><%= I18n.t('reservation.Pets') %>: <b><%= if @static; @reservation.pets; else;in_place_editor_field_prompted :reservation, :pets;end %></b></td>
+    <% end %>
+    <% if @option.use_remote_children? %>
+      <td><%= I18n.t('reservation.Children') %>: <b><%= if @static; @reservation.kids; else;in_place_editor_field_prompted :reservation, :kids;end %></b></td>
+    <% end %>
+    <% if @option.use_remote_length? %>
+      <td><%= I18n.t('reservation.Length') %>: <b><%= if @static; @reservation.length; else;in_place_editor_field_prompted :reservation, :length, {}, :size => 2;end %></b></td>
+    <% end %>
+    <% if @option.use_remote_slides? %>
+      <td><%= I18n.t('reservation.Slides') %>: <b><%= if @static; @reservation.slides; else;in_place_editor_field_prompted :reservation, :slides, {}, :size => 2;end %></b></td>
+    <% end %>
+    <% if @option.use_remote_age? %>
+      <td><%= I18n.t('reservation.RigAge') %>: <b><%= if @static; @reservation.rig_age; else;in_place_editor_field_prompted :reservation, :rig_age, {}, :size => 2;end %></b></td>
+  <% end %>
+  </tr>
+  </table>
+  <% if @option.use_remote_rig_type? && Rigtype.active.count > 0 && @reservation.rigtype_id %>
+    <%= if @static; I18n.t('reservation.RigType') + ': <b>' + @reservation.rigtype.name + '</b>'; else;render :partial => 'shared/rigtype';end %>
+  <% end %>
+  <% if @option.remote_recommendations? && @option.use_recommend? && @reservation.recommender_id && Recommender.active.count > 0 %>
+    <%= if @static; I18n.t('reservation.RecommendedBy') + ': <b>' + @reservation.recommender.name  + '</b>'; else;render :partial => 'shared/recommender';end %>
+  <% end %>
+  <% if @option.remote_discount? && @reservation.discount_id && Discount.for_remote.count > 0 %>
+    <%= if @static; I18n.t('reservation.Discount') + ': <b>' + @reservation.discount.name + '</b>'; else;render :partial => 'shared/discount';end %>
+  <% end %>
+  <br />
+  <span id="special" ><%= render :partial => 'shared/special' %></span>
+  <% unless controller.action_name == 'confirmation' || controller.action_name == 'confirm_without_payment' %>
+    <%= render :partial => 'shared/extras' %>
+  <% end %>
+  <%= render :partial => 'shared/space_summary' %>
+  <div id="trailer">
+    <% if @option.trailer %>
+      <hr />
+      <%= @option.trailer %>
+    <% end %>
+  </div>
+  <div class="noprint">
+    <table>
+      <tr>
+	<% if controller.action_name == 'confirmation' || controller.action_name == 'confirm_without_payment' %>
+	  <td> <%= button_to  I18n.t('reservation.Finished'), :action => :finished %> </td>
+	  <td> <%= button_to  'Create another reservation', { :action => :index }, :new => true %> </td>
+	  <td> <%= render :partial => 'shared/print' %> </td>
+	<% else %>
+	  <td>
+	    <%= button_to  I18n.t('reservation.CompleteReservation'), {:controller => :camper, :action => :find_remote},
+						      :method => "post" %>
+	  </td>
+	  <td> <%= button_to  I18n.t('remote.StartOver'), { :action => :index }, :new => true %> </td>
+	  <td> <%= button_to  I18n.t('reservation.Cancel'), { :action => :abandon_remote }, :id => 'rescanx',
+							      :confirm => I18n.t('remote.Cancel'),
+							      :method => "post" %> </td>
+	<% end %>
+      </tr>
+    </table>
+  </div>
+<% end %>
+</div>

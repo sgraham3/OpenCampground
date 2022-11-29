@@ -1,0 +1,8 @@
+<% form_tag report_card_transactions_path do %>
+  <b>Select start and end dates for report</b></br>
+  <div id="dates">
+    <%= render :partial => 'report/shared/dates' %>
+  </div>
+  <%= submit_tag 'Generate Report', :disable_with => "Processing..." %>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

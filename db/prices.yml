@@ -1,0 +1,16 @@
+--- 
+prices_005: 
+  id: "5"
+  name: Premium EWS 50
+prices_004: 
+  id: "4"
+  name: Regular EWS 50
+prices_003: 
+  id: "3"
+  name: Regular EWS 30
+prices_002: 
+  id: "2"
+  name: Regular EW 30
+prices_001: 
+  id: "1"
+  name: Tent E 15

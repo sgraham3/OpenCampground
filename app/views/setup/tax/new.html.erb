@@ -1,0 +1,8 @@
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', :action => 'show' %>

@@ -1,0 +1,6 @@
+<% form_tag report_sched_deps_path do %>
+<b>Select first and last departure dates for desired report</b></br>
+<%= render :partial => 'report/shared/dates' %>
+<p><%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

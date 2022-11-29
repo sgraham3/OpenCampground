@@ -1,0 +1,31 @@
+#banner { display: none; }
+#side { display: none; }
+#tabs { display: none; }
+#flash { display: none; }
+#notice { display: none; }
+#warning { display: none; }
+#error { display: none; }
+#creditcard { display: none;}
+#deposit { display: none;}
+#explain { display: none; }
+.noprint { display: none; }
+input { display: none; }
+#header { 
+	  text-align: center;
+	  white-space: pre;
+          font-size: 11pt;
+	  margin-bottom: 10px;
+}
+#trailer {
+           margin-left: 20px;
+           margin-right: 20px;
+           font-size: 7pt;
+}
+
+#main {
+	margin-left: 10px;
+	padding-top: 4ex;
+}
+h {font: 15pt Times bold;}
+.pagebreak { page-break-after: always; }
+.keep_together { page-break-inside: avoid; }

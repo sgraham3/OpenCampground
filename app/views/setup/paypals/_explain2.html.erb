@@ -1,0 +1,21 @@
+<div id="explain">
+<h1>Explanation of PayPal Certificate download</h1>
+<p>
+The 'Download' button will cause the public certificate (my-pubcert.pem) to be copied
+to the place you have configured your browser to put downloaded files, usually your Downloads folder.
+</p>
+<h3>Installing your public certificate on PayPal</h3>
+<p>
+When logged in to PayPal on your business account on the upper right hand hover over your name and select  "Account Settings".
+On the page given select "Website Payments" on the left towards the bottom.
+On that page select Update for  “Encrypted Payment Settings” (at the bottom of the page).
+</p><p>
+The PayPal public certificate has been installed in Open Campground so you don't have to worry about that.
+</p><p>
+In “Your Public Certificates”  select "add"  which will bring up a dialog to browse to and upload your public certificate
+(my-pubcert.pem downloaded as described above) to PayPal.
+After you have added it you will see it listed on that PayPal page with a Cert ID.
+Record this id, you will need to enter this ID in the <em>Admin->Setup->Payment Configurations</em> page where it asks for PayPal certificate ID.
+</p>
+<hr>
+</div>

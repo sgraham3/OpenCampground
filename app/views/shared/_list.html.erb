@@ -1,0 +1,84 @@
+  <% if @option.use_remote_reservations? && list.unconfirmed_remote? %>
+    <tr class="unconfirmed">
+  <% elsif controller.action_name == 'list' %>
+    <%= check_rl_status(list) %>
+  <% elsif controller.action_name == 'in_park' %>
+    <%= check_ip_status(list) %>
+  <% end %>
+  <td><%= list.id.to_s %>
+  <% if list.storage? && @option.use_storage? %>
+    (S)
+  <% end %>
+  </td>
+  <td><%=I18n.l(list.startdate, :format => :long) %></td>
+  <td><%=I18n.l(list.enddate, :format => :long) %></td>
+  <% if list.group_id == nil %>
+    <td><%= link_to safeCamper(list.camper), :controller => 'camper', :action => 'show', :camper_id => list.camper %></td>
+    <% if @option.use_license? %>
+      <td><%=list.vehicle_license %>&nbsp;<%=list.vehicle_state %></td>
+    <% end %>
+    <% if @option.use_rig_type? %>
+      <td><%=list.rigtype.name if list.rigtype_id? %></td>
+    <% end %>
+    <% if @option.use_slides? %>
+      <td align="center"><%=list.slides %></td>
+    <% end %>
+    <% if @option.use_length? %>
+      <td align="center"><%=list.length %></td>
+    <% end %>
+    <td><%=list.space.name if list.space_id? %></td>
+    <% if @option.list_payments? -%>
+      <% pmt = Payment.total(list.id) -%>
+      <% if @option.use_override? && (list.override_total > 0.0) -%>
+	<% due = list.override_total - pmt -%>
+      <% else -%>
+	<% due = list.total + list.tax_amount - pmt -%>
+      <% end -%>
+      <td align="right"><%=number_2_currency(pmt) %></td>
+      <td align="right"<% if due.round(2) != 0.0 -%> class="payment_due"<% end -%>><%=number_2_currency(due) %></td>
+    <% end -%>
+    <% unless list.unconfirmed_remote? %>
+      <td><%= link_to I18n.t('reservation.Show'), :controller => 'reservation', :action => 'show', :reservation_id => list %></td>
+    <% end -%>
+    <% if list.checked_in %>
+      <td><%= link_to I18n.t('reservation.Checkout'), {:controller => :reservation, :action => 'do_checkout', :reservation_id => list},
+				  :confirm => I18n.t('reservation.ConfirmCheckoutDate', :name => safeCamper(list.camper), :enddate => I18n.l(list.enddate, :format => :long)),
+				  :method => "post" %></td>
+      <%= extend_stay(list) %>
+    <% else %>
+      <% if @option.use_remote_reservations? && list.unconfirmed_remote? %>
+	<td><%= link_to I18n.t('titles.Review'), :action => 'review', :reservation_id => list %></td>
+      <% else %>
+	<td>
+	  <% if list.startdate == current_Date %>
+	    <%= link_to I18n.t('reservation.Checkin'), :action => 'checkin', :reservation_id => list %>
+	  <% else %>
+	    <%= link_to I18n.t('reservation.Checkin'), {:action => 'checkin', :reservation_id => list},
+				  :confirm => I18n.t('reservation.ConfirmCheckinDate', :name => safeCamper(list.camper)) %>
+	  <% end %>
+	</td>
+	<td><%= link_to I18n.t('reservation.Cancel'), { :action => 'cancel', :reservation_id => list },
+				  :confirm => I18n.t('reservation.ConfirmCancel', :name => safeCamper(list.camper)),
+				  :method => "post" %></td>
+      <% end %>
+    <% end %>
+  <% else %>
+    <td colspan="<%= spancount %>" align="center"><b><%= I18n.t('reservation.Group') %>:</b> <%= link_to list.group.name, :controller => 'group', :action => 'show', :group_id => list.group_id %>
+    <%= link_to safeCamper(list.group.camper), :controller => 'camper', :action => 'show', :camper_id => list.group.camper_id %>
+    &nbsp;<%= list.group.expected_number.to_s + ' ' + I18n.t('reservation.spaces')%> </td>
+    <% if list.checked_in %>
+      <td><%= link_to I18n.t('reservation.Expand'), :controller => 'reservation', :action => 'in_park_expand' %></td>
+      <td><%= link_to I18n.t('reservation.Group') + ' ' + I18n.t('reservation.Checkout'), {:controller => 'group_res', :action => 'checkout', :group_id => list.group_id},
+				  :confirm => I18n.t('group_res.ConfirmCheckout', :name => list.group.name, :enddate => I18n.l(list.enddate, :format => :long)),
+				  :method => "post" %></td>
+    <% else %>
+      <td><%= link_to I18n.t('reservation.Expand'), :controller => 'reservation', :action => 'expand' %></td>
+      <td><%= link_to I18n.t('reservation.Group') + ' ' + I18n.t('reservation.Checkin'), {:controller => 'group_res', :action => 'checkin', :group_id => list.group_id}, 
+				  :confirm => I18n.t('group_res.ConfirmCheckin', :name => list.group.name, :startdate => I18n.l(list.startdate, :format => :long)),
+				  :method => "post" %></td>
+      <td><%= link_to I18n.t('reservation.Cancel'), {:controller => 'group_res', :action => 'cancel', :reservation_id => list },
+				:confirm => I18n.t('group_res.ConfirmCancel', :name => list.group.name),
+				:method => "post" %></td>
+    <% end %>
+  <% end %>
+</tr>

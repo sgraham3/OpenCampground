@@ -1,0 +1,18 @@
+<% form_tag :action => 'express_2' do %>
+  <div id='dates'>
+    <%= render :partial => 'shared/dates' %>
+  </div>
+  <p>
+  <%= render :partial => 'shared/sitetype' %>
+  </p>
+  <p>
+  <%= render :partial => 'shared/count' %>
+  <span id="spaces">
+    <%= render :partial => 'space_pulldown' %>
+  </span>
+  </p>
+  <span style="display: none">
+    <%= collection_select(:reservation, :discount_id, Discount.active, :id, :name, {:prompt => true}) if @option.use_discount? && Discount.active.count > 0 %>
+  </span>
+  <p><%= submit_tag I18n.t('reservation.CompleteReservation') %></p>
+<% end %>

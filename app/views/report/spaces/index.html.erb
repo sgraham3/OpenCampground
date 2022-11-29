@@ -1,0 +1,33 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Space </th>
+    <th>Equipped </th>
+    <th>Length </th>
+    <th>Status </th>
+  </tr>
+  <% for space in @spaces %>
+    <tr>
+      <td><%=space.name %></td>
+      <td><%=space.ews %></td>
+      <td><%=space.length %></td>
+      <% if !space.active? %>
+	<td style="color: #f00">Not Active</td>
+      <% else %>
+	<% if @occupied.member?(space.name) %>
+	  <td style="color: #0f0"><%= link_to 'Occupied', :action => :show, :controller => '/reservation', :reservation_id => @occupied[space.name] %></td>
+	<% else %>
+	  <td></td>
+	<% end %>
+	<% if space.unavailable? %>
+	  <td style="color: #f00">Unavailable</td>
+	  <td><%= link_to 'Release', report_space_url(space, :change => 'release'), {:method => :put} %></td>
+	<% else %>
+	  <td>Available</td>
+	  <td><%= link_to 'Unavailable', report_space_url(space, :change => 'unavailable'), {:method => :put}%> </td>
+	<% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

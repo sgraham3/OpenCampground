@@ -1,0 +1,644 @@
+# Sample localization file for English. refer to https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale
+# The items before the : are the keys, the string to be printed is in quotes
+# To create a new translation copy this file to a new file xx.yml for language xx
+# and replace the items in quotes with the correct translations.
+# Do not translate anything in curley brackets %{ } 
+
+en_ZA:
+# Open Campground
+  layout:
+    banner:
+      user: "User"
+    side:
+      admin: "Admin"
+      logout: "Logout"
+      chg_pwd: "Change Password" 
+      canx_chg:  "Cancel %{change_action} change"
+      canx_chg_conf: "Cancel this %{change_action} change action?"
+      canx_res:  "Cancel Reservation"
+      canx_res_conf: "Cancel this reservation?" 
+  titles:
+    express: "Express"
+    res_list: "Reservation List"
+    in_park:  "In Park List"
+    new_res:  "New Reservation"
+    new_grp_res: "New Group Reservation"
+    find_res: "Find Reservation"
+    campers:  "Campers"
+    CamperName: "Enter Camper Name and Address"
+    find_camper: "Find Camper"
+    site_av:  "Site Availability"
+    CamperByActivity: "Campers by Last Activity"
+    CancelReservation: "Cancel Reservation"
+    ChangeRes: "Change Reservation"
+    ChangeCamper: "Change Camper"
+    ChangeDates: "Change Dates"
+    ChangeSpace: "Change Space"
+    Checkin: "Check in %{name}"
+    CombineCampers: "Combine campers"
+    ConfirmRes: "Confirm Reservation"
+    ConfirmResId: "Confirm Reservation %{reservation_id}"
+    DateSel: "Date Selection"
+    EditExtraCharge: "Edit Extra Charge on Space %{space} for Reservation %{reservation_id}"
+    GroupName: "Group %{name}"
+    GroupResId: "Reservation %{reservation_id}, %{name} group"
+    GroupResSpaceSel: "Group Reservation Space Selection"
+    MeasuredCharges: "Measured Extra Charges by Space"
+    MeterReadings: "Meter Readings"
+    NoResFound: "No reservations found"
+    NoResFoundName: "No reservations found for %{name}"
+    ResId: "Reservation %{reservation_id}"
+    Review: "Review"
+    ReviewRes: "Review Reservation"
+    ResName: "Reservations for %{name}"
+    ReturningGroups: "Returning Groups"
+    SelCreateCamper: "Select or Create Camper"
+    SelCreateGroup: "Select or Create Group"
+    SelCreateWagonmaster: "Select or Create Wagonmaster"
+    SelSpace: "Select Space"
+    ShowCamper: "Show Camper"
+    UserList: "List Users"
+    UserNew: "New User"
+    UserEdit: "Edit User"
+  general:
+    Select: "Select"
+    Show: "Show"
+    Update: "Update"
+    List: "List"
+    Edit: "Edit"
+    Destroy: "Destroy"
+    ConfirmDestroy: "Are you sure?\nThis will completely delete this transaction."
+    Combine: "Combine"
+    Delete: "Delete"
+    Finished: "Finished"
+    Continue: "Continue"
+    Print: "Print"
+    Flash:
+      CheckedInDateChg: "Start date not changed, cannot change start date when checked in"
+      DateOverlap: "Dates not changed.  Proposed dates overlap reservations: "
+      NotAuth: "User is not authorized for selected function"
+      WrongStart: "Reservation start date wrong. "
+      WrongEnd: "Reservation end date wrong. "
+      EqualDates: "Reservation end date earlier than or equal to start date." 
+      DateAdj: "Reservation end date adjusted to be later than start date"
+  camper:
+    Create: "Create"
+    Combine: "Combine <b>%{name}</b> from <b>%{place}</b> with selected camper:"
+    ConfirmCombine: "This will result in %{combine_name} being deleted and %{camper_name} replacing him in all entries.\nIs this what you want?"
+    Delete: "Are you sure you want to delete %{name}?"
+    Name: "Name"
+    Last: "Last Name"
+    First: "First Name"
+    Phone: "Phone Number"
+    Phone2: "Addl Phone Number"
+    Email: "Email Address"
+    Address: "Address"
+    City: "City"
+    State: "Province"
+    Zip: "Mail Code"
+    Country: "Country"
+    ID: "ID Number"
+    FindByName: "Find by Last Name"
+    LastActivity: "Last Activity"
+    ListByName: "List by Name"
+    NotFound: "Camper not found "
+    Notes: "Private Notes"
+    Addl: "Additional Info"
+    Flash:
+      Created: "Camper %{camper_name} created"
+      CreateFail: "Camper %{camper_name} could not be created"
+      CannotDestroy: "%{camper_name} has reservations or groups currently in the system so the record cannot be destroyed"
+      Deleted: "Camper %{camper_name} deleted."
+      DeleteFailed: "Deletion of camper %{camper_name} failed."
+      ChangeFail: "Someone else is changing the same camper, redo the change"
+  remote:
+    ConfirmLater: "Confirm you want to create a reservation with payment later"
+    Cancel: "Cancel this reservation?"
+    Redirect: "You will be redirected to %{url}"
+    StartOver: "Start Over"
+    WaitingConfirm: "Waiting for confirmation of payment"
+  reservation:
+    Adults: "Adults"
+    Amount: "Amount"
+    AmountDue: "Amount Due"
+    Any: "any"
+    Archived: "Archived"
+    Arrival: "Arrival"
+    Cancel: "Cancel"
+    CancelCancellation: "Cancel Cancellation"
+    CancelCheckin: "Cancel Check in"
+    CancelChangeSpace: "Cancel Change Space"
+    CancelDateChg: "Cancel Date Change"
+    CancelOverride: "Cancel Override Total"
+    CancelRes: "Cancel this reservation?"
+    CardNumber: "Card Number"
+    Checkin: "Check in"
+    CheckingInToday: "Checking in today"
+    CheckingOutToday: "Checking out today"
+    CheckInNow: "Check In Now"
+    Checkout: "Check out"
+    Children: "Children"
+    CompleteCancellation: "Complete Cancellation"
+    CompleteCheckin: "Complete Check in"
+    CompleteReservation: "Complete Reservation"
+    ConfirmCheckin: "Confirm check in of %{name}"
+    ConfirmCheckinDate: "Confirm check in of %{name} not on scheduled arrival date"
+    ConfirmCancelCheckin: "Confirm cancellation of check in of %{name}"
+    ConfirmCheckout: "Confirm check out of %{name}"
+    ConfirmCheckoutDate: "Confirm check out of %{name} on %{enddate}"
+    ConfirmCancel: "Confirm cancel of reservation for %{name}"
+    ConfirmPurge: "Confirm complete removal of reservation %{number} for %{name}"
+    ConfirmRes: "Confirm reservation for %{name}"
+    ConfirmExtend: "Extend %{name} for one day?"
+    ConfirmExtendMonth: "Extend %{name} to %{enddate}?"
+    Count: "Count"
+    Current: "Current"
+    Daily: "Daily"
+    Date: "Date"
+    Days: "Days"
+    Departure: "Departure"
+    Deposit: "Deposit"
+    Deselect: "Deselect"
+    Discount: "Discount"
+    DownloadData: "Download Data"
+    Due: "Due"
+    Each: "Each"
+    EndDate: "End Date"
+    Envelope: "Window Env"
+    EWS: "EWS"
+    Expand: "Expand"
+    Expires: "Expires"
+    Extend: "Extend"
+    ExtendMonth: "Extend Month"
+    Feedback: "Send Feedback email"
+    NoFeedback: "Do not send Feedback email"
+    FindbyIdNumber: "Find by Id Number"
+    FindbyLastName: "Find by Last Name"
+    FindbyPhoneNumber: "Find by Phone Number (last digits)"
+    FindbyReservationNumber: "Find by Reservation Number"
+    FindbySpace: "Find by Space"
+    FindSpace: "Find Space"
+    Finished: "Finished"
+    FullSeasonReservation: "Full Season Reservation"
+    Group: "Group"
+    Groups: "Groups"
+    Inpark: "In park"
+    Item: "Item"
+    Length: "Length"
+    Monthly: "Monthly"
+    Months: "Months"
+    none: "none"
+    NotArrivingYet: "Not arriving yet"
+    NotCheckedIn: "Not Checked In"
+    Notes: "Notes"
+    notspecified: "not specified"
+    nr_Adults: "# Adults"
+    nr_Children: "# Children"
+    nr_Pets: "# Pets"
+    nr_Slides: "# Slides"
+    Number: "Number"
+    Occupied: "Occupied"
+    Onetime_Discount: "One-time Discount"
+    OverdueforCheckIn: "Overdue for check in"
+    OverdueforCheckOut: "Overdue for check out"
+    OverrideTotal: "Override Total"
+    Overstayed: "Overstayed"
+    OverstayingReservation: "Overstaying reservation"
+    PaymentType: "Payment Type"
+    Payment: "Payment"
+    PayNow: "Pay Now"
+    Pets: "Pets"
+    PreliminaryRateInfo: "Preliminary Rate Info"
+    Purge: "Purge reservation"
+    RateInfo: "Rate Info"
+    ReasonforCancelation: "Reason for Cancelation"
+    RecalculateCharges: "Recalculate Charges"
+    RecommendedBy: "Recommended by"
+    Reservation: "Reservation"
+    ReservationNumber: "Reservation Number"
+    Reserved: "Reserved"
+    Res_nr: "Res #"
+    Return: "Return"
+    RigAge: "Rig Age"
+    RigType: "Rig Type"
+    ScheduledtoCheckInToday: "Scheduled to check in today"
+    ScheduledtoCheckOutToday: "Scheduled to check out today"
+    SeasonalRate: "Seasonal Rate"
+    Seasonal: "Seasonal"
+    Season: "Season"
+    SelectDatesforChangedSpace: "Select dates for changed space"
+    SelectedSiteInfo: "Selected Site Info"
+    Select: "Select"
+    Show: "Show"
+    ShowLog: "Show/Hide Log"
+    SiteType: "Site type"
+    Size: "Size"
+    Slides: "Slides"
+    Space: "Space"
+    spaces: "spaces"
+    spaces_available: "Spaces available"
+    SpacesSelected: "spaces selected"
+    Special: "Special"
+    Start: "Start"
+    StartDate: "Start Date"
+    Status: "Status"
+    Storage: "Storage"
+    SubmitDateChange: "Submit date change"
+    SubTotal: "Sub Total"
+    To: " to "
+    Today: "Today"
+    TotaltoDisplay: "Total to Display"
+    Total: "Total"
+    Type: "Type"
+    UndoCancel: "Undo Cancel"
+    UndoCheckout: "Undo Checkout"
+    UpdateEmail: "Send Update Email"
+    Vehicle2License: "Vehicle 2 License"
+    Vehicle2State: "Vehicle 2 State"
+    VehicleLicense: "Vehicle License"
+    VehicleState: "Vehicle State"
+    Weekly: "Weekly"
+    Weeks: "Weeks"
+    Year: "Year"
+    Week: "Week number"
+    WeekCount: "Number of weeks"
+    Flash:
+      UpdateSuccess: "Reservation %{reservation_id} for %{camper_name} was successfully updated."
+      UpdateFail: "Reservation could not be updated, please try again."
+      SpaceChgName: "Reservation %{reservation_id} for %{camper_name} changed to space %{space}"
+      SpaceChg: "Reservation %{reservation_id} changed to space %{space}"
+      SpaceUnavailable: "Space Unavailable"
+      ClosedDates: "Park is closed from %{closed} to %{open}"
+      ConfSent: "Confirmation email sent"
+      ConfErr: "Error encountered when sending email. Reservation confirmation email not sent"
+      ConfNotSent: "No valid email address. Reservation confirmation email not sent."
+      NonConfSent: "Non-confirmation email sent"
+      NonConfErr: "Error encountered sending email. Reservation non-confirmation email not sent."
+      NonConfNotSent: "No valid email address. Reservation non-confirmation email not sent"
+      FeedbackSent: "Feedback email sent"
+      FeedbackErr: "Error encountered sending email. Feedback email not sent."
+      FeedbackNotSent: "No valid email address. Feedback email not sent"
+      UpdateSent: "Update email sent"
+      UpdateErr: "Error encountered sending email. Update email not sent"
+      UpdateNotSent: "No valid email address. Update email not sent"
+      CheckedIn: "%{camper_name} checked in to space %{space}"
+      CheckinFail: "Check in of %{camper_name} to space %{space} failed"
+      CheckinFailOcc: "Check in FAILED.  Space %{space} is occupied.<br/>Assign another space to %{camper_name} on reservation#%{reservation_id} or check %{other_camper} on reservation #%{other_reservation} out and retry Check in."
+      CheckinFailUnavail: "Check in FAILED.  Space %{space} unavailable.<br/>Assign another space to %{camper_name} on reservation #%{reservation_id}."
+      CheckedOut: "%{camper_name} check out completed"
+      CheckoutFail: "Check out of %{camper_name} failed"
+      Canceled: "%{camper_name} cancellation of reservation %{reservation_id} completed"
+      CanxFail: "Cancellation of reservation %{reservation_id} failed"
+      CheckinVer: "Start date of reservation %{reservation_id} for space %{space} is %{startdate}<br/>Verify that it is the correct check in date"
+      CamperLong: "Camper length is %{camper_length} and space length is %{space_length}.\nCheck that the space assignment is correct"
+      EarlyStart: "Start date is earlier than today"
+      Conflict: "Conflicting reservation for space, select again"
+      ExtendConflict: "Space %{space_name} is occupied on %{enddate}. See reservation # %{conflict_id}"
+      ExtendFail: "Unable to extend reservation"
+      NotFound: "Reservation %{id} not found"
+      CardNoInvalid: "Credit card number is invalid"
+      CardExpired: "Credit card is past expiration date"
+      Purged: "Reservation %{id} completely removed from the system"
+      UndoCanxFail1: "Reservation %{reservation_id} conflicts with reservations "
+      UndoCFail2: "<br />another space must be selected"
+      UndoCanxOK: "Cancellation of reservation %{reservation_id} undone"
+      UndoCOno: "Reservation %{reservation_id} not checked in.  Checkout cannot be undone"
+      UndoCOFail1: "Reservation %{reservation_id} conflicts with reservations "
+      UndoCOOK: "Checkout of reservation %{reservation_id} undone"
+      CancelSent: "Reservation cancellation email sent"
+      CancelErr: "Error encountered, reservation cancellation email not sent"
+  group:
+    Create: "Create new Group"
+    GroupName: "Group Name"
+    Destroy: "Destroy"
+    CurrentReservations: "CurrentReservations"
+    DownloadCampers: "Download Campers"
+    ShowActiveGroups: "Show Active Groups"
+    ShowAllGroups: "Show All Groups"
+    ShowCampers: "Show Campers"
+    ShowReservations: "Show Reservations"
+    NumberReserved: "Number Reserved"
+    Wagonmaster: "Wagonmaster"
+    Flash:
+      Created: "Group %{name} created"
+      CreateFail: "Group %{name} could not be created"
+      Selected: "Group %{name} selected"
+      Deleted: "Group %{name} deleted."
+      DeleteFailed: "Deletion of group %{name} failed."
+      UpdateErr: "Someone else is changing the same group, redo the change"
+  group_res:
+    NumberofSpacesSelected: "Number of Spaces Selected"
+    SelectionsDone: "Selections Done"
+    FindSpaces: "Find Spaces"
+    DesignateGroup: "Designate Group"
+    ConfirmCancel: "Confirm cancel of group %{name}"
+    ConfirmCheckout: "Confirm check out of group %{name} on %{enddate}"
+    ConfirmCheckin: "Confirm check in of group %{name} on %{startdate}"
+    Flash:
+      NoneSelected: "Must select at least one space.  Try again"
+      CntSelected: "%{count} spaces selected"
+      ResCreated: "Reservation for %{count} spaces for %{name} was successfully created."
+      Canx: "Cancel for "
+      Unavailable: "Spaces unavailable "
+      Correct: " Correct before checkin"
+      Checkin: "Check in for "
+      Checkout: "Check out for "
+      OK: "%{name} OK "
+      Fail: "%{name} FAILED "
+  admin:
+    ConfirmDelete: "Are you sure you want to delete %{name}?"
+    ConfirmRestore: "Are you sure you want to restore from the backup %{name}?\nAll current data will be destroyed and replaced."
+    Confirm: "Are you sure?"
+  user:
+    ChangeUser: "Change User Details"
+    Admin: "Admin"
+    Change: "Change"
+    Remove: "Remove"
+    ConfirmRemove: "Are you sure you want to remove %{name}?"
+    New: "New User"
+    Finished: "Finished"
+    Details: "Enter User Details"
+    AddUser: "Add User"
+    NewPasswd: "Enter New Password"
+    Name: "Name"
+    Password: "Password"
+    Confirm: "Confirm"
+    Submit: "Submit Change"
+    Cancel: "Cancel"
+    Flash:
+      Created: "User %{name} was successfully created."
+      CreateFailed: "User creation failed"
+      Destroyed: "User destroyed"
+      DestroyFailed: "User destroy failed"
+      Updated: "User %{name} was successfully updated."
+      UpdateFailed: "User update failed"
+  login:
+    Login: "Please Log In"
+    Remember: "Remember me?"
+    SubmitLogin: "Login"
+    Flash:
+      BadPass: "invalid user/password combination"
+  extra:
+    Initial: "Initial value:"
+    Previous: "Previous value"
+    New: "New value"
+    Final: "Final value:"
+    Amount: "Amount:"
+    Consumed: "Consumed"
+    Rate: "Rate:"
+    Charge: "Charge:"
+    Created: "Date Created:"
+    Updated: "Last Updated:"
+    Update: "Update"
+    Name: "Extra Name"
+  payment:
+    Date: "Payment date"
+    Type: "Payment type"
+    Number: "Number"
+    Expire: "Expire"
+    Amount: "Amount"
+    Memo: "Memo"
+    Created: "Created"
+    Updated: "Updated"
+  update:
+    Desc: "You should backup your database before doing this update."
+    Fetch: "Fetch Update"
+    Finished: "Finished"
+    Install: "Install Update"
+    Retry: "Try Again"
+    Skip: "Skip Update"
+  day:
+    Sunday_i: "S"
+    Monday_i: "m"
+    Tuesday_i: "t"
+    Wednesday_i: "w"
+    Thursday_i: "t"
+    Friday_i: "f"
+    Saturday_i: "s"
+  notice:
+    Restart: "Please stop and restart your server"
+    Required: "Required Field"
+  error:
+    Application: "Application error"
+    Conflict: "Someone else is changing the same reservation, redo the change"
+  warning:
+    LastName: "last name required"
+    Email: "Valid email is required"
+    Phone: "is required"
+    FirstName: "first name required"
+    Addr: "is required"
+    City: "is required"
+    State: "is required"
+    Zip: "is required"
+    Country: "is required"
+    IdNumber: "is required"
+  will_paginate:
+    previous_label: "« Previous"
+    next_label: "Next »"
+    page_gap: "…"
+# standard rails translations
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+      month: "%B"
+      month_year: "%B %y"
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day 
+    month_names:
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: ! "doesn't match %{attribute}"
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      restrict_dependent_destroy:
+      one: "Cannot delete record because a dependent %{record} exists"
+      many: "Cannot delete record because dependent %{record} exist"
+      taken: has already been taken
+      too_long:
+      one: is too long (maximum is 1 character)
+      other: is too long (maximum is %{count} characters)
+      too_short:
+      one: is too short (minimum is 1 character)
+      other: is too short (minimum is %{count} characters)
+      wrong_length:
+      one: is the wrong length (should be 1 character)
+      other: is the wrong length (should be %{count} characters)
+      other_than: "must be other than %{count}"
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm

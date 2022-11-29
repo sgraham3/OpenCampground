@@ -1,0 +1,29 @@
+<div style="border: solid">
+    <% if authorized?(@option.all_manage_payments) %>
+	<%= link_to 'Manage Payments', payments_path, :class => "link_btn" %>
+    <% end %>
+    <% if measured_extras? %>
+       <% if authorized?(@option.all_manage_measured) %>
+	  <%= link_to 'Manage Metered Extras', extra_charges_path, :class => "link_btn" %>
+      <% end %>
+      <% if authorized?(@option.all_manage_measured) %>
+	  <%= link_to 'Meter Readings', monthly_updates_extra_charges_path, :class => "link_btn" %>
+      <% end %>
+    <% end %>
+    <% if @option.use_variable_charge? && authorized?(@option.all_manage_variable) %>
+	<%= link_to 'Manage Variable Charges', variable_charges_path, :class => "link_btn" %>
+    <% end %>
+    <% if authorized?(@option.all_troubleshoot?) %>
+	<%= link_to 'Troubleshoot Reservations', maintenance_troubleshoot_index_path, :class => "link_btn" %>
+	<%= link_to 'Check for Conflicts', maintenance_conflicts_path, :class => "link_btn" %>
+    <% end %>
+    <% if authorized?(@option.all_manage_backup) %>
+	  <%= link_to 'Manage Backup Files', maintenance_backup_files_path, :class => "link_btn" %>
+    <% end %>
+    <% if authorized?(@option.all_manage_logs) %>
+	<%= link_to 'Manage Log Files', maintenance_log_files_path, :class => "link_btn" %>
+    <% end %>
+    <% if ENV["SERVER_SOFTWARE"] =~ /Apache/ %>
+	<%= link_to 'Restart Server', maintenance_restart_index_path, :class => "link_btn" %>
+    <% end %>
+</div>

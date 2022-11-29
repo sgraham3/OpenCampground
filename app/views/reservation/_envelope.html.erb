@@ -1,0 +1,41 @@
+<% if @reservation.camper_id? && @reservation.camper_id > 0 %>
+<% @camper = Camper.find @reservation.camper_id %>
+<% envelope = true %>
+<div id="header" >
+  <%= @option.header %>
+</div>
+<div id="address" style="margin-top:<%=@option.margin_top%>;margin-left:<%=@option.margin_left%>;margin-bottom:<%=@option.margin_bottom%>;">
+  <b>
+  <%= h @camper.first_name %>&nbsp; <%= h @camper.last_name %><br />
+  <%= h @camper.address %><br />
+  <% if @option.use_2nd_address? and !@camper.address2.blank? %>
+    <%= h @camper.address2 %><br />
+  <% end %>
+  <%= h @camper.city %>&nbsp;
+  <%= h @camper.state %>&nbsp;<%= h @camper.mail_code %> <br />
+  <% if @option.use_country? %>
+    <%= h @camper.country.name if @camper.country_id? && @camper.country.name? %><br />
+  <% end %>
+  </b>
+</div>
+<div id="summary">
+<% if Group.count > 0 and @reservation.group_id %>
+  <%= I18n.t('reservation.Group') %>: <b> <%= @reservation.group.name %></b> <br />
+<% end %>
+  <table>
+    <%= render :partial => 'date' %>
+  </table>
+  <table>
+  <%= render :partial => 'shared/misc' %>
+  </table>
+  <%= render :partial => 'shared/extras' %>
+  <%= render :partial => 'shared/space_summary' %>
+</div>
+<div id="trailer">
+  <% if @option.trailer? %>
+    <hr />
+    <%= @option.trailer %>
+  <% end %>
+</div>
+<% envelope = false %>
+<% end %>

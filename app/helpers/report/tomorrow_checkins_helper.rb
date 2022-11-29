@@ -1,0 +1,2 @@
+module Report::TomorrowCheckinsHelper
+end

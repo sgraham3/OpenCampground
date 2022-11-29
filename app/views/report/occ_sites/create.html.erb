@@ -1,0 +1,29 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<form method="post" action="<%= report_occ_sites_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+<b>Occupancy by Site</b>
+<table >
+<tr>
+<%= header_occ(@header) %>
+</tr>
+<% Space.all.each do |sp| %>
+<%   months = @result[sp.name] %>
+<tr><td> <%=  sp.name %></td>
+<%   months.each do |m| %>
+<td align="right">
+<%=   m %>
+</td>
+<%   end %>
+<td align="right"><%= total_occ(months) %></td>
+</tr>
+<% end %>
+<tr>
+<td align="right">Total</td>
+<% @total_array.each do |t| %>
+<td align="right">
+<%=   t %>
+</td>
+<%   end %>
+<td align="right"><%= total_occ(@total_array) %></td>
+</tr>
+</table>

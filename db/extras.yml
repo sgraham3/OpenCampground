@@ -1,0 +1,43 @@
+--- 
+extras_003: 
+  daily: "0.00"
+  onetime: false
+  counted: false
+  occasional: false
+  name: Metered electric
+  monthly: "0.00"
+  weekly: "0.00"
+  extra_type: "2"
+  unit_name: Kwh
+  measured: false
+  id: "3"
+  rate: "0.1200"
+  charge: "0.00"
+extras_002: 
+  daily: "1.00"
+  onetime: false
+  counted: true
+  occasional: false
+  name: Extra person
+  monthly: "20.00"
+  weekly: "5.00"
+  extra_type: "1"
+  unit_name: ""
+  measured: false
+  id: "2"
+  rate: "0.0000"
+  charge: "0.00"
+extras_001: 
+  daily: "1.00"
+  onetime: false
+  counted: false
+  occasional: false
+  name: WiFi Use
+  monthly: "20.00"
+  weekly: "6.00"
+  extra_type: false
+  unit_name: 
+  measured: false
+  id: "1"
+  rate: "0.0000"
+  charge: "0.00"

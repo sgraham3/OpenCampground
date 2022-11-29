@@ -1,0 +1,40 @@
+<% form_for(@payment) do |f| %>
+  <%= f.error_messages %>
+
+<p>
+<% if @payment.reservation_id %>
+  <%= I18n.t('reservation.ReservationNumber') %>: <b><%= @payment.reservation_id %></b> 
+  <%= I18n.t('reservation.Archived') if Reservation.find_by_id(@payment.reservation_id) && @payment.reservation.archived %>
+<% else %>
+  <%= I18n.t('reservation.ReservationNumber') %>: <b><%= text_field :payment, :reservation_id %></b> 
+<% end %>
+</p><p>
+<%= I18n.t('reservation.PaymentType') %>:
+  <%= collection_select(:payment, :creditcard_id, Creditcard.active, :id, :name, {:prompt => I18n.t('helpers.select.prompt')} ) %> 
+
+<% if @payment.creditcard_id %>
+  <label for="payment_pmt_date"><%= I18n.t('reservation.Date') %>:</label>
+  <%= date_select 'payment', 'pmt_date', :start_year => 1.years.ago.year  %>
+  <% if @payment.creditcard.is_credit_card? %>
+    </p><p>
+    <label for="payment_credit_card_no"><%= I18n.t('reservation.CardNumber') %>:</label>
+      <%= text_field :payment,  :credit_card_no, {:size => '20', :autocomplete => 'off'} %> 
+      <% if @payment.creditcard.use_expiration? %>
+	</p><p>
+	<label for="payment_cc_expire"><%= I18n.t('reservation.Expires') %>:</label>
+	<%= text_field :payment, :cc_expire, {:size => '4', :autocomplete => 'off'} %> 
+      <% end %>
+  <% end %>
+  </p><p>
+  <%= I18n.t('reservation.Payment') %>: <b><%= text_field :payment, :amount, :size => 8 %></b> 
+  </p><p>
+  <%= I18n.t('reservation.Notes') %>: <b><%= text_field :payment, :memo %></b> 
+  </p>
+<% end %>
+  <p>
+    <%= f.submit I18n.t('general.Update') %>
+  </p>
+<% end %>
+
+<%= button_to I18n.t('general.Finished'), payments_path %>
+

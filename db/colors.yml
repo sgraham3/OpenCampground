@@ -1,0 +1,141 @@
+--- 
+colors_009: 
+  value: Black
+  id: "9"
+  name: late
+colors_008: 
+  value: MediumSlateBlue
+  id: "8"
+  name: banner_background
+colors_007: 
+  value: Black
+  id: "7"
+  name: banner
+colors_006: 
+  value: LightSteelBlue
+  id: "6"
+  name: columns_background
+colors_005: 
+  value: Black
+  id: "5"
+  name: columns
+colors_004: 
+  value: WhiteSmoke
+  id: "4"
+  name: main_background
+colors_003: 
+  value: Black
+  id: "3"
+  name: main
+colors_002: 
+  value: WhiteSmoke
+  id: "2"
+  name: body_background
+colors_001: 
+  value: Black
+  id: "1"
+  name: body
+colors_019: 
+  value: Red
+  id: "19"
+  name: today
+colors_018: 
+  value: LightSteelBlue
+  id: "18"
+  name: reserved_background
+colors_017: 
+  value: Black
+  id: "17"
+  name: reserved
+colors_016: 
+  value: LightGray
+  id: "16"
+  name: overstay_background
+colors_015: 
+  value: Black
+  id: "15"
+  name: overstay
+colors_014: 
+  value: LimeGreen
+  id: "14"
+  name: occupied_background
+colors_013: 
+  value: Black
+  id: "13"
+  name: occupied
+colors_012: 
+  value: White
+  id: "12"
+  name: locale_background
+colors_011: 
+  value: Black
+  id: "11"
+  name: locale
+colors_010: 
+  value: Yellow
+  id: "10"
+  name: late_background
+colors_029: 
+  value: Blue
+  id: "29"
+  name: unconfirmed
+colors_028: 
+  value: Red
+  id: "28"
+  name: unavailable
+colors_027: 
+  value: Black
+  id: "27"
+  name: user
+colors_026: 
+  value: Snow
+  id: "26"
+  name: warning_background
+colors_025: 
+  value: Yellow
+  id: "25"
+  name: warning
+colors_024: 
+  value: Snow
+  id: "24"
+  name: error_background
+colors_023: 
+  value: Red
+  id: "23"
+  name: error
+colors_022: 
+  value: Snow
+  id: "22"
+  name: notice_background
+colors_021: 
+  value: Green
+  id: "21"
+  name: notice
+colors_020: 
+  value: Khaki
+  id: "20"
+  name: today_background
+colors_035: 
+  value: LightGrey
+  id: "35"
+  name: hover
+colors_034: 
+  value: White
+  id: "34"
+  name: explain_background
+colors_033: 
+  value: White
+  id: "33"
+  name: ip_editor_field_background
+colors_032: 
+  value: Red
+  id: "32"
+  name: payment_due
+colors_031: 
+  value: Black
+  id: "31"
+  name: link
+colors_030: 
+  value: Red
+  id: "30"
+  name: this_day

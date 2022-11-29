@@ -1,0 +1,25 @@
+<%= render :partial => '/setup/buttons' %>
+<%= render :partial => 'explain' %>
+<div id="attachment_edit">
+<p>
+<table border="1">
+  <tr><th>Attachments for <%= @mail_template.name %> email</th></tr>
+  <% @mail_attachments.each do |attach| %>
+    <tr><td>
+    <%= attach.file_name %>
+    </td><td>
+    <%= button_to "delete attachment", setup_mail_attachment_path(attach.id), :method => :delete %>
+    </td></tr>
+  <% end %>
+  <%= "<tr><td>None</td></tr>" if @mail_attachments.empty? %>
+</table>
+</p>
+<p>
+<b>Add Attachments:</b>
+<% form_tag setup_mail_attachment_path, :multipart => true, :method => :put do %>
+  <label for="upload_file">File to attach</label>:
+  <%= file_field_tag 'upload', :accept => 'image/png,image/gif,image/jpeg, text/plain, application/doc, application/pdf' %> <br />
+  <%= submit_tag "Upload attachment" %>
+<% end %>
+</p>
+</div>

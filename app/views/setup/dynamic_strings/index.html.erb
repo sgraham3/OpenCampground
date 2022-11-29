@@ -1,0 +1,86 @@
+<%= render :partial => 'setup/buttons' %>
+<div>
+<b>Warning:  If you are not familiar with HTML and how to write web pages only use the logo upload of this page.</b>
+<hr />
+</div>
+<div>
+<% if @option.css %>
+  Local HTML File contents:<br />
+  <%= text_area :option, :css, :cols => '80', :rows => '12' %>
+  <%= button_to 'Remove from Database', setup_dynamic_string_path('css'), :method => :delete %>
+<% else %>
+  Local HTML File is empty
+  <% form_tag  setup_dynamic_string_path('css'), {:method => :put, :multipart => true}  do %>
+    <label for="upload_file">Upload Local HTML File</label> :
+    <%= file_field_tag 'upload' %><br />
+    <%= submit_tag "Upload" %>
+  <% end %>
+<% end %>
+<hr />
+</div>
+<div>
+<% if @option.remote_css %>
+  Remote HTML File contents:<br />
+  <%= text_area :option, :remote_css, :cols => '80', :rows => '12' %>
+  <%= button_to 'Remove from Database', setup_dynamic_string_path('remote_css'), :method => :delete %>
+<% else %>
+  Remote HTML File is empty
+  <% form_tag  setup_dynamic_string_path('remote_css'), {:method => :put, :multipart => true}  do %>
+    <label for="upload_file">Upload Remote HTML File</label> :
+    <%= file_field_tag 'upload' %><br />
+    <%= submit_tag "Upload" %>
+  <% end %>
+<% end %>
+<hr />
+</div>
+<div>
+This section is for loading files such as images or css files that will be 
+referenced in the HTML files above.  
+<% form_tag  setup_dynamic_string_path('file'), {:method => :put, :multipart => true}  do %>
+  <label for="upload_file">Upload CSS or Image File</label> :
+  <%= file_field_tag 'upload' %><br />
+  <%= submit_tag "Upload" %>
+<% end %>
+<table>
+  <% @file_list.each do |f| %>
+    <tr>
+      <td>
+        <%= f %>
+      </td>
+      <td>
+	<%= button_to "Remove file", setup_dynamic_string_path(f.sub(/\./,'#')),
+		      :confirm => "Are you sure you want to remove #{f}?",
+		      :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<hr />
+</div>
+<div>
+This section is for loading a Logo file. You can load a file named Logo.png 
+or Logo.jpg which will be used as the logo on all pages where the logo is shown.
+The name is important and must be <b>Logo.png</b> or <b>Logo.jpg</b>.
+It will be automaticly scaled to a height of 46 pixels.
+<% form_tag  setup_dynamic_string_path('logo'), {:method => :put, :multipart => true}  do %>
+  <label for="upload_file">Image File</label> :
+  <%= file_field_tag 'upload' %><br />
+  <%= submit_tag "Upload" %>
+<% end %>
+<% unless @logo.empty? %>
+  <table>
+    <tr>
+      <td>
+	<%= @logo %>
+      </td>
+      <td><img src="/images/<%= @logo %>" height="20" /></td>
+      <td>
+	<%= button_to "Remove file", setup_dynamic_string_path('logo'),
+		      :confirm => "Are you sure you want to delete #{@logo}?",
+		      :method => :delete %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+</div>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

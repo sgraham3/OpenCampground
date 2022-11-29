@@ -1,0 +1,13 @@
+This directory should contain the key files that you will be using.  There should be three files
+my-prvkey.pem, my-pubcert.pem, and paypal_cert.pem
+
+my-prvkey.pem is your private key for decrypting data encrypted with your public key.  On linux generate it with the command
+'openssl genrsa -out my-prvkey.pem 1024'
+
+my-pubcert.pem is the public certificate used to encrypt data sent to you.  On linux generate it with the command
+'openssl req -new -key my-prvkey.pem -x509 -days 365 -out my-pubcert.pem'
+
+paypal_cert.pem is paypals public key which you will use to encrypt data sent to paypal.  To obtain this file login to your business account on paypal.  When logged in go to your “Profile” – “Encrypted Payment Settings”. Here download the paypal public certificate and store it in this directory.
+
+Likewise in your account in “Your Public Certificates” upload your public certificate (my-pubcert.pem generated above).
+After you added it you will see it in the listing with a Cert ID. You will need to enter this ID in the Open Campground PayPal setup page.

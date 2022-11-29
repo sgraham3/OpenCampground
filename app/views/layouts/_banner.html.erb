@@ -1,0 +1,27 @@
+<div id="banner">
+  <% if File.readable?(Rails.root.join('public','images','Logo.png'))%>
+    <img src="/images/Logo.png" height="46" alt="Logo" />
+  <% elsif File.readable?(Rails.root.join('public','images','Logo.jpg'))%>
+    <img src="/images/Logo.jpg" height="46" alt="Logo" />
+  <% elsif File.readable?(Rails.root.join('public','images','OC_logo.2.png'))%>
+    <img src="/images/OC_logo.2.png" height="46" alt="Logo" />
+  <% elsif File.readable?(Rails.root.join('public','images','OC_Logo.png'))%>
+    <img src="/images/OC_logo.png" height="46" alt="Logo" />
+  <% end %>
+  <%= @page_title || controller.action_name %>
+  <div id="user">
+    <% unless Rails.env.production? %>
+      Mode: <%= Rails.env %>
+    <% end %>
+    <% if @option.use_login? && defined? @user_login %>
+      <%= I18n.t('layout.banner.user') %>: <%= @user_login.name %>
+    <% end %>
+    <% unless controller.controller_name == 'cardknox_transactions' %>
+      <% form_tag '', :method => 'GET', :id => 'banner_form', :class => 'locale' do %>
+	<%= select_tag 'locale', options_for_select(LANGUAGES, "#{I18n.locale}"), :onchange => 'this.form.submit()' %>
+	<%= submit_tag 'submit' %>
+	<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

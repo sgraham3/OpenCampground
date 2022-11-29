@@ -1,0 +1,1718 @@
+--- 
+spaces_100: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "100"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "100"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "100"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_098: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "98"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "98"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "98"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_085: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "85"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "85"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "85"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_073: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "73"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "73"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "73"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_007: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "7"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "7"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "7"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_061: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "61"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "61"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "61"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_069: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "69"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "69"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "69"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_057: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "57"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "57"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "57"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_045: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "45"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "45"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "45"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_033: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "33"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "33"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "33"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_021: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "21"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "21"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "21"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_095: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "95"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "95"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "95"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_082: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "82"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "82"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "82"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_070: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "70"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "70"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "70"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_017: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "17"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "17"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "17"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_004: 
+  unavailable: true
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "4"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "4"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "4"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_029: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "29"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "29"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "29"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_078: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "78"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "78"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "78"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_066: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "66"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "66"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "66"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_054: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "54"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "54"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "54"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_042: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "42"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "42"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "42"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_030: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "30"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "30"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "30"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_092: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "92"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "92"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "92"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_014: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "14"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "14"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "14"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_001: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "1"
+  width: "102"
+  special_condition: Pull in
+  power_30a: true
+  id: "1"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: one
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_038: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "38"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "38"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "38"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_026: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "26"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "26"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "26"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_087: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "87"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "87"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "87"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_075: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "75"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "75"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "75"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_009: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "9"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "9"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "9"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_063: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "63"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "63"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "63"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_051: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "51"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "51"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "51"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_011: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "11"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "11"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "11"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_059: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "59"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "59"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "59"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_047: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "47"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "47"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "47"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_035: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "35"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "35"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "35"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_023: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "23"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "23"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "23"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_097: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "97"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "97"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "97"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_084: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "84"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "84"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "84"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_072: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "72"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "72"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "72"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_019: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "19"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "19"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "19"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_006: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "6"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "6"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "6"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_060: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "60"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "60"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "60"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_068: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "68"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "68"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "68"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_056: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "56"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "56"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "56"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_044: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "44"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "44"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "44"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_032: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "32"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "32"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "32"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_020: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "20"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "20"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "20"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_094: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "94"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "94"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "94"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_081: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "81"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "81"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "81"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_016: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "16"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "16"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "16"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_003: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "3"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "3"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: three
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_028: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "28"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "28"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "28"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_089: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "89"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "89"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "89"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_077: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "77"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "77"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "77"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_065: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "65"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "65"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "65"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_053: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "53"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "53"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "53"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_041: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "41"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "41"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "41"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_091: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "91"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "91"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "91"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_013: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "13"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "13"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "13"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_049: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "49"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "49"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "49"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_037: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "37"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "37"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "37"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_025: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "25"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "25"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "25"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_101: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "60"
+  current: "0.00"
+  position: "101"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "101"
+  sewer: false
+  power_50a: false
+  price_id: "1"
+  name: Dry-1
+  remote_reservable: true
+  water: false
+  power_15a: false
+spaces_099: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "99"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "99"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "99"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_086: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "86"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "86"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "86"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_074: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "74"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "74"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "74"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_008: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "8"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "8"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "8"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_062: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "62"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "62"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "62"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_050: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "50"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "50"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "50"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_010: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "10"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "10"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "10"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_058: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "58"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "58"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "58"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_046: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "46"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "46"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "46"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_034: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "34"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "34"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "34"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_022: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "22"
+  width: "102"
+  special_condition: Riverside
+  power_30a: true
+  id: "22"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "22"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_096: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "96"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "96"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "96"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_083: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "83"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "83"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "83"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_071: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "71"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "71"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "71"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_018: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "18"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "18"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "18"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_005: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "5"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "5"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "5"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_079: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "79"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "79"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "79"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_067: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "67"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "67"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "67"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_055: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "55"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "55"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "55"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_043: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "43"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "43"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "43"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_031: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "31"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "31"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "31"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_093: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "93"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "93"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "93"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_080: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "80"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "80"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "80"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_015: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "15"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "15"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "15"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_002: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "2"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "2"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: two
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_039: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "39"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "39"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "39"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_027: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "27"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "27"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "27"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_088: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "88"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "88"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "88"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_076: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "76"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "76"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "76"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_064: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "64"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "64"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "64"
+  remote_reservable: true
+  water: true
+  power_15a: false
+spaces_052: 
+  unavailable: false
+  sitetype_id: "3"
+  length: "80"
+  current: "0.00"
+  position: "52"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "52"
+  sewer: true
+  power_50a: true
+  price_id: "5"
+  name: "52"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_040: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "40"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "40"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "40"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_090: 
+  unavailable: false
+  sitetype_id: "1"
+  length: "20"
+  current: "0.00"
+  position: "90"
+  width: "102"
+  special_condition: 
+  power_30a: false
+  id: "90"
+  sewer: true
+  power_50a: false
+  price_id: "1"
+  name: "90"
+  remote_reservable: true
+  water: false
+  power_15a: true
+spaces_012: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "60"
+  current: "0.00"
+  position: "12"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "12"
+  sewer: true
+  power_50a: true
+  price_id: "4"
+  name: "12"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_048: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "48"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "48"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "48"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_036: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "36"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "36"
+  sewer: false
+  power_50a: false
+  price_id: "2"
+  name: "36"
+  remote_reservable: true
+  water: true
+  power_15a: true
+spaces_024: 
+  unavailable: false
+  sitetype_id: "2"
+  length: "40"
+  current: "0.00"
+  position: "24"
+  width: "102"
+  special_condition: 
+  power_30a: true
+  id: "24"
+  sewer: true
+  power_50a: false
+  price_id: "3"
+  name: "24"
+  remote_reservable: true
+  water: true
+  power_15a: true

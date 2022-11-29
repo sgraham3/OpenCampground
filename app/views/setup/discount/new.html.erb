@@ -1,0 +1,9 @@
+<%= render :partial => 'explain' %>
+<% form_tag setup_discount_index_path do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'discount_name' %>
+<%= button_to 'Cancel', setup_discount_index_path, :method => :get %>

@@ -1,0 +1,29 @@
+<div class="noprint">
+  <span id="pmt"><%= I18n.t('reservation.PaymentType') %>:
+    <% if @integration.use_pmt_dropdown? %>
+      <%= collection_select(:payment, :creditcard_id, Creditcard.active, :id, :name, {:class => "flex_item", :prompt => I18n.t('helpers.select.prompt')} ) %>
+    <% else %>
+      <%= link_to_remote 'Cash', :url => {:action => :update_cc, :reservation_id => @reservation_id, :creditcard_id => Creditcard.find_or_create_by_name('Cash').id},
+				 :html => {:class => "flex_item", :class => 'link_btn'} %>
+      <%= link_to_remote 'Check', :url => {:action => :update_cc, :reservation_id => @reservation_id, :creditcard_id => Creditcard.find_or_create_by_name('Check').id},
+				  :html => {:class => "flex_item", :class => 'link_btn'} %>
+    <% end %>
+    <% if @integration.ck_use_terminal? %>
+        <form method="post" action="<%= new_cardknox_transaction_url %>" style="display:inline;">
+        <input type="hidden" name="ck_transaction[process_mode]" value="<%= CardTransaction::TermCard %>" />
+        <input type="hidden" name="ck_transaction[reservation_id]" value="<%= @reservation.id %>" />
+        <input type="submit" value="<%= "Terminal Process Card"%>" />
+      </form>
+    <% end %>
+    <form method="get" action="<%= new_cardknox_transaction_url %>" style="display:inline;"> 
+      <input type="hidden" name="ck_transaction[process_mode]" value="<%= CardTransaction::TokenLocal %>" />
+      <input type="hidden" name="ck_transaction[reservation_id]" value="<%= @reservation.id %>" />
+      <input type="submit" value="<%= "Tokinizer Process Card"%>" />
+    </form>
+  </span>
+</div>
+<% if @integration.use_pmt_dropdown? %>
+  <%= observe_field :payment_creditcard_id,
+		    :url => {:action => 'update_cc', :only_path => false, :reservation_id => @reservation.id},
+		    :with => "'creditcard_id='+encodeURIComponent(value)" %>
+<% end %>

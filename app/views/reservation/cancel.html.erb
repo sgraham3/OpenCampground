@@ -1,0 +1,34 @@
+<table>
+<tr><td><%= I18n.t('reservation.ReservationNumber') %>:</td><td><%= @reservation.id %></td></tr>
+<tr><td><%= I18n.t('reservation.StartDate') %>:</td><td><%= I18n.l(@reservation.startdate) %></td></tr>
+<tr><td><%= I18n.t('reservation.EndDate') %>:</td><td><%= I18n.l(@reservation.enddate) %></td></tr>
+<% if @reservation.group_id == nil %>
+  <tr><td><%= I18n.t('camper.Name') %>:</td><td><%= @reservation.camper.full_name %></td></tr>
+  <tr><td><% if @option.use_rig_type? %> <%= I18n.t('reservation.RigType') %>:</td><td><%= @reservation.rigtype.name if @reservation.rigtype_id? %><% end %></td>
+      <td><% if @option.use_slides? %><%= I18n.t('reservation.Slides') %>:</td><td><%= @reservation.slides %><% end %></td></tr>
+  <tr><td><% if @option.use_length? %><%= I18n.t('reservation.Length') %>:</td><td><%= @reservation.length %><% end %></td>
+      <td><% if @option.use_rig_age? %><%= I18n.t('reservation.RigAge') %>:</td><td><%= @reservation.rig_age %><% end %></td></tr>
+<% else %>
+    <td colspan=4 align=center><%= 'Group: '+@reservation.group.name %></td>
+<% end %>
+<tr><td>Space:</td><td><%= @reservation.space.name %></td></tr>
+</table>
+<% form_tag :action => 'destroy', :method => 'post' do %>
+<input type="hidden" name="reservation_id" value="<%= @reservation.id %>" />
+<% if Email.address_valid?(@reservation.camper.email) %>
+  Send cancellation email? <input name="email" type="hidden" value="0" /><input id="extra_email" name="email" type="checkbox" value="1" />
+<% end %>
+<p><b><%= I18n.t('reservation.ReasonforCancelation') %>:</b><br>
+  <input id="close_reason" name="close_reason" size="128"
+         type="text_field" value="<%= "" %>" autocomplete="off" /><br />
+</p>
+<p><b><%= 'Cancellation charge' %>:</b><br>
+  <input id="cancel_charge" name="cancel_charge" size="8"
+         type="text_field" value="<%= "" %>" autocomplete="off" /><br />
+</p>
+<p>
+  <%= submit_tag I18n.t('reservation.CompleteCancellation') %>
+<% end %>
+</p>
+<%= button_to I18n.t('reservation.CancelCancellation'), :action => 'list' %>
+<%= set_focus_to_id 'close_reason' %>

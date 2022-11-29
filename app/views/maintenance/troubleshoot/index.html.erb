@@ -1,0 +1,48 @@
+<%= render :partial => '/maintenance/buttons' %>
+<% if defined?(@reservations) %>
+<table width="100%" cellpadding="5" cellspacing="0">
+  <tr>
+      <th align="left"><%= I18n.t('reservation.Res_nr')%></th>
+      <th align="left"><%= I18n.t('reservation.StartDate')%></th>
+      <th align="left"><%= I18n.t('reservation.EndDate')%></th>
+      <th align="left"><%= I18n.t('camper.Name')%></th>
+      <th align="left"><%= I18n.t('reservation.Space')%></th>
+  </tr>
+  <% @reservations.each do |res| %>
+    <tr>
+      <td><%= safePrint res.id %></td>
+      <td><%= safeDate res.startdate %></td>
+      <td><%= safeDate res.enddate %></td>
+      <td><%= safeCamper res.camper %></td>
+      <td><%= safeSpace res.space %></td>
+      <td><a href="/reservation/show?reservation_id=<%=res.id%>">recover</a></td>
+      <td><%= link_to 'Delete', maintenance_troubleshoot_path(:id => res.id, :reservation => true),
+                                  :confirm => "Delete reservation #{res.id}?",
+                                  :method => "delete" %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+<% if defined?(@groups) %>
+<table width="100%" cellpadding="5" cellspacing="0">
+  <tr>
+      <th align="left"><%= I18n.t('group.GroupName')%></th>
+      <th align="left"><%= I18n.t('reservation.StartDate')%></th>
+      <th align="left"><%= I18n.t('reservation.EndDate')%></th>
+      <th align="left"><%= I18n.t('group.Wagonmaster')%></th>
+      <th align="left"><%= I18n.t('group.NumberReserved')%></th>
+  </tr>
+  <% @groups.each do |grp| %>
+    <tr>
+      <td><%= safePrint grp.name %></td>
+      <td><%= safePrint grp.startdate %></td>
+      <td><%= safePrint grp.enddate %></td>
+      <td><%= safeCamper grp.camper %></td>
+      <td><%= safePrint grp.expected_number %></td>
+      <td><%= link_to 'Delete', maintenance_troubleshoot_path(:id => grp.id, :group => true),
+                                  :confirm => "Delete #{grp.name} group?",
+                                  :method => "delete" %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>

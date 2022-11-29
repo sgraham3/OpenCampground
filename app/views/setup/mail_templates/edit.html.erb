@@ -1,0 +1,29 @@
+<%= render :partial => 'setup/buttons' %>
+<% form_tag setup_mail_template_path(@mail_template), :method => :put do %>
+<table>
+<tr>
+<td>
+<table cellpadding="5" cellspacing="0" border="2">
+<tr><th align="center">Item from Reservation</th><th align="center">Name to use</th></tr>
+<tr><td>Full name of camper</td><td>{{camper}}</td></tr>
+<tr><td>Space name</td><td>{{space_name}}</td></tr>
+<tr><td>Reservation number</td><td>{{number}}</td></tr>
+<tr><td>Reservation created date</td><td>{{created}}</td></tr>
+<tr><td>Start date</td><td>{{start}}</td></tr>
+<tr><td>End date</td><td>{{departure}}</td></tr>
+<tr><td>Charges</td><td>{{charges}}</td></tr>
+<tr><td>Payment</td><td>{{payment}}</td></tr>
+<tr><td>Due</td><td>{{due}}</td></tr>
+<tr><td>Deposit</td><td>{{deposit}}</td></tr>
+</table>
+</td>
+<td>
+
+<label for="mail_template_body">Email Body:</label><br/>
+<%= text_area 'mail_template', 'body', 'cols' => 60  %>
+</td>
+</tr>
+</table>
+<%= submit_tag 'Save' %>
+<% end %>
+<%= button_to 'Cancel', setup_mail_templates_path, :method => :get %>

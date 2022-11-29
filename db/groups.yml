@@ -1,0 +1,8 @@
+--- 
+groups_001:
+  startdate: "<%= (Date.today+1).to_s %>"
+  enddate: "<%= (Date.today+5).to_s %>"
+  camper_id: "2"
+  expected_number: "2"
+  id: "1"
+  name: "Demo"

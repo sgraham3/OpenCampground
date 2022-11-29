@@ -1,0 +1,22 @@
+<img class="cardconnect" alt="CardConnect logo" src="/images/SecuredByCardConnect.png" />
+<div id="tokenize" class="cc-form">
+  <form name="tokenform" id="tokenform" autocomplete="off" method="post" action="<%= card_transactions_url %>" >
+    <input type="hidden" name="card_transaction[amount]" value="<%= @card_transaction.amount %>"/>
+    Amount <%= text_field :card_transaction, :amount, :size => 6 %><br/>
+    <%= I18n.t('reservation.CardNumber') %>:
+    <iframe id="tokenframe" name="tokenframe" src="<%=@integration.cc_gateway%>/itoke/ajax-tokenizer.html?css=%2Eerror%7Bcolor%3Ared%3B%7D%26formatinput%3Dtrue%26tokenizewheninactive%3D<%=@mobile.to_s%>%26inactivityto%3D400" frameborder="0" scrolling="no" width="200" height="30"></iframe>
+    <div class="cc-form">
+      <%= I18n.t('reservation.Expires')%>:
+      <%= date_select :card_transaction, :expiry, :discard_day => true, :use_month_numbers => true, :start_year => currentDate.year, :start_month => currentDate.month, :end_year => currentDate.year + 10 %>
+      <% if @integration.cc_use_cvv? %>
+	Security Code:
+	<input type="text" name="card_transaction[cvv2]" autocomplete="off" size="4" />
+      <% end %>
+    </div>
+    <input type="hidden" name="card_transaction[account]" id="mytoken"/>
+    <input type="hidden" name="card_transaction[reservation_id]" value="<%= @card_transaction.reservation_id %>"/>
+    <input type="hidden" name="card_transaction[process_mode]" value="<%= @card_transaction.process_mode %>"/>
+    <%= submit_tag "Submit", :id => "token_submit", :disabled => true, :disable_with => "Processing...", :class => "payment_submit" %>
+  </form>
+</div>
+<%= set_focus_to_id 'card_transaction_amount' %>

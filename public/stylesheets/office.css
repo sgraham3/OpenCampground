@@ -1,0 +1,349 @@
+#banner {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid;
+	font: small-caps 40px/40px "Times New Roman", serif;
+	text-align: center;
+}
+
+#banner_form { 
+	margin-top: 10px;
+}
+
+#user   {
+	width: 12em;
+	float: right;
+	font: small-caps 10px/12px "Arial", sans-serif;
+}
+
+#banner img {
+	padding-left: 5px;
+	float: left;
+}
+
+#locale {
+	margin-right: 1em;
+	font: small-caps 10px/10px "Arial", sans-serif;
+	float: right;
+}
+
+#usernamex {
+	font: small-caps 10px/12px "Arial", sans-serif;
+}
+
+#columns {
+          position: absolute;
+	  left: 0;
+	  right: 0;
+	  margin-left: .5em;
+	  margin-right: .5em;
+}
+
+#find_space {
+	float: left;
+	padding-bottom: 1em;
+	width: 49%;
+}
+
+#side {
+	float: left;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-bottom: 1em;
+}
+
+#tabs {
+	margin-right: 0;
+	margin-top: 1em;
+}
+
+#main {
+	float: left;
+	position: absolute;
+	right: 0;
+	padding-top: 1em;
+	margin-top: 0;
+	margin-right: 0;
+	padding-left: 1em;
+	margin-bottom: 0;
+	height: 100%;
+}
+
+#right-1 {
+	float: left;
+	position: absolute;
+	right: 0;
+}
+#map {
+	float: right;
+	border: solid;
+	border-width: 1px 1px 1px 1px;
+}
+
+#map_edit {
+	  padding-top: 1em;
+}
+
+#main-t {
+	  float: left;
+	  padding-top: 1em;
+	  padding-left: 0;
+	  padding-right: 0;
+	  margin-bottom: 0;
+	  width: 100%;
+}
+
+#notice {
+	border: 4px solid Green;
+	padding: 1em;
+	margin-bottom: 2em;
+	font: bold smaller sans-serif;
+}
+
+#warning {
+	border: 4px solid Yellow;
+	padding: 1em;
+	margin-bottom: 2em;
+	font: bold smaller sans-serif;
+}
+
+#error {
+	border: 4px solid Red;
+	padding: 1em;
+	margin-bottom: 2em;
+	font: bold smaller sans-serif;
+}
+
+#header { display: none; }
+
+#scrheader { 
+	  text-align: center;
+	  white-space: pre;
+          font-size: larger;
+}
+
+#trailer { display: none; }
+
+#scrtrailer {
+           margin-left: 20px;
+           margin-right: 20px;
+           font-size: smaller;
+}
+
+#prompt_body { width: 47em; }
+
+#tabs ul li {
+	  list-style-image: none;
+	  list-style-type: none;
+	  list-style-position: inside;
+	  padding:0;
+	  margin:0;
+}
+
+#tabs li {
+	   display: inline;
+	   border: solid;
+	   border-width: 1px 1px 1px 1px;
+	   margin: 0 0.5em 0 0;
+}
+
+#tabs li a {
+	    padding: 0 0;
+}
+
+#tabs #selected { position: relative;
+		  top: 5px;
+}
+
+#available {
+            font-family: monospace;
+	    font-size: small;
+	    }
+#available table {
+	    border-collapse: collapse;
+	    }
+
+.available th {
+            font-family: monospace;
+	    font-size: small;
+	    border: 1px solid black;
+	    }
+
+.available td {
+            font-family: monospace;
+	    font-size: medium;
+	    border: 1px solid black;
+	    }
+
+.extra {white-space: nowrap;}
+
+.dim {color: grey}
+
+.nodisplay { display: none; }
+
+.seasonal { font-size: larger;}
+
+.oc_form legend {
+	    font-family: sans-serif;
+	    padding: 0.2em 1em;
+	    }
+
+.oc_form label {
+	    width: 5em;
+	    float: left;
+	    text-align: right;
+	    padding-top: 0.2em;
+	    margin-right: 0.1em;
+	    display: block;
+	    }
+
+.oc_form select, .oc_form textarea, .oc_form input {
+	    margin-left: 0.5em;
+	    }
+
+.oc_form .submit {
+	    margin-left: 4em;
+	    }
+
+.oc_form div {
+	    margin: 0.5em;
+	    }
+.in_place_editor_field {
+	    border-style: solid;
+	    border-width: 1px;
+	    padding-left: 1em;
+	    padding-right: 1em;
+	    }
+
+input[type="submit"] {
+                  border-bottom: 3px solid;
+                  border-right: 3px solid;
+                  border-left: 1px solid;
+                  border-top: 1px solid;
+}
+
+input[type="button"] {
+                  border-bottom: 3px solid;
+                  border-right: 3px solid;
+                  border-left: 1px solid;
+                  border-top: 1px solid;
+}
+
+.button-to  input{
+                  border-bottom: 3px solid;
+                  border-right: 3px solid;
+                  border-left: 1px solid;
+                  border-top: 1px solid;
+}
+
+.large_button  input{
+                     width: 120px;
+                     padding-top: 10px;
+                     padding-bottom: 10px;
+}
+
+.flex_container_left {
+		display: flex;
+		height: 3em;
+		justify-content: space-between;
+		align-items: stretch;
+}
+
+.flex_container_center {
+		display: flex;
+		width: 44em;
+		height: 3em;
+		margin: auto;
+		justify-content: center;
+}
+
+.flex_item {
+	    display: flex;
+}
+.flex_item input {
+	    display: flex;
+	    white-space: normal;
+	    width: 8em; 
+	    -webkit-appearance: none;
+}
+a.link_btn {
+  display: inline-block;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 15px;
+  background: #fffff0;
+  color: black;
+  text-decoration:none;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  margin-left:4px;
+  margin-right:2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-top:2px;
+  padding-bottom:2px;
+  padding-left:4px;
+  padding-right:4px;
+}
+a.link_btn:active,a.link_btn:focus,a.link_btn:hover{
+  background: #fffff0;
+  color: black;
+}
+a.link_btn:active{
+  background: #fffff0;
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #333333;
+    color: white;
+    border: 1px solid #333333; }
+  .pagination a {
+    text-decoration: none;
+    color: #444444;
+    border: 1px solid black; }
+    .pagination a:hover, .pagination a:focus {
+      color: black;
+      background: lightgray;
+      border-color: black; }
+  .pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .pagination {
+    height: 1%; }
+  *:first-child + html .pagination {
+    overflow: hidden; }

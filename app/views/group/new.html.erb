@@ -1,0 +1,27 @@
+<% form_tag :action => 'create' do %>
+  <%= error_messages_for :group %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag I18n.t('group.Create') %>
+<% end %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th><%= I18n.t('group.GroupName') %> </th>
+    <th><%= I18n.t('group.NumberReserved') %></th>
+    <th><%= I18n.t('group.Wagonmaster') %></th>
+    <th><%= I18n.t('reservation.StartDate') %></th>
+    <th><%= I18n.t('reservation.EndDate') %></th>
+  </tr>
+  <% Group.all.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td><%= group.expected_number %></td>
+      <td><%= group.camper.full_name if group.camper_id %></td>
+      <td><%= I18n.l(group.startdate) if group.startdate %></td>
+      <td><%= I18n.l(group.enddate) if group.enddate %></td>
+      <td><%= link_to I18n.t('reservation.Select'),
+	{:controller => :group_res, :action => :create, :group_id => group.id, :camper_id => group.camper_id},
+	:confirm => "This will result in these reservations being added to group #{group.name}",
+	:class => 'link_btn' %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,21 @@
+<%= render :partial => 'setup/buttons' %>
+
+<%= button_to 'New blackout dates', new_setup_blackout_path, :method => :get %>
+<p>
+<table cellpadding="5" cellspacing="0" border="1">
+  <tr>
+    <th>Name</th><th>Start</th><th>End</th><th>Active?</th>
+  </tr>
+  <% @setup_blackouts.each do |blackout| %>
+    <tr>
+      <td><%=blackout.name%></td>
+      <td><%=blackout.startdate%></td>
+      <td><%=blackout.enddate%></td>
+      <td><%=blackout.active%></td>
+      <td><%= link_to 'Edit', edit_setup_blackout_path(blackout) %></td>
+      <td><%= link_to 'Destroy', setup_blackout_path(blackout.id), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

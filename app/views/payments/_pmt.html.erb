@@ -1,0 +1,38 @@
+<table cellpadding="5" cellspacing="0" border="2">
+  <tr>
+    <th><%= I18n.t('reservation.Reservation') %></th>
+    <th><%= "Payment\nID" %></th>
+    <th><%= I18n.t('payment.Date') %></th>
+    <th><%= I18n.t('payment.Type') %></th>
+    <th><%= I18n.t('payment.Number') %></th>
+    <th><%= I18n.t('payment.Expire') %></th>
+    <th><%= I18n.t('payment.Amount') %></th>
+    <th><%= I18n.t('payment.Memo') %></th>
+    <th><%= I18n.t('payment.Created') %></th>
+    <th><%= I18n.t('payment.Updated') %></th>
+  </tr>
+
+  <% @payments.each do |payment| %>
+    <tr>
+      <td align="right"><%= payment.reservation_id %></td>
+      <td align="right"><%= pmt_id(payment) %></td>
+      <td align="right"><%= I18n.l payment.pmt_date %></td>
+      <td align="right"><%= payment.creditcard.name if payment.creditcard_id %></td>
+      <td align="right"><%= payment.credit_card_no_obscured %></td>
+      <td align="right"><%= payment.cc_expire.strftime("%m/%y") if payment.cc_expire %></td>
+      <td align="right"><%=number_to_currency(payment.amount) %></td>
+      <td><%= payment.memo %></td>
+      <td><%= I18n.l payment.created_at %></td>
+      <td><%= I18n.l payment.updated_at %></td>
+      <td><%= link_to I18n.t('general.Edit'), edit_payment_path(payment) %></td>
+      <td>
+	<% if payment.refundable? %>
+	  <%= link_to 'Refund', edit_payment_refund_path(payment), :id => payment.id %>
+	<% else %>
+	  <%= link_to I18n.t('general.Destroy'), payment, :confirm => I18n.t('general.ConfirmDestroy'), :method => :delete %>
+	<% end %>
+      </td>
+      <%= receipt(payment) %>
+    </tr>
+  <% end %>
+</table>

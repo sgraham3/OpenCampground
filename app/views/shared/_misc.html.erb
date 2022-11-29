@@ -1,0 +1,51 @@
+<% reservation = @reservation %>
+<table>
+<tr>
+  <% if !@reservation.editable? or (defined? envelope and envelope?) %>
+    <% if @option.use_adults? %>
+      <td><%= I18n.t('reservation.Adults') %>: <b><%= @reservation.adults %></b></td>
+    <% end %>
+    <% if @option.use_pets? %>
+      <td><%= I18n.t('reservation.Pets') %>: <b><%= @reservation.pets %></b></td>
+    <% end %>
+    <% if @option.use_children? %>
+      <td><%= I18n.t('reservation.Children') %>: <b><%= @reservation.kids %></b></td>
+    <% end %>
+    <% if @option.use_length? %>
+      <td><%= I18n.t('reservation.Length') %>: <b><%= @reservation.length %></b></td>
+    <% end %>
+    <% if @option.use_slides? %>
+      <td><%= I18n.t('reservation.Slides') %>: <b><%= @reservation.slides %></b></td>
+    <% end %>
+    <% if @option.use_rig_age? %>
+      <td><%= I18n.t('reservation.RigAge') %>: <b><%= @reservation.rig_age %></b></td>
+    <% end %>
+  <% else %>
+    <% if @option.use_adults? %>
+      <td><%= I18n.t('reservation.Adults') %>: <b><%= in_place_editor_field_prompted :reservation, :adults %></b></td>
+    <% end %>
+    <% if @option.use_pets? %>
+      <td><%= I18n.t('reservation.Pets') %>: <b><%= in_place_editor_field_prompted :reservation, :pets %></b></td>
+    <% end %>
+    <% if @option.use_children? %>
+      <td><%= I18n.t('reservation.Children') %>: <b><%= in_place_editor_field_prompted :reservation, :kids %></b></td>
+    <% end %>
+    <% if @option.use_length? %>
+      <td><%= I18n.t('reservation.Length') %>: <b><%= in_place_editor_field_prompted :reservation, :length, {}, :size => 2 %></b></td>
+    <% end %>
+    <% if @option.use_slides? %>
+      <td><%= I18n.t('reservation.Slides') %>: <b><%= in_place_editor_field_prompted :reservation, :slides, {}, :size => 2 %></b></td>
+    <% end %>
+    <% if @option.use_rig_age? %>
+      <td><%= I18n.t('reservation.RigAge') %>: <b><%= in_place_editor_field_prompted :reservation, :rig_age, {}, :size => 2 %></b></td>
+    <% end %>
+  <% end %>
+</tr>
+</table>
+<%= render :partial => 'shared/rigtype' %>
+<%= render :partial => 'shared/recommender' %>
+<% if @option.use_discount? %>
+  <%= render :partial => 'shared/discount' %>
+<% end %>
+<br />
+<span id="special" ><%= render :partial => 'shared/special' %></span>

@@ -1,0 +1,44 @@
+<% if @reservation.camper_id? && @reservation.camper_id > 0 %>
+<tr>
+  <td><%= I18n.t('camper.Name')%>:</td>
+  <td><b><%= @reservation.camper.full_name %></b></td>
+<% if @option.use_id? %>
+  <td><%= I18n.t('camper.ID')%>:</td>
+  <td><b><%= @reservation.camper.idnumber %></b></td>
+<% end %>
+</tr>
+<tr>
+  <td><%= I18n.t('camper.Address') %>:</td>
+  <td><b><%= @reservation.camper.address %></b></td>
+</tr>
+<% if @option.use_2nd_address? %>
+<tr>
+  <td></td>
+  <td><b><%= @reservation.camper.address2 %></b></td>
+</tr>
+<% end %>
+<tr>
+  <td><%= I18n.t('camper.City') %>:</td>
+  <td><b><%= @reservation.camper.city %></b></td>
+  <td><%= I18n.t('camper.State') %>:</td>
+  <td><b><%= @reservation.camper.state %>&nbsp
+      <%= @reservation.camper.mail_code %> </b></td>
+  <% if @option.use_country? %>
+    <td><b><%= @reservation.camper.country.name if @reservation.camper.country_id? && @reservation.camper.country.name? %></b></td>
+  <% end %>
+</tr>
+</table>
+<table>
+<tr>
+  <% if @option.no_phones > 0 %>
+    <td><%= I18n.t('camper.Phone') %>:</td>
+    <td><b><%= @reservation.camper.phone %></b></td>
+    <% if @option.no_phones > 1 %>
+      <td><%= I18n.t('camper.Phone2') %>:</td>
+      <td><b><%= @reservation.camper.phone_2 %></b></td>
+    <% end %>
+  <% end %>
+  <td><%= I18n.t('camper.Email') %>:</td>
+  <td><b><%= @reservation.camper.email %></b></td>
+</tr>
+<% end %>

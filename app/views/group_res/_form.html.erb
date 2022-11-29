@@ -1,0 +1,9 @@
+<%= error_messages_for 'reservation' %>
+
+  <%= render :partial => 'shared/dates' %>
+
+<p><b><%= I18n.t('reservation.RigType') %></b>
+<%= collection_select(:reservation, :rigtype_id, Rigtype.active, :id, :name, {:prompt => true}) %>
+
+<p><b><%= I18n.t('reservation.Discount') %></b>
+<%= collection_select(:reservation, :discount_id, Discount.active, :id, :name, {:prompt => true}) %>

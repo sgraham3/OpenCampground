@@ -1,0 +1,17 @@
+<p> <%= @color.name %>: <span style="background: <%= @color.value %>">&nbsp;</p>
+<table border="1">
+  <tr>
+    <th>Color name</th>
+    <th>Color sample</th>
+  </tr>
+  
+  <% @colors.each_index do |x| %>
+    <tr>
+      <td><%=  link_to @colors[x], {:action => :update, :id => @color.id, :color => @colors[x] }, :method => :put %></td>
+      <td style="background: <%= @hex[x] %>">&nbsp;</td>
+    </tr>
+  <% end %>
+  <%# select(:color, :value, @hex) %>
+  <%# collection_select(:color, :name, @colors, :capitalize, sample(:capitalize)) %>
+
+<%= button_to 'Cancel', setup_color_index_path, :method => :get %>

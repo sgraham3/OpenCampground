@@ -1,0 +1,57 @@
+<div id="extras">
+  <div id=extra_type>
+    <label for="option_extra_type">Type of Extra:</label>
+      <%= radio_button 'extra', 'extra_type', Extra::STANDARD,
+		      {:onchange => remote_function( :url => update_type_setup_extra_path(@extra.id),:method => :put,
+		      :with => "'extra_type='+encodeURIComponent(value)")} %>Standard
+      <%= radio_button 'extra', 'extra_type', Extra::COUNTED,
+		      {:onchange => remote_function( :url => update_type_setup_extra_path(@extra.id),:method => :put,
+		      :with => "'extra_type='+encodeURIComponent(value)")} %>Counted
+      <%= radio_button 'extra', 'extra_type', Extra::MEASURED,
+		      {:onchange => remote_function( :url => update_type_setup_extra_path(@extra.id),:method => :put,
+		      :with => "'extra_type='+encodeURIComponent(value)")} %>Metered
+      <%= radio_button 'extra', 'extra_type', Extra::OCCASIONAL, 
+		      {:onchange => remote_function( :url => update_type_setup_extra_path(@extra.id),:method => :put,
+		      :with => "'extra_type='+encodeURIComponent(value)")} %>Occasional
+      <%= radio_button 'extra', 'extra_type', Extra::DEPOSIT, 
+		      {:onchange => remote_function( :url => update_type_setup_extra_path(@extra.id),:method => :put,
+		      :with => "'extra_type='+encodeURIComponent(value)")} %>Deposit
+  </div>
+  <p>
+  <% if @extra.extra_type == Extra::MEASURED %>
+    <div id="measured">
+  <% else %>
+    <div id="measured" style="display: none">
+  <% end %>
+    <label for="extra_rate">Rate per Unit:</label>
+    <%= text_field 'extra', 'rate'  %>
+    <label for="extra_unit_name">Unit Name:</label>
+    <%= text_field 'extra', 'unit_name'  %>
+  </div>
+
+  <% if @extra.extra_type == Extra::OCCASIONAL || @extra.extra_type == Extra::DEPOSIT %>
+    <div id="occasional">
+  <% else %>
+    <div id="occasional" style="display: none">
+  <% end %>
+    <label for="extra_charge">Charge</label>
+    <%= text_field 'extra', 'charge'  %></p>
+  </div>
+
+  <% if @extra.extra_type == Extra::STANDARD || @extra.extra_type == Extra::COUNTED %>
+    <div id="standard">
+  <% else %>
+    <div id="standard" style="display: none">
+  <% end %>
+    <label for="extra_daily">Daily Rate</label><br/>
+    <%= text_field 'extra', 'daily'  %></p>
+
+    <p><label for="extra_weekly">Weekly Rate</label><br/>
+    <%= text_field 'extra', 'weekly'  %></p>
+
+    <p><label for="extra_monthly">Monthly Rate</label><br/>
+    <%= text_field 'extra', 'monthly'  %></p>
+  </div>
+</div>
+<!--[eoform:extra]-->
+

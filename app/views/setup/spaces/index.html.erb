@@ -1,0 +1,59 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to_function 'New space',"showhide('new_space');" %>
+<% form_for setup_spaces_path, :html => { :id => "new_space", :style => "display: none" } do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'space_name' %>
+<%
+  @use_remote = @option.use_remote_reservations?
+  @use_measured = Extra.find_all_by_extra_type(Extra::MEASURED).size > 0
+%>
+<%= button_to 'Update Sort Order', sort_setup_spaces_path, :method => :get %>
+<table border="1">
+  <tr>
+    <th>Name</th><th>15 A</th><th>30 A</th><th>50 A</th>
+    <th>Water</th><th>Sewer</th><th>Length</th><th>Width</th>
+    <th>Sitetype</th><th>Price Group</th>
+    <% if @use_remote %>
+      <th>Remote Reservable</th>
+    <% end %>
+    <% if @use_measured %>
+      <th>Current value</th>
+    <% end %>
+    <th>Special</th>
+    <th>Active?</th>
+  </tr>
+  
+  <% @spaces.each do |s| %>
+    <tr>
+      <td><%= s.name %></td>
+      <td><%= s.power_15a %></td>
+      <td><%= s.power_30a %></td>
+      <td><%= s.power_50a %></td>
+      <td><%= s.water %></td>
+      <td><%= s.sewer %></td>
+      <td><%= s.length %></td>
+      <td><%= s.width %></td>
+      <td><%= s.sitetype.name %></td>
+      <td><%= s.price.name %></td>
+      <% if @use_remote %>
+        <td><%= s.remote_reservable %></td>
+      <% end %>
+      <% if @use_measured %>
+        <td><%= s.current %></td>
+      <% end %>
+      <td><%= s.special_condition %></td>
+      <td><%= s.active %></td>
+      <td><%= link_to 'Edit', edit_setup_space_path(s) %></td>
+      <td><%= link_to 'Delete', setup_space_path(s),
+				:confirm => "Are you sure you want to delete #{s.name}?",
+				:method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

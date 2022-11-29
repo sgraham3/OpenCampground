@@ -1,0 +1,12 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= link_to 'Finished', setup_extra_index_path, :class => 'link_btn' %>
+<div id="container" style="overflow: scroll; height: <%= (@option.disp_rows*2).to_s %>em">
+ <ul id="extras"> 
+  <% @extras.each do |s| %>
+      <li id="extra_<%=s.id%>"><%= s.name %></li>
+  <% end %>
+</ul>
+</p>
+<%= javascript_tag "Position.includeScrollOffsets = true" %>
+<%= sortable_element :extras, :scroll => "'container'", :url => {:action => 'resort'} %>

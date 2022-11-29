@@ -1,0 +1,25 @@
+--- 
+extras_002: 
+  unit_name: 
+  measured: false
+  counted: true
+  weekly: "0.00"
+  daily: "1.00"
+  id: "2"
+  rate: "0.0000"
+  monthly: "0.00"
+  name: Extra person
+  onetime: false
+  charge: "0.00"
+extras_001: 
+  unit_name: 
+  measured: false
+  counted: false
+  weekly: "6.00"
+  daily: "1.00"
+  id: "1"
+  rate: "0.0000"
+  monthly: "20.00"
+  name: WiFi Use
+  onetime: false
+  charge: "0.00"

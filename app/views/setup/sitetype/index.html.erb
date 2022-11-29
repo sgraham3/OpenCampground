@@ -1,0 +1,28 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'New sitetype', new_setup_sitetype_path, :method => :get %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_sitetype_path, :method => :get %>
+<table border="1">
+  <tr> <th>Name</th>
+   <% @taxes.each do |t| %>
+     <th><%= t.name %></th>
+   <% end %>
+  <th>Active?</th></tr>
+  <% for sitetype in @sitetypes %>
+    <tr>
+      <td><%=h sitetype.name %></td>
+      <% @taxes.each do |t| %>
+	<td><%= sitetype.taxrates.exists?(t.id) %></td>
+      <% end %>
+      <td><%= sitetype.active %></td>
+    <td><%= link_to 'Edit', edit_setup_sitetype_path(sitetype), :method => :get %></td>
+    <% if @count > 1 %>
+      <td><%= link_to 'Delete', setup_sitetype_path(sitetype.id), :method => :delete,
+				:confirm => "Are you sure you want to delete #{sitetype.name}?" %></td>
+    <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

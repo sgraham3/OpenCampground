@@ -1,0 +1,35 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<form method="post" action="<%= report_card_transactions_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+
+<% total = 0.0 %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Res #</th>
+    <th>Camper</th>
+    <th>Date/Time</th>
+    <th>Card</th>
+    <th>Card No.</th>
+    <th>Ref No.</th>
+    <th>Status</th>
+    <th>Charges</th>
+  </tr>
+  <% @card_transactions.each do |p| %>
+    <% unless p.account.blank? %>
+      <% res = get_res p.reservation_id %>
+      <tr>
+	<td align="right"><%= res.id %></td>
+	<td><%= res.camper.full_name %></td>
+	<td><%= p.created_at %></td>
+	<td><%= Creditcard.card_type(p.account[1].chr) %></td>
+	<td><%= '****' + p.account[-4..-1] %></td>
+	<td><%= p.retref if p.retref %></td>
+	<td><%= p.resptext if p.resptext %></td>
+	<td><%= total += p.amount ; number_2_currency(p.amount) if p.amount %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  <tr>
+    <td><b>Total</b></td><td><%= number_2_currency(total) %></td>
+  </tr>
+</table>

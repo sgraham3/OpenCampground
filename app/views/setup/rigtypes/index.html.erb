@@ -1,0 +1,22 @@
+<%= render :partial => 'setup/buttons' %>
+<%= render :partial => 'explain' %>
+<%= error_messages_for 'rigtype' %>
+<p>
+<%= button_to 'New rigtype', new_setup_rigtype_path %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_rigtypes_path, :method => :get %>
+<table border="1">
+  <tr> <th>Name</th> <th>Active?</th></tr>
+  <% for rigtype in @rigtypes %>
+    <tr>
+      <td><%=h rigtype.name %></td>
+      <td><%= rigtype.active %></td>
+      <td><%= link_to 'Edit', edit_setup_rigtype_path(rigtype) %></td>
+      <td><%= link_to 'Delete', setup_rigtype_path( rigtype ),
+				:confirm => "Are you sure you want to delete #{rigtype.name}?",
+				:method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

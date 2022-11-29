@@ -1,0 +1,61 @@
+<% unless !@reservation.editable? or (defined? envelope and envelope?) %>
+<div id="extras" class="noprint">
+<% if Extra.count > 0 %>
+  <% @extras.each do |e| %>
+    <% if @remote && e.remote_required %>
+      <input name="extra[extra<%=e.id%>]" type="hidden" value="1" />
+      <% next %>
+    <% end %>
+    <% if @remote && !e.remote_display %>
+      <% next %>
+    <% end %>
+    <span class="extra">
+    <b><%= e.name %></b>
+    <% if e.extra_type == Extra::MEASURED
+         @ec_applies = false
+       else
+         @ec_applies = ExtraCharge.exists?(e.id, @reservation.id) ? true : false
+       end %>
+    <input type="checkbox" id="<%="extra#{e.id}"%>" <%= @ec_applies ? 'checked="checked"' : '' %>
+			   value="<%=@ec_applies%>"
+			   onclick="<%= remote_function( :update => 'summary',
+			     :url => {:action => 'update_extras', :reservation_id => @reservation.id },
+			     :with => "'checked='+encodeURIComponent(checked)+'&extra='+#{e.id}") %>" />
+    <% case e.extra_type
+       when Extra::COUNTED, Extra::OCCASIONAL %>
+	    <span id="<%="count_#{e.id}"%>" <%= "style=\"display:none;\"" unless @ec_applies %>>
+	    <b><%= I18n.t('reservation.Count') %></b>
+	    <% extra_charge = ExtraCharge.find_by_extra_id_and_reservation_id(e.id,  @reservation.id) %>
+	    <% cnt = extra_charge ? extra_charge.number : 1  %>
+	    <%= text_field_tag "count#{e.id}", cnt, {:id => "count#{e.id}", :size => '1', :autocomplete => 'off'} %>
+	    <%= observe_field "count#{e.id}",
+			      :frequency => 0.4,
+			      :update => 'summary',
+			      :url => {:action => 'update_count', :only_path => false, :reservation_id => @reservation.id },
+			      :with => "'number='+encodeURIComponent(value)+'&extra_id='+#{e.id}" %>
+	    </span>
+    <% when Extra::MEASURED %>
+	    <span id="<%="measure_#{e.id}"%>" style="display:none;" >
+	    <% initial = @reservation.space.current %>
+	    <% final = 0.0 %>
+	    <b><%= I18n.t('reservation.Start')%>:</b>
+	    <%= text_field_tag "start#{e.id}", initial, {:id => "start#{e.id}", :size => '5', :autocomplete => 'off'} %>
+	    <%= observe_field "start#{e.id}",
+			      :update => 'summary',
+			      :url => {:action => 'update_initial', :only_path => false, :reservation_id => @reservation.id },
+			      :with => "'value='+encodeURIComponent(value)+'&extra_id='+#{e.id}" %>
+	    <% if @reservation.checked_in? %>
+	      <b><%= I18n.t('reservation.Current')%>:</b>
+	      <%= text_field_tag "final#{e.id}", final, {:id => "final#{e.id}", :size => '5', :autocomplete => 'off'} %>
+	      <%= observe_field "final#{e.id}",
+				:update => 'summary',
+				:url => {:action => 'update_final', :only_path => false, :reservation_id => @reservation.id },
+				:with => "'value='+encodeURIComponent(value)+'&extra_id='+#{e.id}" %>
+	    <% end %>
+	    </span>
+    <% end -%>
+    </span>
+  <% end %>
+<% end %>
+</div>
+<% end %>

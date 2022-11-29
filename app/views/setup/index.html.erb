@@ -1,0 +1,17 @@
+<% unless session[:top] == true; session[:top] = true %>
+<div id="copyright">
+Open Campground, Copyright &copy; 2007-2022 Norman K. Scherer.<br \>
+Open Campground comes with ABSOLUTELY NO WARRANTY; for details see the license button in the User's Manual or look in the Admin section of this software.
+This is free software and you are welcome to redistribute it under the conditions in the license.
+</div>
+<% end -%>
+<%= render :partial => 'setup/buttons' %>
+
+<% unless Rails.env.production? %>
+      <p>
+  <%= link_to 'Initialize Database', 
+	initdemo_setup_initdb_path, :class => 'link_btn',
+        :confirm => "Do you want to completely recreate the demo/training database?" %>
+  </p>
+  <%end %>
+

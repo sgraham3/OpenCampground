@@ -1,0 +1,6 @@
+<% form_tag setup_sitetype_path(@sitetype), :method => :put do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<%= button_to 'Cancel', setup_sitetype_index_path, :method => :get %>

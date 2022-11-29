@@ -1,0 +1,7 @@
+<% form_for :extra, :url => setup_extra_index_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'form' %>
+  <p> <%= submit_tag "Create" %> </p>
+<% end %>
+<%= set_focus_to_id 'extra_name' %>
+<%= link_to 'Cancel', setup_extra_index_path, :class => 'link_btn' %>

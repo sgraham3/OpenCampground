@@ -1,0 +1,135 @@
+body {
+  color: Black;
+  background-color: WhiteSmoke;
+}
+#banner {
+  color: Black;
+  background-color: MediumSlateBlue;
+}
+#columns {
+  color: Black;
+  background-color: LightSteelBlue;
+}
+#side {
+  color: Black;
+  background-color: LightSteelBlue;
+}
+#main {
+  color: Black;
+  background-color: WhiteSmoke;
+}
+#user   {
+  color: Black;
+}
+#locale {
+  color: Black;
+  background-color: White;
+}
+#notice {
+  background-color: Snow;
+}
+#warning {
+  background-color: Snow;
+}
+#error {
+  background-color: Snow;
+}
+.inputError { 
+  color: Red;
+}
+.reserved { 
+  color: Black;
+  background-color: LightSteelBlue;
+}
+a.reserved:link {
+  color:Black;
+}
+a.reserved:visited {
+  color:Black;
+}
+a.reserved:hover {
+  color:White;
+}
+.occupied { 
+  color: Black;
+  background-color: LimeGreen;
+}
+a.occupied:link {
+  color:Black;
+}
+a.occupied:visited {
+  color:Black;
+}
+a.occupied:hover {
+  color:White;
+}
+.overstay {
+  color: Black;
+  background-color: LightGray;
+}
+a.overstay:link {
+  color:Black;
+}
+a.overstay:visited {
+  color:Black;
+}
+a.overstay:hover {
+  color:White;
+}
+.late { 
+  color: Black;
+  background-color: Yellow;
+}
+a.late:link {
+  color:Black;
+}
+a.late:visited {
+  color:Black;
+}
+a.late:hover {
+  color:White;
+}
+.today { 
+  color: Black;
+  background-color: lightGreen;
+}
+.unavailable {
+  color: Black;
+  background-color: Red;
+}
+.unconfirmed { 
+  color: Blue;
+}
+.payment_due { 
+  color: Red;
+}
+.late_checkin { 
+  color: Black;
+  background-color: Yellow;
+}
+.today_checkin { 
+ color: DarkRed;
+ background-color: Khaki;
+}
+.today_checkout {
+  color: DarkRed;
+  background-color: Khaki;
+}
+.in_place_editor_field {
+  background-color: White;
+}
+.explain {
+  background-color: White;
+}
+.button-to  input {
+  color: Black;
+  background-color: WhiteSmoke;
+}
+.oc_form legend {
+  color: Black;
+  background-color: WhiteSmoke;
+}
+.link_btn {
+  color: Black;
+  background-color: WhiteSmoke;
+}

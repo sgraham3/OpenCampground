@@ -1,0 +1,11 @@
+<% form_tag report_occ_sites_path do %>
+  <b>
+  End date can be no later than the beginning of the current month.</b>
+  <p><b>
+  Select start and end dates for desired report:
+  </b></p>
+  <p> <label for="reservation_startdate"><b>Starting Date:</b></label> <%= date_select 'reservation', 'startdate', :end_year => currentDate.year %></p>
+  <p> <label for="reservation_enddate">  <b>Ending Date:  </b></label> <%= date_select 'reservation', 'enddate', :end_year => currentDate.year   %></p>
+  <p> <%= submit_tag 'Generate Report', :disable_with => "Processing..." %> </p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

@@ -1,0 +1,193 @@
+  <div id="camper">
+  <% @reservation = @reservations[0] if defined?(@reservations) %>
+  <% @camper = @reservation.camper unless defined?(@camper) %>
+  <% camper = @camper %>
+  <% unless !defined?(@reservation) || @reservation.editable? %>
+    <table>
+    <tr>
+      <td><%= I18n.t('camper.Name') %>:</td>
+      <td><b><%= h @camper.first_name %>&nbsp; <%= h @camper.last_name %></b></td>
+      <% if @option.use_id? %>
+	<td><%= I18n.t('camper.ID') %>:</td>
+	<td><b><%= h @camper.idnumber %></b></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td><%= I18n.t('camper.Address') %>:</td>
+      <td><b><%= h @camper.address %></b></td>
+    </tr>
+    <% if @option.use_2nd_address? %>
+      <tr>
+	<td></td>
+	<td><b><%= h @camper.address2 %></b></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= I18n.t('camper.City') %>:</td>
+      <td><b><%= h @camper.city %></b></td>
+      <td><%= I18n.t('camper.State') %>:</td>
+      <td><b><%= h @camper.state %>&nbsp; <%= h @camper.mail_code %> </b></td>
+      <%= render :partial => 'shared/country' %>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <% if @option.no_phones > 0 %>
+	<td><%= I18n.t('camper.Phone') %>:</td>
+	<td><b><%= h @camper.phone %></b></td>
+	<% if @option.no_phones > 1 %>
+	  <td><%= I18n.t('camper.Phone2') %>:</td>
+	  <td><b><%=h  @camper.phone_2 %></b></td>
+	<% end %>
+      <% end %>
+      <td><%= I18n.t('camper.Email') %>:</td>
+      <td><b><%= h @camper.email %></b></td>
+      <% unless @camper.email.blank? %>
+	<td class="noprint"><%= mail_to(h(@camper.email), "Send Email", :class => "link_btn") %></td>
+      <% end %>
+      <td class="noprint"><%= I18n.t('camper.Notes') %>:</td>
+      <td class="noprint"><b><%= h @camper.notes %></b></td>
+      <% if @option.use_addl? %>
+	<td class="noprint"><%= I18n.t('camper.Addl') %>:</td>
+	<td class="noprint"><b><%= h @camper.addl %></b></td>
+      <% end %>
+    </tr>
+  <% else %>
+  <table>
+    <tr>
+      <td><%= I18n.t('camper.Name') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :first_name,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_first_name', :controller => 'camper', :id => camper.id}%>&nbsp;
+	     <%= in_place_editor_field_prompted   :camper,
+				       :last_name,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_last_name', :controller => 'camper', :id => camper.id}%></b></td>
+    <% if @option.use_id? %>
+      <td><%= I18n.t('camper.ID') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :idnumber,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_idnumber', :controller => 'camper', :id => camper.id}%></b></td>
+    <% end %>
+    </tr>
+    <tr>
+      <td><%= I18n.t('camper.Address') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :address,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_address', :controller => 'camper', :id => camper.id}%></b></td>
+    </tr>
+    <% if @option.use_2nd_address? %>
+      <tr>
+      <td></td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :address2,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_address2', :controller => 'camper', :id => camper.id}%></b></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= I18n.t('camper.City') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :city,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_city', :controller => 'camper', :id => camper.id}%></b></td>
+      <td><%= I18n.t('camper.State') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :state,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_state', :controller => 'camper', :id => camper.id}%>&nbsp;
+	  <%= in_place_editor_field_prompted :camper,
+				    :mail_code,
+				    {:autocomplete => 'off'},
+				    :url => {:action => 'set_camper_mail_code', :controller => 'camper', :id => camper.id}%> </b></td>
+    <%= render :partial => 'shared/country' %>
+    </tr>
+    </table>
+    <table>
+      <tr>
+      <% if @option.no_phones > 0 %>
+	<td><%= I18n.t('camper.Phone') %>:</td>
+	<td><b><%= in_place_editor_field_prompted :camper,
+					   :phone,
+					   {:autocomplete => 'off'},
+					   :url => {:action => 'set_camper_phone', :controller => 'camper', :id => camper.id}%></b></td>
+	<% if @option.no_phones > 1 %>
+	  <td><%= I18n.t('camper.Phone2') %>:</td>
+	  <td><b><%= in_place_editor_field_prompted :camper,
+					   :phone_2,
+					   {:autocomplete => 'off'},
+					   :url => {:action => 'set_camper_phone_2', :controller => 'camper', :id => camper.id}%></b></td>
+	<% end %>
+      <% end %>
+      </tr><tr>
+      <td><%= I18n.t('camper.Email') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :camper,
+				       :email,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_email', :controller => 'camper', :id => camper.id}%></b></td>
+      <% unless @camper.email.blank? %>
+	<td class="noprint"><%= mail_to(h(@camper.email), "Send Email", :class => "link_btn") %></td>
+      <% end %>
+      <td class="noprint"><%= I18n.t('camper.Notes') %>:</td>
+      <td class="noprint"><b><%= in_place_editor_field_prompted :camper,
+				       :notes,
+				       {:autocomplete => 'off'},
+				       :url => {:action => 'set_camper_notes', :controller => 'camper', :id => camper.id}%></b></td>
+      <% if @option.use_addl? %>
+	<td class="noprint"><%= I18n.t('camper.Addl') %>:</td>
+	<td class="noprint"><b><%= in_place_editor_field_prompted :camper,
+					 :addl,
+					 {:autocomplete => 'off'},
+					 :url => {:action => 'set_camper_addl', :controller => 'camper', :id => camper.id}%></b></td>
+      <% end %>
+    </tr>
+    <% end %>
+  <% if (defined?(@reservations) && @reservations.size > 0) %>
+    <table border="1">
+      <caption><b><%= I18n.t('titles.res_list')-%></b></caption>
+      <tr align="center">
+	<th><%=I18n.t('reservation.Res_nr')-%></th>
+	<th><%=I18n.t('reservation.Arrival')-%></th>
+	<th><%=I18n.t('reservation.Departure')-%></th>
+	<% if @option.use_rig_type? %>
+	  <th><%=I18n.t('reservation.RigType')-%></th>
+	<% end %>
+	<th><%=I18n.t('reservation.Space')-%></th>
+	<th><%=I18n.t('reservation.Group')-%></th>
+	<th><%=I18n.t('reservation.Special')-%></th>
+	<th><%=I18n.t('reservation.Status')-%></th>
+      </tr>
+      <% @reservations.each do |r| %>
+	<tr>
+	  <% if r.storage? && @option.use_storage? %>
+	    <td><%= r.id.to_s %>(S)</td>
+	  <% else %>
+	    <td><%= r.id.to_s %></td>
+	  <% end %>
+	  <td><%= I18n.l(r.startdate) %></td>
+	  <td><%= I18n.l(r.enddate) %></td>
+	  <% if @option.use_rig_type? %>
+	    <td align="center"><%= r.rigtype.name if r.rigtype_id? %></td>
+	  <% end %>
+	  <td align="center"><%= r.space.name %></td>
+	  <td align="center">
+	  <% if r.group_id && r.group_id > 0 %>
+	    <%= r.group.name %>
+	  <% end %>
+	  </td>
+	  <td><%= r.special_request %></td>
+	  <td><%= if r.archived
+		    close_reason(r)
+		  elsif r.checked_in
+		    I18n.t('reservation.Inpark') 
+		  else
+		    I18n.t('reservation.Reserved')
+		  end  %></td>
+	  <td><%= link_to I18n.t('reservation.Show'), :controller => :reservation, :action => :show, :reservation_id => r.id %></td>
+	</tr>
+      <% end %>
+    </table>
+  <% end %>

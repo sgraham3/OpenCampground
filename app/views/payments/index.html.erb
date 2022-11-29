@@ -1,0 +1,10 @@
+<%= render :partial => '/maintenance/buttons' %>
+
+<% form_tag :action => :index, :method => :get  do %>
+  <label for="id"><b><%= I18n.t('reservation.ReservationNumber') %>:</b></label>
+  <%= text_field_tag :id, params[:id], :size => '4', :autocomplete => "off" %>
+  <%= submit_tag I18n.t('reservation.FindbyReservationNumber') %></p>
+<% end %>
+
+<%= render :partial => 'pmt' %>
+<%= will_paginate @payments, :params => {:id => @id} %>

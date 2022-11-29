@@ -1,0 +1,11 @@
+<div id="paypal" class="cc-form">
+  <% form_for(@paypal_transaction) do |f| %>
+    <div>
+    Amount: <%= f.text_field :amount, :size => 6 %>
+    </div>
+    <%= f.hidden_field :reservation_id %><br/>
+  <%= f.submit "Submit", :type => :image, :src => "https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif", :alt => "PayPal - The safer, easier way to pay online!", :border => "0", :class => "payment_submit" %>
+  <% end %>
+<br/><%= button_to 'Cancel Payment', {:action => :show, :controller => :reservation, :reservation_id => @reservation_id} %>
+</div>
+<%= set_focus_to_id 'paypal_transaction_amount' %>

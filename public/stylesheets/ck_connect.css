@@ -1,0 +1,65 @@
+img.cardknox {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.ck-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+  text-align: center;
+}
+.ck-form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.ck-item {
+  font-size: 13px;
+}
+.ck-list {
+  list-style-type: none;
+}
+.ck-row {
+  display: flex;
+  flex: 1 auto;
+  justify-content: center;
+  margin: 1em;
+  # border: 1px dotted black;
+}
+.ck-other {
+  align-items: center;
+  # border: 1px solid blue;
+  margin-left: 3em;
+}
+.ck-item {
+  align-items: center;
+  # margin: 2em;
+  # border: 1px dashed black;
+}
+select#ck_transaction_expiry_2i {
+   margin-top: 0;
+   margin-bottom: 0;
+}
+select#ck_transaction_expiry_1i {
+   margin-top: 0;
+   margin-bottom: 0;
+}
+#ck-card {
+  margin-bottom: 1em;
+  width: 20.5em;
+  height: 3em;
+}
+
+#ck-cvv {
+  margin-bottom: 1em;
+  width: 20.5em;
+  height: 3em;
+}
+
+.ck-date {
+  margin-bottom: 2em;
+}

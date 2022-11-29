@@ -1,0 +1,22 @@
+<%= javascript_include_tag :defaults %>
+<% if controller.controller_name == 'cardknox_transactions' %>
+  <%= javascript_include_tag "jquery-3.6.0.min" %>
+  <script> var $j = jQuery.noConflict(); </script>
+  <script src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifields.min.js"></script>
+  <%= javascript_include_tag 'ck_tokenization'%>
+<% elsif controller.controller_name == 'card_transactions' %>
+  <%= javascript_include_tag 'cc_tokenization'%>
+<% elsif controller.controller_name == 'availables' %>
+  <%= javascript_include_tag 'tablelock'%>
+<% else %>
+  <% CalendarDateSelect.format=:euro_24hr %>
+  <%= calendar_date_select_includes :default,:locale => I18n.locale %>
+<% end %>
+<%= stylesheet_link_tag "colors" %>
+<%= stylesheet_link_tag "scaffold", :media => "screen" %>
+<%= stylesheet_link_tag "office", :media => "screen" %>
+<%= stylesheet_link_tag "#{I18n.locale}", :media => "screen" %>
+<%= stylesheet_link_tag "ck_connect" %>
+<%= stylesheet_link_tag "card_connect" %>
+<%= stylesheet_link_tag "print", :media => "print" %>
+<title><%= controller.action_name %></title>

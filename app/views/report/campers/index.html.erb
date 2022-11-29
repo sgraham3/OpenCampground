@@ -1,0 +1,56 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<form method="get" action="<%= report_campers_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+<table>
+<tr>
+<th>Camper name</th>
+<% if @option.use_2nd_address? -%>
+  <th colspan=2>Address</th>
+<% else -%>
+  <th>Address</th>
+<% end -%>
+<th>City</th>
+<th>State</th>
+<th>Mail code</th>
+<% if @option.use_country? && Country.active.count > 0 -%>
+  <th>Country</th>
+<% end -%>
+<% case @option.no_phones -%>
+<%   when 1 -%>
+  <th>Phone</th>
+<%   when 2 -%>
+  <th>Phone 1</th><th>Phone 2</th>
+<% end -%>
+<th>Email address</th>
+<th>Last activity</th>
+</tr>
+<% @campers.each do |c| -%>
+  <tr>
+  <td><%= c.full_name -%></td>
+  <td><%= c.address -%></td> 
+  <% if @option.use_2nd_address? -%>
+    <td><%= c.address2 -%></td>
+  <% end -%>
+  <td><%= c.city -%></td> 
+  <td><%= c.state -%></td>
+  <td><%= c.mail_code -%></td> 
+  <% if @option.use_country? && Country.active.count > 0 -%>
+    <% if c.country_id? && c.country.name? -%>
+      <td><%= c.country.name -%></td>
+    <% else -%>
+      <td></td>
+    <% end -%>
+  <% end -%>
+<% case @option.no_phones -%>
+<%   when 1 -%>
+    <td><%= c.phone -%></td>
+  <%   when 2 -%>
+    <td><%= c.phone -%></td>
+    <td><%= c.phone_2 -%></td>
+  <% end -%>
+  <td><%= c.email -%></td>
+  <td><%= c.activity -%></td> 
+  </tr>
+<% end -%>
+
+</table>

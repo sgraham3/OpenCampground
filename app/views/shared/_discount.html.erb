@@ -1,0 +1,39 @@
+<% if Discount.active.count > 0 %>
+  <span id="discount">
+  <% if !@reservation.editable? or (defined? envelope and envelope?) %>
+    <%= I18n.t('reservation.Discount') %>:
+    <b>
+    <%= if @reservation.discount_id? && @reservation.discount_id > 0
+	  @reservation.discount.name
+	else
+	  I18n.t('reservation.none')
+	end %></b>
+  <% elsif @reservation.seasonal? && Discount.skip_seasonal? %>
+    <%# do nothing %>
+  <% else %>
+      <%= I18n.t('reservation.Discount') %>:
+      <span class="noprint">
+	<% if @remote && @static %>
+	  <%= @reservation.discount.name %>
+	<% else %>
+	  <% if @remote %>
+	    <%= collection_select(:reservation, :discount_id, Discount.for_remote, :id, :name, {:prompt => true}) %>
+	  <% else %>
+	    <%= collection_select(:reservation, :discount_id, Discount.active, :id, :name, {:prompt => true}) %>
+	  <% end %>
+	<% end %>
+      </span>
+      <span class="nodisplay">
+	<b>
+	<%= if @reservation.discount_id? && @reservation.discount_id > 0
+	      @reservation.discount.name
+	    else
+	      I18n.t('reservation.none')
+	    end %></b>
+      </span>
+      <%= observe_field :reservation_discount_id,
+			:url => {:action => 'update_discount', :only_path => false },
+			:with => "'discount_id='+encodeURIComponent(value) + '&reservation_id=' + #{@reservation.id}" %>
+  <% end %>
+  </span>
+<% end %>

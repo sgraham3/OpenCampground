@@ -1,0 +1,14 @@
+<% form_for :country, @country, :url => setup_country_path(@country), :html => {:method => :put} do |f| %>
+
+  <%= f.error_messages %>
+
+<p><label for="country_name">Country name</label><br/>
+<%= text_field 'country', 'name'  %></p>
+  <p><label for="country_active">Active?</label>
+  <%= check_box :country, :active  %></p>
+  <p>
+  <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', setup_countries_path, :class => 'link_btn' %>

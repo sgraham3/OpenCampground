@@ -1,0 +1,13 @@
+<% form_for :sitetype, :url => setup_sitetype_index_path do |f| %>
+  <%= f.error_messages %>
+  <p>Sitetype name: <%= f.text_field :name  %></p>
+  <p> Taxes that apply: 
+    <% Taxrate.all.each do |t| %>
+      <%= f.label t.name %>
+      <%= check_box 'tax', t.name, :checked => true  %>
+    <% end %>
+  </p>
+  <p> <%= submit_tag "Create" %> </p>
+<% end %>
+<%= set_focus_to_id 'sitetype_name' %>
+<%= button_to 'Cancel', setup_sitetype_index_path, :method => :get %>

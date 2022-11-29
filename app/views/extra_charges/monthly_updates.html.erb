@@ -1,0 +1,26 @@
+<%= render :partial => '/maintenance/buttons' %>
+<table cellpadding="5" cellspacing="0" border="2">
+  <tr>
+    <th><%= I18n.t('reservation.Space') %></th>
+    <th><%= I18n.t('reservation.ReservationNumber') %></th>
+    <th><%= I18n.t('camper.Name') %></th>
+    <th><%= I18n.t('extra.Previous') %></th>
+    <th><%= I18n.t('extra.New') %></th>
+    <th><%= I18n.t('extra.Consumed') %></th>
+    <th><%= I18n.t('extra.Rate') %></th>
+    <th><%= I18n.t('extra.Charge') %></th>
+  </tr>
+
+  <% @reservations.each do |res| %>
+    <%= render :partial => "extra_update", :object => res, :locals => {:extra_charge => @extra_charge} %>
+  <% end %>
+</table>
+<%= will_paginate @reservations %>
+
+<table>
+<tr>
+<td><input type="button" onclick="javascript:window.print()" value="<%= I18n.t('general.Print') %>" /></td>
+<td><form method="post" action="<%= extra_charges_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form></td>
+
+</tr>
+</table>

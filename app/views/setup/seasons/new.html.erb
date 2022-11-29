@@ -1,0 +1,8 @@
+<% form_tag setup_seasons_path do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'season_name' %>
+<%= button_to 'Cancel', setup_seasons_path, :method => :get %>

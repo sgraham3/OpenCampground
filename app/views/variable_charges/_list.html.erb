@@ -1,0 +1,36 @@
+<% form_tag :action => :show, :method => :get  do %>
+  <label for="id"><b><%= I18n.t('reservation.ReservationNumber') %>:</b></label>
+  <%= text_field_tag :id, params[:id], :size => '4', :autocomplete => "off" %>
+  <%= submit_tag I18n.t('reservation.FindbyReservationNumber') %></p>
+<% end %>
+
+<table cellpadding="5" cellspacing="0" border="2">
+  <tr>
+    <th><%= I18n.t('extra.Name') %></th>
+    <th><%= I18n.t('reservation.ReservationNumber') %></th>
+    <th><%= I18n.t('reservation.Space') %></th>
+    <th><%= I18n.t('extra.Amount') %></th>
+    <% @taxes.each do |t| %>
+      <%= '<th>' + t.name + '</th>' if t.is_percent? %>
+    <% end %>
+    <th><%= I18n.t('extra.Created') %></th>
+    <th><%= I18n.t('extra.Updated') %></th>
+  </tr>
+
+  <% @variable_charges.each do |var| %>
+    <tr>
+      <td align="right"><%= var.detail %></td>
+      <td align="right"><%= var.reservation_id %></td>
+      <td align="right"><%= var.reservation.space.name %></td>
+      <td align="right"><%=number_2_currency(var.amount) %></td>
+      <% @taxes.each do |t| %>
+        <%= '<td>' + var.taxrates.exists?(t.id).to_s + '</td>' if t.is_percent? %>
+      <% end %>
+      <td align="right"><%= I18n.l var.created_at.getlocal %></td>
+      <td align="right"><%= I18n.l var.updated_at.getlocal %></td>
+      <td><%= link_to I18n.t('general.Edit'), edit_variable_charge_path(var) %></td>
+      <td><%= link_to I18n.t('general.Destroy'), var, :confirm => I18n.t('general.ConfirmDestroy'), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @variable_charges %>

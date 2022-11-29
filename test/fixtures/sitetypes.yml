@@ -1,0 +1,10 @@
+--- 
+sitetypes_003: 
+  name: Premium
+  id: "3"
+sitetypes_002: 
+  name: Regular
+  id: "2"
+sitetypes_001: 
+  name: Tent
+  id: "1"

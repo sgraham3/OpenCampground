@@ -1,0 +1,135 @@
+GIT
+  remote: https://github.com/makandra/rails.git
+  revision: 0ea1b40e5c13e63737f4210044285be1578022de
+  branch: 2-3-lts
+  specs:
+    actionmailer (2.3.18.41)
+      actionpack (= 2.3.18.41)
+    actionpack (2.3.18.41)
+      activesupport (= 2.3.18.41)
+      rack (< 1.5)
+    activerecord (2.3.18.41)
+      activesupport (= 2.3.18.41)
+    activeresource (2.3.18.41)
+      activesupport (= 2.3.18.41)
+    activesupport (2.3.18.41)
+    rails (2.3.18.41)
+      actionmailer (= 2.3.18.41)
+      actionpack (= 2.3.18.41)
+      activerecord (= 2.3.18.41)
+      activeresource (= 2.3.18.41)
+      activesupport (= 2.3.18.41)
+      railslts-version (= 2.3.18.41)
+      railties (= 2.3.18.41)
+    railslts-version (2.3.18.41)
+    railties (2.3.18.41)
+      actionpack (= 2.3.18.41)
+      activesupport (= 2.3.18.41)
+      rake (>= 0.8.3)
+
+GIT
+  remote: https://github.com/makandra/rspec-rails.git
+  revision: 8bc8d0aa96308365abaeb3f6effa39f4da8a810f
+  branch: 1-3-lts
+  specs:
+    rspec-rails (1.3.4)
+      rack (>= 1.0.0)
+      rspec (~> 1.3.1)
+
+GIT
+  remote: https://github.com/makandra/rspec.git
+  revision: 692ab8326bb60b6784c4e0cc230bf87edcbafa43
+  branch: 1-3-lts
+  specs:
+    rspec (1.3.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    active_utils (2.0.2)
+      activesupport (>= 2.3.11)
+      i18n
+    activemerchant (1.33.0)
+      active_utils (>= 1.0.2)
+      activesupport (>= 2.3.14)
+      builder (>= 2.0.0)
+      i18n
+      json (>= 1.5.1)
+      money
+      nokogiri
+    activerecord-mysql2-adapter (0.0.3)
+      mysql2
+    acts_as_list (0.1.2)
+    builder (3.2.2)
+    calendar_date_select (1.16.4)
+    daemons (1.4.1)
+    eventmachine (1.2.7)
+    faker (1.8.4)
+      i18n (~> 0.5)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
+    geokit (1.13.1)
+    hoe (3.23.1)
+      rake (>= 0.8, < 15.0)
+    i18n (0.6.9)
+    in_place_editing (1.2.0)
+    json (2.6.1)
+    liquid (2.6.3)
+    money (6.16.0)
+      i18n (>= 0.6.4, <= 2)
+    multipart-post (1.2.0)
+    mysql2 (0.5.3)
+    nokogiri (1.5.10)
+    rack (1.4.7)
+    rails-footnotes (3.6.7)
+    rake (10.5.0)
+    test-unit (1.2.3)
+      hoe (>= 1.5.1)
+    thin (1.8.1)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+    will_paginate (2.3.16)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  actionmailer!
+  actionpack!
+  active_utils (= 2.0.2)
+  activemerchant (= 1.33.0)
+  activerecord!
+  activerecord-mysql2-adapter
+  activeresource!
+  activesupport!
+  acts_as_list (= 0.1.2)
+  builder (= 3.2.2)
+  calendar_date_select (= 1.16.4)
+  faker
+  faraday (= 0.9.0)
+  faraday_middleware (= 0.9.1)
+  geokit
+  i18n (= 0.6.9)
+  in_place_editing (= 1.2.0)
+  json
+  liquid (~> 2.6.0)
+  money
+  multipart-post (= 1.2.0)
+  mysql2
+  nokogiri (= 1.5.10)
+  rails (~> 2.3.18)!
+  rails-footnotes
+  railslts-version!
+  railties!
+  rake (~> 10.5.0)
+  rspec (= 1.3.2)!
+  rspec-rails (= 1.3.4)!
+  test-unit (= 1.2.3)
+  thin
+  will_paginate (= 2.3.16)
+
+BUNDLED WITH
+   1.16.1

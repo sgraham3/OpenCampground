@@ -1,0 +1,11 @@
+<table>
+<tr>
+<td> <%= I18n.t('reservation.StartDate') %>: <b><%= I18n.l(@reservation.startdate) %></b> </td>
+<td> <%= I18n.t('reservation.EndDate') %>: <b><%= I18n.l(@reservation.enddate) %></b> </td>
+<% if @static == false %>
+  <td>
+  <span class="noprint"> <%= button_to I18n.t('titles.ChangeDates'), {:action => 'change_dates'} %> </span>
+  </td>
+<% end %>
+</tr>
+</table>

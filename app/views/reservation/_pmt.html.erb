@@ -1,0 +1,34 @@
+<div id="cc_error" style="color: red; background-image: none; background-color: transparent; font-weight: bold"></div>
+<span class="noprint">
+<%= I18n.t('reservation.PaymentType') %>:
+<b><%= @pmt_method %></b>
+<%# collection_select(:payment, :creditcard_id, Creditcard.active, :id, :name, {:prompt => I18n.t('helpers.select.prompt')} ) %>
+<%# observe_field :payment_creditcard_id,
+      :url => {:action => 'update_cc', :only_path => false, :reservation_id => @reservation.id},
+      :with => "'creditcard_id='+encodeURIComponent(value)" %>
+</span>
+<span class="noprint" id="pmt">
+  <% if @payment.creditcard.is_credit_card? %>
+    <label for="payment_credit_card_no"><%= I18n.t('reservation.Number') %>:</label>
+    <span class="noprint">
+      <b><%= in_place_editor_field_prompted :payment,  :credit_card_no, {:size => '20', :autocomplete => 'off'} %></b>
+    </span>
+    <% if @payment.creditcard.use_expiration? %>
+      <label for="payment_cc_expire"><%= I18n.t('reservation.Expires') %>:</label>
+      <form id="cc_expire" style="margin:0;padding:0;display:inline;">
+	<%= date_select :payment, :cc_expire, :discard_day => true, :use_short_month => true, :start_year => currentDate.year, :end_year => currentDate.year + 7, :start_month => currentDate.month %>
+      </form>
+      <%= observe_form :cc_expire,
+		       :url => {:action => 'update_cc_expire', :only_path => false, :reservation_id => @reservation.id} %>
+    <% end %>
+  <% end %>
+  <%= I18n.t('reservation.Payment') %>: <b><%= in_place_editor_field_prompted :payment, :deposit_formatted, {}, :size => 6 %></b>
+  <%= I18n.t('reservation.Notes') %>: <b><%= in_place_editor_field_prompted :payment, :memo, {}, :size => 4 %></b>
+  <% cds_format %>
+  <%= I18n.t('reservation.Date') %>:
+  <%= calendar_date_select 'payment', 'pmt_date',
+			  :popup => true,
+			  :year_range => 1.years.ago.year..1.years.from_now.year,
+			  :onchange => "new Ajax.Request('/reservation/update_pmt_date?date=' + $F(this) + \"&reservation_id=#{@reservation.id}\", {asynchronous:true, evalScripts:true});",
+			  :size => 15 %>
+</span>

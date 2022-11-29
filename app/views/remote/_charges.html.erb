@@ -1,0 +1,104 @@
+<div id="charges">
+<% @discount = (@reservation.discount.id > 1 ? true : false) -%>
+<table cellpadding="5" cellspacing="0" border="2">
+  <tr> 
+    <th align="center"><%= I18n.t('reservation.Item') %> </th>
+    <th align="center"><%= I18n.t('reservation.StartDate') %> </th>
+    <th align="center"><%= I18n.t('reservation.EndDate') %> </th>
+    <% if Season.active.count > 1 -%>
+      <th align="center"><%= I18n.t('reservation.Season') %> </th>
+    <% end -%>
+    <th align="center"><%= I18n.t('reservation.Count') %> </th>
+    <th align="center"><%= I18n.t('reservation.Each') %> </th>
+    <% if @discount == true -%>
+      <% if @option.inline_subtotal? %>
+	<th><%= I18n.t('reservation.SubTotal') %></th>
+      <% end %>
+      <th align="center"><%= I18n.t('reservation.Discount') %> </th>
+    <% end -%>
+    <th align="center"><%= I18n.t('reservation.Amount') %> </th>
+  </tr>
+    <% @charges.each do |c| %>
+      <tr>
+	<%= charge_item(c, @discount, Season.active.count) %>
+      </tr>
+    <% end -%>
+  <% ext = ExtraCharge.find_all_by_reservation_id(@reservation.id) %>
+  <% ext.each do |e| %>
+    <%= charge_extra(e, @discount, Season.active.count) %>
+  <% end %>
+  <% if @tax_records.size > 0 %>
+    <tr>
+      <td><%= I18n.t('reservation.SubTotal') %></td>
+      <td></td>
+      <td></td>
+      <% if Season.active.count > 1 -%>
+	<td></td>
+      <% end -%>
+      <td></td>
+      <td></td>
+      <% if @discount == true -%>
+	<% if @option.inline_subtotal? %>
+	  <td></td>
+	<% end %>
+	<td></td>
+      <% end %>
+      <td align="right"><%=number_2_currency(@reservation.total) %></td>
+    </tr>
+  <% end %>
+  <%  @tax_records.each do |t| %>
+    <tr>
+      <td align="left"><%= t.name %></td>
+      <td></td>
+      <td></td>
+      <% if Season.active.count > 1 -%>
+	<td></td>
+      <% end -%>
+      <td align="center">
+	<% if t.count > 0 %>
+	  <%= t.count.to_s %>
+	<% end %>
+      </td>
+      <td align="right"><%= t.rate %></td>
+      <% if @discount == true -%>
+	<% if @option.inline_subtotal? %>
+	  <td></td>
+	<% end %>
+	<td></td>
+      <% end %>
+      <td align="right"><%=number_2_currency(t.amount) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><%= I18n.t('reservation.Total') %></td>
+    <%= spacing_for_charges -%></td>
+    <td align="right"><%=number_2_currency(@reservation.total + @reservation.tax_amount) %></td>
+  </tr>
+  <% payments = 0.0 %>
+  <% if @payments %>
+    <% payments = 0.0 -%>
+    <% @payments.each do |p| %>
+      <% if p.creditcard_id -%>
+        <% payments += p.amount -%>
+        <tr>
+          <td><%= I18n.t('reservation.Payment')%></td>
+          <%= spacing_for_charges -%>
+          <%= payment_details(p) %> </td>
+          <td align="right"><%=number_2_currency(p.amount) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+  <tr>
+    <td><%= I18n.t('reservation.AmountDue') %></td>
+    <%= spacing_for_charges -%>
+    <% if @reservation.confirm? || !defined?(@deposit) %>
+       </td><td align="right"><%= number_2_currency(@reservation.total + @reservation.tax_amount - payments) %></td> 
+    <% elsif @deposit['custom'] == 'Full amount' %>
+       </td><td align="right"><%= number_2_currency(@reservation.total + @reservation.tax_amount - payments) %></td> 
+    <% else %>
+       <%= @deposit['custom'] %></td><td align="right"><%= number_2_currency(@deposit['amount']) %></td> 
+    <% end %>
+  </tr>
+</table>
+</div>

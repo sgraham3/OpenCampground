@@ -1,0 +1,46 @@
+<%= render :partial => '/setup/buttons' %>
+<div id="map_edit">
+<% if @use_map %>
+  <% if(@map && !@map.empty? )%>
+    <p>
+    <table><tr>
+    <td>
+      Map file: <b><%= @map %></b>
+    </td><td>
+      <img src="/map/<%= @map %>" height="100" />
+    </td><td>
+      <%= button_to 'Delete map file', setup_map_path('local'), :method => :delete %>
+    </td>
+    </tr></table>
+  <% else %>
+    <% form_tag  setup_map_index_path, :method => :post, :multipart => true do %>
+      <label for="upload_file">Map File</label> :
+      <%= file_field_tag 'upload', :accept => 'image/*' %> <br />
+      <%= submit_tag "Upload Map file" %>
+    <% end %>
+  <% end %>
+  </p>
+<% end %>
+<% if @use_remote_map %>
+  <% if @remote_map && ( @remote_map.size > 0) %>
+    <p>
+    <table><tr>
+    <td>
+      Remote Map file: <b><%= @remote_map %></b>
+    </td><td>
+      <img src="/map/<%= @remote_map %>" height="100" />
+    </td><td>
+      <%= button_to 'Delete remote map file', setup_map_path('remote'), :method => :delete %>
+    </td>
+    </tr></table>
+  <% else %>
+    <% form_tag  setup_map_index_path, :method => :post, :multipart => true do %>
+      <label for="upload_file">Remote Map File</label> :
+      <%= hidden_field_tag 'remote' %>
+      <%= file_field_tag 'upload', :accept => 'image/*' %><br />
+      <%= submit_tag "Upload Remote Map file" %>
+    <% end %>
+  <% end %>
+  </p>
+<% end %>
+</div>

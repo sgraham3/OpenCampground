@@ -1,0 +1,57 @@
+--- 
+options_001: 
+  home: 
+  use_confirm_email: false
+  sa_columns: "120"
+  separator: .
+  allow_gateway: true
+  season_end: <%= Date.today.end_of_year %>
+  season_start: <%= Date.today.beginning_of_year %>
+  max_spacename: "5"
+  header: |-
+    <b>Ty Coon,</b> manager
+    <em>My RV Park</em>
+    123 Main St.
+    Somewhere, XX
+  ftp_server: 
+  archive_list_sort: id
+  disp_rows: "12"
+  trailer: This space is provided for the sole use of the camper registered and any damages are the <em>responsibility of the camper</em>.  and so on and so on.
+  use_onetime_discount: false
+  use_remote_reservations: false
+  use_login: false
+  ftp_passwd: 
+  checkout_time: "08:10:00"
+  locale: en
+  use_override: false
+  remote_discount: false
+  use_reserve_by_wk: true
+  lookback: "7"
+  id: "1"
+  match_firstname: false
+  auto_checkin_remote: false
+  require_gateway: false
+  list_payments: true
+  res_list_sort: unconfirmed_remote desc, startdate, group_id, spaces.position asc
+  current_version: 
+  keep_reservations: "13"
+  use_2nd_address: false
+  use_autologin: false
+  no_vehicles: "1"
+  match_city: false
+  use_checkout_time: false
+  no_phones: "1"
+  unit: $
+  current_revision: 
+  remote_recommendations: false
+  override_by_all: false
+  inpark_list_sort: unconfirmed_remote desc, enddate, startdate, group_id, spaces.position asc
+  use_seasonal: false
+  find_by_id: false
+  delimiter: ","
+  use_country: false
+  ftp_account: 
+  use_feedback: false
+  print: true
+  use_recommend: false
+  use_id: false

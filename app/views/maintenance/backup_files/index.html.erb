@@ -1,0 +1,32 @@
+<%= render :partial => '/maintenance/buttons' %>
+<b>Select the desired action:</b>
+<p>
+<% form_tag  maintenance_backup_files_path, :multipart => true  do %>
+  <label for="upload_file">Upload Backup File</label> :
+  <%= file_field_tag 'upload' %><br />
+  <%= submit_tag "Upload" %>
+<% end %>
+</p>
+<table>
+  <% @file_list.each_index do |i| %>
+    <tr>
+      <td>
+	<%= @file_list[i] %>
+      </td>
+      <td>
+	<%= link_to "delete backup", maintenance_backup_file_path(i), :class => "link_btn",
+		      :confirm => I18n.t('admin.ConfirmDelete', :name => @file_list[i]),
+		      :method => 'delete' %>
+      </td>
+      <td>
+	<%= link_to  "restore from backup", maintenance_backup_file_path(i), :class => "link_btn",
+		      :confirm => I18n.t('admin.ConfirmRestore', :name => @file_list[i]),
+		      :method => 'put'  %>
+      </td>
+      <td>
+        <%= link_to  "download backup file", maintenance_backup_file_path(i), :class => "link_btn" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

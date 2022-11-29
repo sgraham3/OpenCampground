@@ -1,0 +1,39 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'New tax', new_setup_taxrate_path, :method => :get %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_taxrates_path, :method => :get %>
+<table border="1">
+  <tr>
+  <th>Name</th><th>Is Percent</th><th>Percentage</th><th>Daily Amount</th>
+  <th>Applies to Daily</th><th>Applies to Weekly</th>
+  <th>Applies to Monthly</th><th>Applies to Seasonal</th>
+  <th>Active?</th>
+  </tr>
+  
+<% @taxes.each do |tax| %>
+  <tr>
+    <td><%= h tax.name %></td>
+    <td><%= tax.is_percent %></td>
+    <td><%= tax.percent.to_s+"%" if tax.is_percent? %></td>
+    <td><%= number_2_currency(tax.amount) unless tax.is_percent? %></td>
+    <td><%= tax.apl_daily %></td>
+    <% if tax.is_percent? %>
+      <td><%= tax.apl_week.to_s %> </td>
+      <td><%= tax.apl_month.to_s %> </td>
+      <td><%= tax.apl_seasonal.to_s %> </td>
+    <% else %>
+      <td><%= if tax.apl_week?;if tax.weekly_charge_daily;"each day";else;"once per week";end;else;"false";end %></td>
+      <td><%= if tax.apl_month?;if tax.monthly_charge_daily;"each day";else;"once per month";end;else;"false";end %></td>
+      <td><%= if tax.apl_seasonal?;if tax.seasonal_charge_daily;"each day";else;"once per season";end;else;"false";end %></td>
+    <% end %>
+    <td><%= tax.active %></td>
+    <td><%= link_to 'Edit', edit_setup_taxrate_path(tax) %></td>
+    <td><%= link_to 'Delete', setup_taxrate_path(tax),
+			      :confirm => "Are you sure you want to delete #{tax.name}?",
+			      :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

@@ -1,0 +1,22 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<form method="post" action="<%= report_archives_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+<b>Archived Reservations</b>
+<table >
+<tr><th>Reservation #</th><th>Space</th><th>start date</th><th>end date</th><th>Name</th><th>Address</th><th>City</th><th>State</th><th>ZIP</th><th>Charges</th><th>log</th></tr>
+<% @result.each do |a| %>
+  <tr>
+  <td><%= a.reservation_id %> </td>
+  <td><%= a.space_name %> </td>
+  <td><%= a.startdate %> </td>
+  <td><%= a.enddate %> </td>
+  <td><%= a.name %> </td>
+  <td><%= a.address %> </td>
+  <td><%= a.city %> </td>
+  <td><%= a.state %> </td>
+  <td><%= a.mail_code %> </td>
+  <td align="right"><%= number_2_currency(a.total_charge) %></td>
+  <td><%= a.last_log_entry %> </td>
+  </tr>
+<% end %>
+</table>

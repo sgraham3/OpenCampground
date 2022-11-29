@@ -1,0 +1,100 @@
+<% if @option.remote_css.blank? %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png"/>
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"/>
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png"/>
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"/>
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png"/>
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"/>
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png"/>
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"/>
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"/>
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+  <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194"/>
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="msapplication-TileColor" content="#2b5797"/>
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <meta http-equiv="Expires" content="-1"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Cache-control" content="no-cache"/>
+  <meta http-equiv="Cache" content="no-cache"/>
+  <meta http-equiv="Expires" content="thu, 01 Jan 1998 12:00:00 GMT"/>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <% if controller.action_name == 'payment' %>
+    <% if Integration.first.name.start_with?('CardConnect') %>
+      <%= javascript_include_tag 'cc_tokenization'%>
+    <% elsif Integration.first.name.start_with?('CardKnox') %>
+      <%= javascript_include_tag "jquery-3.6.0.min" %>
+      <script> var $j = jQuery.noConflict(); </script>
+      <script src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifields.min.js"></script>
+      <%= javascript_include_tag 'ck_tokenization'%>
+    <% end %>
+  <% end %>
+  <%= javascript_include_tag :defaults %>
+  <% CalendarDateSelect.format=:euro_24hr %>
+  <%= calendar_date_select_includes :default,:locale => I18n.locale %>
+  <%= stylesheet_link_tag "colors" %>
+  <%= stylesheet_link_tag "scaffold", "office", "remote", :media => "screen" %>
+  <%= stylesheet_link_tag "ck_connect" %>
+  <%= stylesheet_link_tag "card_connect" %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
+
+  <title><%= controller.action_name %></title>
+</head>
+<body>
+  <div id="banner">
+    <% if File.readable?(Rails.root.join('public','images','Logo.png'))%>
+      <img src="/images/Logo.png" height="46" alt="Logo" />
+    <% elsif File.readable?(Rails.root.join('public','images','Logo.jpg'))%>
+      <img src="/images/Logo.jpg" height="46" alt="Logo" />
+    <% elsif File.readable?(Rails.root.join('public','images','OC_logo.2.png'))%>
+      <img src="/images/OC_logo.2.png" height="46" alt="Logo" />
+    <% elsif File.readable?(Rails.root.join('public','images','OC_Logo.png'))%>
+      <img src="/images/OC_logo.png" height="46" alt="Logo" />
+    <% end %>
+    <%= @page_title || controller.action_name %>
+    <span id="user">
+      <% form_tag '', :method => 'GET', :class => 'locale' do %>
+	<%= select_tag 'locale', options_for_select(LANGUAGES, "#{I18n.locale}"), :onchange => 'this.form.submit()' %>
+	<%= submit_tag 'submit' %>
+	<%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+      <% end %>
+    </span>
+  </div>
+    <div id="main-r">
+      <div id="flash">
+	<% if flash[:error] -%>
+	  <div id="error">
+	    <%= flash[:error] %>
+	  </div>
+	  <%= javascript_tag("$('error').focus()") %>
+	<% end -%>
+	<% if flash[:warning] -%>
+	  <div id="warning">
+	    <%= flash[:warning] %>
+	  </div>
+	<% end -%>
+	<% if flash[:notice] -%>
+	  <div id="notice">
+	    <%= flash[:notice] %>
+	  </div>
+	<% end -%>
+      </div>
+      <%= @content_for_layout %>
+  </div>
+</body>
+</html>
+<% else %>
+  <%= ERB.new(@option.remote_css).result(binding) %>
+<% end %>

@@ -1,0 +1,44 @@
+<% form_tag report_payments_path do %>
+  <b>Select start and end dates for report</b></br>
+  <div id="dates">
+    <%= render :partial => 'report/shared/dates' %>
+  </div>
+  <div>
+  <b>Time period shortcuts:</b><br />
+  Today <input <%= @today ? 'checked="checked"' : '' %>  id="today" name="when" type="radio" value="today" />
+  Yesterday <input <%= @yesterday ? 'checked="checked"' : '' %>  id="yesterday" name="when" type="radio" value="yesterday" />
+  Last Week <input <%= @l_week ? 'checked="checked"' : '' %>  id="l_week" name="when" type="radio" value="l_week" />
+  Last Month <input <%= @l_month ? 'checked="checked"' : '' %>  id="l_month" name="when" type="radio" value="l_month" />
+  Last Year <input <%= @l_year ? 'checked="checked"' : '' %>  id="l_year" name="when" type="radio" value="l_year" />
+  </div>
+  <div>
+  <b>Subtotals:</b><br />
+  No Subtotal <%= radio_button('payment', 'subtotal', 'None') %>
+  Subtotal by reservation <%= radio_button('payment', 'subtotal', 'Reservation') %>
+  Subtotal by week <%= radio_button('payment', 'subtotal', 'Week') %>
+  Subtotal by month <%= radio_button('payment', 'subtotal', 'Month', :checked=>'checked') %>
+  Subtotal by payment type <%= radio_button('payment', 'subtotal', 'Payment Type') %>
+  </div>
+  <%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>
+<%= observe_field :today,
+		  :on => 'selected',
+		  :url => report_payment_url(:update), :method => :put,
+		  :with => "'when='+encodeURIComponent(value)" %>
+<%= observe_field :yesterday,
+		  :on => 'selected',
+		  :url => report_payment_url(:update), :method => :put,
+		  :with => "'when='+encodeURIComponent(value)" %>
+<%= observe_field :l_week,
+		  :on => 'selected',
+		  :url => report_payment_url(:update), :method => :put,
+		  :with => "'when='+encodeURIComponent(value)" %>
+<%= observe_field :l_month,
+		  :on => 'selected',
+		  :url => report_payment_url(:update), :method => :put,
+		  :with => "'when='+encodeURIComponent(value)" %>
+<%= observe_field :l_year,
+		  :on => 'selected',
+		  :url => report_payment_url(:update), :method => :put,
+		  :with => "'when='+encodeURIComponent(value)" %>

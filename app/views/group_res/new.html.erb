@@ -1,0 +1,13 @@
+<% form_tag :action => 'find_spaces' do %>
+  <div id='dates'>
+    <%= render :partial => 'shared/dates' %>
+  </div>
+  <% if @option.show_available? %>
+    <span id="count">
+      <%= render :partial => 'shared/count' %>
+    </span>
+  <% end %>
+  <p> <%= render :partial => 'shared/sitetype' %></p>
+  <p> <%= submit_tag I18n.t('group_res.FindSpaces') %></p>
+<% end %>
+

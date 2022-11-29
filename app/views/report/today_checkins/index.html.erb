@@ -1,0 +1,44 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Reservation #</th>
+    <th>Arrival Date </th>
+    <th>Departure Date </th>
+    <th>Name </th>
+    <th>Phone </th>
+    <th>Email </th>
+    <th>Rig Type</th>
+    <th>Length</th>
+    <th>Slides</th>
+    <th>Space </th>
+    <% if controller.controller_name == 'sched_arrs' and @option.list_payments -%>
+      <th align="right"><%= I18n.t('reservation.Payment') %> </th>
+      <th align="right"><%= I18n.t('reservation.Due') %> </th>
+    <% end %>
+  </tr>
+  <% for reservation in @reservations %>
+    <tr>
+      <td><%= reservation.id %></td>
+      <td><%=DateFmt.format_date(reservation.startdate,'long') %></td>
+      <td><%=DateFmt.format_date(reservation.enddate,'long') %></td>
+      <td><%=h reservation.camper.full_name %></td>
+      <td><%=h reservation.camper.phone %></td>
+      <td><%=h reservation.camper.email %></td>
+      <td><%= reservation.rigtype.name unless reservation.rigtype_id.zero?  %></td>
+      <td><%= reservation.length %></td>
+      <td><%= reservation.slides %></td>
+      <td><%= reservation.space.name unless reservation.space_id.zero?  %></td>
+      <% if controller.controller_name == 'sched_arrs' and @option.list_payments -%>
+	<% pmt = Payment.total(reservation.id) -%>
+	<% if @option.use_override? && (reservation.override_total > 0.0) -%>
+	  <% due = reservation.override_total - pmt -%>
+	<% else -%>
+	  <% due = reservation.total + reservation.tax_amount - pmt -%>
+	<% end -%>
+	<td align="right"><%=number_2_currency(pmt) %></td>
+	<td align="right"<% if due != 0.0 -%> class="payment_due"<% end -%>><%=number_2_currency(due) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

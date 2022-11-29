@@ -1,0 +1,26 @@
+<div class="oc_form">
+
+  <% form_tag do %>
+    <fieldset>
+      <legend><%= I18n.t('login.Login')%></legend>
+      <div>
+	<label for="login_name"><%= I18n.t('user.Name')%>:</label>
+	<%= text_field_tag :name, params[:name], {:id => 'login_name', :size => 40} %>
+      </div>
+      <div>
+	<label for="password"><%= I18n.t('user.Password')%>:</label>
+	<%= password_field_tag :password, params[:password], {:size => 40, :autocomplete => 'off'} %>
+      </div>
+      <% if @option.use_autologin? %>
+      <div>
+	<%= I18n.t('login.Remember')%>
+        <%= check_box_tag :remember_me %>
+      </div>
+      <% end %>
+      <div>
+	<%= submit_tag I18n.t('login.SubmitLogin') %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<%= set_focus_to_id 'login_name' %>

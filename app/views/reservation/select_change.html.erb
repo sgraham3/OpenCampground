@@ -1,0 +1,12 @@
+<% form_tag :action => 'change_space' do %>
+  <input type="hidden" name="reservation_id" value="<%= @reservation.id -%>" />
+  <b><%= I18n.t('reservation.SelectDatesforChangedSpace') %></b>
+  <div id='dates'>
+    <%= render :partial => 'dates' %>
+  </div>
+  <%= render :partial => 'shared/count' %>
+  <p>
+    <%= render :partial => 'shared/sitetype' %>
+  </p>
+  <%= submit_tag I18n.t('reservation.FindSpace') %>
+<% end %>

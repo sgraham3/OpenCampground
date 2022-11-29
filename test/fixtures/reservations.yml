@@ -1,0 +1,535 @@
+--- 
+reservations_001: 
+  adults: "2"
+  camper_id: "1"
+  checked_in: true
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today).to_s %>"
+  group_id: 
+  id: "1"
+  kids: "0"
+  length: "0"
+  lock_version: "0"
+  pets: "0"
+  rig_age: "0"
+  rigtype_id: "5"
+  slides: "0"
+  space_id: "7"
+  special_request: Tent camper
+  startdate: "<%= (Date.today-5).to_s %>"
+  total: "14689"
+  override_total: "0"
+  vehicle_license: XYZ123
+  vehicle_state: TX
+reservations_002: 
+  adults: "2"
+  camper_id: "2"
+  checked_in: true
+  deposit: "0"
+  discount_id: "4"
+  enddate: "<%= (Date.today+1).to_s %>"
+  group_id: 
+  id: "2"
+  kids: "0"
+  length: "26"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "6"
+  rigtype_id: "3"
+  slides: "0"
+  space_id: "9"
+  special_request: ""
+  startdate: "<%= (Date.today-6).to_s %>"
+  total: 180.51
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_003: 
+  adults: "2"
+  camper_id: "4"
+  checked_in: true
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today).to_s %>"
+  group_id: 
+  id: "3"
+  kids: "0"
+  length: "32"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "8"
+  special_request: 
+  startdate: "<%= (Date.today-7).to_s %>"
+  total: 180.51
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_004: 
+  adults: "2"
+  camper_id: "6"
+  checked_in: true
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+1).to_s %>"
+  group_id: 
+  id: "4"
+  kids: "0"
+  length: "36"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "11"
+  special_request: 
+  startdate: "<%= (Date.today-20).to_s %>"
+  total: 541.55
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_005: 
+  adults: "2"
+  camper_id: "8"
+  checked_in: true
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+12).to_s %>"
+  group_id: 
+  id: "5"
+  kids: "0"
+  length: "19"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "2"
+  slides: "0"
+  space_id: "12"
+  special_request: 
+  startdate: "<%= (Date.today-30).to_s %>"
+  total: 881.23
+  override_total: "0"
+  vehicle_license: AQ158
+  vehicle_state: AZ
+reservations_006: 
+  adults: "2"
+  camper_id: "10"
+  checked_in: true
+  deposit: "0"
+  discount_id: "2"
+  enddate: "<%= (Date.today+3).to_s %>"
+  group_id: 
+  id: "6"
+  kids: "0"
+  length: "40"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "36"
+  special_request: 
+  startdate: "<%= (Date.today-4).to_s %>"
+  total: "16166"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_007: 
+  adults: "2"
+  camper_id: "12"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+1).to_s %>"
+  group_id: 
+  id: "7"
+  kids: "0"
+  length: "40"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "7"
+  special_request: 
+  startdate: "<%= (Date.today).to_s %>"
+  total: "2937"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_008: 
+  adults: "2"
+  camper_id: "3"
+  deposit: "0"
+  discount_id: "4"
+  enddate: "<%= (Date.today+7).to_s %>"
+  group_id: 
+  id: "8"
+  kids: "0"
+  length: "42"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "15"
+  rigtype_id: "4"
+  slides: "0"
+  space_id: "13"
+  special_request: ""
+  startdate: "<%= (Date.today).to_s %>"
+  total: "18051"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_009: 
+  adults: "2"
+  camper_id: "5"
+  deposit: "0"
+  discount_id: "3"
+  enddate: "<%= (Date.today+1).to_s %>"
+  group_id: 
+  id: "9"
+  kids: "0"
+  length: "30"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "16"
+  special_request: 
+  startdate: "<%= (Date.today).to_s %>"
+  total: "2686"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_010: 
+  adults: "2"
+  camper_id: "7"
+  deposit: "0"
+  discount_id: "2"
+  enddate: "<%= (Date.today+30).to_s %>"
+  group_id: 
+  id: "10"
+  kids: "0"
+  length: "32"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "15"
+  special_request: 
+  startdate: "<%= (Date.today).to_s %>"
+  total: "52488"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_011: 
+  adults: "2"
+  camper_id: "9"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+2).to_s %>"
+  group_id: 
+  id: "11"
+  kids: "0"
+  length: "35"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "11"
+  special_request: 
+  startdate: "<%= (Date.today+1).to_s %>"
+  total: "2937"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_012: 
+  adults: "2"
+  camper_id: "11"
+  deposit: "0"
+  discount_id: "3"
+  enddate: "<%= (Date.today+4).to_s %>"
+  group_id: 
+  id: "12"
+  kids: "0"
+  length: "35"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "16"
+  special_request: 
+  startdate: "<%= (Date.today+1).to_s %>"
+  total: "8059"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_013: 
+  adults: "2"
+  camper_id: "13"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+5).to_s %>"
+  group_id: 
+  id: "13"
+  kids: "0"
+  length: "24"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "8"
+  rigtype_id: "6"
+  slides: "0"
+  space_id: "17"
+  special_request: ""
+  startdate: "<%= (Date.today+1).to_s %>"
+  total: "11751"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_014: 
+  adults: "2"
+  camper_id: "13"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+32).to_s %>"
+  group_id: 
+  id: "14"
+  kids: "0"
+  length: "19"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "2"
+  slides: "0"
+  space_id: "20"
+  special_request: 
+  startdate: "<%= (Date.today+2).to_s %>"
+  total: "58320"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_015: 
+  adults: "2"
+  camper_id: "5"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+9).to_s %>"
+  group_id: 
+  id: "15"
+  kids: "0"
+  length: "20"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "4"
+  rigtype_id: "8"
+  slides: "0"
+  space_id: "34"
+  special_request: ""
+  startdate: "<%= (Date.today+2).to_s %>"
+  total: "16795"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_016: 
+  adults: "2"
+  camper_id: "7"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+13).to_s %>"
+  group_id: 
+  id: "16"
+  kids: "0"
+  length: "34"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "36"
+  special_request: 
+  startdate: "<%= (Date.today+3).to_s %>"
+  total: "25190"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_017: 
+  adults: "2"
+  camper_id: "9"
+  deposit: "0"
+  discount_id: "2"
+  enddate: "<%= (Date.today+11).to_s %>"
+  group_id: 
+  id: "17"
+  kids: "0"
+  length: "33"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "41"
+  special_request: 
+  startdate: "<%= (Date.today+4).to_s %>"
+  total: "16166"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_018: 
+  adults: "2"
+  camper_id: "8"
+  deposit: "0"
+  discount_id: "5"
+  enddate: "<%= (Date.today+7).to_s %>"
+  group_id: 
+  id: "18"
+  kids: "0"
+  length: "40"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "8"
+  rigtype_id: "4"
+  slides: "0"
+  space_id: "9"
+  special_request: ""
+  startdate: "<%= (Date.today+4).to_s %>"
+  total: "5044"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_019: 
+  adults: "2"
+  camper_id: "11"
+  deposit: "0"
+  discount_id: "4"
+  enddate: "<%= (Date.today+21).to_s %>"
+  group_id: 
+  id: "19"
+  kids: "0"
+  length: "20"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "62"
+  special_request: ""
+  startdate: "<%= (Date.today+7).to_s %>"
+  total: "37360"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_020: 
+  adults: "2"
+  camper_id: "6"
+  deposit: "0"
+  discount_id: "3"
+  enddate: "<%= (Date.today+12).to_s %>"
+  group_id: 
+  id: "20"
+  kids: "0"
+  length: 
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "5"
+  slides: "0"
+  space_id: "91"
+  special_request: tent
+  startdate: "<%= (Date.today+8).to_s %>"
+  total: "6223"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_021: 
+  adults: "2"
+  camper_id: "11"
+  deposit: "0"
+  discount_id: "3"
+  enddate: "<%= (Date.today+4).to_s %>"
+  group_id: 
+  id: "21"
+  kids: "0"
+  length: "35"
+  lock_version: "1"
+  pets: "0"
+  rig_age: 
+  rigtype_id: "1"
+  slides: "0"
+  space_id: "90"
+  special_request: 
+  startdate: "<%= (Date.today+1).to_s %>"
+  total: "8059"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_022: 
+  adults: "2"
+  camper_id: "8"
+  deposit: "0"
+  discount_id: "5"
+  enddate: "<%= (Date.today+7).to_s %>"
+  group_id: 
+  id: "22"
+  kids: "0"
+  length: "40"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "8"
+  rigtype_id: "4"
+  slides: "0"
+  space_id: "91"
+  special_request: ""
+  startdate: "<%= (Date.today+4).to_s %>"
+  total: "5044"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_023: 
+  adults: "2"
+  camper_id: "13"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+5).to_s %>"
+  group_id: 
+  id: "23"
+  kids: "0"
+  length: "24"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "8"
+  rigtype_id: "6"
+  slides: "0"
+  space_id: "62"
+  special_request: ""
+  startdate: "<%= (Date.today+1).to_s %>"
+  total: "11751"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 
+reservations_024: 
+  adults: "2"
+  camper_id: "5"
+  deposit: "0"
+  discount_id: "1"
+  enddate: "<%= (Date.today+9).to_s %>"
+  group_id: 
+  id: "24"
+  kids: "0"
+  length: "20"
+  lock_version: "1"
+  pets: "0"
+  rig_age: "4"
+  rigtype_id: "8"
+  slides: "0"
+  space_id: "63"
+  special_request: ""
+  startdate: "<%= (Date.today+2).to_s %>"
+  total: "16795"
+  override_total: "0"
+  vehicle_license: 
+  vehicle_state: 

@@ -1,0 +1,131 @@
+--- 
+payments_013: 
+  reservation_id: "4"
+  memo: 
+  id: "21"
+  pmt_date: "<%= (Date.today-6).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "3"
+  amount: "258.77"
+  cc_expire: 
+payments_012: 
+  reservation_id: "2"
+  memo: 
+  id: "20"
+  pmt_date: "<%= (Date.today-4).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "5"
+  amount: "87.59"
+  cc_expire: 
+payments_011: 
+  reservation_id: "6"
+  memo: 
+  id: "19"
+  pmt_date: "<%= (Date.today-40).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "4"
+  amount: "75.74"
+  cc_expire: 
+payments_010: 
+  reservation_id: "4"
+  memo: 
+  id: "18"
+  pmt_date: "<%= (Date.today-65).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "3"
+  amount: "220.00"
+  cc_expire: 
+payments_009: 
+  reservation_id: "2"
+  memo: Deposit
+  id: "17"
+  pmt_date: "<%= (Date.today-24).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "5"
+  amount: "72.00"
+  cc_expire: 
+payments_008: 
+  reservation_id: "6"
+  memo: Deposit
+  id: "16"
+  pmt_date: "<%= (Date.today-20).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "4"
+  amount: "65.00"
+  cc_expire: 
+payments_007: 
+  reservation_id: "5"
+  memo: 
+  id: "7"
+  pmt_date: "<%= (Date.today-1).to_s %>"
+  name: 
+  credit_card_no: "132"
+  creditcard_id: "2"
+  amount: "103.67"
+  cc_expire: 
+payments_006: 
+  reservation_id: "5"
+  memo: Partial
+  id: "6"
+  pmt_date: "<%= (Date.today-1.month).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "2"
+  amount: "576.00"
+  cc_expire: 
+payments_005: 
+  reservation_id: "5"
+  memo: Deposit
+  id: "5"
+  pmt_date: "<%= (Date.today-6.month).to_s %>"
+  name: 
+  credit_card_no: "12345678"
+  creditcard_id: "5"
+  amount: "250.00"
+  cc_expire: 
+payments_004: 
+  reservation_id: "1"
+  memo: 
+  id: "4"
+  pmt_date: "<%= (Date.today-5).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "1"
+  amount: "65.95"
+  cc_expire: 
+payments_003: 
+  reservation_id: "1"
+  memo: Deposit
+  id: "3"
+  pmt_date: "<%= (Date.today-45).to_s %>"
+  name: 
+  credit_card_no: "12345678"
+  creditcard_id: "4"
+  amount: "66.00"
+  cc_expire: 
+payments_002: 
+  reservation_id: "3"
+  memo: 
+  id: "2"
+  pmt_date: "<%= (Date.today-7).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "2"
+  amount: "84.59"
+  cc_expire: 
+payments_001: 
+  reservation_id: "3"
+  memo: Deposit
+  id: "1"
+  pmt_date: "<%= (Date.today-27).to_s %>"
+  name: 
+  credit_card_no: ""
+  creditcard_id: "2"
+  amount: "75.00"
+  cc_expire: 

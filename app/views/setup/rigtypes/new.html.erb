@@ -1,0 +1,9 @@
+<%= render :partial => 'explain' %>
+<% form_tag setup_rigtypes_path do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'rigtype_name' %>
+<%= link_to 'Cancel', setup_rigtypes_path, :class => 'link_btn' %>

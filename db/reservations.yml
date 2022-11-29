@@ -1,0 +1,1126 @@
+--- 
+reservations_009: 
+  tax_str: |
+    --- 
+    - :amount: $1.03
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $1.25
+      :count: 1
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "5"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+1).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "3"
+  log: 
+  total: "21.60"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "2.28"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "9"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "30"
+  startdate: "<%= (Date.today).to_s %>"
+  space_id: "16"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_008: 
+  tax_str: |
+    --- 
+    - :amount: $6.84
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "3"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+7).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "4"
+  log: 
+  total: "144.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "15.59"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "8"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "15"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "42"
+  startdate: "<%= (Date.today).to_s %>"
+  space_id: "13"
+  rigtype_id: "4"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_007: 
+  tax_str: |
+    --- 
+    - :amount: $1.14
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $1.25
+      :count: 1
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "12"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+1).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "24.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "2.39"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "7"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "40"
+  startdate: "<%= (Date.today).to_s %>"
+  space_id: "7"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_006: 
+  tax_str: |
+    --- 
+    - :amount: $5.99
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: 
+  created_at: "<%= (Time.now - 24.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "10"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+3).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "2"
+  log: 
+  total: "126.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "14.74"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "6"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "40"
+  startdate: "<%= (Date.today-4).to_s %>"
+  space_id: "36"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_005: 
+  tax_str: |
+    --- 
+    - :amount: $41.04
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $17.50
+      :count: 14
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: 
+  created_at: "<%= (Time.now - 90.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: AZ
+  camper_id: "8"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+12).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "864.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "58.54"
+  adults: "2"
+  vehicle_license: AQ158
+  group_id: 
+  id: "5"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "19"
+  startdate: "<%= (Date.today-1.month).to_s %>"
+  space_id: "12"
+  rigtype_id: "2"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_004: 
+  tax_str: |
+    --- 
+    - :amount: $20.52
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $26.25
+      :count: 28
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: 
+  created_at: "<%= (Time.now - 80.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "6"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+1).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "432.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "46.77"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "4"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "36"
+  startdate: "<%= (Date.today-20).to_s %>"
+  space_id: "11"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_003: 
+  tax_str: |
+    --- 
+    - :amount: $6.84
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: 
+  created_at: "<%= (Time.now - 37.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "4"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "144.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "15.59"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "3"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "32"
+  startdate: "<%= (Date.today-7).to_s %>"
+  space_id: "8"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_002: 
+  tax_str: |
+    --- 
+    - :amount: $6.84
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: ""
+  created_at: "<%= (Time.now - 46.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "2"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+1).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "4"
+  log: 
+  total: "144.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "15.59"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "2"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "6"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "26"
+  startdate: "<%= (Date.today-6).to_s %>"
+  space_id: "9"
+  rigtype_id: "3"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_001: 
+  tax_str: |
+    --- 
+    - :amount: $5.70
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $6.25
+      :count: 5
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: "Tent camper"
+  created_at: "<%= (Time.now - 35.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: TX
+  camper_id: "1"
+  unconfirmed_remote: false
+  confirm: true
+  enddate:  "<%= (Date.today).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "120.00"
+  lock_version: "1"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "11.95"
+  adults: "2"
+  vehicle_license: XYZ123
+  group_id: 
+  id: "1"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "0"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "0"
+  startdate: "<%= (Date.today-5).to_s %>"
+  space_id: "7"
+  rigtype_id: "5"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_019: 
+  tax_str: |
+    --- 
+    - :amount: $14.25
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $17.50
+      :count: 14
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: "Arriving Late"
+  created_at: "<%= (Time.now - 7.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "11"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+21).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "4"
+  log: 
+  total: "300.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "31.75"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "19"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "20"
+  startdate: "<%= (Date.today+7).to_s %>"
+  space_id: "62"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_018: 
+  tax_str: |
+    --- 
+    - :amount: $1.71
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $3.75
+      :count: 3
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now - 4.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "8"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+7).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "5"
+  log: 
+  total: "36.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "5.46"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "18"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "8"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "40"
+  startdate: "<%= (Date.today+4).to_s %>"
+  space_id: "9"
+  rigtype_id: "4"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_017: 
+  tax_str: |
+    --- 
+    - :amount: $5.99
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 4.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "9"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+11).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "2"
+  log: 
+  total: "126.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "14.74"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "17"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "33"
+  startdate: "<%= (Date.today+4).to_s %>"
+  space_id: "41"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_016: 
+  tax_str: |
+    --- 
+    - :amount: $9.50
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $12.50
+      :count: 10
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 3.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "7"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+13).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "200.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "22.00"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "16"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "34"
+  startdate: "<%= (Date.today+3).to_s %>"
+  space_id: "36"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_015: 
+  tax_str: |
+    --- 
+    - :amount: $6.27
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now - 2.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "5"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+9).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "132.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "15.02"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "15"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "4"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "20"
+  startdate: "<%= (Date.today+2).to_s %>"
+  space_id: "34"
+  rigtype_id: "8"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_014: 
+  tax_str: |
+    --- 
+    - :amount: $29.64
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $37.50
+      :count: 30
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 2.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "13"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+2+1.month).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "624.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "67.14"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "14"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "19"
+  startdate: "<%= (Date.today+2).to_s %>"
+  space_id: "20"
+  rigtype_id: "2"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_013: 
+  tax_str: |
+    --- 
+    - :amount: $4.56
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $5.00
+      :count: 4
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now - 1.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "2"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+5).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "96.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "9.56"
+  adults: "2"
+  vehicle_license: 
+  group_id: "1"
+  id: "13"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "8"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "24"
+  startdate: "<%= (Date.today+1).to_s %>"
+  space_id: "17"
+  rigtype_id: "6"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_012: 
+  tax_str: |
+    --- 
+    - :amount: $3.08
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $3.75
+      :count: 3
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 1.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "10"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+4).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "3"
+  log: 
+  total: "64.80"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "6.83"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "12"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "35"
+  startdate: "<%= (Date.today+1).to_s %>"
+  space_id: "16"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_011: 
+  tax_str: |
+    --- 
+    - :amount: $1.14
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $1.25
+      :count: 1
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 1.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "9"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+2).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "24.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "2.39"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "11"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "35"
+  startdate: "<%= (Date.today+1).to_s %>"
+  space_id: "11"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_010: 
+  tax_str: |
+    --- 
+    - :amount: $29.41
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $37.50
+      :count: 30
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 45.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "7"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+1.month).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "2"
+  log: 
+  total: "619.20"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "66.91"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "10"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "32"
+  startdate: "<%= (Date.today).to_s %>"
+  space_id: "15"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_024: 
+  tax_str: |
+    --- 
+    - :amount: $7.13
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $8.75
+      :count: 7
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now - 2.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "3"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+9).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "150.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "15.88"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "24"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "4"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "20"
+  startdate: "<%= (Date.today+2).to_s %>"
+  space_id: "63"
+  rigtype_id: "8"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_023: 
+  tax_str: |
+    --- 
+    - :amount: $4.75
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $5.00
+      :count: 4
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now - 1.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "13"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+5).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "1"
+  log: 
+  total: "100.00"
+  lock_version: "3"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "9.75"
+  adults: "2"
+  vehicle_license: 
+  group_id: "1"
+  id: "23"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "8"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "24"
+  startdate: "<%= (Date.today+1).to_s %>"
+  space_id: "62"
+  rigtype_id: "6"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_022: 
+  tax_str: |
+    --- 
+    - :amount: $0.86
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $3.75
+      :count: 3
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: ""
+  created_at: "<%= (Time.now - 4.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "4"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+7).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "5"
+  log: 
+  total: "18.00"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "4.61"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "22"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: "8"
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "40"
+  startdate: "<%= (Date.today+4).to_s %>"
+  space_id: "91"
+  rigtype_id: "4"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_021: 
+  tax_str: |
+    --- 
+    - :amount: $1.54
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $3.75
+      :count: 3
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: 
+  created_at: "<%= (Time.now - 1.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "11"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+4).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "3"
+  log: 
+  total: "32.40"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "5.29"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "21"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: "35"
+  startdate: "<%= (Date.today+1).to_s %>"
+  space_id: "90"
+  rigtype_id: "1"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_020: 
+  tax_str: |
+    --- 
+    - :amount: $2.05
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $5.00
+      :count: 4
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: false
+  special_request: "tent"
+  created_at: "<%= (Time.now - 12.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "6"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today+12).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "3"
+  log: 
+  total: "43.20"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "7.05"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "25"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: 
+  startdate: "<%= (Date.today+8).to_s %>"
+  space_id: "91"
+  rigtype_id: "5"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"
+reservations_025: 
+  tax_str: |
+    --- 
+    - :amount: $2.05
+      :desc: 4.75%
+      :name: Sales tax
+    - :amount: $5.00
+      :count: 6
+      :desc: $1.25 per night
+      :name: Room tax
+
+  pets: "0"
+  checked_in: true
+  special_request: "tent"
+  created_at: "<%= (Time.now - 12.day).strftime("%Y-%m-%d %H:%M:%S") %>"
+  vehicle_state: 
+  camper_id: "6"
+  unconfirmed_remote: false
+  confirm: true
+  enddate: "<%= (Date.today-2).to_s %>"
+  ext_charges: "0.00"
+  seasonal: false
+  discount_id: "3"
+  log: 
+  total: "43.20"
+  lock_version: "2"
+  kids: "0"
+  vehicle_license_2: 
+  tax_amount: "7.05"
+  adults: "2"
+  vehicle_license: 
+  group_id: 
+  id: "20"
+  slides: "0"
+  seasonal_charges: "0.00"
+  rig_age: 
+  recommender_id: "0"
+  vehicle_state_2: 
+  length: 
+  startdate: "<%= (Date.today-8).to_s %>"
+  space_id: "13"
+  rigtype_id: "5"
+  seasonal_rate: "0.00"
+  override_total: "0.00"
+  deposit: "0.00"

@@ -1,0 +1,15 @@
+<%= error_messages_for 'sitetype' %>
+
+<!--[form:sitetype]-->
+<p><label for="sitetype_name">Sitetype name</label><br/>
+<%= text_field 'sitetype', 'name'  %></p>
+<p>
+Taxes that apply:
+<%= sitetype_taxrates %>
+</p>
+<% unless controller.action_name == 'new' %>
+  <p><label for="sitetype_active">Active?</label>
+  <%= check_box :sitetype, :active  %></p>
+<% end %>
+<!--[eoform:sitetype]-->
+

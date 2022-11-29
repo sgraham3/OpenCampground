@@ -1,0 +1,147 @@
+#! /bin/sh
+
+###############################################################
+# This is setup for the Debian distribution or derived
+# distributions like Ubuntu etc.  On other distribuitions you
+# may want to put this functionallity in /etc/rc/rc.local
+# or a similar file.  Systems using a SysV init structure
+# should be able to use this as is though installation may
+# be different.
+#
+# Install this file as /etc/init.d/open_campground by
+# sudo cp open_campground.init /etc/init.d/open_campground
+# and then set it up (as root) with:
+# sudo update-rc.d open_campground defaults
+###############################################################
+
+#### BEGIN INIT INFO
+# Provides:          open_campground
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Should-Start:      mongrel_rails
+# Should-Stop:       mongrel_rails
+# Default-Start:     2 3 4 5
+# Default-Stop:      S 0 1 6
+# Short-Description: Start and stop the mongrel_rails server for open_campground
+# Description:       Controls an html server which runs the open_campground
+#                    ruby on rails application.
+### END INIT INFO
+
+###############################################################
+# Author: Norman Scherer <norm@opencampground.com>
+###############################################################
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+DESC="HTML server for Open Campground"
+NAME=open_campground
+
+# Read configuration variable file if it is present
+[ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+OC_DIR_=${OC_DIR:=/home/opencampground/Open_campground/}
+MODE_=${MODE:=training}
+USER_=${USER:=opencampground}
+GROUP_=${GROUP:=opencampground}
+LOG_=${LOG:=/dev/null}
+PORT_=${PORT:=3000}
+ADDR_=${ADDR:=0.0.0.0}
+
+PIDFILE=${OC_DIR_}/tmp/pids/${NAME}.pid
+SCRIPTNAME=/etc/init.d/${NAME}
+PROGRAM=mongrel_rails
+STOP_ARGS="--pid $PIDFILE"
+START_ARGS="--environment $MODE_ --chdir $OC_DIR_ --log $LOG_ --user $USER_ --group $GROUP_ --port $PORT_ --address $ADDR_ --daemonize"
+
+# Exit if the server package is not installed
+[ -x `which ${PROGRAM}` ] || exit 0
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
+. /lib/lsb/init-functions
+
+
+#
+# Function that starts the daemon/service
+#
+do_start()
+{
+	# Return
+	#   0 if daemon has been started
+	#   1 if daemon was already running
+	#   2 if daemon could not be started
+	cd "$OC_DIR_"
+	$PROGRAM start $STOP_ARGS $START_ARGS || return 2
+	return 0
+}
+
+#
+# Function that stops the daemon/service
+#
+do_stop()
+{
+	# Return
+	#   0 if daemon has been stopped
+	#   1 if daemon was already stopped
+	#   2 if daemon could not be stopped
+	#   other if a failure occurred
+	$PROGRAM stop $STOP_ARGS > /dev/null
+	RETVAL=$?
+	if [ $RETVAL ] ; then return $RETVAL ;fi
+	# Wait for children to finish too if this is a daemon that forks
+	# and if the daemon is only ever run from this initscript.
+	# If the above conditions are not satisfied then add some other code
+	# that waits for the process to drop all resources that could be
+	# needed by services started subsequently.  A last resort is to
+	# sleep for some time.
+	if [ -f $PIDFILE ] ; then
+	  kill -INT `cat $PIDFILE`
+	fi
+	[ "$?" = 2 ] && return 2
+	# Many daemons don't delete their pidfiles when they exit.
+	rm -f $PIDFILE
+	return "$RETVAL"
+}
+
+case "$1" in
+  start)
+	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$PROGRAM"
+	do_start
+	case "$?" in
+		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+	esac
+	;;
+  stop)
+	[ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$PROGRAM"
+	do_stop
+	case "$?" in
+		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+	esac
+	;;
+  restart|force-reload)
+	log_daemon_msg "Restarting $DESC" "$PROGRAM"
+	do_stop
+	case "$?" in
+	  0|1)
+		do_start
+		case "$?" in
+			0) log_end_msg 0 ;;
+			1) log_end_msg 1 ;; # Old process is still running
+			*) log_end_msg 1 ;; # Failed to start
+		esac
+		;;
+	  *)
+	  	# Failed to stop
+		log_end_msg 1
+		;;
+	esac
+	;;
+  *)
+	#echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+	echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+	exit 3
+	;;
+esac
+
+:

@@ -1,0 +1,8 @@
+<% form_tag setup_prices_path do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'price_name' %>
+<%= button_to 'Cancel', setup_prices_path, :method => :get %>

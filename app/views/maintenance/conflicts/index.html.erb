@@ -1,0 +1,37 @@
+<%= render :partial => '/maintenance/buttons' %>
+<table border="1">
+  <tr>
+    <th>Space</th>
+    <th colspan="4" align="center">reservation 1</th>
+    <th colspan="4" align="center">reservation 2</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Reservation</th>
+    <th>Camper</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
+    <th>Reservation</th>
+    <th>Camper</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
+  </tr>
+
+  <% @conflicts.each_index do |conflict| %>
+    <% first = Reservation.find(@conflicts[conflict]["first"].to_i) %>
+    <% second = Reservation.find(@conflicts[conflict]["second"].to_i) %>
+    <tr>
+      <td><%= first.space.name %> </td>
+      <th align="center"><%= link_to "reservation #{first.id}", :controller => '/reservation', :action => 'show', :reservation_id => first.id %></td>
+      <td><%= safeCamper(first.camper) %> </td>
+      <td><%= first.startdate %> </td>
+      <td><%= first.enddate %> </td>
+      <th align="center"><%= link_to "reservation #{second.id}", :controller => '/reservation', :action => 'show', :reservation_id => second.id %></td>
+      <td><%= safeCamper(second.camper) %> </td>
+      <td><%= second.startdate %> </td>
+      <td><%= second.enddate %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<br />

@@ -1,0 +1,21 @@
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th><%= I18n.t('reservation.ReservationNumber') %></th>
+    <th><%= I18n.t('reservation.StartDate') %> </th>
+    <th><%= I18n.t('reservation.EndDate') %> </th>
+    <th><%= I18n.t('camper.Name') %> </th>
+    <% if @option.use_rig_type? %>
+      <th><%= I18n.t('reservation.RigType') %></th>
+    <% end %>
+    <% if @option.use_slides? %>
+      <th><%= I18n.t('reservation.Slides') %> </th>
+    <% end %>
+    <% if @option.use_length? %>
+      <th><%= I18n.t('reservation.Length') %> </th>
+    <% end %>
+    <th><%= I18n.t('reservation.Space') %> </th>
+  </tr>
+  <% for reservation in @reservations %>
+    <%= render :partial  => 'shared/expand', :object => reservation %>
+  <% end %>
+</table>

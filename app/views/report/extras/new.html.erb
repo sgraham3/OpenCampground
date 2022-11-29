@@ -1,0 +1,22 @@
+<% form_tag report_extras_path do %>
+<b>Select start and end dates for report</b></br>
+<%= render :partial => 'report/shared/dates' %>
+    <p>
+    Extras to report on:
+    <% @extras.each do |ex| %>
+      <%= ex.name %>:
+      <input type="checkbox" name="extras[<%= ex.id.to_s %>]" />
+    <% end %>
+    </p>
+    <p>
+    All will be reported if none are selected.
+    </p>
+    <p>
+    No Subtotal <%= radio_button('extra', 'subtotal', 'None', :checked => 'checked') %>
+    Subtotal by reservation <%= radio_button('extra', 'subtotal', 'Reservation') %>
+    Subtotal by week <%= radio_button('extra', 'subtotal', 'Week') %>
+    Subtotal by month <%= radio_button('extra', 'subtotal', 'Month') %>
+</p>
+<p><%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

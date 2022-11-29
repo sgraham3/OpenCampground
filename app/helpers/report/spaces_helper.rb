@@ -1,0 +1,2 @@
+module Report::SpacesHelper
+end

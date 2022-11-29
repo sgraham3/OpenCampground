@@ -1,0 +1,97 @@
+<% if @option.use_remote_reservations? && expand.unconfirmed_remote? %>
+  <tr class="unconfirmed">
+<% elsif controller.action_name == 'expand' %>
+  <% if expand.startdate < current_Date %>
+       <tr class="late_checkin">
+  <% elsif expand.startdate == current_Date %>
+       <tr class="today_checkin">
+  <% else %>
+       <tr>
+  <% end %>
+<% elsif controller.action_name == 'in_park_expand' %>
+  <% if expand.enddate < current_Date %>
+       <tr class="overstay">
+  <% elsif expand.enddate == current_Date %>
+       <tr class="today_checkout">
+  <% else %>
+       <tr>
+  <% end %>
+<% end %>
+  <% if expand.storage? && @option.use_storage? %>
+    <td><%= expand.id.to_s %>(S)</td>
+  <% else %>
+    <td><%= expand.id.to_s %></td>
+  <% end %>
+  <td><%=I18n.l(expand.startdate, :format => :long) %></td>
+  <td><%=I18n.l(expand.enddate, :format => :long) %></td>
+  <% if expand.group_id == nil %>
+    <td><%= link_to safeCamper(expand.camper), :controller => 'camper', :action => 'show', :camper_id => expand.camper %></td>
+  <% else %>
+    <% if controller.action_name == 'show' && controller.controller_name == 'group' %>
+      <td><%= link_to safeCamper(expand.camper), :controller => 'camper', :action => 'show', :camper_id => expand.camper %></td>
+    <% else%>
+      <td><b><%= I18n.t('reservation.Group') + '</b>' + ':&nbsp;' + expand.group.name %>&nbsp;<%= link_to safeCamper(expand.camper), :controller => 'camper', :action => 'show', :camper_id => expand.camper %></td>
+    <% end %>
+  <% end %>
+    <% if controller.action_name == 'show' && controller.controller_name == 'group' %>
+      <% if @option.use_rig_type? %>
+	<td><%=expand.rigtype.name if expand.rigtype_id? %></td>
+      <% end %>
+      <td><%=expand.space.name if expand.space_id? %></td>
+    <% else%>
+      <% if @option.use_license? %>
+	<td><%=expand.vehicle_license %>&nbsp;<%=expand.vehicle_state %></td>
+      <% end %>
+      <% if @option.use_rig_type? %>
+	<td><%=expand.rigtype.name if expand.rigtype_id? %></td>
+      <% end %>
+      <% if @option.use_slides? %>
+	<td align="center"><%=expand.slides %></td>
+      <% end %>
+      <% if @option.use_length? %>
+	<td align="center"><%=expand.length %></td>
+      <% end %>
+      <td><%=expand.space.name if expand.space_id? %></td>
+      <% if @option.list_payments? -%>
+	<% pmt = Payment.total(expand.id) -%>
+	<% if @option.use_override? && (expand.override_total > 0.0) -%>
+	  <% due = expand.override_total - pmt -%>
+	<% else -%>
+	  <% due = expand.total + expand.tax_amount - pmt -%>
+	<% end -%>
+	<td align="right"><%=number_2_currency(pmt) %></td>
+	<td align="right"<% if due.round(2) != 0.0 -%> class="payment_due"<% end -%>><%=number_2_currency(due) %></td>
+      <% end -%>
+    <% end -%>
+    <% unless expand.unconfirmed_remote? %>
+      <td><%= link_to I18n.t('reservation.Show'), :controller => 'reservation', :action => 'show', :reservation_id => expand %></td>
+    <% end -%>
+    <% if expand.archived %>
+      <% if controller.action_name == 'show' && controller.controller_name == 'group' %>
+        <td><%=close_reason(expand)%> </td>
+      <% else %>
+	<td><%= I18n.t('reservation.Archived') %></td>
+      <% end -%>
+    <% elsif expand.checked_in %>
+      <td><%= link_to I18n.t('reservation.Checkout'), {:controller => :reservation, :action => 'do_checkout', :reservation_id => expand},
+				  :confirm => I18n.t('reservation.ConfirmCheckoutDate', :name => safeCamper(expand.camper), :enddate => I18n.l(expand.enddate, :format => :long)),
+				  :method => "post" %></td>
+      <%= extend_stay(expand) %>
+    <% else %>
+      <% if @option.use_remote_reservations? && expand.unconfirmed_remote? %>
+	<td><%= link_to I18n.t('titles.Review'), :action => 'review', :reservation_id => expand %></td>
+      <% else %>
+	<td>
+          <% if expand.startdate == current_Date %>
+            <%= link_to I18n.t('reservation.Checkin'), :controller => :reservation, :action => 'checkin', :reservation_id => expand %>
+          <% else %>
+            <%= link_to I18n.t('reservation.Checkin'), {:controller => :reservation, :action => 'checkin', :reservation_id => expand}, 
+                                            :confirm => I18n.t('reservation.ConfirmCheckin', :name => safeCamper(expand.camper)) %>
+          <% end %>
+	</td>
+	<td><%= link_to I18n.t('reservation.Cancel'), { :controller => :reservation, :action => 'cancel', :reservation_id => expand },
+				  :confirm => I18n.t('reservation.ConfirmCancel', :name => safeCamper(expand.camper)),
+				  :method => "post" %></td>
+      <% end %>
+    <% end %>
+</tr>

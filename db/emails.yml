@@ -1,0 +1,17 @@
+--- 
+emails_001: 
+  cc: ""
+  update_subject: Reservation Update
+  smtp_authentication_id: "1"
+  charset: utf-8
+  feedback_subject: Reservation Feedback
+  smtp_password: ""
+  smtp_domain: ""
+  smtp_address: ""
+  id: "1"
+  smtp_username: ""
+  smtp_port: "25"
+  bcc: ""
+  confirm_subject: Reservation Confirmation
+  reply: ""
+  sender: ""

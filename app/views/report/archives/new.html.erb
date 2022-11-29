@@ -1,0 +1,8 @@
+<% form_tag report_archives_path do %>
+<p><b>
+Select start and end dates for desired report:
+</b></p>
+<%= render :partial => 'report/shared/dates' %>
+<p> <%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

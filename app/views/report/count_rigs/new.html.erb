@@ -1,0 +1,21 @@
+<% form_tag report_count_rigs_path do %>
+<b>Select sort fields for report</b></br>
+<table>
+<tr>
+<td>Primary Sort</td><td>Secondary Sort</td><td>Tertiary Sort</td>
+</tr>
+<tr>
+<td>
+<%= select('Sorts','sort1', %w{site\ type space\ name start\ date end\ date none}) %>
+</td>
+<td>
+<%= select('Sorts','sort2', %w{space\ name start\ date end\ date site\ type none}) %>
+</td>
+<td>
+<%= select('Sorts','sort3', %w{none site\ type space\ name start\ date end\ date }) %>
+</td>
+</tr>
+</table>
+<p> <%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

@@ -1,0 +1,80 @@
+<script type="text/javascript">
+  function is_percent()
+  {
+    showhide('apply_seasonal');
+    showhide('apply_monthly');
+    showhide('apply_weekly');
+    showhide('percent');
+    showhide('amount');
+  }
+</script>
+<%= error_messages_for 'taxrate' %>
+<!--[form:taxrate]-->
+<p><label for="taxrate_name">Name of Tax</label><br/>
+<%= text_field 'taxrate', 'name'  %></p>
+
+<p><label for="taxrate_is_percent">Tax is a percentage</label>
+<%= check_box 'taxrate', 'is_percent', {:onclick => "is_percent()"}, '1', '0' %></p>
+
+<% if @taxrate.is_percent? %>
+  <span id=percent>
+<% else %>
+  <span id=percent style="display: none">
+<% end %>
+<p><label for="taxrate_percent">Percent</label>
+<%= text_field 'taxrate', 'percent'  %></p>
+</span>
+
+<% unless @taxrate.is_percent? %>
+  <span id=amount>
+<% else %>
+  <span id=amount style="display: none">
+<% end %>
+<p><label for="taxrate_amount">Amount</label>
+<%= text_field 'taxrate', 'amount'  %></p>
+</span>
+
+<p><label for="taxrate_apl_daily">Tax applies to Daily Rate</label>
+<%= check_box 'taxrate', 'apl_daily', {}, '1', '0' %></p>
+
+<p><label for="taxrate_apl_week">Tax applies to Weekly Rate</label>
+<%= check_box 'taxrate', 'apl_week', {}, '1', '0' %>
+<% unless @taxrate.is_percent? %>
+  <span id=apply_weekly>
+<% else %>
+  <span id=apply_weekly style="display: none">
+<% end %>
+<label for="taxrate_weekly_charge_daily">Tax applies Once per Week</label>
+<%= check_box 'taxrate', 'weekly_charge_daily', {}, '1', '0' %>
+</span>
+</p>
+
+<p><label for="taxrate_apl_month">Tax applies to Monthly Rate</label>
+<%= check_box 'taxrate', 'apl_month', {}, '1', '0' %>
+<% unless @taxrate.is_percent? %>
+  <span id="apply_monthly">
+<% else %>
+  <span id="apply_monthly" style="display: none">
+<% end %>
+<label for="taxrate_monthly_charge_daily">Tax applies Once per Month</label>
+<%= check_box 'taxrate', 'monthly_charge_daily', {}, '1', '0' %>
+</span
+</p>
+
+<p><label for="taxrate_apl_seasonal">Tax applies to Seasonal Rate</label>
+<%= check_box 'taxrate', 'apl_seasonal', {}, '1', '0' %>
+<% unless @taxrate.is_percent? %>
+  <span id="apply_seasonal">
+<% else %>
+  <span id="apply_seasonal" style="display: none">
+<% end %>
+<label for="taxrate_monthly_charge_daily">Tax applies Once per Season</label>
+<%= check_box 'taxrate', 'seasonal_charge_daily', {}, '1', '0' %>
+</span
+</p>
+<% unless controller.action_name == 'new' %>
+  <p><label for="taxrate_active">Active?</label>
+  <%= check_box 'taxrate', 'active', {}, '1', '0' %></p>
+<% end %>
+
+<!--[eoform:taxrate]-->

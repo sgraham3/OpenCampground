@@ -1,0 +1,2 @@
+module Setup::InitdbHelper
+end

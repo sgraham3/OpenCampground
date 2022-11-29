@@ -1,0 +1,7 @@
+  <% unless (@remote && !@option.use_remote_sitetype?) %>
+    <b><%= I18n.t('reservation.SiteType') %>:</b>
+    <%= select(:reservation, :sitetype_id, [["any", 0]].concat(Sitetype.active.map{|u| [u.name, u.id]})) %>
+    <%= observe_field :reservation_sitetype_id,
+		      :url => {:action => 'update_sitetype', :only_path => false, :reservation_id => @reservation.id },
+		      :with => "'sitetype_id='+encodeURIComponent(value)" %>
+  <% end %>

@@ -1,0 +1,2 @@
+module Setup::CampersHelper
+end

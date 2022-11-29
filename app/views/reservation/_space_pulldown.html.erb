@@ -1,0 +1,4 @@
+  <b><%= I18n.t('titles.SelSpace')%>:</b>
+  <% if @count > 0 %>
+    <%= collection_select(:space, :space_id, @spaces, :id, :name) %>
+  <% end %>

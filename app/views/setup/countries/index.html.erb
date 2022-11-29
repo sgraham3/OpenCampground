@@ -1,0 +1,24 @@
+<%= error_messages_for 'country' %>
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= link_to 'Add a country', new_setup_country_path, :class => 'link_btn' %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_countries_path, :method => :get %>
+<table border="1">
+  <tr>
+    <th>Country</th> <th>Active?</th>
+  </tr>
+  
+  <% for country in @countries %>
+    <tr>
+      <td><%=h country.name %></td>
+      <td><%=country.active %></td>
+      <td><%= link_to 'Edit', edit_setup_country_path(country) %></td>
+      <td><%= link_to 'Delete', setup_country_path(country), 
+				  :confirm => "Are you sure you want to delete #{country.name}?",
+				  :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

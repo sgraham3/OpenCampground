@@ -1,0 +1,10 @@
+--- 
+users_001: 
+  admin: true
+  salt: "-6110109180.636247394271613"
+  remember_token: 
+  remember_token_expires: 
+  id: "113326033"
+  name: manager
+  hashed_password: 750ab24bd0faaa16f6da79dafa1c3654b07b18c2
+  remember_me: false

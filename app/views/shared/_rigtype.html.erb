@@ -1,0 +1,32 @@
+<span id="rigtype">
+<% if @option.use_rig_type? && Rigtype.active.count > 0 %>
+  <%= I18n.t('reservation.RigType') %>:
+  <% if !@reservation.editable? or (defined? envelope and envelope?) %>
+    <b>
+    <%= if @reservation.rigtype_id? && @reservation.rigtype_id > 0
+	  @reservation.rigtype.name
+	else
+	  I18n.t('reservation.notspecified')
+	end %></b>
+  <% else %>
+    <span class="noprint">
+      <% if @remote && @static %>
+	<% @reservation.rigtype.name %>
+      <% else %>
+	<%= collection_select(:reservation, :rigtype_id, Rigtype.active, :id, :name, {:prompt => true}) %>
+      <% end %>
+    </span>
+    <span class="nodisplay">
+      <b>
+      <%= if @reservation.rigtype_id? && @reservation.rigtype_id > 0
+	    @reservation.rigtype.name
+	  else
+	    I18n.t('reservation.notspecified')
+	  end %></b>
+    </span>
+    <%= observe_field :reservation_rigtype_id,
+		      :url => {:action => 'update_rigtype', :only_path => false, :reservation_id => @reservation.id },
+		      :with => "'rigtype_id='+encodeURIComponent(value)" %>
+  <% end %>
+<% end %>
+</span>

@@ -1,0 +1,2 @@
+module VariableChargesHelper
+end

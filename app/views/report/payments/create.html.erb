@@ -1,0 +1,51 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<div class="noprint"> <%= render :partial => 'explain' %> </div>
+<%= render :partial => 'report/shared/print' %>
+<div class="noprint">
+<form method="post" action="<%= report_payments_path %>" style='display:inline;' class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+<form method="post" action="<%= report_payments_path %>" style='display:inline;' class="button-to"><input type="hidden" name="bsa" value="1" /> <input type="submit" value="Download for BS&A" /></form>
+<form method="post" action="<%= report_payments_path %>" style='display:inline;' class="button-to"><input type="hidden" name="tp" value="1" /> <input type="submit" value="Download for Transaction Pro" /></form>
+</div>
+
+<% total = 0.0
+   t_net = 0.0
+   t_tax = 0.0 %>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Res #</th>
+    <th>Camper</th>
+    <th>Space Name</th>
+    <th>Sitetype</th>
+    <th>Pmt Type</th>
+    <th>Date</th>
+    <th>Memo</th>
+    <th>Charges</th>
+    <th>Tax</th>
+    <th>Total</th>
+  </tr>
+  <% @payments.each do |p| %>
+    <tr>
+    <%= sub_total(p) if p != @payments[0] %>
+    <td><%= pmt_id(p) %></td>
+    <%= p_if_needed(p) %>
+    <td><%= p.creditcard ? p.creditcard.name : "" %></td>
+    <td align="right"><%= DateFmt.format_date(p.pmt_date,'long') %></td>
+    <td><%= p.memo %></td>
+    <% net,tax = p.taxes %>
+    <td align="right"><%= number_2_currency(net) %></td>
+    <td align="right"><%= number_2_currency(tax) %></td>
+    <td align="right"><%= @subtotal += p.amount ; total += p.amount ; number_2_currency(p.amount) %></td>
+    </tr>
+    <% @net_sub += net 
+       @tax_sub += tax
+       t_net += net
+       t_tax += tax %>
+  <% end %>
+  <tr>
+  <%= sub_total() %>
+  </tr>
+  <tr>
+  <%= total(total, t_net, t_tax) %>
+  </tr>
+</table>

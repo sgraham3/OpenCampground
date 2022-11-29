@@ -1,0 +1,25 @@
+--- 
+rigtypes_008: 
+  id: "8"
+  name: Truck Camper
+rigtypes_007: 
+  id: "7"
+  name: 5th Wheel
+rigtypes_006: 
+  id: "6"
+  name: Trailer
+rigtypes_005: 
+  id: "5"
+  name: Tent
+rigtypes_004: 
+  id: "4"
+  name: Bus
+rigtypes_003: 
+  id: "3"
+  name: Class C
+rigtypes_002: 
+  id: "2"
+  name: Class B
+rigtypes_001: 
+  id: "1"
+  name: Class A

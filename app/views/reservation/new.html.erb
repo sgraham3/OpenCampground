@@ -1,0 +1,68 @@
+<% form_tag :action => 'find_space' do %>
+  <%= render :partial => 'dates' %>
+  <%= render :partial => 'shared/count' %>
+<p>
+<% if @option.use_adults? %>
+  <label for="reservation_adults"><b><%= I18n.t('reservation.nr_Adults') %></b></label>
+  <%= text_field 'reservation', 'adults', {:size => '2', :autocomplete => 'off'} %>
+<% end %>
+
+<% if @option.use_pets? %>
+  <label for="reservation_pets"><b><%= I18n.t('reservation.nr_Pets') %></b></label>
+  <%= text_field 'reservation', 'pets', {:size => '2', :autocomplete => 'off'} %>
+<% end %>
+
+<% if @option.use_children? %>
+  <label for="reservation_kids"><b><%= I18n.t('reservation.nr_Children') %></b></label>
+  <%= text_field 'reservation', 'kids', {:size => '2', :autocomplete => 'off'} %>
+<% end %>
+</p>
+<p>
+<% if @option.use_rig_type? && Rigtype.active.count > 0 %>
+  <b><%= I18n.t('reservation.RigType') %></b>
+  <%= collection_select(:reservation, :rigtype_id, Rigtype.active, :id, :name, {:prompt => true}) %>
+<% end %>
+<% if @option.use_length? %>
+  <label for="reservation_length"><b><%= I18n.t('reservation.Length') %></b></label>
+  <%= text_field 'reservation', 'length', {:size => '2', :autocomplete => 'off'} %>
+<% end %>
+<% if @option.use_slides? %>
+  <label for="reservation_slides"><b><%= I18n.t('reservation.nr_Slides') %></b></label>
+  <%= text_field 'reservation', 'slides', {:size => '2', :autocomplete => 'off'} %>
+<% end %>
+<% if @option.use_rig_age? %>
+  <label for="reservation_rig_age"><b><%= I18n.t('reservation.RigAge') %></b></label>
+  <%= text_field 'reservation', 'rig_age', {:size => '3', :autocomplete => 'off'} %>
+<% end %>
+</p><p>
+<% if @option.use_discount? && Discount.active.count > 0 %>
+  <label for="reservation_discount"><b><%= I18n.t('reservation.Discount') %></b></label>
+  <%= collection_select(:reservation, :discount_id, Discount.active, :id, :name, {:prompt => true}) %>
+<% end %>
+<% if @option.use_recommend? && Recommender.active.count > 0 %>
+  <label for="reservation_recommender"><b><%= I18n.t('reservation.RecommendedBy') %></b></label>
+  <%= collection_select(:reservation, :recommender_id, Recommender.active, :id, :name, {:prompt => true}) %>
+<% end %>
+<label for="reservation_special_request"><b><%= I18n.t('reservation.Notes') %>:</b></label>
+<%= text_field 'reservation', 'special_request', {:size => '40', :autocomplete => 'off'} %></p>
+</p>
+
+  <%= render :partial => 'shared/sitetype' %>
+<div id="extras">  
+<% @extras.each do |e| -%>
+  <% unless e.extra_type == Extra::MEASURED -%>
+    <span class="extra">
+    <b><%= e.name %></b>
+    <%= check_box 'extra', "extra#{e.id}", {}, '1','0' %>
+
+    <% if e.extra_type == Extra::COUNTED || e.extra_type == Extra::OCCASIONAL -%>
+      <b><%= I18n.t('reservation.Count') %></b>
+      <%= text_field 'extra', "count#{e.id}", {:size => '2', :value => '1', :autocomplete => 'off'} %>
+    <% end -%>
+  <% end -%>
+  </span>
+<% end -%>
+</div>
+
+  <p><%= submit_tag I18n.t('reservation.FindSpace'), :disable_with => "Processing..." %></p>
+<% end %>

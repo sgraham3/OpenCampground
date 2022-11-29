@@ -1,0 +1,5 @@
+<% form_tag :action => 'find_next' do %>
+<%= @num_selected.to_s + ' ' + I18n.t('reservation.SpacesSelected')%>.
+<% end %>
+<br />
+<%= button_to I18n.t('group_res.DesignateGroup'), :controller => 'group', :action => 'find' %>

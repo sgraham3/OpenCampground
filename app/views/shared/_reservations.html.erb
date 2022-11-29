@@ -1,0 +1,41 @@
+<table width="100%" cellpadding="5" cellspacing="0">
+  <tr>
+    <% if controller.action_name == 'show' && controller.controller_name %>
+      <th align="left"><%= I18n.t('reservation.Res_nr')%></th>
+      <th align="left"><%= I18n.t('reservation.StartDate')%></th>
+      <th align="left"><%= I18n.t('reservation.EndDate')%></th>
+      <th align="left"><%= I18n.t('camper.Name')%></th>
+      <% if @option.use_rig_type? %>
+	<th align="left"><%= I18n.t('reservation.RigType') %> </th>
+      <% end %>
+      <th align="left"><%= I18n.t('reservation.Space')%></th>
+    <% else %>
+      <th align="left"><%= button_to I18n.t('reservation.Res_nr'), :action => :sort_by_res %></th>
+      <th align="left"><%= button_to I18n.t('reservation.StartDate'), :action => :sort_by_start %></th>
+      <th align="left"><%= button_to I18n.t('reservation.EndDate'), :action => :sort_by_end %></th>
+      <th align="left"><%= button_to I18n.t('camper.Name'), :action => :sort_by_name %></th>
+      <% if @option.use_license? %>
+	<th align="left"><%= I18n.t('reservation.VehicleLicense') %> </th>
+      <% end %>
+      <% if @option.use_rig_type? %>
+	<th align="left"><%= I18n.t('reservation.RigType') %> </th>
+      <% end %>
+      <% if @option.use_slides? %>
+	<th align="left"><%= I18n.t('reservation.Slides') %> </th>
+      <% end %>
+      <% if @option.use_length? %>
+	<th align="left"><%= I18n.t('reservation.Length') %> </th>
+      <% end %>
+      <th align="left"><%= button_to I18n.t('reservation.Space'), :action => :sort_by_space %></th>
+      <% if @option.list_payments? -%>
+	<th align="right"><%= I18n.t('reservation.Payment') %> </th>
+	<th align="right"><%= I18n.t('reservation.Due') %> </th>
+      <% end %>
+    <% end %>
+  </tr>
+  <% if controller.action_name == 'expand' || controller.action_name == 'in_park_expand' || (controller.controller_name == 'group' && controller.action_name == 'show') %>
+    <%= render :partial => 'shared/expand', :collection => @reservations %>
+  <% else %>
+    <%= render :partial => 'shared/list', :collection => @reservations %>
+  <% end %>
+</table>

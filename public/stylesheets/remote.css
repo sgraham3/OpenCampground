@@ -1,0 +1,30 @@
+
+#action {
+  padding-top: 1em;
+  margin-left: 4em;
+}
+
+#rescanx { margin-left: 10em;}
+
+#explain {
+	    margin-left: 4em;
+	    margin-right: 4em;
+	    border-style: solid;
+	    border-width: 1px;
+	    padding-left: 1em;
+	    padding-right: 1em;
+	    }
+
+
+#main-r {
+	  float: left;
+	  padding-top: 1em;
+	  padding-left: 0;
+	  padding-right: 0;
+	  margin-bottom: 0;
+	  width: 100%;
+}
+
+.payment_submit { 
+	  font-size: 140%;
+}

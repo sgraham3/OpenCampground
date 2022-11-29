@@ -1,0 +1,19 @@
+<% if @camper %>
+  <%= error_messages_for 'camper' %>
+  <table>
+    <%= render :partial => 'shared/camper', :object => @camper %>
+  </table>
+  <div class="noprint">
+    <table>
+      <tr>
+	<% if @option.print? %>
+	  <td> <input type="button" onclick="javascript:window.print()" value="<%= I18n.t('general.Print') %>" /> </td>
+	<% end %>
+	<td> <%= button_to I18n.t('general.Finished'), :action => session[:next_action], :controller => session[:next_controller], :id => @camper.id %> </td>
+	<% if defined?(@reservations) && @reservations.size == 0 %>
+	  <td><%= button_to I18n.t('general.Delete'), { :action => 'destroy', :camper_id => @camper.id }, :confirm => I18n.t('camper.Delete', :name => @camper.full_name), :method => 'post' %></td>
+	<% end %>
+      </tr>
+    </table>
+  </div>
+<% end %>

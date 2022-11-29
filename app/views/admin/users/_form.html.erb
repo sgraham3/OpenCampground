@@ -1,0 +1,23 @@
+<label> <%= I18n.t('user.Name') %>:</label>
+<span style="font-size: large">
+<% if @user_login.admin? %>
+  <div>
+    <%= text_field :user, :name, {:size => 40, :autocomplete => 'off'} %>
+  </div>
+  </span>
+  <div>
+    <label> <%= I18n.t('user.Admin') %>:</label>
+    <%= check_box :user, :admin %>
+  </div>
+<% else %>
+    <%= @user.name %>
+    </span>
+<% end %>
+<div>
+  <label for="user_password"> <%=I18n.t('user.Password') %>:</label>
+  <%= password_field :user, :password, :size => 40 %>
+</div>
+<div>
+  <label for="user_password_confirmation"> <%=I18n.t('user.Confirm') %>:</label>
+  <%= password_field :user, :password_confirmation, :size => 40 %>
+</div>

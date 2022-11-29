@@ -1,0 +1,9 @@
+<% if @success %>
+    <h2><%= I18n.t('update.Desc') %> </h2><%= @desc %>
+    <p>
+    <form method="get" action=<%=edit_admin_version_path(@revision)%>  class="button-to"><div><input type="hidden" name="maintenance" value=<%=@maintenance%>  /><input type="submit" value="Fetch Update" /></div></form>
+       
+<% else %>
+  <%= button_to I18n.t('update.Retry'), admin_versions_path, :method => :get %>
+<% end %>
+<%= button_to I18n.t('update.Skip'), admin_index_path, :method => :get %>

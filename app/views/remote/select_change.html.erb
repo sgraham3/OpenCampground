@@ -1,0 +1,19 @@
+<div id="action">
+<% form_tag :action => 'change_space' do %>
+  <% @reservation == @reservation %>
+  <b><%= I18n.t('reservation.SelectDatesforChangedSpace') %></b>
+  <div id="dates"
+    <%= render :partial => 'shared/dates' %>
+  </div>
+  <% if @option.show_remote_available? %>
+    <span id="count">
+      <%= render :partial => 'shared/count' %>
+    </span>
+  <% end %>
+  <p>
+    <%= render :partial => 'shared/sitetype' %>
+  </p>
+  <%= submit_tag I18n.t('reservation.FindSpace') %>
+<% end %>
+<%= button_to I18n.t('reservation.CancelChangeSpace'), :action => 'space_selected' %>
+</div>

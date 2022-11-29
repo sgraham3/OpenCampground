@@ -1,0 +1,34 @@
+<%= error_messages_for 'tax' %>
+
+<!--[form:tax]-->
+<p><label for="tax_room_tax_amount">Room tax amount</label><br/>
+<%= text_field 'tax', 'room_tax_amount'  %></p>
+
+<p><label for="tax_room_tax_percent">Room tax percent</label><br/>
+<%= text_field 'tax', 'room_tax_percent'  %></p>
+
+<p><label for="tax_sales_tax_percent">Sales tax percent</label><br/>
+<%= text_field 'tax', 'sales_tax_percent'  %></p>
+
+<p><label for="tax_local_tax_percent">Local sales tax percent</label><br/>
+<%= text_field 'tax', 'local_tax_percent'  %></p>
+
+<p><label for="tax_rmt_apl_week">Room tax applies to weekly rate</label>
+<%= check_box 'tax', 'rmt_apl_week', {}, '1', '0' %></p>
+
+<p><label for="tax_rmt_apl_month">Room tax applies to monthly rate</label>
+<%= check_box 'tax', 'rmt_apl_month', {}, '1', '0' %></p>
+
+<p><label for="tax_st_apl_week">Sales tax applies to weekly rate</label>
+<%= check_box 'tax', 'st_apl_week', {}, '1', '0' %></p>
+
+<p><label for="tax_st_apl_month">Sales tax applies to monthly rate</label>
+<%= check_box 'tax', 'st_apl_month', {}, '1', '0' %></p>
+
+<p><label for="tax_lt_apl_week">Local tax applies to weekly rate</label>
+<%= check_box 'tax', 'lt_apl_week', {}, '1', '0' %></p>
+
+<p><label for="tax_lt_apl_month">Local tax applies to monthly rate</label>
+<%= check_box 'tax', 'lt_apl_month', {}, '1', '0' %></p>
+<!--[eoform:tax]-->
+

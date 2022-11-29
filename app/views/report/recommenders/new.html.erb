@@ -1,0 +1,25 @@
+<% form_tag report_recommenders_path do %>
+<b>Select start and end dates for desired report</b></br>
+<%= render :partial => 'report/shared/dates' %>
+<table>
+  <tr>
+    <th align="center" colspan="2"><b>Data to include</b></th>
+  </tr>
+  <tr>
+    <td> Historical </td>
+    <td> <%= check_box 'include', 'use_historical', {}, '1', '0' %> </td>
+  </tr>
+  <tr>
+    <td> In Park </td>
+    <td> <%= check_box 'include', 'use_inpark', {}, '1', '0' %> </td>
+  </tr>
+  <tr>
+    <td> Reservations </td>
+    <td> <%= check_box 'include', 'use_reservations', {}, '1', '0' %> </td>
+  </tr>
+</table>
+<p>
+<%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+</p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

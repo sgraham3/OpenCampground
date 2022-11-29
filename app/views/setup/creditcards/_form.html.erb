@@ -1,0 +1,22 @@
+<%= error_messages_for 'creditcard' %>
+
+<!--[form:creditcard]-->
+<p>
+<label for="creditcard_name">Payment Type name</label>
+<%= text_field 'creditcard', 'name'  %>
+<p><label for="creditcard_is_credit_card">Handle as credit card?</label>
+<%= check_box 'creditcard', 'is_credit_card', {}, '1', '0' %></p>
+<p><label for="creditcard_counted">Validate number?</label>
+<%= check_box 'creditcard', 'validate_cc_number', {}, '1', '0' %></p>
+<p><label for="creditcard_counted">Use Expiration date?</label>
+<%= check_box 'creditcard', 'use_expiration', {}, '1', '0' %></p>
+<p><label for="creditcard_counted">Validate Expiration date?</label>
+<%= check_box 'creditcard', 'validate_expiration', {}, '1', '0' %></p>
+<% unless controller.action_name == 'new' %>
+  <p><label for="creditcard_active">Active?</label>
+  <%= check_box 'creditcard', 'active', {}, '1', '0' %></p>
+<% end %>
+
+</p>
+<!--[eoform:creditcard]-->
+

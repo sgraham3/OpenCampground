@@ -1,0 +1,7 @@
+<% form_tag setup_recommender_path, :method => :put, :id => @recommender do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag 'Save' %>
+  </p>
+<% end %>
+<%= link_to 'Cancel', setup_recommenders_path, :class => 'link_btn' %>

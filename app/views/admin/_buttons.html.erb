@@ -1,0 +1,20 @@
+<div style="border: solid">
+    <% if(authorized?(@option.all_manage_backup?)|| authorized?(@option.all_manage_logs?) || authorized?(@option.all_manage_payments?) || authorized?(@option.all_manage_measured?)||authorized?(@option.all_troubleshoot?))%>
+	<%= link_to 'Maintenance', maintenance_index_path, :class => "link_btn" %>
+    <% end %>
+    <% if (@option.use_login? && @user_login.admin?) || !@option.use_login? %>
+	<%= link_to 'Setup', setup_index_path, :class => "link_btn" %>
+    <% end %>
+    <% if authorized? @option.all_archives? %>
+	<%= link_to 'Archives', admin_archives_path, :class => "link_btn" %>
+    <% end %>
+    <% if @option.use_login? && @user_login.admin? %>
+	  <%= link_to 'User Maintenance', admin_users_path, :class => "link_btn" %>
+    <% end %>
+	<%= link_to 'License', admin_license_index_path, :class => "link_btn" %>
+	<%= link_to 'User Manual', admin_user_manual_index_path, :class => "link_btn" %>
+	<%= link_to 'About', admin_about_index_path, :class => "link_btn" %>
+    <% if authorized?(@option.all_updates?) && @option.use_update? && Rails.env.production? %>
+	<%= link_to 'Updates', admin_versions_path, :class => "link_btn" %>
+    <% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Space </th>
+    <th>Arrival Date </th>
+    <th>Departure Date </th>
+    <th>Name </th>
+    <th>Rig Type</th>
+    <th>Space Type</th>
+    <th>Notes</th>
+  </tr>
+  <% for reservation in @reservations %>
+    <tr>
+      <td><%=reservation.space.name %></td>
+      <td><%=DateFmt.format_date(reservation.startdate,'long') %></td>
+      <td><%=DateFmt.format_date(reservation.enddate,'long') %></td>
+      <td> <%= if reservation.group_id == nil
+		 h reservation.camper.full_name 
+	       else
+		 'Group: '+reservation.group.name
+	       end %></td>
+      <td><%= reservation.rigtype.name if reservation.rigtype_id? %></td>
+      <td><%= reservation.space.sitetype.name %></td>
+      <td><%= reservation.special_request %></td>
+    </tr>
+  <% end %>
+</table>

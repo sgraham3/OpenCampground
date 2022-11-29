@@ -1,0 +1,74 @@
+<table>
+<tr> <td>Name: <%= @archive.name %></td></tr>
+
+<tr><td>Address: <%= @archive.address %></td></tr>
+
+<tr><td>City: <%= @archive.city %>,</td>
+    <td>State:<%= @archive.state %> </td>
+    <td><%= @archive.mail_code%> </td></tr>
+
+<tr><td>Phone: <%= @archive.phone %></td>
+    <td>Addl Phone: <%= @archive.phone_2 %></td>
+    <td>Email: <%= @archive.email %></td>
+    <td>Country: <%= @archive.country %></td></tr>
+
+</table>
+<table>
+  <tr>
+    <td>License: <%= @archive.vehicle_state %>&nbsp;<%= @archive.vehicle_license %></td>
+    <td>License 2: <%= @archive.vehicle_state_2 %>&nbsp;<%= @archive.vehicle_license_2 %></td>
+  </tr>
+
+<% if @archive.idnumber? %>
+  <td>Id:&nbsp;
+  <%= @archive.idnumber %></td>
+<% end %>
+</tr>
+
+<tr><td>Adults: <%= @archive.adults %></td>
+    <td>Children: <%= @archive.kids %></td>
+    <td>Pets: <%= @archive.pets %> </td></tr>
+
+<tr><td>Discount:</td><td> <%= @archive.discount_name %></td></tr>
+<tr><td>Special Request:</td><td> <%= @archive.special_request %> </td></tr>
+<tr><td>Rig Type:</td><td> <%= @archive.rigtype_name %></td></tr>
+<tr><td>Space:</td><td> <%= @archive.space_name %> </td></tr>
+<% if @archive.group_name? %>
+<tr><td>Group:</td><td>
+     <%= @archive.group_name %></td></tr>
+     <% end %>
+</table>
+Reservation Start Date:&nbsp; <%= I18n.l(@archive.startdate) %>&nbsp;
+Reservation End Date:&nbsp; <%= I18n.l(@archive.enddate) %>
+<%= "(Seasonal)" if @archive.seasonal %><br />
+<% begin %>
+<% if @payments.size > 0 && @payments[0].class == String %>
+  <table>
+  <tr><td colspan=4 align=center>Payments</td></tr>
+  <% @payments.each do |p| %>
+    <%= p %>
+  <% end %>
+  </table>
+<% end %>
+<% rescue
+   end %>
+Log:<br/><%= @archive.log %>
+Close-Out Reason: <%= @archive.close_reason %> 
+<div class='noprint'>
+  <table>
+    <tr>
+      <% if @option.print? %>
+	<td> <input type="button" onclick="javascript:window.print()" value="<%= I18n.t('general.Print') %>" /> </td>
+      <% end %>
+      <td><%= button_to I18n.t('reservation.Finished'),  admin_archives_path, :method => :get %></td>
+      <% if @reservation && @reservation.editable? %>
+	<% if @reservation.cancelled? %>
+	  <td> <%= button_to I18n.t('reservation.UndoCancel'), {:action => :undo_cancel, :controller => '/reservation', :reservation_id => @reservation.id} %> </td>
+	<% elsif @reservation.checked_out? %>
+	  <td> <%= button_to I18n.t('reservation.UndoCheckout'), {:action => :undo_checkout, :controller => '/reservation', :reservation_id => @reservation.id} %> </td>
+	<% end %>
+      <% end %>
+      <td><%= button_to I18n.t('general.Destroy'), admin_archive_path(@archive.id), :method => :delete, :confirm => "Are you sure you want to destroy the archive record for reservation #{@archive.reservation_id}?" %></td>
+    </tr>
+  </table>
+</div>

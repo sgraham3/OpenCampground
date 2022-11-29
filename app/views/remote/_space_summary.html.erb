@@ -1,0 +1,12 @@
+<table>
+  <tbody>
+    <tr>
+      <th><b><%= I18n.t('reservation.SelectedSiteInfo') %>: </b></th>
+      <th><b><%= I18n.t('reservation.PreliminaryRateInfo') %>: </b></th>
+    </tr>
+    <tr>
+      <td valign=top><%= render :partial => 'site' %></td>
+      <td><%= render :partial => 'charges' %></td>
+    </tr>
+  </tbody>
+</table>

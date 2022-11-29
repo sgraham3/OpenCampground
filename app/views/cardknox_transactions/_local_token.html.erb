@@ -1,0 +1,37 @@
+<script type="text/javascript">
+  //<![CDATA[
+  window.ck_ifields_key = '<%= @integration.ck_ifields_key %>';
+  //]]>
+</script>
+<img class="cardknox" alt="CardKnox logo" src="/images/CardKnox.png" />
+<div id="tokenize" class="ck-form">
+  <form name="payment-form" id="payment-form" autocomplete="off" method="post" action="<%= cardknox_transactions_url %>" >
+      Amount: <%= text_field :ck_transaction, :amount, :value => number_to_currency(@ck_transaction.amount), :size => 6 %><br/>
+    <ul class="ck-list">
+      <li class="ck-row">
+        <label class="ck-item">Card Number:</label>
+	<iframe id="ck-card" class="ck-item" data-ifields-id="card-number" data-ifields-placeholder="Card Number" src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifield.htm"></iframe>
+      </li>
+      <li class="ck-row">
+	<label class="ck-item" >Card Security #:</label>
+	<iframe id="ck-cvv" class="ck-item" data-ifields-id="cvv" data-ifields-placeholder="CVV" src="https://cdn.cardknox.com/ifields/2.6.2006.0102/ifield.htm"></iframe>
+      </li>
+      <li class="ck-row">
+	<label class="ck-item" >Card Expiration:</label>
+	<%= date_select :ck_transaction, :expiry, :discard_day => true, :use_short_month => :true, :add_month_number => true, :start_year => currentDate.year, :start_month => currentDate.month, :end_year => currentDate.year + 10, :class =>"ck_date_sel" %>
+      </li>
+      <li class="ck-row">
+	<input id="submit-btn" type="submit" value="Submit" class="ck-item" class="button-to"></input>
+      </li>
+    </ul>
+    <label id="transaction-status"></label>
+    <label data-ifields-id="card-data-error" style="color: red;"></label>
+    <input data-ifields-id="cvv-token" name="xCVV" type="hidden"></input>
+    <input data-ifields-id="card-number-token" name="xCardNum" type="hidden"></input>
+    <input type="hidden" name="ck_transaction[process_mode]" value="<%= CardTransaction::TokenLocal %>"/>
+    <input type="hidden" name="ck_transaction[reservation_id]" value="<%= @reservation.id %>"/>
+    <input type="hidden" id="card-token">
+    <input type="hidden" id="cvv-token">
+  </form>
+  <%= button_to 'Cancel Payment', {:action => :show, :controller => :reservation, :reservation_id => @reservation_id} %>
+</div>

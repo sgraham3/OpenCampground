@@ -1,0 +1,46 @@
+<%= error_messages_for 'discount' %>
+
+<!--[form:discount]-->
+<p><label for="discount_name">Name</label><br/>
+<%= text_field 'discount', 'name'  %></p>
+
+<p><label for="discount_discount_percent">Discount Duration</label>
+<%= text_field 'discount', 'duration', :size => 2 %> Days
+<p>Days of the week discount applies:
+<%= check_box 'discount', 'sunday', {}, '1', '0' %>Sunday
+<%= check_box 'discount', 'monday', {}, '1', '0' %>Monday
+<%= check_box 'discount', 'tuesday', {}, '1', '0' %>Tuesday
+<%= check_box 'discount', 'wednesday', {}, '1', '0' %>Wednesday
+<%= check_box 'discount', 'thursday', {}, '1', '0' %>Thursday
+<%= check_box 'discount', 'friday', {}, '1', '0' %>Friday
+<%= check_box 'discount', 'saturday', {}, '1', '0' %>Saturday
+<%# radio_button 'discount', :duration_units, Discount::DAY % >days %>
+<%# radio_button 'discount', :duration_units, Discount::WEEK % >weeks %>
+<%# radio_button 'discount', :duration_units, Discount::MONTH % >months %>
+</p>
+<p><label for="discount_discount_percent">Percent Discount</label>
+<%= text_field 'discount', 'discount_percent', :size => 3  %>
+<label for="discount_disc_appl_daily">Applies to Daily Rate:</label>
+<%= check_box 'discount', 'disc_appl_daily', {}, '1', '0' %>
+<label for="discount_disc_appl_week">Weekly Rate:</label>
+<%= check_box 'discount', 'disc_appl_week', {}, '1', '0' %>
+<label for="discount_disc_appl_month">Monthly Rate:</label>
+<%= check_box 'discount', 'disc_appl_month', {}, '1', '0' %>
+<label for="discount_disc_appl_seasonal">Seasonal Rate:</label>
+<%= check_box 'discount', 'disc_appl_seasonal', {}, '1', '0' %></p>
+<p><label for="discount_amount">Amount Once:</label>
+<%= text_field 'discount', 'amount', :size => 6  %></p>
+<p><label for="discount_amount">Amount Per Day:</label>
+<%= text_field 'discount', 'amount_daily', :size => 6  %></p>
+<p><label for="discount_amount">Amount Per Week:</label>
+<%= text_field 'discount', 'amount_weekly', :size => 6  %></p>
+<p><label for="discount_amount">Amount Per Month:</label>
+<%= text_field 'discount', 'amount_monthly', :size => 6  %></p>
+<p><label for="discount_show_on_remote">Show on remote?</label>
+<%= check_box 'discount', 'show_on_remote', {}, '1', '0' %></p>
+<% unless controller.action_name == 'new' %>
+  <p><label for="discount_active">Active?</label>
+  <%= check_box 'discount', 'active', {}, '1', '0' %></p>
+<% end %>
+</p>
+<!--[eoform:discount]-->

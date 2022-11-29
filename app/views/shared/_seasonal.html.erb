@@ -1,0 +1,17 @@
+<% if @seasonal_ok %>
+  <label for="reservation_seasonal"><b><%= I18n.t('reservation.FullSeasonReservation') %>:</b></label>
+  <%= check_box 'reservation', 'seasonal', {}, '1', '0' %>
+  <%= observe_field :reservation_seasonal,
+		    :on => 'selected',
+		    :update => 'dates',
+		    :url => {:action => 'update_seasonal', :only_path => false, :reservation_id => @reservation.id },
+		    :with => "'seasonal='+encodeURIComponent(value)" %>
+<% end %>
+<% if @storage_ok %>
+  <label for="reservation_storage"><b><%= I18n.t('reservation.Storage') %>:</b></label>
+  <%= check_box 'reservation', :storage, {}, '1', '0' %>
+  <%= observe_field :reservation_storage,
+		    :on => 'selected',
+		    :url => {:action => 'update_storage', :only_path => false, :reservation_id => @reservation.id },
+		    :with => "'storage='+encodeURIComponent(value)" %>
+<% end %>

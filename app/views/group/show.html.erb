@@ -1,0 +1,43 @@
+<% if @group %>
+  <%= error_messages_for 'group' %>
+  <table>
+    <tr>
+      <td><%= I18n.t('reservation.StartDate') %>:</td> <td><b><%= I18n.l(@group.startdate) %></b></td>
+      <td><%= I18n.t('reservation.EndDate') %>:</td> <td><b><%= I18n.l(@group.enddate) %></b></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td><%= I18n.t('group.GroupName') %>:</td>
+      <td><b><%= in_place_editor_field_prompted :group, 
+				       :name %></b></td>
+      <td><%= I18n.t('group.NumberReserved') %>:</td>
+      <td><b><%= @group.expected_number %></b></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td colspan=3 align=center ><b><%= I18n.t('group.Wagonmaster') %></b></td>
+    </tr>
+    <%= render :partial => 'shared/camper', :object => @group.camper %>
+  </table>
+  <div class="noprint">
+    <table>
+      <tr>
+	<% if @group.expected_number > 0 %>
+	  <td>
+	    <%= link_to I18n.t('group.ShowReservations'), group_path(@group.id, :reservations => true), :class => 'link_btn'  %>
+	  </td>
+	<% end %>
+	<td>
+	  <%= button_to I18n.t('reservation.Finished'), :action => :list, :controller => :reservation %>
+	</td>
+	<% if @option.print? %>
+	  <td>
+	    <input type="button" onclick="javascript:window.print()" value="<%= I18n.t('general.Print') %>" />
+	  </td>
+	<% end %>
+      </tr>
+    </table>
+  </div>
+<% end %>

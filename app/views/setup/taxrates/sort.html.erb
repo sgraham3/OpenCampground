@@ -1,0 +1,12 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'Finished', setup_taxrates_path, :method => :get %>
+<div id="container" style="overflow: scroll; height: <%= (@option.disp_rows*2).to_s %>em">
+ <ul id="taxes"> 
+  <% @taxes.each do |s| %>
+      <li id="tax_<%=s.id%>"><%= s.name %></li>
+  <% end %>
+</ul>
+</p>
+<%= javascript_tag "Position.includeScrollOffsets = true" %>
+<%= sortable_element :taxes, :scroll => "'container'", :url => resort_setup_taxrates_path %>

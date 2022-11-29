@@ -1,0 +1,124 @@
+---
+prompts_001:
+  id: 1
+  display: confirmation
+  locale: en
+  body: This page is your reservation confirmation.  Print it on a printer or to a
+    file for your records.
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_002:
+  id: 2
+  display: find_space
+  locale: en
+  body: "On this page are listed all of the sites that are available on the dates
+    you selected.\n   \n\t\t\t The EWS column indicates whether the sites have Electricity,
+    Water and Sewer and for those having Electricity the amp capacity.\n\t\t\t The
+    size column indicates the size in the common measure of the locale (normally feet
+    or meters depending on the locale).\n\t\t\t Daily, Weekly and Monthly columns
+    give the Daily, Weekly and Monthly rate for the space.  \n\t\t\t If there is no
+    amount indicated the space does not have a rate for that period.\n\t\t\t Type
+    is the space type which was selected on the previous page.\n\t\t\t The Special
+    column contains information that may help you in deciding whether or not you would
+    like the site.\n\t\t\t <p>\n\t\t\t When you find the site you want just click
+    on the <span style=\"text-decoration: underline\">Select</span> link to the right
+    of that site.\n\t\t\t You will have an opportunity to change your selection on
+    a following page if you change your mind."
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_003:
+  id: 3
+  display: index
+  locale: en
+  body: "Using this series of web pages you can make your own reservations.  Just
+    enter into the fields the information on your party. \n\t\t\t   The most important
+    piece of information is the dates you want.\n\t\t\t     When you have entered
+    the requested information, pressing the 'Find Space' button will cause the system
+    to find spaces which are\n\t\t\t       available on the dates indicated.  At any
+    time you can terminate the process with the 'Cancel' button."
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_004:
+  id: 4
+  display: show
+  locale: en
+  body: "This is your last chance to change things before you confirm your reservation
+    pay for your stay. \n\t\t\t Any fields that are boxed can be modified by selecting
+    them and typing the new data.\n\t\t\t To change date or space select the buttons
+    so labeled.\n\t\t\t <p> \n\t\t\t Select the <em>Complete Reservation</em> button
+    to go to the page to pay for your stay. \n\t\t\t When your payment transaction
+    is complete you will be checked in to your site if your reservation starts today.\n\t\t\t
+    A confirmation page will be presented which you can print for your records.\n\t\t\t
+    </p><p>\n\t\t\t <b>This display will only persist for 30 minutes.  You must complete
+    your reservation in that time</b>"
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_005:
+  id: 5
+  display: wait_for_confirm
+  locale: en
+  body: "This page is shown while we are waiting for PayPal to respond with a confirmation
+    of the transaction.\n\t\t\t This usually only takes a few seconds.\n\t\t\t When
+    the transaction is complete the confirmation page will be presented."
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_006:
+  id: 6
+  display: find_remote
+  locale: en
+  body: "On this page enter your name etc. Any fields with a asterisk after the name
+    of the field are required.\n\t\t\t   You will not be able to proceed any further
+    in the process until you have filled in the information required."
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_007:
+  id: 7
+  display: CardConnect-payment
+  locale: en
+  body: This page is your secure credit card gateway.  Enter your credit card number,
+    expiration date and security code as prompted then select 'Submit'
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_008:
+  id: 8
+  display: CardConnect-a-payment
+  locale: en
+  body: This page is your secure credit card gateway.  Enter your credit card number,
+    expiration date and security code as prompted then select 'Submit'<p>If you will
+    not be paying now select Finish Reservation.
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_009:
+  id: 9
+  display: CardKnox-payment
+  locale: en
+  body: This page is your secure credit card gateway.  Enter your credit card number,
+    expiration date and security code as prompted then select 'Submit'
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_010:
+  id: 10
+  display: CardKnox-a-payment
+  locale: en
+  body: This page is your secure credit card gateway.  Enter your credit card number,
+    expiration date and security code as prompted then select 'Submit'<p>If you will
+    not be paying now select Finish Reservation.
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_011:
+  id: 11
+  display: PayPal-payment
+  locale: en
+  body: Review the amount to be charged using PayPal and then select the PayPal Buy
+    Now button.  This button will take you to the PayPal secure payments page.
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z
+prompts_012:
+  id: 12
+  display: PayPal-a-payment
+  locale: en
+  body: Review the amount to be charged using PayPal and then select the PayPal Buy
+    Now button.  This button will take you to the PayPal secure payments page.<p>If
+    you will not be paying now select Finish Reservation.
+  created_at: 2022-04-12 16:43:41.000000000 Z
+  updated_at: 2022-04-12 16:43:41.000000000 Z

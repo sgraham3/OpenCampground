@@ -1,0 +1,25 @@
+<%= render :partial => 'setup/buttons' %>
+<%= button_to 'New', new_setup_prompt_path, :method => :get %>
+<table border>
+  <tr>
+    <th>Locale</th><th>Display</th><th>Explanation</th>
+  </tr>
+  <% @prompts.each do |prompt| %>
+    <% pp = prompt.display %>
+    <% prompt.body %>
+    <% prompt.id %>
+    <% prompt.display %>
+    <% prompt.locale %>
+    <% next unless display?(prompt.display) %>
+      <tr>
+	<td> <%= prompt.locale %> </td>
+	<td> <%= display_name(prompt.display)%> </td>
+	<td id="prompt_body"> <%= prompt.body %> </td>
+	<td> <%= button_to 'Edit', edit_setup_prompt_path(prompt), :method => :get %> </td>
+	<td><%= button_to 'Delete', setup_prompt_path(prompt),
+				      :confirm => "Are you sure you want to delete explanation for #{prompt.display} locale #{prompt.locale}",
+				      :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

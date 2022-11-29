@@ -1,0 +1,6 @@
+<% form_for(@card_transaction) do |f| %>
+  <%= f.label "Review Amount:" %> <%= f.text_field :amount, :length => 4 %> <br />
+  <%= f.hidden_field :process_mode %>
+  <%= f.hidden_field :reservation_id %>
+  <%= f.submit 'Process Card', :disable_with => "Processing" %>
+<% end %>

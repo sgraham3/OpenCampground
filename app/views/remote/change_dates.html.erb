@@ -1,0 +1,49 @@
+<% form_for :reservation, :url => { :action => 'update_dates', :method => 'post'} do |f| %>
+<%= f.error_messages %>
+<p><b><%= I18n.t('reservation.ReservationNumber') %>: </b><%= @reservation.id %> &nbsp;
+
+<%= @available_str %></br> </p>
+
+<div id='dates'>
+  <%= render :partial => 'shared/dates' %>
+</div>
+<% if @option.show_remote_available? %>
+  <span id="count">
+<% else %>
+  <span id="count" style ="display: none">
+<% end %>
+<%= render :partial => 'shared/count' %>
+</span>
+<p> <b><%= I18n.t('reservation.nr_Adults') %>:</b>&nbsp;<%= @reservation.adults %> 
+    &nbsp;<b><%= I18n.t('reservation.nr_Pets') %>:</b>&nbsp;<%= @reservation.pets %>
+    &nbsp;<b><%= I18n.t('reservation.nr_Children') %>:</b>&nbsp;<%= @reservation.kids %>
+</p>
+
+<p> <% if @option.use_remote_rig_type? && Rigtype.active.count > 0 && @reservation.rigtype_id %>
+      <b><%= I18n.t('reservation.RigType') %>:</b>&nbsp;<%= @reservation.rigtype.name if !@reservation.rigtype_id.zero? %>
+    <% end %>
+    <% if @option.use_remote_length? %>
+      &nbsp;<b><%= I18n.t('reservation.Length') %>:</b>&nbsp;<%= @reservation.length %>
+    <% end %>
+    <% if @option.use_remote_slides? %>
+      &nbsp;<b><%= I18n.t('reservation.nr_Slides') %>:</b>&nbsp;<%= @reservation.slides %>
+    <% end %>
+    <% if @option.use_remote_age? %>
+      &nbsp;<b><%= I18n.t('reservation.RigAge') %>:</b>&nbsp;<%= @reservation.rig_age %>
+    <% end %>
+</p>
+<% if @option.remote_discount? && Discount.for_remote.count > 0 && @reservation.discount_id %>
+  <p>
+    <b><%= I18n.t('reservation.Discount') %>:</b>&nbsp;<%= @reservation.discount.name if !@reservation.discount_id.zero? %>
+  </p>
+<% end %>
+<p>
+<%= submit_tag I18n.t('reservation.SubmitDateChange') %>
+</p>
+<!--[eoform:reservation]-->
+<% end %>
+<div>
+<%= link_to I18n.t('reservation.CancelDateChg'), {:action => 'space_selected'}, :class => "link_btn" %>
+<%= link_to I18n.t('titles.ChangeSpace'), {:action => 'select_change', :reservation_id => @reservation.id}, :class => "link_btn" %>
+</div>
+

@@ -1,0 +1,10 @@
+<% if @option.use_find_by_id? %>
+  <b><%= I18n.t('reservation.FindbyIdNumber') %>:</b>
+  <%= text_field 'camper', 'idnumber', {:size => '20', :autocomplete=>"off"}  %>
+  <%= observe_field :camper_idnumber,
+		    :frequency => 0.4,
+		    :update => 'campers',
+		    :url => {:controller => 'camper', :action => 'partial_update_id', :only_path => false},
+		    :with => "'camper_idnumber='+encodeURIComponent(value)" %>
+  <hr>
+<% end %>

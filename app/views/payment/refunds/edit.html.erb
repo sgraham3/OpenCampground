@@ -1,0 +1,7 @@
+<% form_tag(payment_refund_path(@transaction.id), :method => :put) do %>
+  <%= label_tag "Review Amount:" %> <%= text_field 'transaction', 'amount', :length => 4 %> <br />
+  <%= submit_tag 'Process Refund', :disable_with => "Processing" %>
+<% end %>
+<div>
+<br/><%= link_to I18n.t('user.Cancel'), payments_path, :class => "link_btn" %>
+</div>

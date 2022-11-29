@@ -1,0 +1,27 @@
+<%= error_messages_for 'extra' %>
+
+<!--[form:extra]-->
+<label for="extra_name">Name</label><br/>
+<%= text_field 'extra', 'name'  %>
+
+<p>
+Taxes that apply:
+<%= extra_taxrates %>
+</p>
+
+<% if @option.use_remote_reservations %>
+  <p><label for="extra_remote_display">Display for Remote Reservations?</label>
+  <%= check_box 'extra', 'remote_display', {}, '1', '0' %></p>
+  <p><label for="extra_remote_required">Required on Remote Reservations?</label>
+  <%= check_box 'extra', 'remote_required', {}, '1', '0' %></p>
+<% end %>
+
+<%= render :partial => 'update_type' %>
+
+<% unless controller.action_name == 'new' %>
+  <p><label for="extra_active">Active?</label>
+  <%= check_box 'extra', 'active'  %></p> 
+<% end %>
+
+<!--[eoform:extra]-->
+

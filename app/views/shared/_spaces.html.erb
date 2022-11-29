@@ -1,0 +1,86 @@
+<%= spaces_display %>
+  <tr>
+    <th><%= I18n.t('reservation.Space') %> </th>
+    <th><%= I18n.t('reservation.EWS') %>    </th>
+    <% if @option.disp_site_length? %>
+      <th><%= I18n.t('reservation.Size') %> </th>
+    <% end %>
+
+    <% if controller.controller_name == 'reservation' %>
+      <% if @reservation.seasonal == true %>
+        <th><%= I18n.t('reservation.SeasonalRate') %></th>
+      <% elsif @reservation.storage? %>
+        <th><%= I18n.t('reservation.Storage') %></th>
+      <% else %>
+	<th><%= I18n.t('reservation.Daily') %> </th>
+	<th><%= I18n.t('reservation.Weekly') %> </th>
+	<th><%= I18n.t('reservation.Monthly') %> </th>
+      <% end %>
+    <% end %>
+
+    <th><%= I18n.t('reservation.Type') %> </th>
+    <th><%= I18n.t('reservation.Special') %> </th>
+  </tr>
+  <% for space in @spaces %>
+    <% rate = Rate.find_current_rate(@season.id, space.price_id) %>
+    <% if controller.controller_name == 'group_res' && @space_selected = SpaceAlloc.find_by_reservation_id_and_space_id(@reservation.id, space.id) %> 
+      <tr id="space-<%=space.id %>" style="color: grey">
+    <% else %>
+      <tr id="space-<%=space.id %>" style="color: black">
+    <% end %>
+      <td><%=space.name %></td>
+      <td><%=space.ews %></td>
+      <% if @option.disp_site_length? %>
+	<td><%=space.length %></td>
+      <% end %>
+      <% if controller.controller_name == 'reservation' %>
+	<% if @reservation.seasonal == true %>
+	  <% if rate.seasonal_rate > 0.0 %>
+	    <td><%=number_2_currency(rate.seasonal_rate) %></td>
+	  <% else %>
+	    <td></td>
+	  <% end %>
+	<% elsif @reservation.storage? %>
+	    <td><%=number_2_currency(rate.monthly_storage) %></td>
+	<% else %>
+	  <% if(day_rate = rate.rate_for_day(@reservation.startdate, @option.variable_rates?))  > 0.0 %>
+	    <td><%=number_2_currency(day_rate) %></td>
+	  <% else %>
+	    <td></td>
+	  <% end %>
+	  <% if rate.weekly_rate > 0.0 %>
+	    <td><%=number_2_currency(rate.weekly_rate) %></td>
+	  <% else %>
+	    <td></td>
+	  <% end %>
+	  <% if rate.monthly_rate > 0.0 %>
+	    <td><%=number_2_currency(rate.monthly_rate) %></td>
+	  <% else %>
+	    <td></td>
+	  <% end %>
+	<% end %>
+      <% end %>
+
+      <td><%=space.sitetype.name %></td>
+      <td><%=space.special_condition %></td>
+      <% if controller.controller_name == 'reservation' %>
+	<td><a href="/reservation/<%= "#{@next_action}?space_id=#{space.id}&reservation_id=#{@reservation.id}"%>" onclick="this.onclick=function () {return false;};return true;"><%= I18n.t('reservation.Select') %></a></td>
+      <% else %>
+        <% if @space_selected %>
+	  <td id="select-<%=space.id%>" style="display: none">
+	<% else %>
+	  <td id="select-<%=space.id%>" >
+	<% end %>
+	    <%= link_to_remote I18n.t('reservation.Select'), :url => {:action => 'space_selected'},
+				:with => " 'space_id=' + #{space.id} + '&reservation_id=' + #{@reservation.id} " %></td>
+        <% if @space_selected %>
+	  <td id="deselect-<%=space.id%>" >
+	<% else %>
+	  <td id="deselect-<%=space.id%>" style="display: none">
+	<% end %>
+	    <%= link_to_remote I18n.t('reservation.Deselect'), :url => { :action => 'space_deselected' },
+				:with => " 'space_id=' + #{space.id} + '&reservation_id=' + #{@reservation.id} " %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

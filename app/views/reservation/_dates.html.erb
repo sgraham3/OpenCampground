@@ -1,0 +1,124 @@
+<div id="dates">
+<% if @reservation.seasonal? %>
+  <label for="reservation_startdate"><b><%= I18n.t('reservation.Arrival') %></b></label>
+  <span class="seasonal"><%= I18n.l(@reservation.startdate, :format => :long) %></span>
+  <label for="reservation_enddate"><b><%= I18n.t('reservation.Departure') %></b></label>
+  <span class="seasonal"><%= I18n.l(@reservation.enddate, :format => :long) %></span>
+  <span class="nodisplay">
+  <%= date_select 'reservation', 'startdate' %>
+  <%= date_select 'reservation', 'enddate' %>
+  </span>
+<% else %>
+  <% if @mobile %>
+    <table>
+      <tr>
+	<td> <b><%= I18n.t('reservation.Arrival') %>:</b> </td>
+	<td> <%= date_select 'reservation', 'startdate', {:start_year => 1.years.ago.year}  %></td>
+      </tr><tr>
+	<td><b><%= I18n.t('reservation.Departure') %>:</b></td>
+	<td><%= date_select 'reservation', 'enddate', {:start_year => 1.years.ago.year}  %></td>
+      </tr>
+    </table>
+    <%= observe_field :reservation_enddate_1i, :on => 'selected',
+		      :url => {:action => 'date_end_update', :only_path => false},
+		      :with => "'year='+encodeURIComponent(value)" %>
+    <%= observe_field :reservation_enddate_2i, :on => 'selected',
+		      :url => {:action => 'date_end_update', :only_path => false},
+		      :with => "'month='+encodeURIComponent(value)" %>
+    <%= observe_field :reservation_enddate_3i, :on => 'selected',
+		      :url => {:action => 'date_end_update', :only_path => false},
+		      :with => "'day='+encodeURIComponent(value)" %>
+    <%= observe_field :reservation_startdate_1i, :on => 'selected',
+		    :url => {:action => 'date_update', :only_path => false},
+		    :with => "'year='+encodeURIComponent(value)" %>
+    <%= observe_field :reservation_startdate_2i, :on => 'selected',
+		    :url => {:action => 'date_update', :only_path => false},
+		    :with => "'month='+encodeURIComponent(value)" %>
+    <%= observe_field :reservation_startdate_3i, :on => 'selected',
+		    :url => {:action => 'date_update', :only_path => false},
+		    :with => "'day='+encodeURIComponent(value)" %>
+  <% else %>
+    <table>
+      <tr>
+	<td>
+	  <b><%= I18n.t('reservation.Arrival') %>:</b>
+	</td><td>
+	  <%= cds_start('reservation', 'startdate', 'calendar_update', @remote) %>
+	</td><td>
+	  <b><%= I18n.t('reservation.Departure') %>:</b>
+	</td><td>
+	  <%= cds_end('reservation', 'enddate', 'calendar_end_update', @remote) %>
+	</td>
+      </tr>
+    </table>
+  <% end %>
+  <% if @option.use_closed? %>
+    <div id="closed_time">
+      <br />
+      <b>
+      <%= I18n.t('reservation.Flash.ClosedDates', :closed => I18n.l(@option.closed_start,:format => :short), :open => I18n.l(@option.closed_end,:format => :short)) %>
+      </b>
+    </div>
+  <% end %>
+  <% if @remote %>
+    <%= blackout_dates %>
+  <% end %>
+  <% if @option.use_reserve_by_wk? %>
+    <div id="by_week">
+      <% current_week = session[:number]
+	 current_count = session[:count]
+	 current_year = session[:year]
+	 start_year = 1.years.ago.year -%>
+      <br />
+      <b><%= I18n.t('reservation.Year') -%>:</b>
+      <select id="week_year" name="week[year]">
+	<% start_year.upto(start_year + 5) do |y| -%>
+	  <option value="<%= y -%>" <%= ' selected = "selected"' if y == current_year.to_i -%>> <%= y.to_s -%> </option>
+	<% end -%>
+      </select>
+      <b><%= I18n.t('reservation.Week') -%>:</b>
+      <select id="week_number" name="week[number]">
+	<% 1.upto(53) do |w| -%>
+	  <option value="<%= w -%>" <%= ' selected = "selected"' if w == current_week.to_i -%>> <%= w.to_s -%> </option>
+	<% end -%>
+      </select>
+      <b><%= I18n.t('reservation.WeekCount') -%>:</b>
+      <select id="week_count" name="week[count]">
+	<% 0.upto(53) do |c| -%>
+	  <option value="<%= c -%>" <%= ' selected = "selected"' if c == current_count.to_i -%>> <%= c.to_s -%> </option>
+	<% end -%>
+      </select>
+      <%= observe_field :week_year,
+			:on => 'changed',
+			:url => {:action => 'update_week_year', :only_path => false, :reservation_id => @reservation.id},
+			:with => "'year='+encodeURIComponent(value)" %>
+      <%= observe_field :week_number,
+			:on => 'changed',
+			:url => {:action => 'update_week_number', :only_path => false, :reservation_id => @reservation.id},
+			:with => "'number='+encodeURIComponent(value)" %>
+      <%= observe_field :week_count,
+			:on => 'changed',
+			:url => {:action => 'update_week_count', :only_path => false, :reservation_id => @reservation.id},
+			:with => "'count='+encodeURIComponent(value)" %>
+    </div>
+  <% end %>
+<% end %>
+<div id="seasonal">
+<% if @seasonal_ok %>
+  <label for="reservation_seasonal"><b><%= I18n.t('reservation.FullSeasonReservation') %>:</b></label>
+  <%= check_box 'reservation', 'seasonal', {}, '1', '0' %>
+  <%= observe_field :reservation_seasonal,
+                    :on => 'selected',
+                    :url => {:action => 'update_seasonal', :only_path => false, :reservation_id => @reservation.id},
+                    :with => "'seasonal='+encodeURIComponent(value)" %>
+<% end %>
+<% if @storage_ok %>
+  <label for="reservation_storage"><b><%= I18n.t('reservation.Storage') %>:</b></label>
+  <%= check_box 'reservation', :storage, {}, '1', '0' %>
+  <%= observe_field :reservation_storage,
+                    :on => 'selected',
+                    :url => {:action => 'update_storage', :only_path => false, :reservation_id => @reservation.id},
+                    :with => "'storage='+encodeURIComponent(value)" %>
+<% end %>
+</div>
+</div>

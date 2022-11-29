@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>We're sorry, but something went wrong (500)</title>
+	<style type="text/css">
+		body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+		div.dialog {
+			width: 25em;
+			padding: 0 4em;
+			margin: 4em auto 0 auto;
+			border: 1px solid #ccc;
+			border-right-color: #999;
+			border-bottom-color: #999;
+		}
+		h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+	</style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+  <% if controller.controller_name == 'remote' %>
+    <h1>Error 500 Web page does not exist.</h1>
+  <% else %>
+    <h1>We're sorry, but something went wrong.</h1>
+    <p>
+       You have encountered an error that was not anticipated in the 
+       building of Open Campground.  
+       Please send an email to
+       <a href="mailto:problems@OpenCampground.com?subject=Problem%20Report 500">problems@OpenCampground.com</a>
+       describing what you were last doing before
+       the problem occured.
+       The more information you can provide the more likely it is that
+       the problem can be rectified.</p>
+       <p>
+       In all cases that we have heard of the database was not impacted
+       but the last transaction which you were working on may not have
+       completed.</p>
+       <p>
+       Press this button to resume the system 
+     <form method="post" action="/" class="button-to"><div><input type="submit" value="Resume" /></div></form> 
+     this button will help you see where the problem is
+     <form method="get" action="/maintenance/troubleshoot" class="button-to"><div><input type="submit" value="Show problem Reservations or Groups" /></div></form>
+  <% end %>
+  </div>
+</body>
+</html>

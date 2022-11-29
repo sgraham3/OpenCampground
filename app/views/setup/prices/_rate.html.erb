@@ -1,0 +1,21 @@
+<% @seasons.each do |s|%>
+  <table border="1">
+    <tr><th></th><th colspan="<%=@count%>">Season: <%=s.name%></th></tr>
+    <tr>
+    <th>Price</th>
+    <% if @option.variable_rates %>
+      <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+    <% else %>
+      <th>Daily</th>
+    <% end %>
+      <th>Weekly</th> <th>Monthly</th>
+    <% if @seasonal %>
+      <th>Seasonal</th>
+    <% end %>
+    <% if @storage %>
+      <th>Monthly<br \>Storage</th>
+    <% end %>
+    </tr>
+    <%= each_season_rate(s) %>
+  </table><br />
+<% end %>

@@ -1,0 +1,648 @@
+# localization file for German.
+# The items before the : are the keys, the string to be printed is in quotes
+# To create a new translation copy this file to a new file xx.yml for language xx
+# and replace the items in quotes with the correct translations.
+# Do not translate anything in curley brackets %{ } 
+
+de:
+  # Open Campground phrases
+  layout:
+    banner:
+      user: "Benutzer"
+    side:
+      admin: "Admin"
+      logout: "Logout"
+      chg_pwd: "Passwort ändern" 
+      canx_chg:  "Änderung %{change_action} abbrechen"
+      canx_chg_conf: "Möchten Sie diese %{change_action} Änderung abbrechen?"
+      canx_res:  "Reservierung abbrechen"
+      canx_res_conf: "Diese Reservierung abbrechen?" 
+  titles:
+    express: "Expressreservierung"
+    res_list: "Reservierungsliste"
+    in_park:  "Anwesenheitsliste"
+    new_res:  "Neue Reservierung"
+    new_grp_res: "Neue Gruppenreservierung"
+    find_res: "Reservierung suchen"
+    campers:  "Camper"
+    CamperName: "Enter Camper Name and Address"
+    find_camper: "Camper suchen"
+    site_av:  "Platzverfügbarkeit"
+    CamperByActivity: "Camper nach letzter Aktivität"
+    CancelReservation: "Reservierung stornieren"
+    ChangeRes: "Reservierung ändern"
+    ChangeCamper: "Camper wechseln"
+    ChangeDates: "Datum ändern"
+    ChangeSpace: "Platz wechseln"
+    Checkin: "%{name} anmelden"
+    CombineCampers: "Camper zusammenfassen"
+    ConfirmRes: "Reservierung bestätigen"
+    ConfirmResId: "Reservierung %{reservation_id} bestätigen"
+    DateSel: "Datumsauswahl"
+    EditExtraCharge: "Bearbeite Aufpreis für Fläche %{space} für Reservierung %{reservation_id}"
+    GroupName: "Gruppe %{name}"
+    GroupResId: "Reservierung %{reservation_id}, %{name} Gruppe"
+    GroupResSpaceSel: "Gruppenreservierung Platzauswahl"
+    MeasuredCharges: "Gemessener Aufpreis pro Fläche"
+    MeterReadings: "Meter Werte"
+    NoResFound: "Keine Reservierung gefunden"
+    NoResFoundName: "Keine Reservierung für %{name} gefunden"
+    ResId: "Reservierung %{reservation_id}"
+    Review: "Überprüfen"
+    ReviewRes: "Reservierung überprüfen"
+    ResName: "Reservierungen für %{name}"
+    ReturningGroups: "Wiederkehrende Gruppen"
+    SelCreateCamper: "Camper auswählen oder erstellen"
+    SelCreateGroup: "Gruppe auswählen oder erstellen"
+    SelCreateWagonmaster: "Gruppenleiter auswählen oder erstellen"
+    SelSpace: "Platz auswählen"
+    ShowCamper: "Camper anzeigen"
+    UserList: "Benutzer auflisten"
+    UserNew: "Neuer Benutzer"
+    UserEdit: "Benutzer ändern"
+  general:
+    Select: "Auswählen"
+    Show: "Anzeigen"
+    Update: "Update"
+    List: "Auflisten"
+    Edit: "Bearbeiten"
+    Destroy: "Entfernen"
+    ConfirmDestroy: "Sind sie sicher?\nDie Transaktion wird vollständig entfernt."
+    Combine: "Zusammenführen"
+    Delete: "Löschen"
+    Finished: "Fertig"
+    Continue: "Weiter"
+    Print: "Drucken"
+    Flash:
+      CheckedInDateChg: "Ankunftsdatum nicht geändert. Ankunftsdatum kann nicht geändert werden, wenn bereits eingecheckt wurde."
+      DateOverlap: "Daten nicht geändert.  Vorgeschlagene Daten überschneiden sich mit Reservierungen: "
+      NotAuth: "Benutzer hat keine Berechtigung für die gewählte Funktion"
+      WrongStart: "Anfangsdatum der Reservierung falsch. "
+      WrongEnd: "Enddatum der Reservierung falsch. "
+      EqualDates: "Enddatum der Reservierung ist früher oder gleich dem Anfangsdatum." 
+      DateAdj: "Enddatum der Reservierung wurde später als Anfangsdatum gesetzt"
+  camper:
+    Create: "Erstellen"
+    Combine: "Verschmelze <b>%{name}</b> aus <b>%{place}</b> mit gewähltem Camper:"
+    ConfirmCombine: "Hierdurch wird %{combine_name} entfernt und durch %{camper_name} in allen Einträgen ersetzt.replacing.\nSind Sie sicher?"
+    Delete: "Möchten Sie %{name} wirklich löschen?"
+    Name: "Name"
+    Last: "Nachname"
+    First: "Vorname"
+    Phone: "Telefon"
+    Phone2: "Mobil"
+    Email: "E-Mail-Adresse"
+    Address: "Straße"
+    City: "Wohnort"
+    State: "Bundesland"
+    Zip: "PLZ"
+    Country: "Land"
+    ID: "Ausweis-Nummer"
+    FindByName: "Nach Nachnamen suchen"
+    LastActivity: "Letzte Aktivität"
+    ListByName: "Nach Namen sortieren"
+    NotFound: "Camper nicht gefunden"
+    Notes: "Private Notizen"
+    Addl: "Zusätzliche Informationen"
+    Flash:
+      Created: "Camper %{camper_name} erstellt"
+      CreateFail: "Camper %{camper_name} konnte nicht erstellt werden"
+      CannotDestroy: "%{camper_name} hat derzeit Reservierungen oder Gruppen im System, daher kann der Eintrag nicht entfernt werden"
+      Deleted: "Camper %{camper_name} gelöscht."
+      DeleteFailed: "Löschen von Camper %{camper_name} fehlgeschlagen."
+      ChangeFail: "Jemand anderes bearbeitet gerade diesen Camper, Änderungen wiederholen"
+  remote:
+    ConfirmLater: "Bestätigen Sie, dass Sie eine Reservierung mit späterer Bezahlung erstellen wollen"
+    Cancel: "Reservierung abbrechen?"
+    Redirect: "Sie werden weitergeleitet zu %{url}"
+    StartOver: "Neu beginnen"
+    WaitingConfirm: "Warte auf Zahlungsbestätigung"
+  reservation:
+    Adults: "Erwachsene"
+    Amount: "Gesamt"
+    AmountDue: "Ausstehende Zahlung"
+    Any: "irgendein/e"
+    Archived: "Archiviert"
+    Arrival: "Ankunft"
+    Cancel: "Storno"
+    CancelCancellation: "Storno abbrechen"
+    CancelCheckin: "Check in abbrechen"
+    CancelChangeSpace: "Platz-Änderung abbrechen"
+    CancelDateChg: "Datums-Änderung abbrechen"
+    CancelOverride: "Gesamtsumme Überschreiben abbrechen"
+    CancelRes: "Reservierung abbrechen?"
+    CardNumber: "Kartennummer"
+    Checkin: "Check in"
+    CheckingInToday: "Ankunft heute"
+    CheckingOutToday: "Abreise heute"
+    CheckInNow: "Jetzt anmelden"
+    Checkout: "Check out"
+    Children: "Kinder"
+    CompleteCancellation: "Storno fertigstellen"
+    CompleteCheckin: "Check in fertigstellen"
+    CompleteReservation: "Reservierung fertigstellen"
+    ConfirmCheckin: "Check In von %{name} bestätigen"
+    ConfirmCheckinDate: "Check in von %{name} nicht am geplanten Ankunftsdatum bestätigen"
+    ConfirmCancelCheckin: "Abbruch des Check in von %{name} bestätigen"
+    ConfirmCheckout: "Check out von %{name} bestätigen"
+    ConfirmCheckoutDate: "Check out von %{name} am %{enddate} bestätigen"
+    ConfirmCancel: "Stornieren der Reservierung von %{name} bestätigen"
+    ConfirmPurge: "Komplettes Entfernen der Reservierung %{number} für %{name} bestätigen"
+    ConfirmRes: "Reservierung für %{name} bestätigen"
+    ConfirmExtend: "%{name} für einen Tag verlängern?"
+    ConfirmExtendMonth: "%{name} bis %{enddate} verlängern?"
+    Count: "Anzahl"
+    Current: "Stand"
+    Daily: "Täglich"
+    Date: "Datum"
+    Days: "Tage"
+    Departure: "Abreise"
+    Deposit: "Kaution"
+    Deselect: "Auswahl aufheben"
+    Discount: "Rabatt"
+    DownloadData: "Daten herunterladen"
+    Due: "Noch ausstehend"
+    Each: "pro Tag"
+    EndDate: "Abreise"
+    Envelope: "Fenster Umschlag"
+    EWS: "Anschlüsse"
+    Expand: "Erweitern"
+    Expires: "Gültigkeit"
+    Extend: "Verlängern"
+    ExtendMonth: "Um Monat verlängern"
+    Feedback: "Feedback per E-Mail"
+    NoFeedback: "Kein Feedback per E-Mail schicken"
+    FindbyIdNumber: "Nach Ausweis-Nummer suchen"
+    FindbyLastName: "Nach Nachname suchen"
+    FindbyPhoneNumber: "Find by Phone Number (last digits)"
+    FindbyReservationNumber: "Nach Reservierungsnummer suchen"
+    FindbySpace: "Find by Space"
+    FindSpace: "Platz suchen"
+    Finished: "Fertigstellen"
+    FullSeasonReservation: "Jahresreservierung"
+    Group: "Gruppe"
+    Groups: "Gruppen"
+    Inpark: "Anwesend"
+    Item: "Posten"
+    Length: "Länge"
+    Monthly: "Monatlich"
+    Months: "Monate"
+    none: "kein"
+    NotArrivingYet: "Noch nicht angekommen"
+    NotCheckedIn: "Noch nicht angemeldet"
+    Notes: "Bemerkungen"
+    notspecified: "nicht angegeben"
+    nr_Adults: "Anz. Erwachsene"
+    nr_Children: "Anz. Kinder"
+    nr_Pets: "Anz. Hunde"
+    nr_Slides: "Anz. Auszüge"
+    Number: "Nummer"
+    Occupied: "Belegt"
+    Onetime_Discount: "Einmaliger Rabatt"
+    OverdueforCheckIn: "Anmeldung überfällig"
+    OverdueforCheckOut: "Abmeldung überfällig"
+    OverrideTotal: "Gesamtsumme anpassen"
+    Overstayed: "Überschreitung"
+    OverstayingReservation: "Reservierung überschritten"
+    PaymentType: "Zahlungsart"
+    Payment: "Zahlung"
+    PayNow: "Jetzt zahlen"
+    Pets: "Haustiere"
+    PreliminaryRateInfo: "Vorläufige Preisauskunft"
+    Purge: "Reservierung leeren"
+    RateInfo: "Preisauskunft"
+    ReasonforCancelation: "Grund für Absage"
+    RecalculateCharges: "Summe neu berechnen"
+    RecommendedBy: "Empfohlen von"
+    Reservation: "Reservierung"
+    ReservationNumber: "Reservierungsnummer"
+    Reserved: "Reserviert"
+    Res_nr: "Res.-Nr."
+    Return: "Zurück"
+    RigAge: "Baujahr"
+    RigType: "Fahrzeugtyp"
+    ScheduledtoCheckInToday: "Vorgesehene Ankunft heute"
+    ScheduledtoCheckOutToday: "Vorgesehene Abreise heute"
+    SeasonalRate: "Saisonale Gebühr"
+    Seasonal: "Saisonal"
+    Season: "Saison"
+    SelectDatesforChangedSpace: "Datum für Platzwechsel auswählen"
+    SelectedSiteInfo: "Info für ausgewählten Platz"
+    Select: "Auswählen"
+    Show: "Anzeigen"
+    ShowLog: "Log zeigen/verbergen"
+    SiteType: "Platzart"
+    Size: "Größe"
+    Slides: "Auszüge"
+    Space: "Platz"
+    spaces: "Plätze"
+    spaces_available: "Plätze verfügbar"
+    SpacesSelected: "Plätze ausgewählt"
+    Special: "Spezial"
+    Start: "Start"
+    StartDate: "Anreise"
+    Status: "Status"
+    Storage: "Abstellplatz"
+    SubmitDateChange: "Datum ändern"
+    SubTotal: "Zwischensumme"
+    To: " bis "
+    Today: "Today"
+    TotaltoDisplay: "Anzuzeigende Summe"
+    Total: "Summe"
+    Type: "Art"
+    UndoCancel: "Änderung abbrechen"
+    UndoCheckout: "Checkout rückgängig machen"
+    UpdateEmail: "Update prt E-Mail verschicken"
+    Vehicle2License: "Kennzeichen"
+    Vehicle2State: "Landkreis"
+    VehicleLicense: "Kennzeichen"
+    VehicleState: "Landkreis"
+    Weekly: "Wöchentlich"
+    Weeks: "Wochen"
+    Year: "Jahr"
+    Week: "Kalenderwoche"
+    WeekCount: "Anzahl der Wochen"
+    Flash:
+      UpdateSuccess: "Reservierung %{reservation_id} für %{camper_name} wurde erfolgreich aktualisiert."
+      UpdateFail: "Reservierung konnte nicht aktualisiert werden. Bitte wiederholen."
+      SpaceChgName: "Reservierung %{reservation_id} für %{camper_name} auf Platz %{space} geändert"
+      SpaceChg: "Reservierung %{reservation_id} auf Platz %{space} geändert"
+      SpaceUnavailable: "Platz nicht verfügbar"
+      ClosedDates: "Park geschlossen von %{closed} bis %{open}"
+      ConfSent: "Bestätigungs-E-mail verschickt"
+      ConfErr: "Fehler beim Verschicken der Bestätigungs-E-Mail. Reservierungsbestätigung nicht verschickt."
+      ConfNotSent: "Keine E-Mail-Adresse. Reservierungsbestätigung nicht verschickt."
+      NonConfSent: "Reservierungs-Absage nicht verschickt."
+      NonConfErr: "Fehler beim Verschicken der E-Mail. Reservierungs-Absage nicht verschickt."
+      NonConfNotSent: "Keine E-Mail-Adresse. Reservierungs-Absage nicht verschickt"
+      FeedbackSent: "Feedback E-Mail verschickt"
+      FeedbackErr: "Fehler beim Verschicken der E-Mail. Feedback E-Mail nicht verschickt."
+      FeedbackNotSent: "Keine E-Mail-Adresse. Feedback-E-Mail nicht verschickt"
+      UpdateSent: "Update E-Mail verschickt"
+      UpdateErr: "Fehler beim Verschicken der E-Mail. Update E-Mail nicht verschickt"
+      UpdateNotSent: "Keine E-Mail-Adresse. Update E-Mail nicht verschickt"
+      CheckedIn: "%{camper_name} hat auf Platz %{space} eingecheckt"
+      CheckinFail: "Check in von %{camper_name} auf Platz %{space} fehlgeschlagen"
+      CheckinFailOcc: "Check in FEHLGESCHLAGEN.  Platz %{space} ist belegt.<br/> %{camper_name} anderen Platz auf Reservierung#%{reservation_id}zuweisen oder %{other_camper} auf Reservierungs#%{other_reservation} auschecken und Check in erneut versuchen."
+      CheckinFailUnavail: "Check in FEHLGESCHLAGEN.  Platz %{space} ist nicht verfügbar.<br/> %{camper_name} anderen Platz auf Reservierungs#%{reservation_id} zuweisen."
+      CheckedOut: "%{camper_name} check out abgeschlossen"
+      CheckoutFail: "Check out von %{camper_name} fehlgeschlagen"
+      Canceled: "Stornierung von %{camper_name}s Reservierung %{reservation_id} abgeschlossen"
+      CanxFail: "Stornierung von Reservierung %{reservation_id} fehlgeschlagen"
+      CheckinVer: "Anfangsdatum der Reservierung %{reservation_id} für Platz %{space} ist der %{startdate}<br/> Bestätigen, dass dies das korrekte Check in Datum ist."
+      CamperLong: "Fahrzeuglänge beträgt %{camper_length} und Platz-Länge beträgt %{space_length}.\nÜberprüfen, dass Platzzuweisung korrekt ist"
+      EarlyStart: "Anfangsdatum ist früher als das heutige Datum"
+      Conflict: "Reservierungs-Konflikt für diesen Platz, erneut auswählen"
+      ExtendConflict: "Platz %{space_name} ist am %{enddate} belegt. Siehe Reservierung # %{conflict_id}"
+      ExtendFail: "Verlängerung der Reservierung nicht möglich"
+      NotFound: "Reservierung %{id} nicht gefunden"
+      CardNoInvalid: "Kreditkartennummer ungültig"
+      CardExpired: "Kreditkarte ist abgelaufen"
+      Purged: "Reservierung %{id} komplett aus dem System entfernt"
+      UndoCanxFail1: "Reservierung %{reservation_id} kollidiert mit anderen Reservierungen "
+      UndoCFail2: "<br />wählen Sie einen anderen Platz"
+      UndoCanxOK: "Stornierung der Reservierung %{reservation_id} rückgängig gemacht"
+      UndoCOno: "Reservierung %{reservation_id} nicht eingechecked.  Checkout kann nicht rückgängig gemacht werden"
+      UndoCOFail1: "Reservierung %{reservation_id} kollidiert mit anderen Reservierungen"
+      UndoCOOK: "Checkout von Reservierung %{reservation_id} rückgängig gemacht"
+      CancelSent: "Reservation cancellation email sent"
+      CancelErr: "Error encountered, reservation cancellation email not sent"
+  group:
+    Create: "Neue Gruppe erstellen"
+    GroupName: "Gruppenname"
+    Destroy: "Löschen"
+    CurrentReservations: "Laufende Reservierungen"
+    DownloadCampers: "Camper herunterladen"
+    ShowActiveGroups: "Aktive Gruppen anzeigen"
+    ShowAllGroups: "Alle Gruppen anzeigen"
+    ShowCampers: "Camper anzeigen"
+    ShowReservations: "Reservierungen anzeigen"
+    NumberReserved: "Nummer reserviert"
+    Wagonmaster: "Gruppenleiter"
+    Flash:
+      Created: "Gruppe %{name} erstellt"
+      CreateFail: "Gruppe %{name} konnte nicht erstellt werden"
+      Selected: "Gruppe %{name} ausgewählt"
+      Deleted: "Gruppe %{name} gelöscht."
+      DeleteFailed: "Löschen von Gruppe %{name} fehlgeschlagen."
+      UpdateErr: "Die Gruppe wird gerade von jemand anderem bearbeitet, Änderungen wiederholen"
+  group_res:
+    NumberofSpacesSelected: "Anzahl der ausgewählten Plätze"
+    SelectionsDone: "Auswahl abgeschlossen"
+    FindSpaces: "Plätze suchen"
+    DesignateGroup: "Gruppe zuweisen"
+    ConfirmCancel: "Stornieren der Reservierungen für Gruppe %{name} bestätigen"
+    ConfirmCheckout: "Check out von Gruppe %{name} am %{enddate} bestätigen"
+    ConfirmCheckin: "Check in von Gruppe %{name} am %{startdate} bestätigen"
+    Flash:
+      NoneSelected: "Mindestens ein Platz muss ausgewählt werden.  Erneut versuchen"
+      CntSelected: "%{count} Plätze ausgewählt"
+      ResCreated: "Reservierungen für %{count} Plätze für %{name} wurden erfolgreich erstellt."
+      Canx: "Stornieren für "
+      Unavailable: "Plätze nicht verfügbar "
+      Correct: " Vor Check In korrigieren"
+      Checkin: "Check in für "
+      Checkout: "Check out für "
+      OK: "%{name} OK "
+      Fail: "%{name} FEHLGESCHLAGEN "
+  admin:
+    ConfirmDelete: "Sind Sie sicher, dass Sie %{name} entfernen wollen?"
+    ConfirmRestore: "Sind Sie sicher, dass Sie %{name} aus dem Backup wiederherstellen wollen?\nAlle vorhandenen Daten werden ersetzt."
+    Confirm: "Sind Sie sicher?"
+  user:
+    ChangeUser: "Benutzer Details ändern"
+    Admin: "Admin"
+    Change: "Ändern"
+    Remove: "Entfernen"
+    ConfirmRemove: "Sind Sie sicher, dass %{name} entfernt werden soll?"
+    New: "Neuer Benutzer"
+    Finished: "Abgeschlossen"
+    Details: "Benutzer Details eingeben"
+    AddUser: "Benutzer hinzufügen"
+    NewPasswd: "Neues Passwort eingeben"
+    Name: "Name"
+    Password: "Passwort"
+    Confirm: "Bestätigen"
+    Submit: "Änderungen absenden"
+    Cancel: "Abbrechen"
+    Flash:
+      Created: "Benutzer %{name} erfolgreich erstellt."
+      CreateFailed: "Benutzer-Erstellung fehlgeschlagen"
+      Destroyed: "Benutzer gelöscht"
+      DestroyFailed: "Löschen des Benutzers fehlgeschlagen"
+      Updated: "Benutzer %{name} erfolgreich aktualisiert."
+      UpdateFailed: "Benutzer-Aktualisierung fehlgeschlagen"
+  login:
+    Login: "Bitte einloggen"
+    Remember: "Daten merken"
+    SubmitLogin: "Login"
+    Flash:
+      BadPass: "Ungültige Benutzer/Passwort-Kombination"
+  extra:
+    Initial: "Anfangswert:"
+    Previous: "Vorheriger Wert"
+    New: "Neuer Wert"
+    Final: "Finaler Wert:"
+    Amount: "Summe:"
+    Consumed: "Verbraucht"
+    Rate: "Rate:"
+    Charge: "Gebühr:"
+    Created: "Erstellungsdatum:"
+    Updated: "Letzte Aktualisierung:"
+    Update: "Aktualisierung"
+    Name: "Extra Name"
+  payment:
+    Date: "Zahlungsdatum"
+    Type: "Zahlungsart"
+    Number: "Nummer"
+    Expire: "Gültig bis"
+    Amount: "Summe"
+    Memo: "Memo"
+    Created: "Created"
+    Updated: "Updated"
+  update:
+    Desc: "You should backup your database before doing this update."
+    Fetch: "Aktualisierung holen"
+    Finished: "Abgeschlossen"
+    Install: "Update installieren"
+    Retry: "Nochmal versuchen"
+    Skip: "Update abbrechen"
+  day:
+    Sunday_i: "S"
+    Monday_i: "m"
+    Tuesday_i: "d"
+    Wednesday_i: "m"
+    Thursday_i: "d"
+    Friday_i: "f"
+    Saturday_i: "s"
+  notice:
+    Restart: "Bitte den Server stoppen und neu starten!"
+    Required: "Erforderliches Feld"
+  error:
+    Application: "Anwendungsfehler"
+    Conflict: "Jemand anderes ändert die gleiche Reservierung, bitte erneut versuchen."
+  warning:
+    LastName: "Nachname für Camper ist erforderlich"
+    Email: "Gültige E-Mail-Adresse erforderlich"
+    Phone: "Telefonnummer ist erforderlich"
+    FirstName: " - Camper muss einen Vornamen haben"
+    Addr: "Pflichtfeld"
+    City: "Pflichtfeld"
+    State: "Pflichtfeld"
+    Zip: "Pflichtfeld"
+    Country: "Pflichtfeld"
+    IdNumber: "Pflichtfeld"
+  will_paginate:
+    previous_label: "« vorherige Seite"
+    next_label: "nächste Seite »"
+    page_gap: "…"
+  # standard Rails translations
+  date:
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+    month_names:
+      - ~
+      - Januar
+      - Februar
+      - März
+      - April
+      - Mai
+      - Juni
+      - Juli
+      - August
+      - September
+      - Oktober
+      - November
+      - Dezember
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mär
+      - Apr
+      - Mai
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dez
+    day_names: 
+      - Sonntag
+      - Montag
+      - Dienstag
+      - Mittwoch
+      - Donnerstag
+      - Freitag
+      - Samstag
+    abbr_day_names: 
+      - So
+      - Mo
+      - Di
+      - Mi
+      - Do
+      - Fr
+      - Sa
+    formats:
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b"
+      month: "%B"
+      month_year: "%B %y"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 'etwa eine Stunde'
+        other: 'etwa %{count} Stunden'
+      about_x_months:
+        one: 'etwa ein Monat'
+        other: 'etwa %{count} Monate'
+      about_x_years:
+        one: 'etwa ein Jahr'
+        other: 'etwa %{count} Jahre'
+      almost_x_years:
+        one: 'fast ein Jahr'
+        other: 'fast %{count} Jahre'
+      half_a_minute: 'eine halbe Minute'
+      less_than_x_minutes:
+        one: 'weniger als eine Minute'
+        other: 'weniger als %{count} Minuten'
+      less_than_x_seconds:
+        one: 'weniger als eine Sekunde'
+        other: 'weniger als %{count} Sekunden'
+      over_x_years:
+        one: 'mehr als ein Jahr'
+        other: 'mehr als %{count} Jahre'
+      x_days:
+        one: 'ein Tag'
+        other: ! '%{count} Tage'
+      x_minutes:
+        one: 'eine Minute'
+        other: ! '%{count} Minuten'
+      x_months:
+        one: 'ein Monat'
+        other: ! '%{count} Monate'
+      x_seconds:
+        one: 'eine Sekunde'
+        other: ! '%{count} Sekunden'
+    prompts:
+      day: Tag
+      hour: Stunden
+      minute: Minuten
+      month: Monat
+      second: Sekunden
+      year: Jahr
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 'muss akzeptiert werden'
+      blank: 'muss ausgefüllt werden'
+      present: 'darf nicht ausgefüllt werden'
+      confirmation: 'stimmt nicht mit %{attribute} überein'
+      empty: 'muss ausgefüllt werden'
+      equal_to: 'muss genau %{count} sein'
+      even: 'muss gerade sein'
+      exclusion: 'ist nicht verfügbar'
+      greater_than: 'muss größer als %{count} sein'
+      greater_than_or_equal_to: 'muss größer oder gleich %{count} sein'
+      inclusion: 'ist kein gültiger Wert'
+      invalid: 'ist nicht gültig'
+      less_than: 'muss kleiner als %{count} sein'
+      less_than_or_equal_to: 'muss kleiner oder gleich %{count} sein'
+      not_a_number: 'ist keine Zahl'
+      not_an_integer: 'muss ganzzahlig sein'
+      odd: 'muss ungerade sein'
+      record_invalid: ! 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+      restrict_dependent_destroy:
+      one: ! 'Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz existiert.'
+      many: ! 'Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.'
+      taken: 'ist bereits vergeben'
+      too_long:
+      one: 'ist zu lang (mehr als 1 Zeichen)'
+      other: 'ist zu lang (mehr als %{count} Zeichen)'
+      too_short:
+      one: 'ist zu kurz (weniger als 1 Zeichen)'
+      other: 'ist zu kurz (weniger als %{count} Zeichen)'
+      wrong_length:
+      one: 'hat die falsche Länge (muss genau 1 Zeichen haben)'
+      other: 'hat die falsche Länge (muss genau %{count} Zeichen haben)'
+      other_than: 'darf nicht gleich %{count} sein'
+    template:
+      body: ! 'Bitte überprüfen Sie die folgenden Felder:'
+      header:
+        one: ! 'Konnte %{model} nicht speichern: ein Fehler.'
+        other: ! 'Konnte %{model} nicht speichern: %{count} Fehler.'
+  helpers:
+    select:
+      prompt: 'Bitte wählen'
+    submit:
+      create: ! '%{model} erstellen'
+      submit: ! '%{model} speichern'
+      update: ! '%{model} aktualisieren'
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: .
+      precision: 2
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            one: Milliarde
+            other: Milliarden
+          million: Millionen
+          quadrillion:
+            one: Billiarde
+            other: Billiarden
+          thousand: Tausend
+          trillion: Billionen
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' und '
+      two_words_connector: ! ' und '
+      words_connector: ! ', '
+  time:
+    am: vormittags
+    formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+      short: "%d. %B, %H:%M Uhr"
+    pm: nachmittags

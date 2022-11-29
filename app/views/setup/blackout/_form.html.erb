@@ -1,0 +1,8 @@
+<div id="blackout">
+  <p><b><label for="blackout_name">Name</label></b> <%= text_field :blackout, :name %>
+  <b><label for="startdate">Start Date:</label></b>
+    <%= date_select 'blackout', 'startdate' %>
+  <b><label for="enddate">End Date:</label></b>
+    <%= date_select 'blackout', 'enddate' %>
+  <b><label for="active">Active:</label></b> <%= check_box :blackout, :active  %>
+</div>

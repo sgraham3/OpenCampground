@@ -1,0 +1,18 @@
+<div class="oc_form">
+  <%= error_messages_for 'users' %>
+
+  <% form_tag(admin_user_path(@user.id), :method => :put) do %>
+    <fieldset>
+      <legend><%= I18n.t('user.NewPasswd')%></legend>
+      <%= render :partial => 'form' %>
+      <div>
+	<%= submit_tag I18n.t('user.Submit'), :class => "submit" %>
+      </div>
+    </fieldset>
+  <% end %>
+<% if @user_login.admin? %>
+  <%= link_to I18n.t('user.Cancel'), admin_users_path, :class => "link_btn" %>
+<% else %>
+  <%= link_to I18n.t('user.Cancel'), {:controller => '/reservation', :action => 'list'}, :class => "link_btn" %>
+<% end %>
+</div>

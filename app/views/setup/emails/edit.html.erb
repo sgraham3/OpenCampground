@@ -1,0 +1,56 @@
+<%= render :partial => 'setup/buttons' %>
+<% form_tag setup_email_path, :method => :put do %>
+<div>
+<h2>
+Mail message subject definition
+</h2>
+<table>
+<tr> <td>Reservation confirmed email: </td> <td> <b><%= text_field :email, :confirm_subject %></b> </td></tr>
+<tr> <td>Reservation updated email: </td> <td> <b><%= text_field :email, :update_subject %></b> </td></tr>
+<tr> <td>Reservation feedback email: </td> <td> <b><%= text_field :email, :feedback_subject %></b> </td></tr>
+<tr> <td>Reservation cancelled email: </td> <td> <b><%= text_field :email, :reservation_cancel_subject %></b> </td></tr>
+<% if @option.use_remote_reservations? %>
+  <tr> <td>Remote Reservation created email: </td> <td> <b><%= text_field :email, :remote_res_subject %></b> </td></tr>
+  <tr> <td>Remote Reservation confirmed email: </td> <td> <b><%= text_field :email, :remote_res_confirm_subject %></b> </td></tr>
+  <tr> <td>Remote Reservation rejected email: </td> <td> <b><%= text_field :email, :remote_res_reject_subject %></b> </td></tr>
+<% end %>
+</table>
+<h2>
+SMTP Configuration
+</h2>
+<table>
+  <tr>
+    <td> SMTP server address: </td> <td> <b><%= text_field :email, :smtp_address %></b> </td>
+    <td> SMTP domain: </td> <td> <b><%= text_field :email, :smtp_domain %></b> </td>
+  </tr>
+  <tr>
+    <td> SMTP authentication method: </td> <td> <%= collection_select( :email, :smtp_authentication_id, SmtpAuthentication.all, :id, :name) %> </td>
+    <td> SMTP port number: </td> <td> <b><%= text_field :email, :smtp_port %></b> </td>
+  </tr>
+  <tr>
+    <td> SMTP user name: </td> <td> <b><%= text_field :email, :smtp_username %></b> </td>
+    <td> SMTP password: </td> <td> <b><%= text_field :email, :smtp_password %></b> </td>
+  </tr>
+</table>
+<hr/>
+<h2>
+Mail Configuration
+</h2>
+<table>
+  <tr>
+    <td>Mail sender address:</td><td> <b><%= text_field :email, :sender %></b></td>
+    <td>Mail reply_to address:</td><td> <b><%= text_field :email, :reply %></b></td>
+  </tr>
+  <tr>
+    <td>Mail cc address:</td><td> <b><%= text_field :email, :cc %></b></td>
+    <td>Mail bcc address:</td><td> <b><%= text_field :email, :bcc %></b></td>
+  </tr>
+</table>
+<%= submit_tag 'Save Changes' %>
+</div>
+<% end %>
+<table><tr><td>
+<%= button_to 'Test current configuration', send_test_setup_email_path, :method => :get %>
+</td><td>
+<%= button_to 'Finished', setup_index_path, :method => :get %>
+</td></tr></table>

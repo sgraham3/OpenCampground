@@ -1,0 +1,18 @@
+<%= render :partial => 'setup/buttons' %>
+  <h2>
+    Security Settings:
+  </h2>
+  <p>
+  These two values are used to uniquely secure your system.
+  New values will be generated and stored in the database when you hit the update button.
+  This will have no impact if you do not operate on the Internet but if your system is connected to the Internet you should set
+  these values to more closely secure your system.
+  This may take a second or so to execute.
+  </p>
+  <p>
+  <br />
+Cookie Token: <b><%=  @option.cookie_token %></b><br />
+Session Token: <b><%=  @option.session_token %></b><br />
+  </p>
+<%= button_to 'Update', setup_security_path, :method => :put %>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

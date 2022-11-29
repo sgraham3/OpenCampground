@@ -1,0 +1,2 @@
+module Setup::RigtypeHelper
+end

@@ -1,0 +1,8 @@
+<% form_tag setup_space_path(@space), :method => :put do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag 'Save' %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', setup_spaces_path, :method => :get %>

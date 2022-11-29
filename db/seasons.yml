@@ -1,0 +1,15 @@
+--- 
+seasons_002: 
+  startdate: "<%= (Date.today - 3.days).to_s %>"
+  applies_to_weekly: true
+  enddate: "<%= (Date.today + 1.days).to_s %>"
+  id: "2"
+  applies_to_monthly: true
+  name: Holiday
+seasons_001: 
+  startdate: "2000-01-01"
+  applies_to_weekly: true
+  enddate: "2100-01-01"
+  id: "1"
+  applies_to_monthly: true
+  name: default

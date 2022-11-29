@@ -1,0 +1,12 @@
+<%= render :partial => '/setup/buttons' %>
+<%= render :partial => 'explain' %>
+<p>
+<a href="/camper/new", class="link_btn">Create a camper</a>
+</p>
+<div id="csv">
+    <% form_tag setup_campers_path, :multipart => true, :csv => 'csv'  do %>
+      <label for="upload_file">Csv File</label> :
+      <%= file_field_tag 'upload', :accept => '.csv', :multipart => true %> <br />
+      <%= submit_tag "Upload csv file of campers" %>
+    <% end %>
+</div>

@@ -1,0 +1,47 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<form method="post" action="<%= report_recommenders_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+<table>
+<tr>
+<th>Source of</th>
+<% if @history == true %>
+<th colspan="2">Historical</th>
+<% end %>
+<% if @inpark == true %>
+<th colspan="2">In Park</th>
+<% end %>
+<% if @res == true %>
+<th colspan="2">Reservations</th>
+<% end %>
+<th colspan="2">Total</th>
+</tr>
+<tr>
+<th>Recommendations</th>
+<% if @history == true %>
+<th>Count</th><th>Days</th>
+<% end %>
+<% if @inpark == true %>
+<th>Count</th><th>Days</th>
+<% end %>
+<% if @res == true %>
+<th>Count</th><th>Days</th>
+<% end %>
+<th>Count</th><th>Days</th>
+</tr>
+<% @recommends.each_key do |src| %>
+<tr>
+<td><%= src %></td>
+<% if @history == true %>
+<td align="center"><%= @recommends[src]["h_cnt"] %></td><td align="center"><%= @recommends[src]["h_days"]%></td>
+<% end %>
+<% if @inpark == true %>
+<td align="center"><%= @recommends[src]["i_cnt"] %></td><td align="center"><%= @recommends[src]["i_days"]%></td>
+<% end %>
+<% if @res == true %>
+<td align="center"><%= @recommends[src]["r_cnt"] %></td><td align="center"><%= @recommends[src]["r_days"]%></td>
+<% end %>
+<td align="center"><%= @recommends[src]["t_cnt"] %></td><td align="center"><%= @recommends[src]["t_days"]%></td>
+</tr>
+<% end %>
+</table>
+</p>

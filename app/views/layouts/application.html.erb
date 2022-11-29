@@ -1,0 +1,47 @@
+<% if @option.css.blank? %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <%= render :partial => 'layouts/head' %>
+  <%= render :partial => 'layouts/includes' %>
+  <style type="text/css" media="print">
+    #main {
+            font-family: <%= @option.font_family %>;
+	    font-size: <%= @option.font_size %>pt;
+	  }
+    #main-t {
+            font-family: <%= @option.font_family %>;
+	    font-size: <%= @option.font_size %>pt;
+	  }
+  </style>
+  <% if controller.controller_name == 'availables' %>
+    <style type="text/css">
+      td { 
+	   font-size: <%= @option.sa_font_size %>px;
+	   line-height: <%= @option.sa_font_size + 2 %>px;
+	   font-weight: bold;
+	}
+    </style>
+  <% end %>
+</head>
+<body>
+  <%= render :partial => 'layouts/banner' %>
+  <% if @option.tabs? %>
+    <%= render :partial => 'layouts/tabs' %>
+  <% else %>
+    <%= render :partial => 'layouts/columns' %>
+  <% end %>
+  <%= render :partial => 'layouts/flash', :object => flash %>
+  <%= @content_for_layout %>
+  </div>
+  <% unless @use_navigation %>
+  </div>
+  <% end %>
+</body>
+</html>
+<% else %>
+  <%= ERB.new(@option.css).result(binding) %>
+<% end %>

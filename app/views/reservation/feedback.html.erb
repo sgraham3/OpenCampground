@@ -1,0 +1,13 @@
+<% form_tag :action => :feedback do %>
+  <input type="hidden" name="camper_id" value="<%= @reservation.camper_id -%>" />
+  <input type="hidden" name="reservation_id" value="<%= @reservation.id -%>" />
+  <input type="hidden" name="space_id" value="<%=@reservation.space_id -%>" />
+  <input type="hidden" name="startdate" value="<%=@reservation.startdate -%>" />
+  <input type="hidden" name="enddate" value="<%=@reservation.enddate -%>" />
+  <input type="hidden" name="total" value="<%=@reservation.total -%>" />
+  <input type="hidden" name="deposit" value="<%=@reservation.deposit -%>" />
+  <input type="hidden" name="created_at" value="<%=@reservation.created_at -%>" />
+
+  <%= submit_tag I18n.t('reservation.Feedback') %>
+<% end %>
+<%= button_to I18n.t('reservation.NoFeedback'), :action => :in_park %>

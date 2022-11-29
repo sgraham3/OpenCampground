@@ -1,0 +1,8 @@
+<%= render :partial => 'explain' %>
+<% form_tag setup_discount_path, :method => :put, :id => @discount do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag 'Save' %>
+  </p>
+<% end %>
+<%= button_to 'Cancel', setup_discount_index_path, :method => :get %>

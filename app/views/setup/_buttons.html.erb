@@ -1,0 +1,38 @@
+<div style="border: solid">
+    <%= link_to '  Sitetypes   ', setup_sitetype_index_path, :class => "link_btn" %>
+    <%= link_to '   Seasons    ', setup_seasons_path, :class => "link_btn" %>
+    <%= link_to '    Prices    ', setup_prices_path, :class => "link_btn" %>
+    <%= link_to '    Spaces    ', setup_spaces_path, :class => "link_btn" %>
+    <%= link_to '  Discounts   ', setup_discount_index_path, :class => "link_btn" %>
+    <%= link_to '   Rigtypes   ', setup_rigtypes_path, :class => "link_btn" %>
+    <%= link_to '    Taxes     ', setup_taxrates_path, :class => "link_btn" %>
+    <%= link_to '    Extras    ', setup_extra_index_path, :class => "link_btn" %>
+    <%= link_to " Payment \nTypes  ", setup_creditcards_path, :class => "link_btn" %>
+    <%= link_to "System \nOptions", edit_setup_option_path, :class => "link_btn" %>
+    <% if @option.use_country == true %>
+      <%= link_to '  Countries   ', setup_countries_path, :class => "link_btn" %>
+    <% end %>
+    <% if @option.use_recommend == true %>
+      <%= link_to '  Recommenders   ', setup_recommenders_path, :class => "link_btn" %>
+    <% end %>
+    <%= link_to '    Colors    ', setup_color_index_path, :class => "link_btn" %>
+    <%= link_to "Customize \nDisplay", setup_dynamic_strings_path, :class => "link_btn" %>
+    <%= link_to "Create \nCampers", new_setup_camper_path, :class => "link_btn" %>
+    <% if @option.use_map? || (@option.use_remote_reservations? && @option.use_remote_map?) %>
+      <%= link_to "Map", setup_map_index_path, :class => "link_btn" %>
+    <% end %>
+    <%= link_to "Security \nSettings", setup_security_path, :class => "link_btn" %>
+    <% if @option.use_confirm_email? || @option.use_feedback? || @option.use_remote_res_email? || @option.use_remote_res_confirm? || @option.use_remote_res_reject? %>
+      <%= link_to '  Email   ', edit_setup_email_path, :class => "link_btn" %>
+      <%= link_to " Mail \nMessages  ", setup_mail_templates_path, :class => "link_btn" %>
+    <% end %>
+    <% if @option.use_remote_reservations == true %>
+      <%= link_to "Remote \nReservations", edit_setup_remote_path, :class => "link_btn" %>
+      <%= link_to "Remote \nExplanations", setup_prompts_path, :class => "link_btn" %>
+      <%= link_to "Remote \nBlackouts", setup_blackout_index_path, :class => "link_btn" %>
+    <% end %>
+    <%= link_to "Payment \nConfigurations", edit_setup_integrations_path, :class => "link_btn" %>
+    <%= if (@os != 'Windows_NT') && Integration.first_or_create.name.start_with?('PayPal')
+      link_to "PayPal \nCertificate", new_setup_paypals_path, :class => "link_btn"
+    end %>
+</div>

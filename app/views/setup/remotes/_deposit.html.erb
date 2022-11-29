@@ -1,0 +1,16 @@
+<div id="deposit">
+<%= error_messages_for 'options' %>
+  <% case @option.deposit_type
+       when Remote::Full_charge %>
+	Full Amount
+       <% when Remote::Percentage %>
+	 <%= text_field(:option, :deposit, {:size => '2', :autocomplete => 'off'}) %>%
+       <% when Remote::Fixed_amount %>
+	 <%# @option.unit + text_field(:option, :deposit, {:size => '2', :autocomplete => 'off'}) %>
+	 $<%= text_field(:option, :deposit, {:size => '2', :autocomplete => 'off'}) %>
+       <% when Remote::Days %>
+	 <%=select_tag "count", "<option selected = \"selected\">#{@option.deposit.to_i}</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>"%> Days
+      <% else  %>
+	Error
+      <% end %>
+</div>

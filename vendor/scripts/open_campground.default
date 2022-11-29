@@ -1,0 +1,50 @@
+###############################################################
+# This is setup for the Debian distribution or derived
+# distributions like Ubuntu etc.
+#
+# Install this file as /etc/default/open_campground by
+# sudo cp open_campground.default /etc/default/open_campground
+###############################################################
+# This file is used to set the variables that will be used
+# for the execution of the server.  If these variables are
+# not set a default value which might not be what you
+# want will be used. In each case remove the # and insert the
+# values you would like used
+###############################################################
+
+###############################################################
+# Directory where Open Campground is installed
+###############################################################
+# OC_DIR=/home/opencampground/Open_campground/
+
+###############################################################
+# mode in which the system will operate.  Use training
+# for training and demonstration.  Use production for real
+###############################################################
+# MODE=training
+
+###############################################################
+# user and group for executing Open Campground.  The use of 
+# a dedicated user and group is recommended but not required.
+###############################################################
+# USER=opencampground
+# GROUP=opencampground
+
+###############################################################
+# File which will be used by mongrel for logging.  This is only
+# needed for tracing unusual problems.  This value is usually
+# recommended.
+###############################################################
+# LOG=/dev/null
+
+###############################################################
+# port used to connect to Open Campground.  3000 is usually
+# used but if that is occupied another value can be used.
+###############################################################
+# PORT=3000
+
+###############################################################
+# address from which to accept connections.  0.0.0.0 means
+# accept connections from any address.
+###############################################################
+# ADDR=0.0.0.0

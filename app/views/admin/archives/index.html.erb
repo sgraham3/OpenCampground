@@ -1,0 +1,79 @@
+<% form_tag admin_archive_path(:reservation_id), :method => :get do %>
+  <label for="reservation_id"><b><%= I18n.t('reservation.ReservationNumber') %>:</b></label>
+  <%= text_field 'archive', 'reservation_id', {'reservation_id' => 'reservation_id', :size => '8', :autocomplete => "off"} %>
+  <%= submit_tag I18n.t('reservation.FindbyReservationNumber') %>
+<% end %>
+
+  <hr>
+
+<% form_tag admin_archive_path(:reservation_id), :method => :get do %>
+  <label for="reservation_id"><b>Name:</b></label>
+  <%= text_field 'archive', 'name', {'name' => 'name', :size => '18', :autocomplete => "off"} %>
+  <%= submit_tag 'Find by Name' %>
+<% end %>
+
+  <hr>
+
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Select</th>
+    <th><%= button_to 'Res #', admin_archive_path('res'), :method => :put %></th>
+    <th><%= button_to 'Name', admin_archive_path('name'), :method => :put %></th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <% if @option.use_country? && Country.active.count > 0 %>
+      <th>Country</th>
+    <% end %>
+    <th>Zip</th>
+    <th><%= button_to 'Start date', admin_archive_path('start'), :method => :put %></th>
+    <th><%= button_to 'End date', admin_archive_path('end'), :method => :put %></th>
+    <th><%= button_to 'Space', admin_archive_path('space'), :method => :put %></th>
+    <th><%= Reason %></th>
+  </tr>
+  
+<% for a in @archives %>
+  <tr>
+  <td><input type="checkbox" id="<%="a_#{a.id}"%>" <%= a.selected ? 'checked="no"' : '' %>
+                           value=<%="#{!a.selected}"%>
+                           onclick="<%= remote_function( :update => 'select', :url => select_admin_archive_path(a.id)) %>" />
+
+  <td><%= a.reservation_id.to_s %></td>
+  <td><%= a.name %></td>
+  <td><%= a.address %></td>
+  <td><%= a.city %></td>
+  <td align=center><%= a.state %></td>
+  <% if @option.use_country? && Country.active.count > 0 %>
+    <td align=center><%= a.country if a.country? %></td>
+  <% end %>
+  <td><%= a.mail_code %></td>
+  <td><%= I18n.l(a.startdate) %></td>
+  <td><%= I18n.l(a.enddate) %></td>
+  <td align=center><%= a.space_name %></td>
+  <td align=left><%= a.last_log_reason %></td>
+    <td><%= link_to 'Show', admin_archive_path(a.id) %></td>
+    <% if a.reservation_available? %>
+      <td><%= link_to 'Edit', :controller => '/reservation', :action => 'show', :reservation_id => a.reservation_id %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @archives %>
+<table>
+<tr>
+<td>
+<%= button_to "Select all", admin_archive_path('all'), :method => :put %>
+</td>
+<td>
+<%= button_to "Clear all", admin_archive_path('clear'), :method => :put %>
+</td>
+<td>
+<%= button_to "Download selected", download_admin_archives_path, :method => :get %>
+</td>
+<td>
+<%= button_to "Delete selected", admin_archive_path('delete'), :method => :delete %>
+</td>
+</tr>
+</table>
+<%= set_focus_to_id('archive_reservation_id') %>

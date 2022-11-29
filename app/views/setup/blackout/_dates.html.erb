@@ -1,0 +1,40 @@
+<div id="dates">
+  <% if @option.use_calendar? %>
+    <% if @option.embedded_calendar? %>
+      <table><tr>
+	<td>
+	  <b>Start of Blackout</b>
+	</td><td>
+	  <%= calendar_date_select 'blackout', 'startdate',
+		:embedded => :true,
+		:year_range => 1.years.ago.year..3.years.from_now.year,
+		:size => 15 %>
+	</td><td>
+	  <b>End of Blackout</b>
+	</td><td>
+	  <%= calendar_date_select 'blackout', 'enddate',
+		:embedded => :true,
+		:year_range => 1.years.ago.year..3.years.from_now.year,
+		:size => 15 %>
+	</td>
+      </tr> </table>
+    <% else %>
+      <b>Start of Blackout:</b>
+      <%= calendar_date_select 'reservation', 'startdate',
+	    :popup => :force,
+	    :year_range => 1.years.ago.year..3.years.from_now.year,
+	    :size => 15 %>
+      <b>End of Blackout:</b>
+	<%= calendar_date_select 'reservation', 'enddate',
+	      :popup => :force,
+	      :year_range => 1.years.ago.year..3.years.from_now.year,
+	      :size => 15 %>
+    <% end %>
+  <% else %>
+      <b>Start of Blackout:</b>
+    <label for="blackout_startdate"><b>Start of Blackout:</b></label>
+    <%= date_select 'blackout', 'startdate', :start_year => 1.years.ago.year  %>
+    <label for="blackout_enddate"><b>End of Blackout:</b></label>
+  <% end %>
+<% end %>
+</div>

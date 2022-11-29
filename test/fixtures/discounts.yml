@@ -1,0 +1,61 @@
+--- 
+discounts_005: 
+  amount_monthly: "0.00"
+  amount_weekly: "0.00"
+  disc_appl_week: false
+  disc_appl_month: false
+  amount_daily: "0.00"
+  disc_appl_daily: true
+  id: "5"
+  discount_percent: "50.00"
+  name: Passport America
+  amount: "0.00"
+  disc_appl_seasonal: false
+discounts_004: 
+  amount_monthly: "0.00"
+  amount_weekly: "0.00"
+  disc_appl_week: false
+  disc_appl_month: false
+  amount_daily: "0.00"
+  disc_appl_daily: true
+  id: "4"
+  discount_percent: "15.00"
+  name: Escapees
+  amount: "0.00"
+  disc_appl_seasonal: false
+discounts_003: 
+  amount_monthly: "0.00"
+  amount_weekly: "0.00"
+  disc_appl_week: true
+  disc_appl_month: false
+  amount_daily: "0.00"
+  disc_appl_daily: true
+  id: "3"
+  discount_percent: "10.00"
+  name: Good Sam
+  amount: "0.00"
+  disc_appl_seasonal: false
+discounts_002: 
+  amount_monthly: "0.00"
+  amount_weekly: "0.00"
+  disc_appl_week: false
+  disc_appl_month: true
+  amount_daily: "0.00"
+  disc_appl_daily: true
+  id: "2"
+  discount_percent: "10.00"
+  name: FMCA
+  amount: "0.00"
+  disc_appl_seasonal: false
+discounts_001: 
+  amount_monthly: "0.00"
+  amount_weekly: "0.00"
+  disc_appl_week: false
+  disc_appl_month: false
+  amount_daily: "0.00"
+  disc_appl_daily: true
+  id: "1"
+  discount_percent: "0.00"
+  name: none
+  amount: "0.00"
+  disc_appl_seasonal: false

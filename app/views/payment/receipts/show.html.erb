@@ -1,0 +1,73 @@
+<pre>
+<% if @emv %>
+<%= safePrint @receipt["header"] %>
+
+<%= safePrint @receipt["dba"] %>
+<%= safePrint @receipt["address1"] %>
+<%= safePrint @receipt["address2"] %>
+<%= safePrint @receipt["phone"] %>
+
+Reservation ID: <%= @card_transaction.reservation_id %>
+RetRef #: <%= @card_transaction.retref %>
+Desc: <%= safePrint @card_transaction.resptext %>
+Auth #: <%= safePrint @card_transaction.authcode %>
+<% if @card_transaction.batchid -%>
+Batch #: <%= @card_transaction.batchid %>
+<% end -%>
+MID: <%= @merchid %>
+
+<%= I18n.l(@card_transaction.created_at) %>
+
+Amount: <%= number_2_currency(@card_transaction.amount) %>
+
+Method: <%= safePrint @emv["Entry method"] %>
+<%= safePrint @emv["Application Label"] %>
+<%= safePrint @card %>
+<%= safePrint @receipt["nameOnCard"] %>
+
+AID:<%= safePrint @emv["AID"] %>
+AthNtwkNm: <%= safePrint @emv["Network Label"] %>
+<%# RtInd: safePrint @card_transaction.routind -%>
+Mode: <%= safePrint @emv["Mode"] %>
+<%# safePrint @card_transaction.verification -%>
+
+<%= safePrint @card_transaction.approval %>
+
+<%= @receipt["footer"] %>
+<% else %>
+<%= @receipt["header"] %>
+
+<%= @receipt["dba"] %>
+<%= @receipt["address1"] %>
+<%= @receipt["address2"] %>
+<%= @receipt["phone"] %>
+
+Reservation ID: <%= @card_transaction.reservation_id %>
+RetRef #: <%= @card_transaction.retref %>
+Desc: <%= @card_transaction.resptext %>
+Auth #: <%= @card_transaction.authcode %>
+<% if @card_transaction.batchid -%>
+Batch #: <%= @card_transaction.batchid %>
+<% end -%>
+MID: <%= @merchid %>
+
+<%= I18n.l(@card_transaction.created_at) %>
+
+Amount: <%= number_2_currency(@card_transaction.amount) %>
+<%= Creditcard.card_type(@card_transaction.account[1].chr) if @card_transaction.account %>
+<%= safePrint @card %>
+<%= @receipt["nameOnCard"] if @receipt["nameOnCard"] -%>
+
+<%# RtInd: @card_transaction.routind -%>
+<%# @card_transaction.verification -%>
+<%= safePrint @card_transaction.approval %>
+
+<%= @receipt["footer"] %>
+<% end %>
+</pre>
+<div class="noprint">
+<table><tr>
+<td><%= render :partial => 'shared/print' %></td>
+<td><%= button_to I18n.t('reservation.Finished'), {:action => :show, :controller => "/reservation", :reservation_id => @card_transaction.reservation_id} %></td>
+</tr></table>
+</div>

@@ -1,0 +1,6 @@
+<% form_tag setup_creditcard_path(@creditcard), :method => :put do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<%= button_to 'Cancel', setup_creditcards_path, :method => :get %>

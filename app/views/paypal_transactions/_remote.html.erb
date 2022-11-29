@@ -1,0 +1,7 @@
+<div id="paypal" class="cc-form">
+  <% form_for(@paypal_transaction) do |f| %>
+    <%= f.hidden_field :reservation_id %><br/>
+    <%= f.hidden_field :amount, :value => @deposit['amount'] + @deposit['tax'] %><br/>
+  <%= f.submit "Submit", :type => :image, :src => "https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif", :alt => "PayPal - The safer, easier way to pay online!", :border => "0", :class => "payment_submit" %>
+  <% end %>
+</div>

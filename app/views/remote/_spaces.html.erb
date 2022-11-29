@@ -1,0 +1,43 @@
+<%= spaces_display %>
+  <tr>
+    <th><%= I18n.t('reservation.Space') %> </th>
+    <th><%= I18n.t('reservation.EWS') %>    </th>
+    <th><%= I18n.t('reservation.Size') %> </th>
+    <th><%= I18n.t('reservation.Daily') %> </th>
+    <th><%= I18n.t('reservation.Weekly') %> </th>
+    <th><%= I18n.t('reservation.Monthly') %> </th>
+    <th><%= I18n.t('reservation.Type') %> </th>
+    <th><%= I18n.t('reservation.Special') %> </th>
+  </tr>
+  <% for space in @spaces %>
+    <% if space.remote_reservable? %>
+    <tr>
+      <% rate = Rate.find_current_rate(@season.id, space.price_id) %>
+      <td><%=space.name %></td>
+      <td><%=space.ews %></td>
+      <td><%=space.length %></td>
+      <td><%=number_2_currency(rate.rate_for_day(@reservation.startdate,@option.variable_rates?)) %></td>
+      <% if rate.weekly_rate > 0.0 %>
+	<td><%=number_2_currency(rate.weekly_rate) %></td>
+      <% else %>
+	<td></td>
+      <% end %>
+      <% if rate.monthly_rate > 0.0 %>
+	<td><%=number_2_currency(rate.monthly_rate) %></td>
+      <% else %>
+	<td></td>
+      <% end %>
+      <td><%=space.sitetype.name %></td>
+      <td><%=space.special_condition %></td>
+      <td>
+      <% if controller.action_name == 'find_space' %>
+	<a href="/remote/space_selected?space_id=<%=space.id.to_s%>" onclick="this.onclick=function () {return false;};return true;"><%= I18n.t('reservation.Select') %></a></td>
+
+      <% else %>
+	<a href="/remote/space_changed?space_id=<%=space.id.to_s%>" onclick="this.onclick=function () {return false;};return true;"><%= I18n.t('reservation.Select') %></a></td>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>

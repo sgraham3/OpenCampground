@@ -1,0 +1,12 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= link_to 'Finished', setup_recommenders_path, :class => 'link_btn' %>
+<div id="container" style="overflow: scroll; height: <%= (@option.disp_rows*2).to_s %>em">
+ <ul id="recommenders"> 
+  <% @recommenders.each do |s| %>
+      <li id="recommender_<%=s.id%>"><%= s.name %></li>
+  <% end %>
+</ul>
+</p>
+<%= javascript_tag "Position.includeScrollOffsets = true" %>
+<%= sortable_element :recommenders, :scroll => "'container'", :url => resort_setup_recommenders_path %>

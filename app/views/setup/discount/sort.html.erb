@@ -1,0 +1,12 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'Finished', setup_discount_index_path, :method => :get %>
+<div id="container" style="overflow: scroll; height: <%= (@option.disp_rows*2).to_s %>em">
+ <ul id="discounts"> 
+  <% @discounts.each do |s| %>
+      <li id="discount_<%=s.id%>"><%= s.name %></li>
+  <% end %>
+</ul>
+</p>
+<%= javascript_tag "Position.includeScrollOffsets = true" %>
+<%= sortable_element :discounts, :scroll => "'container'", :url => resort_setup_discount_path %>

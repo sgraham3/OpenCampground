@@ -1,0 +1,63 @@
+<div id="integration">
+<% unless @integration.name == 'None' %>
+  <% form_for :integration, @integration, :url => setup_integrations_path(@integration), :html =>{:method => :put } do |int| %> 
+    <% if @os == 'Linux' %>
+      <% if @integration.name.start_with?('CardConnect') %>
+	<div id="CardConnect">
+      <% else %>
+	<div id="CardConnect" style="display: none">
+      <% end %>
+	<h2>
+	  CardConnect Configuration:
+	</h2>
+	<table>
+	  <tr> <td> Merchant ID: </td> <td> <b><%= int.text_field :cc_merchant_id %></b> </td> </tr>
+	  <tr> <td> Username: </td> <td> <b><%= int.text_field :cc_api_username %></b> </td> </tr>
+	  <tr> <td> Password: </td> <td> <b><%= int.text_field :cc_api_password %></b> </td> </tr>
+	  <% unless @integration.name == 'CardConnect_r' %>
+	    <tr> <td> Terminal HSN: </td> <td> <b><%= int.select  :cc_hsn, get_hsn %></b> </td> </tr>
+	    <tr> <td> Display Amount: </td> <td> <%= int.check_box :cc_display_amount %> </td> </tr>
+	    <tr> <td> Require Signature: </td> <td> <%= int.check_box :cc_use_signature %> </td> </tr>
+	    <tr> <td> Require Mail Code: </td> <td> <%= int.check_box :cc_use_zip %> </td> </tr>
+	  <% end %>
+	  <tr> <td> Currency code: </td> <td> <b><%= int.text_field :cc_currency_code %></b> </td> </tr>
+	  <tr> <td> Require Security Code: </td> <td> <%= int.check_box :cc_use_cvv %> </td> </tr>
+	</table>
+      </div>
+      <% if @integration.name.start_with?('CardKnox') %>
+	<div id="CardKnox">
+      <% else %>
+	<div id="CardKnox" style="display: none">
+      <% end %>
+	<h2>
+	  CardKnox Configuration:
+	</h2>
+	<table>
+	  <tr> <td> Cardknox Ifields Key: </td> <td> <b><%= int.text_field :ck_ifields_key, :size => 40 %></b> </td> </tr>
+	  <tr> <td> Cardknox Source Key: </td> <td> <b><%= int.text_field :ck_api, :size => 40 %></b> </td> </tr>
+	  <tr> <td> Currency code: </td> <td> <b><%= int.text_field :cc_currency_code %></b> </td> </tr>
+	  <tr> <td> Require Security Code: </td> <td> <%= int.check_box :cc_use_cvv %> </td> </tr>
+	  <tr> <td> Use Card Terminal: </td> <td> <%= int.check_box :ck_use_terminal %> </td> </tr>
+	</table>
+      </div>
+      <% if @integration.name.start_with?('PayPal') %>
+	<div id="PayPal">
+      <% else %>
+	<div id="PayPal" style="display: none">
+      <% end %>
+	<h2>
+	  PayPal Configuration:
+	</h2>
+	<table>
+	  <tr> <td> PayPal business name: </td> <td> <b><%= int.text_field :pp_business %></b></td> </tr>
+	  <tr> <td> PayPal certificate ID: </td> <td> <b><%= int.text_field :pp_cert_id %></b></td> </tr>
+	  <tr> <td> PayPal currency code: </td> <td> <b><%= int.text_field :pp_currency_code %></b></td> </tr>
+	  <tr> <td> PayPal country code: </td> <td> <b><%= int.text_field :pp_country %></b></td> </tr>
+	</table>
+      </div>
+      Display Payment Dropdown: <%= int.check_box :use_pmt_dropdown %><br/>
+    <%= submit_tag 'Save Changes' %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>

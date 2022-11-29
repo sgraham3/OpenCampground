@@ -1,0 +1,18 @@
+<div class="noprint">
+<% form_for :variable_charge do |f| %>
+  <%= f.error_messages %>
+  <b>Variable charge:</b>
+  <%= f.check_box 'variable_charge', {:onclick => "showhide('variable')"}, '1', '0' %>
+  <span id="variable" style="display: none" >
+  <b>Item:</b>
+  <%= f.text_field :detail %>
+  <b>Amount:</b>
+  <%= f.text_field :amount, :size => 3 %>
+  <% if Taxrate.active.size > 0 %>
+    <b>Taxes:<b>
+    <%= variable_charge_taxrates %>
+  <% end %>
+  <%= submit_tag %>
+  </span>
+<% end %>
+</div>

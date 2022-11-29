@@ -1,0 +1,50 @@
+<% form_for :reservation, :url => { :action => 'update_dates', :reservation_id => @reservation, :method => 'post'} do |f| %>
+<%= f.error_messages %>
+<p><b><%= I18n.t('reservation.ReservationNumber') %>: </b><%= @reservation.id %> &nbsp;
+
+<%= @available_str %></br> </p>
+
+  <%= render :partial => 'shared/count' %>
+  <%= render :partial => 'dates' %>
+
+<% if @option.no_vehicles > 0 %>
+<p>
+    <b><%= I18n.t('reservation.VehicleState') %>:</b>&nbsp;<%= @reservation.vehicle_state if !@reservation.vehicle_state.blank? %>
+    &nbsp;<b><%= I18n.t('reservation.VehicleLicense') %>:</b>&nbsp;<%= @reservation.vehicle_license if !@reservation.vehicle_license.blank? %>
+  <% if @option.no_vehicles > 1 %>
+      &nbsp;<b><%= I18n.t('reservation.Vehicle2State') %>:</b>&nbsp;<%= @reservation.vehicle_state_2 if !@reservation.vehicle_state_2.blank? %>
+      &nbsp;<b><%= I18n.t('reservation.Vehicle2License') %>:</b>&nbsp;<%= @reservation.vehicle_license_2 if !@reservation.vehicle_license_2.blank? %>
+  <% end %>
+  </p>
+<% end %>
+
+<p> <%= '<b>' + I18n.t('reservation.nr_Adults') + ':</b>&nbsp;'  + @reservation.adults.to_s + '&nbsp;' if @option.use_adults? %> 
+    <%= '<b>' + I18n.t('reservation.nr_Pets') + ':</b>&nbsp;' + @reservation.pets.to_s + '&nbsp;' if @option.use_pets? %>
+    <%= '<b>' + I18n.t('reservation.nr_Children') + ':</b>&nbsp;' + @reservation.kids.to_s if @option.use_children? %>
+</p>
+
+<p> <% if @option.use_rig_type? %> <b><%= I18n.t('reservation.RigType') %>:</b>&nbsp;<%= @reservation.rigtype.name if !@reservation.rigtype_id.zero? %><% end %>
+    <% if @option.use_length? %> &nbsp;<b><%= I18n.t('reservation.Length') %>:</b>&nbsp;<%= @reservation.length %><% end %>
+    <% if @option.use_slides? %> &nbsp;<b><%= I18n.t('reservation.nr_Slides') %>:</b>&nbsp;<%= @reservation.slides %><% end %>
+    <% if @option.use_rig_age? %> &nbsp;<b><%= I18n.t('reservation.RigAge') %>:</b>&nbsp;<%= @reservation.rig_age %><% end %>
+</p>
+<p>
+    <b><%= I18n.t('reservation.Discount') %>:</b>&nbsp;<%= @reservation.discount.name if !@reservation.discount_id.zero? %>
+    &nbsp;<b><%= I18n.t('reservation.Notes') %>:</b>&nbsp;<%= @reservation.special_request if !@reservation.special_request.blank? %>
+</p>
+<p>
+<% Extra.active.each do |e| %>
+  <% if ExtraCharge.exists?(e.id, @reservation.id) %>
+    <b><%= e.name %>:</b>&nbsp;
+    <% if e.counted %>
+      <b><%= I18n.t('reservation.Count') %>:</b>&nbsp; <%= ExtraCharge.count(e.id, @reservation.id) %>
+    <% end -%>
+  <% end -%>
+<% end %>
+</p>
+<p>
+<%= submit_tag I18n.t('reservation.SubmitDateChange') %>
+</p>
+<!--[eoform:reservation]-->
+<% end %>
+<%= button_to I18n.t('titles.ChangeSpace'), {:action => 'select_change', :reservation_id => @reservation.id} %>

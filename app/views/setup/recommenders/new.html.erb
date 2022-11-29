@@ -1,0 +1,8 @@
+<% form_tag setup_recommenders_path do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'recommender_name' %>
+<%= link_to 'Cancel', setup_recommenders_path, :class => 'link_btn' %>

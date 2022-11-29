@@ -1,0 +1,311 @@
+--- 
+spaces_090: 
+  name: "90"
+  water: false
+  special_condition: 
+  power_30a: false
+  power_50a: false
+  id: "90"
+  length: "20"
+  sitetype_id: "1"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "1"
+  width: "102"
+  remote_reservable: false
+spaces_091: 
+  name: "91"
+  water: false
+  special_condition: 
+  power_30a: false
+  power_50a: false
+  id: "91"
+  length: "20"
+  sitetype_id: "1"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "1"
+  width: "102"
+spaces_007: 
+  name: "7"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "7"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_010: 
+  name: "10"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "10"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_008: 
+  name: "8"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "8"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_011: 
+  name: "11"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "11"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_009: 
+  name: "9"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "9"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_012: 
+  name: "12"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "12"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_034: 
+  name: "34"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: false
+  id: "34"
+  length: "40"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "3"
+  width: "102"
+spaces_013: 
+  name: "13"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "13"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_014: 
+  name: "14"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "14"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_015: 
+  name: "15"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "15"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_036: 
+  name: "36"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: false
+  id: "36"
+  length: "40"
+  sitetype_id: "2"
+  sewer: false
+  power_15a: true
+  unavailable: false
+  price_id: "2"
+  width: "102"
+spaces_016: 
+  name: "16"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "16"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_017: 
+  name: "17"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "17"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_020: 
+  name: "20"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "20"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+  remote_reservable: false
+spaces_018: 
+  name: "18"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "18"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_041: 
+  name: "41"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: false
+  id: "41"
+  length: "40"
+  sitetype_id: "2"
+  sewer: false
+  power_15a: true
+  unavailable: false
+  price_id: "2"
+  width: "102"
+spaces_062: 
+  name: "62"
+  water: true
+  special_condition: 
+  power_30a: false
+  power_50a: true
+  id: "62"
+  length: "80"
+  sitetype_id: "3"
+  sewer: true
+  power_15a: false
+  unavailable: false
+  price_id: "5"
+  width: "102"
+spaces_019: 
+  name: "19"
+  water: true
+  special_condition: 
+  power_30a: true
+  power_50a: true
+  id: "19"
+  length: "60"
+  sitetype_id: "2"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "4"
+  width: "102"
+spaces_063: 
+  name: "63"
+  water: true
+  special_condition: 
+  power_30a: false
+  power_50a: true
+  id: "63"
+  length: "80"
+  sitetype_id: "3"
+  sewer: true
+  power_15a: false
+  unavailable: false
+  price_id: "5"
+  width: "102"
+spaces_100: 
+  name: "100"
+  water: false
+  special_condition: 
+  power_30a: false
+  power_50a: false
+  id: "100"
+  length: "20"
+  sitetype_id: "1"
+  sewer: true
+  power_15a: true
+  unavailable: false
+  price_id: "1"
+  width: "102"

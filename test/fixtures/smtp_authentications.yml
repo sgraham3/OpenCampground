@@ -1,0 +1,13 @@
+--- 
+smtp_authentications_004: 
+  id: "4"
+  name: cram_md5
+smtp_authentications_003: 
+  id: "3"
+  name: login
+smtp_authentications_002: 
+  id: "2"
+  name: plain
+smtp_authentications_001: 
+  id: "1"
+  name: none

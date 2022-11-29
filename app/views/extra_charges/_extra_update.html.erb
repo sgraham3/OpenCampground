@@ -1,0 +1,16 @@
+<tr id="extra_<%=extra_update.id%>">
+  <td align="right"><%= extra_update.space.name %></td>
+  <td align="right"><%= extra_update.id %></td>
+  <td align="right"><%= extra_update.camper.full_name %></td>
+  <td align="right"><%= extra_update.space.current %></td>
+  <td align="right"><%= text_field 'extra_charge', 'final' , {:size => '6', :value => extra_update.space.current.to_s, :autocomplete => 'off', :id => "extra_final_" + extra_update.id.to_s }%></td>
+  <td align="right" id="extra_consumed_<%=extra_update.id%>">0.0</td>
+  <td align="right"><%=number_2_currency(extra_charge.extra.rate) + '/' + extra_charge.extra.unit_name %></td>
+  <td align="right" id="extra_charge_<%=extra_update.id%>">0.0</td>
+</tr>
+<%= observe_field "extra_final_"+ extra_update.id.to_s,
+		  :on => 'blur',
+		  :url => extra_charge_path(extra_update.id), :method => :put,
+		  :with => "'extra_charge_final='+encodeURIComponent(value)" %>
+
+

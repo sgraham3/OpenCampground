@@ -1,0 +1,21 @@
+<% form_tag :action => 'find_by_number' do %>
+  <label for="reservation_id"><b><%= I18n.t('reservation.ReservationNumber') %>:</b></label>
+  <%= text_field 'reservation', 'id', {'id' => 'reservationid', :size => '8', :autocomplete => "off"} %>
+  <%= submit_tag I18n.t('reservation.FindbyReservationNumber') %>
+<% end %>
+<hr>
+<%= render :partial => 'shared/find_by_phone' %>
+<%= render :partial => 'shared/find_by_id' %>
+<label for="camper_last_name"><b><%= I18n.t('reservation.FindbyLastName') %>:</b></label>
+<%= text_field 'camper', 'last_name', {:autocomplete=>"off"}  %>
+<%= observe_field :camper_last_name,
+		  :frequency => 0.4,
+		  :update => 'campers',
+		  :url => {:controller => 'camper', :action => 'partial_update', :only_path => false},
+		  :with => "'camper_last_name='+encodeURIComponent(value)" %>
+<hr>
+<br />
+<div id='campers'>
+  <%= render :partial => 'camper/campers' %>
+</div>
+<%= set_focus_to_id "reservationid" %>

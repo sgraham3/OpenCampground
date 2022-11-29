@@ -1,0 +1,85 @@
+--- 
+seasons_008: 
+  name: Jul-Aug 2012
+  enddate: "2012-08-31"
+  id: "9"
+  applies_to_weekly: true
+  startdate: "2012-07-01"
+  applies_to_monthly: true
+seasons_009: 
+  name: Sep-Oct 2012
+  enddate: "2012-10-15"
+  id: "10"
+  applies_to_weekly: true
+  startdate: "2012-09-01"
+  applies_to_monthly: true
+seasons_001: 
+  name: default
+  enddate: "2100-01-01"
+  id: "1"
+  applies_to_weekly: true
+  startdate: "2000-01-01"
+  applies_to_monthly: true
+seasons_002: 
+  name: Apr-May
+  enddate: "2011-05-31"
+  id: "2"
+  applies_to_weekly: true
+  startdate: "2011-04-15"
+  applies_to_monthly: true
+seasons_003: 
+  name: Jun
+  enddate: "2011-06-30"
+  id: "3"
+  applies_to_weekly: true
+  startdate: "2011-06-01"
+  applies_to_monthly: true
+seasons_004: 
+  name: Jul-Aug
+  enddate: "2011-08-31"
+  id: "4"
+  applies_to_weekly: true
+  startdate: "2011-07-01"
+  applies_to_monthly: true
+seasons_005: 
+  name: Sep-Oct
+  enddate: "2011-10-15"
+  id: "5"
+  applies_to_weekly: true
+  startdate: "2011-09-01"
+  applies_to_monthly: true
+seasons_006: 
+  name: April-May 2012
+  enddate: "2012-05-31"
+  id: "7"
+  applies_to_weekly: true
+  startdate: "2012-04-15"
+  applies_to_monthly: true
+seasons_007: 
+  name: June 2012
+  enddate: "2012-06-30"
+  id: "8"
+  applies_to_weekly: true
+  startdate: "2012-06-01"
+  applies_to_monthly: true
+seasons_012: 
+  id: "12"
+  name: summer
+  startdate: "2009-06-01"
+  enddate: "2009-08-31"
+  applies_to_weekly: true
+  applies_to_monthly: true
+seasons_013: 
+  id: "13"
+  name: holiday1
+  startdate: "2009-07-01"
+  enddate: "2009-07-06"
+  applies_to_weekly: false
+  applies_to_monthly: true
+seasons_014: 
+  id: "14"
+  name: holiday2
+  startdate: "2009-08-29"
+  enddate: "2009-09-04"
+  applies_to_weekly: true
+  applies_to_monthly: false

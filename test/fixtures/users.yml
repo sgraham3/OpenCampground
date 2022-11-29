@@ -1,0 +1,12 @@
+--- 
+users_001: 
+  created_at: 2012-08-14 14:16:47
+  admin: true
+  salt: "-6110109180.636247394271613"
+  remember_token: 
+  remember_token_expires: 
+  id: "113326033"
+  name: manager
+  updated_at: 2012-08-14 14:16:47
+  hashed_password: 750ab24bd0faaa16f6da79dafa1c3654b07b18c2
+  remember_me: false

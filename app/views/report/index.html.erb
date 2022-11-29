@@ -1,0 +1,89 @@
+<b>Select desired report</b>
+<table id="report_top">
+  <% if authorized?(@option.all_checkin_rpt) %>
+  <tr>
+    <td align="center">
+      <%= button_to 'Arriving today', report_today_checkins_path, :method => :get  %> 
+    </td>
+    <td align="center">
+      <%= button_to 'Arriving tomorrow', report_tomorrow_checkins_path, :method => :get  %> 
+    </td>
+    <td align="center">
+      <%= button_to 'Scheduled Arrivals', new_report_sched_arr_path, :method => :get  %> 
+    </td>
+   <% end %>
+  <% if authorized?(@option.all_leave_rpt) %>
+    <td align="center">
+      <%= button_to 'Leaving today', report_today_checkouts_path, :method => :get  %> 
+    </td>
+    <td align="center">
+      <%= button_to 'Leaving tomorrow', report_tomorrow_checkouts_path, :method => :get  %> 
+    </td>
+    <td align="center">
+      <%= button_to 'Scheduled Departures', new_report_sched_dep_path, :method => :get  %> 
+    </td>
+    <% end %>
+  </tr>
+  <tr>
+    <% if authorized?(@option.all_in_park_rpt) %>
+    <td align="center">
+      <%= button_to 'Rigs in Park', new_report_count_rig_path, :method => :get  %> 
+    </td>
+    <% end %>
+    <% if authorized?(@option.all_space_sum_rpt) %>
+    <td align="center">
+      <%= button_to 'Space Summary', report_spaces_path, :method => :get  %> 
+    </td>
+     <% end %>
+    <% if authorized?(@option.all_occupancy_rpt) %>
+    <td align="center">
+      <%= button_to 'Occupancy', new_report_occ_site_path, :method => :get  %>
+    </td>
+      <% end %>
+    <% if @option.use_recommend? && authorized?(@option.all_recommend_rpt) %>
+    <td align="center">
+      <%= button_to 'Recommenders', new_report_recommender_path, :method => :get  %> 
+    </td>
+     <% end %>
+    <% if authorized?(@option.all_campers_rpt) %>
+    <td align="center">
+      <%= button_to 'Campers', report_campers_path, :method => :get  %> 
+    </td>
+      <% end %>
+    <% if authorized?(@option.all_transactions_rpt) %>
+    <td align="center">
+      <%= button_to 'Transactions', new_report_transaction_path, :method => :get  %> 
+    </td>
+     <% end %>
+  </tr>
+  <tr>
+    <% if authorized?(@option.all_payments_rpt) %>
+    <td align="center">
+      <%= button_to 'Payments', new_report_payment_path, :method => :get  %> 
+    </td>
+      <% end %>
+    <% if authorized?(@option.all_payments_rpt) %>
+    <td align="center">
+      <%= button_to 'Amounts Due', report_dues_path, :method => :get  %> 
+    </td>
+      <% end %>
+    <% if Extra.active.size && authorized?(@option.all_measured_rpt) %>
+    <td align="center">
+      <%= button_to 'Extras', new_report_extra_path, :method => :get  %> 
+    </td>
+      <% end %>
+    <% if authorized?(@option.all_reservations_rpt) %>
+    <td align="center">
+      <%= button_to 'Reservations', new_report_reservation_path, :method => :get  %> 
+    </td>
+      <%end %>
+    <% if @integration && (@integration.name.start_with?('CardConnect') && authorized?(@option.all_card_transactions_rpt)) %>
+    <td align="center">
+      <%= button_to 'Credit Card Transactions', new_report_card_transaction_path, :method => :get  %> 
+    </td>
+      <% end %>
+    <td align="center">
+      <%= button_to 'Archived Transactions', new_report_archive_path, :method => :get %> 
+    </td>
+  </tr>
+</table>

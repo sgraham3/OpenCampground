@@ -1,0 +1,6 @@
+testing with ruby 2.5.7
+problem with -e args on script/server have to use environment declarations
+still issues with database setup user/passwd etc.
+db issues not permitting running tests yet
+System seems to run fine using webrick in training and development
+some question on @object.id vs @object_id.  Don't understand for now.

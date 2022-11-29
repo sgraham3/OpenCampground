@@ -1,0 +1,21 @@
+<%= render :partial => '/maintenance/buttons' %>
+<b>Select the desired action:</b>
+<table>
+<tr> <th>Name</th><th>Updated</th><th>Size</th> </tr>
+  <% @file_list.each_index do |i| %>
+    <tr>
+      <td> <%= @file_list[i] %> </td>
+      <td> <%= DateFmt.format_date(@file_stats[i].mtime.to_date,'long') %> </td>
+      <td align="right"> <%= @file_stats[i].size/1024 %> Kbytes </td>
+      <td>
+	<%= link_to "delete log file", maintenance_log_file_path(i), :class => "link_btn",
+                      :confirm => I18n.t('admin.ConfirmDelete', :name => @file_list[i]),
+                      :method => 'delete' %>
+      </td>
+      <td>
+        <%= link_to  "download log file", maintenance_log_file_path(i), :class => "link_btn" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

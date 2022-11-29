@@ -1,0 +1,25 @@
+<div class="nodisplay" style="text-align: center;"><b><%= @page_title %> </b> </div>
+<%= render :partial => 'report/shared/print' %>
+<form method="get" action="<%= report_dues_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Res #</th>
+    <th>Space</th>
+    <th>Camper</th>
+    <th>Total</th>
+    <th>Paid</th>
+    <th>Due</th>
+  </tr>
+  <% @reservations.each do |res| %>
+    <tr>
+    <% pmt,due,total = payment(res) %>
+    <td><%= res.id %></td>
+    <td><%= res.space.name %></td>
+    <td><%= res.camper.full_name %></td>
+    <td align="right"><%= total %></td>
+    <td align="right"><%= pmt %></td>
+    <td align="right"><%= due %></td>
+    </tr>
+  <% end %>
+</table>

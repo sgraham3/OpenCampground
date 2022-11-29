@@ -1,0 +1,19 @@
+<%= render :partial => 'setup/buttons' %>
+<% form_for :prompt, :url => setup_prompts_path do |f| %>
+  <%= f.error_messages %>
+
+  <p><label for="prompt_locale">Language:</label><br/>
+  <%= f.select :locale, LANGUAGES %></p>
+
+  <p><label for="prompt_display">Display:</label><br/>
+  <%= f.select :display, @displays %></p>
+
+  <p><label for="prompt_body">Explanation:</label><br/>
+  <%= f.text_area :body  %></p>
+
+  <p>
+  <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', setup_prompts_path, :method => :get %>

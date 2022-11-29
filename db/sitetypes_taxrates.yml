@@ -1,0 +1,16 @@
+--- 
+sitetypes_taxrates_005: 
+  sitetype_id: "3"
+  taxrate_id: "2"
+sitetypes_taxrates_004: 
+  sitetype_id: "3"
+  taxrate_id: "1"
+sitetypes_taxrates_003: 
+  sitetype_id: "2"
+  taxrate_id: "2"
+sitetypes_taxrates_002: 
+  sitetype_id: "2"
+  taxrate_id: "1"
+sitetypes_taxrates_001: 
+  sitetype_id: "1"
+  taxrate_id: "1"

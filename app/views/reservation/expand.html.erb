@@ -1,0 +1,13 @@
+<% if controller.action_name == 'expand' %>
+       <b class="today_checkin"><%= I18n.t('reservation.CheckingInToday') %></b>
+       &nbsp;
+       <b class="late_checkin"><%= I18n.t('reservation.OverdueforCheckIn') %></b>
+<% elsif controller.action_name == 'in_park_expand' %>
+       <b><%= I18n.t('reservation.Count') %>: <%= @count %></b>
+       &nbsp;
+       <b class="today_checkout"><%= I18n.t('reservation.CheckingOutToday') %></b>
+       &nbsp;
+       <b class="overstay"><%= I18n.t('reservation.OverstayingReservation') %></b>
+<% end %>
+<%= render :partial => 'shared/reservations' %>
+<%= will_paginate @reservations %>

@@ -1,0 +1,14 @@
+<tr>
+  <td><%= I18n.t('reservation.StartDate') %>:</td>
+  <td><b><%= I18n.l(@reservation.startdate, :format => :long) %></b></td>
+  <td><%= I18n.t('reservation.EndDate') %>:</td>
+  <td><b><%= I18n.l(@reservation.enddate, :format => :long) %></b></td>
+  <% if @reservation.editable? %>
+    <% if @reservation.seasonal? %>
+      <td>&nbsp;(<%= I18n.t('reservation.FullSeasonReservation') %>)&nbsp;</td>
+    <% elsif @reservation.storage? %>
+      <td>&nbsp;(<%= I18n.t('reservation.Storage') %>)&nbsp;</td>
+    <% end %>
+    <td class="noprint"> <%= button_to I18n.t('titles.ChangeDates'), {:action => 'change_dates', :reservation_id => @reservation.id } %> </td>
+  <% end %>
+</tr>

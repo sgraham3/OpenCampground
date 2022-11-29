@@ -1,0 +1,44 @@
+<div id="explain">
+<h1>Explanation of extras</h1>
+There are 5 basic types of extras, each intended for a different use.
+Following is an explanation of how and for what each is used.
+<ul>
+<li><b>Standard</b> This is intended for extras that are charged by the day, week or month.  Examples would be WiFi or a 50 amp surcharge.
+The charges are computed by multiplying the rate by the number of days, weeks and months.
+</li>
+<li><b>Counted</b> This is intended for things that are charged by the day, week or month where there is a count.
+Examples would be an extra person charge.
+The charges are computed by multiplying the count by the rate by the number of days, weeks and months.
+</li>
+<li><b>Metered</b> This is intended for metered electric.
+The system only has the capacity to have a single extra of this type.
+The current value stays with the site and is updated when changes are made through meter readings etc.
+Metered extras are not visible to a guest making a remote reservation.
+</li>
+<li><b>Occasional</b> This is intended for counted things that are charged from time to time.
+An Example would be bundles of firewood or charge for washing the RV.
+</li>
+<li><b>Deposit</b> This is intended for deposits.
+An Example would be a cable box deposit.  It is similar to the occasional type extra except there is no count associated with it.
+The implicit count is 1.  If more that 1 instance is needed use the occasional extra.
+</li>
+</ul>
+For charges for measured things such as propane use the variable charges facility.
+It must first be enabled in admin->setup->system options.
+<% if @option.use_remote_reservations %>
+<p>The extra can be specified to be <b>visible</b> to the guest making a remote reservation.
+This is included because some extras will not be specified by the guest making a remote reservation.
+The default is for a new extra to be visible.
+</p><p>
+It can also be specified to be <b>required</b>. The normal case for a required extra (charge) would be a one time charge like a reservation charge.
+It would usually be defined as an 'occasional' charge and would have an implicit count of 1 though it could be defined as a 'standard' charge which would be applied to each day/week/month..
+A required extra is not displayed whatever the visible specification because the guest does not need to choose it.
+</p>
+<% end %>
+<p>
+If the 'Active?' box is not checked the extra will not be able to be applied.
+If the extra has previously been applied to a reservation, it will still be applied to that reservation even if it is no longer active.
+You will not be able to delete a extra if it is in use by reservations currently in the system but you can uncheck Active? and it will no longer be selectable.
+When a extra is created Active will be true.
+</p>
+</div>

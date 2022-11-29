@@ -1,0 +1,23 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'New recommender', new_setup_recommender_path, :method => :get %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_recommenders_path, :method => :get %>
+<table border="1">
+  <tr>
+  <th>Name</th>
+  <th>Active</th>
+  </tr>
+  <% for recommender in @recommenders %>
+  <tr>
+    <td><%= recommender.name %></td>
+    <td><%= recommender.active %></td>
+    <td><%= link_to 'Edit', edit_setup_recommender_path(recommender) %></td>
+    <td><%= link_to 'Delete', setup_recommender_path(recommender),
+				:confirm => "Are you sure you want to delete #{recommender.name}?",
+				:method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

@@ -1,0 +1,76 @@
+<%= render :partial => 'setup/buttons' %>
+<%= error_messages_for 'integrations' %>
+<h2>Payment gateway setup</h2>
+<table>
+<tr><td>
+  Select payment gateway to use:<br/>
+</td></tr>
+<tr><td></td><td>
+  None <%= radio_button "integration", "name", "None",
+					{:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								      :method => :put,
+								      :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<tr><td></td><td>
+  CardConnect (office only) <%= radio_button "integration", "name", "CardConnect_o",
+					{:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								      :method => :put,
+								      :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<% if @option.use_remote_reservations? && (@option.pay?) %>
+<tr><td></td><td>
+  CardConnect (remote only) <%= radio_button "integration", "name", "CardConnect_r",
+				    {:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								  :method => :put,
+								  :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<tr><td></td><td>
+  CardConnect(remote & office) <%= radio_button "integration", "name", "CardConnect",
+				    {:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								  :method => :put,
+								  :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<% end %>
+<tr><td></td><td>
+  CardKnox (office only) <%= radio_button "integration", "name", "CardKnox_o",
+					{:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								      :method => :put,
+								      :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<% if @option.use_remote_reservations? && (@option.pay?) %>
+<tr><td></td><td>
+  CardKnox (remote only) <%= radio_button "integration", "name", "CardKnox_r",
+				    {:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								  :method => :put,
+								  :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<tr><td></td><td>
+  CardKnox(remote & office) <%= radio_button "integration", "name", "CardKnox",
+				    {:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								  :method => :put,
+								  :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<% end %>
+<tr><td></td><td>
+  PayPal (office only) <%= radio_button "integration", "name", "PayPal_o",
+					{:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								      :method => :put,
+								      :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<% if @option.use_remote_reservations? && (@option.pay?) %>
+<tr><td></td><td>
+  PayPal (remote only) <%= radio_button "integration", "name", "PayPal_r",
+					{:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								      :method => :put,
+								      :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<tr><td></td><td>
+  PayPal(remote & office) <%= radio_button "integration", "name", "PayPal",
+				    {:onchange => remote_function(:url => {:action => 'update', :id => 1},
+								  :method => :put,
+								  :with => "'name='+encodeURIComponent(value)")}%> <br/>
+</td></tr>
+<% end %>
+</table>
+  <%= render :partial => 'integrations' %>
+  <%= button_to 'Finished', setup_index_path %>

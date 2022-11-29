@@ -1,0 +1,59 @@
+<div class="oc_form">
+
+  <% form_for(:camper, :url => {:controller => :camper, :action => :create} ) do |f| %>
+    <%= f.error_messages %>
+    <fieldset>
+    <legend>Define a new camper</legend>
+      <b><%= I18n.t('camper.First') %><%= manditory('require_first', @remote, @option) %></b>
+      <%= f.text_field :first_name, {:autocomplete => 'off'} %><%= manditory('require_first', @remote, @option) %>&nbsp;
+      <b><%= I18n.t('camper.Last') %>*</b>
+      <%= f.text_field :last_name, {:autocomplete => 'off'} %></b>
+    <% if @option.use_id? %>
+      <b><%= I18n.t('camper.ID') %><%= manditory('require_id', @remote, @option) %></b>
+      <%= f.text_field :idnumber, {:autocomplete => 'off', :size => 6} %>
+    <% end %>
+    <br/>
+      <b><%= I18n.t('camper.Address') %><%= manditory('require_addr', @remote, @option) %></b>
+      <%= f.text_field :address, {:autocomplete => 'off', :size => 60 } %>
+      <% if @option.use_2nd_address? %>
+	<br/>
+	<%= f.text_field :address2, {:autocomplete => 'off', :size => 60 } %>
+      <% end %>
+    <br/>
+      <b><%= I18n.t('camper.City') %><%= manditory('require_city', @remote, @option) %></b>
+      <%= f.text_field :city, {:autocomplete => 'off'} %>
+      <b><%= I18n.t('camper.State') %><%= manditory('require_state', @remote, @option) %></b>
+      <%= f.text_field :state, {:autocomplete => 'off', :size => 12} %>&nbsp;
+	  <%= f.text_field :mail_code, {:autocomplete => 'off', :size => 8} %><%= manditory('require_mailcode', @remote, @option) %> </b>
+      <% if @option.use_country %>
+	<b><%= I18n.t('camper.Country') %><%= manditory('require_country', @remote, @option) %></b>
+		<%= collection_select( :camper, :country_id, Country.active, :id, :name, {:prompt => true} ) %>
+      <% end %>
+    <br/>
+      <% if @option.no_phones > 0 %>
+	<b><%= I18n.t('camper.Phone') %><%= manditory('require_phone', @remote, @option) %></b>
+	<%= f.text_field :phone, {:autocomplete => 'off', :size => 10} %>
+	<% if @option.no_phones > 1 %>
+	  <b><%= I18n.t('camper.Phone2') %></b>
+	  <%= f.text_field :phone_2, {:autocomplete => 'off', :size => 10} %>
+	<% end %>
+      <% end %>
+      
+      <b><%= I18n.t('camper.Email') %><%= manditory('require_email', @remote, @option) %></b>
+      <%= f.text_field :email, {:autocomplete => 'off', :size => 24} %>
+    <br/>
+      <b><%= I18n.t('camper.Notes') %></b>
+      <b><%= f.text_area :notes, {:autocomplete => 'off', :cols => 40, :rows => 2} %></b>
+      <% if @option.use_addl? %>
+	<b><%= I18n.t('camper.Addl') %></b>
+	<%= f.text_area :addl, {:autocomplete => 'off', :cols => 40, :rows => 2} %>
+      <% end %>
+	
+      </fieldset>
+      <b>Fields with a * are mandatory.</b>
+      <input type="hidden" name="single" value="1"/>
+      <table><tr>
+      <td> <%= f.submit I18n.t('camper.Create'), :class => "submit" %></td>
+      <td> <%= link_to I18n.t('user.Cancel'), new_setup_camper_url, :class => "link_btn" %></td>
+      </tr></table>
+  <% end %>

@@ -1,0 +1,105 @@
+<b>Selected Site Info: </b>
+<table cellpadding="5" cellspacing="0" border="2">
+  <tr>
+    <th><p align="center">Space </th>
+    <th><p align="center">EWS    </th>
+    <th><p align="center">Size </th>
+    <th><p align="center">Type </th>
+    <th><p align="center">Special </th>
+  </tr>
+    <tr>
+      <td><p align="center"><%=@reservation.space.name %></td>
+      <td><p align="center"><%=@reservation.space.ews %></td>
+      <td><p align="center"><%=@reservation.space.length %></td>
+      <td><p align="center"><%=@reservation.space.sitetype.name %></td>
+      <td><p align="center"><%=@reservation.space.special_condition %></td>
+    </tr>
+</table>
+<b>Preliminary Rate Info: </b>
+
+<table cellpadding="5" cellspacing="0" border="2">
+  <tr> 
+    <th><p align="center">Item </th>
+    <th><p align="center">Count </th>
+    <th><p align="center">Each </th>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <th><p align="center">Discount </th>
+    <% end %>
+    <th><p align="center">Amount </th>
+  </tr>
+  <% if @charges.days > 0 %>
+  <tr>
+    <td><p align="left">Days</td>
+    <td><p align="center"><%=@charges.days %></td>
+    <td><p align="right"><%=cents_to_dollars(@charges.daily_rate) %></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td><p align="center"><%= @reservation.discount.discount_percent%>%</td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@charges.day_charges) %></td>
+  </tr>
+  <% end %>
+  <% if @charges.weeks > 0 %>
+  <tr>
+    <td><p align="left">Weeks</td>
+    <td><p align="center"><%=@charges.weeks %></td>
+    <td><p align="right"><%=cents_to_dollars(@charges.weekly_rate) %></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td></td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@charges.week_charges) %></td>
+  </tr>
+  <% end %>
+  <% if @charges.months > 0 %>
+  <tr>
+    <td><p align="left">Months</td>
+    <td><p align="center"><%=@charges.months %></td>
+    <td><p align="right"><%=cents_to_dollars(@charges.monthly_rate) %></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td></td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@charges.month_charges) %></td>
+  </tr>
+  <% end %>
+  <% if @charges.room_tax > 0 %>
+  <tr>
+    <td><p align="left">Room Tax</td>
+    <td></td>
+    <td><p align="right"><%= @charges.room_tax_str %></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td></td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@charges.room_tax) %></td>
+  </tr>
+  <% end %>
+  <% if @charges.sales_tax > 0 %>
+  <tr>
+    <td>Sales Tax</td>
+    <td></td>
+    <td><p align="right"><%= @charges.sales_tax_str %></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td></td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@charges.sales_tax) %></td>
+  </tr>
+  <% end %>
+  <% if @charges.local_tax > 0 %>
+  <tr>
+    <td>Local Tax</td>
+    <td></td>
+    <td><p align="right"><%= @charges.local_tax_str %></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td></td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@charges.local_tax) %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td>TOTAL</td>
+    <td></td>
+    <td></td>
+    <% if @reservation.discount.discount_percent > 0 %>
+    <td></td>
+    <% end %>
+    <td><p align="right"><%=cents_to_dollars(@total) %></td>
+  </tr>
+</table>

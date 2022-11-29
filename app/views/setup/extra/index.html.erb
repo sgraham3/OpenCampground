@@ -1,0 +1,50 @@
+<%= render :partial => 'setup/buttons' %>
+<%= render :partial => 'explain' %>
+<p>
+<%= button_to 'New extra charge', new_setup_extra_path, :method => :get %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_extra_path, :method => :get %>
+<table border="1">
+  <tr>
+    <th rowspan="<%=@col%>">Name</th>
+    <% @taxes.each do |t| %>
+      <th rowspan="<%=@col%>"><%= t.name %></th>
+    <% end %>
+    <th rowspan="<%=@col%>">Type</th><th rowspan="<%=@col%>">Rate/Unit</th><th rowspan="<%=@col%>">Unit</th><th rowspan="<%=@col%>">Charge</th><th rowspan="<%=@col%>">Daily</th><th rowspan="<%=@col%>">Weekly</th><th rowspan="<%=@col%>">Monthly</th>
+    <% if @option.use_remote_reservations? %>
+      <th colspan="2">on Remote Reservation</th>
+    <% end %>
+    <th rowspan="<%=@col%>">Active?</th>
+  </tr>
+  <% if @option.use_remote_reservations? %>
+    <tr>
+      <th>Display?</th><th>Require?</th>
+      <th></th>
+    </tr>
+  <% end %>
+  
+<% for extra in @extras %>
+  <tr>
+  <td><%= extra.name %></td> 
+  <% @taxes.each do |t| %>
+    <td><%= extra.taxrates.exists?(t.id) %></td>
+  <% end %>
+  <td><%= extra.type_name %></td>
+  <td><%= number_2_currency(extra.rate) if extra.rate? %></td> 
+  <td><%= extra.unit_name %></td> 
+  <td><%= number_2_currency(extra.charge) if extra.extra_type == Extra::OCCASIONAL or extra.extra_type == Extra::DEPOSIT %></td> 
+  <td><%= number_2_currency(extra.daily) unless extra.daily.zero? %></td> 
+  <td><%= number_2_currency(extra.weekly) unless extra.weekly.zero? %></td> 
+  <td><%= number_2_currency(extra.monthly) unless extra.monthly.zero? %></td> 
+  <% if @option.use_remote_reservations? %>
+    <td><%= extra.remote_display? %></td>
+    <td><%= extra.remote_required? %></td>
+  <% end %>
+  <td><%= extra.active? %></td>
+  <td><%= link_to 'Edit', edit_setup_extra_path(extra), :method => :get %></td>
+  <td><%= link_to 'Delete', setup_extra_path(extra), :confirm => "Are you sure you want to delete extra charge #{extra.name}?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

@@ -1,0 +1,8 @@
+<% form_tag report_transactions_path do %>
+<b>Select start and end dates for report</b></br>
+<%= render :partial => 'report/shared/dates' %>
+<p> Summary <%= radio_button('control', 'button', 'Summary', :checked=>'checked')%>
+    Full report <%= radio_button('control', 'button','Full')%></p>
+<p> <%= submit_tag "Generate Report", :disable_with => "Processing..." %></p>
+<% end %>
+<%= button_to "Cancel", report_index_path, :method => 'GET' %>

@@ -1,0 +1,17 @@
+<p>
+<%= I18n.t('reservation.Archived') if @variable_charge.reservation.archived %>
+</p><p>
+
+<% form_for(@variable_charge) do |f| %>
+  <%= f.error_messages %>
+    Description <em><%= f.text_field :detail %></em><br/>
+    <%= I18n.t('extra.Amount') %><em><%= f.text_field :amount %></em><br/>
+    Taxes: <%= variable_charge_taxrates %><br/>
+    <%= I18n.t('extra.Created') %><%= I18n.l @variable_charge.created_at.getlocal %><br/>
+    <%= I18n.t('extra.Updated') %><%= I18n.l @variable_charge.updated_at.getlocal %><br/>
+
+</p><p>
+    <%= f.submit I18n.t('general.Update') %>
+  </p>
+<% end %>
+<%= link_to I18n.t('general.Finished'), variable_charges_path, :class => "link_btn"  %>

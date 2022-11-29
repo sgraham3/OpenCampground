@@ -1,0 +1,46 @@
+<% if @campers && @campers.size > 0 %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th><%= I18n.t('camper.Name') %> </th>
+    <th><%= I18n.t('camper.Address') %> </th>
+    <% if @option.use_2nd_address? %>
+      <th></th>
+    <% end %>
+    <th><%= I18n.t('camper.City') %> </th>
+    <th><%= I18n.t('camper.State') %> </th>
+    <th><%= I18n.t('camper.Zip') %> </th>
+    <% if @option.use_country? %>
+      <th><%= I18n.t('camper.Country') %> </th>
+    <% end %>
+    <% if @option.use_id? %>
+      <th><%= I18n.t('camper.ID') %></th>
+    <% end %>
+  </tr>
+  <% for camper in @campers %>
+    <tr>
+      <td><%=h camper.full_name %></td>
+      <td><%=h camper.address %></td>
+      <% if @option.use_2nd_address? %>
+	<td><%=h camper.address2 %></td>
+      <% end %>
+      <td><%=h camper.city %></td>
+      <td><%=h camper.state %></td>
+      <td><%=h camper.mail_code %></td>
+      <% if @option.use_country? %>
+       <td>
+	 <%=h camper.country.name if camper.country_id? && camper.country.name? %>
+       </td>
+      <% end %>
+      <% if @option.use_id? %>
+	<td>
+	  <% if camper.idnumber != nil %>
+	    <%=h camper.idnumber %>
+	  <% end %>
+	</td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<% else %>
+  <b><%= I18n.t('camper.NotFound') %></b>
+<% end %>

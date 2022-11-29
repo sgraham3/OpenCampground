@@ -1,0 +1,37 @@
+<%= error_messages_for 'color' %>
+<%= render :partial => 'setup/buttons' %>
+<p>
+<table>
+  <tr>
+    <td>
+      <%= button_to 'Blue',   setup_color_path('Blue'),   :method => :put %>
+    </td><td>
+      <%= button_to 'Desert', setup_color_path('Desert'), :method => :put %>
+    </td><td>
+      <%= button_to 'Forest', setup_color_path('Forest'), :method => :put %>
+    </td><td>
+      <%= button_to 'Silver', setup_color_path('Silver'), :method => :put %>
+    </td>
+  </tr>
+</table>
+
+</p>
+<p>
+<table border="1">
+  <tr>
+    <th>Color use</th>
+    <th>Color sample</th>
+    <th>Color name</th>
+  </tr>
+  
+  <% for color in @colors %>
+    <tr>
+      <td><%=h color.name %></td>
+      <td style="background: <%=color.value%>">&nbsp;</td>
+      <td><%=h color.value %></td>
+      <td><%= link_to 'Edit', edit_setup_color_path(color) %></td>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

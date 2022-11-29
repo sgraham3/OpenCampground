@@ -1,0 +1,2 @@
+module GroupResHelper
+end

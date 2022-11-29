@@ -1,0 +1,20 @@
+<%= link_to I18n.t('reservation.DownloadData'), report_available_path('csv'), :method => :put, :class => "link_btn" %>
+<span class="occupied"><%= I18n.t('reservation.Occupied') %></span>
+<span class="reserved"><%= I18n.t('reservation.Reserved') %></span>
+<span class="late"><%= I18n.t('reservation.NotCheckedIn') %></span>
+<span class="unavailable"><%= I18n.t('reservation.Flash.SpaceUnavailable') %></span>
+<span class="today"><%= I18n.t('reservation.Today') %></span>
+<div id="container" >
+  <table id="available" class="available" cellspacing="0" >
+    <thead>
+      <%= header -%>
+    </thead>
+    <tbody>
+      <%= available(@res) -%>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript">
+  TableLock("available", "av_space", "av_date", "locked");
+</script>
+

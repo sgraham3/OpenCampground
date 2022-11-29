@@ -1,0 +1,11 @@
+<%= error_messages_for 'rigtype' %>
+
+<!--[form:rigtype]-->
+<p><label for="rigtype_name">Rigtype name</label><br/>
+<%= text_field 'rigtype', 'name'  %></p>
+<% unless controller.action_name == 'new' %>
+  <p> <label for="rigtype_active">Active?</label>
+  <%= check_box 'rigtype', 'active', {}, '1', '0' %> </p>
+<% end %>
+<!--[eoform:rigtype]-->
+

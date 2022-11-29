@@ -1,0 +1,2 @@
+module Setup::PaypalHelper
+end

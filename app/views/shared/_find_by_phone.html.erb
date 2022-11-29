@@ -1,0 +1,15 @@
+<% if controller.controller_name == 'reservation' %>
+  <% form_tag :action => 'find_by_phone' do %>
+    <label for="camper_phone"><b><%= I18n.t('camper.Phone') %>:</b></label>
+    <%= text_field 'camper', 'phone', {'id' => 'phone', :size => '4', :autocomplete => "off"} %>
+    <%= submit_tag I18n.t('reservation.FindbyPhoneNumber') %>
+  <% end %>
+<% else %>
+  <% form_tag :action => 'list' do %>
+    <label for="camper_phone"><b><%= I18n.t('camper.Phone') %>:</b></label>
+    <%= text_field 'camper', 'phone', {'id' => 'phone', :size => '4', :autocomplete => "off"} %>
+    <%= submit_tag I18n.t('reservation.FindbyPhoneNumber') %>
+  <% end %>
+<% end %>
+<hr>
+

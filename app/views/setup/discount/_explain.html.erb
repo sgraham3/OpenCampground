@@ -1,0 +1,48 @@
+<div id="explain">
+<h1>Explanation of discounts</h1>
+<p>
+There are a variety of ways in which discounts can be applied.
+The system as presently implemented allows only one discount to be applied to a reservation. 
+You can define a discount that combines discounts if desired.
+</p>
+<p>
+Following is an explanation of how discounts are currently defined and used.
+This may be expanded in the future and suggestions for enhancement are welcomed.
+</p>
+<ul>
+<li>Every discount must have a unique name.
+An error will be given if a discount is created with a name that is currently in use.
+You can edit a discount if you want to reuse the name and change the characteristics.
+</li>
+<li>A discount <b>can</b> be defined to apply for a limited <b>duration</b> in days.
+A discount defined in this manner will only apply to the daily rate.
+The amount used will be as specified for a Percent Discount.
+This is intended to be used for discounts like Passport America etc.
+If the Discount Duration is 0 there will be no limitation on the duration.
+This discount will always apply to the daily rate whether the "Applies to Daily Rate:" box is checked or not.
+</li>
+<li>
+A discount <b>can</b> be defined to be applied only on specified days of the week.
+The default is that the discount applies on all days of the week.
+</li>
+<li>A discount can be a Percentage, a single amount or an amount per day, week or month.
+<ul>
+<li>If a percentage is specified, the applicability must be specified by checking the box for 
+those periods it applies to.
+</li><li>
+An "Amount once" can be specified.
+This will only be applied once and will be applied regardless of the duration of the stay.
+</li><li>
+An amount per day, week or month can be specified.
+</li>
+</ul>
+<p>
+These discounts are exclusive so if you enter a percent you cannot also enter an amount once or amount per day etc.
+If you enter an amount once you cannot enter amount per day etc.
+</p><p>
+If the 'Active?' box is not checked the discount will not be able to be applied.
+If the discount has previously been applied to a reservation, it will still be applied to that reservation even if it is no longer active.
+You will not be able to delete a discount if it is in use by reservations currently in the system but you can uncheck Active? and it will no longer be selectable.
+When a discount is created Active will be true.
+</p>
+</div>

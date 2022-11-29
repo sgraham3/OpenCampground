@@ -1,0 +1,25 @@
+<table/>
+  <tr>
+    <th>Reservation</th>
+    <th>Space</th>
+    <th>Camper</th>
+    <th>Start date</th>
+    <th>End date</th>
+  </tr>
+  <tr>
+    <td><%= @first.id %></td>
+    <td><%= @first.space.name %></td>
+    <td><%= safeCamper(@first.camper) %></td>
+    <td><%= @first.startdate %></td>
+    <td><%= @first.enddate %></td>
+    <td><%= link_to I18n.t('reservation.Show'), :controller => '/reservation', :action => 'show', :reservation_id => @first.id %></td>
+  </tr>
+  <tr>
+    <td><%= @second.id %></td>
+    <td><%= @second.space.name %></td>
+    <td><%= safeCamper(@second.camper) %></td>
+    <td><%= @second.startdate %></td>
+    <td><%= @second.enddate %></td>
+    <td><%= link_to I18n.t('reservation.Show'), :controller => '/reservation', :action => 'show', :reservation_id => @second.id %></td>
+  </tr>
+</table>

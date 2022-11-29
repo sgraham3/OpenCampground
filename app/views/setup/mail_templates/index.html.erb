@@ -1,0 +1,17 @@
+<%= render :partial => 'setup/buttons' %>
+<p>
+<table border="1">
+  <tr>
+  <th>Name</th>
+  </tr>
+  <% for template in @mail_templates %>
+  <tr>
+    <td><%= template.name %></td>
+    <td><%= link_to 'Edit', edit_setup_mail_template_path(template) %></td>
+    <td><%= link_to 'Attachments', edit_setup_mail_attachment_path(template.id) %></td>
+
+  </tr>
+<% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

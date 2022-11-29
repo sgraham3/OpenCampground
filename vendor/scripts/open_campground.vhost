@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  <Directory /home/open_campground/OpenCampground
+    AllowOverride None
+    Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+    Order allow,deny
+    Allow from all
+  </Directory>
+  ServerName opencampground
+  RailsEnv production
+  DocumentRoot /home/open_campground/OpenCampground/public
+  # restart file is $DocumentRoot/../tmp/restart.tmp
+  PassengerRestartDir tmp
+  LogLevel warn
+</VirtualHost>
+

@@ -1,0 +1,11 @@
+<% form_for :blackout, @blackout, :url => setup_blackout_path(@blackout), :html=> {:method => :put} do |f| %>
+  <%= f.error_messages %>
+
+<%= render :partial => 'form' %>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', setup_blackout_index_path, :method => :get %>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

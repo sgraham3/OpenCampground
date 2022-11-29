@@ -1,0 +1,35 @@
+<p>
+<%= I18n.t('reservation.Archived') if @extra_charge.reservation.archived %>
+</p><p>
+
+<% form_for(@extra_charge) do |f| %>
+  <%= f.error_messages %>
+  <table>
+    <tr><td><%= I18n.t('extra.Initial') %></td>
+      <td align="right"> <%= f.text_field :initial, {:size => '8', :autocomplete => 'off'} %> </td>
+    </tr>
+    <tr><td><%= I18n.t('extra.Final') %></td>
+      <td align="right"> <%= f.text_field :final, {:size => '8', :autocomplete => 'off'} %> </td>
+    </tr>
+    <tr><td><%= I18n.t('extra.Amount') %></td>
+      <td align="right"><em><%= @extra_charge.final.to_f - @extra_charge.initial.to_f %></em></td>
+    </tr>
+    <tr><td><%= I18n.t('extra.Rate') %></td>
+      <td align="right"> <%= f.text_field :measured_rate, {:size => '8', :autocomplete => 'off'} %> </td>
+    </tr>
+    <tr><td><%= I18n.t('extra.Charge') %></td>
+      <td align="right"><em><%=number_2_currency(@extra_charge.charge) %></em></td>
+    </tr>
+    <tr><td><%= I18n.t('extra.Created') %></td>
+      <td align="right"><em><%= I18n.l @extra_charge.created_on %></em></td>
+    </tr>
+    <tr><td><%= I18n.t('extra.Updated') %></td>
+      <td align="right"><em><%= I18n.l @extra_charge.updated_on %></em></td>
+    </tr>
+  </table>
+
+  <p>
+    <%= f.submit I18n.t('extra.Update') %>
+  </p>
+<% end %>
+<%= button_to 'List', extra_charges_path %>

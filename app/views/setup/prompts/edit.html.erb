@@ -1,0 +1,20 @@
+<% form_for :prompt, @prompt, :url => setup_prompt_path(@prompt), :html =>{:method => :put } do |f| %> 
+
+
+  <%= f.error_messages %>
+
+  <p><label for="prompt_locale">Language:</label><br/>
+  <%= f.select :locale, LANGUAGES %></p>
+
+  <p><label for="prompt_display">Display:</label><br/>
+  <%= f.select :display, @displays %></p>
+
+  <p><label for="prompt_body">Explanation:</label><br/>
+  <%= f.text_area :body  %></p>
+
+  <p>
+  <%= submit_tag 'Save' %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', setup_prompts_path %>

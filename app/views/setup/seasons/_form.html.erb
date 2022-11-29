@@ -1,0 +1,22 @@
+<%= error_messages_for 'season' %>
+
+<!--[form:season]-->
+<p><label for="season_name">Season name</label><br/>
+<%= text_field 'season', 'name'  %></p>
+<% if @season.id == 1 %>
+<br \>Only the name of the default season can be changed
+<% else %>
+<p> Starting Date: <%= date_select 'season', 'startdate'  %> </p>
+
+<p> Ending Date: <%= date_select 'season', 'enddate'  %> </p>
+
+<p> Applies to weekly: <%= check_box 'season', 'applies_to_weekly', {}, '1', '0' %></p>
+
+<p> Applies to monthly: <%= check_box 'season', 'applies_to_monthly', {}, '1', '0' %></p>
+<% unless controller.action_name == 'new' %>
+  <p><label for="season_active">Active?</label>
+     <%= check_box 'season', 'active', {}, '1', '0' %></p>
+<% end %>
+<% end %>
+
+<!--[eoform:season]-->

@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th><%= I18n.t('user.Name')%></th>
+    <th><%= I18n.t('user.Admin')%></th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.admin %></td>
+    <% if user.id != @user_login.id %>
+      <td><%= link_to I18n.t('user.Change'), edit_admin_user_path(user.id) %></td>
+      <td><%= link_to I18n.t('user.Remove'), admin_user_path(user.id), :confirm => I18n.t('user.ConfirmRemove', :name => user.name), 
+				       :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to I18n.t('user.New'), new_admin_user_path, :class => "link_btn"  %> &nbsp;
+<%= link_to I18n.t('user.Finished'), {:controller => '/reservation', :action => 'list'}, :class => "link_btn"  %>

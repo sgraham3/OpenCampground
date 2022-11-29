@@ -1,0 +1,132 @@
+<% if @remote %>
+  <div id="explain">
+    <%= @prompt.body %>
+  </div>
+  <p>
+   <% action = 'create_remote' %>
+<% else  %>
+   <% action = 'create' %>
+<% end %>
+<% form_tag :action =>  action do %>
+  <%= error_messages_for :camper %>
+  <!--[form:camper]-->
+  <table>
+    <tr>
+      <td align="right"><label for="camper_last_name"><b><%= I18n.t('camper.Last') %>*</b></label></td>
+      <td align="left"><%= text_field 'camper', 'last_name', {:autocomplete=>"off", :required=>true} %></td>
+      <td align="right"><label for="camper_first_name"><b><%= I18n.t('camper.First') %><%= manditory('require_first', @remote, @option) %></b></label></td>
+      <td align="left"><%= text_field 'camper', 'first_name', required('require_first', @remote, @option) %></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="camper_address"><b><%= I18n.t('camper.Address') %><%= manditory('require_addr', @remote, @option) %></b></label></td>
+      <td align="left"><%= text_field 'camper', 'address', required( 'require_addr', @remote, @option) %></td>
+    </tr>
+    <% if @option.use_2nd_address? %>
+      <td></td>
+      <td align="left"><%= text_field 'camper', 'address2', {:autocomplete => 'off'}  %></td>
+    <% end %>
+    <tr>
+      <td align="right"><label for="camper_city"><b><%= I18n.t('camper.City') %><%= manditory('require_city', @remote, @option) %></b></label></td>
+      <td align="left"><%= text_field 'camper', 'city', required('require_city', @remote, @option) %></td>
+      <td align="right"><label for="camper_state"><b><%= I18n.t('camper.State') %><%= manditory('require_state', @remote, @option) %></b></label></td>
+      <td align="left"><%= text_field 'camper', 'state', required('require_state', @remote, @option).merge({:size=>'4'}) %>
+      <label for="camper_mail_code"><b><%= I18n.t('camper.Zip') %><%= manditory('require_mailcode', @remote, @option) %></b></label>
+      <%= text_field 'camper', 'mail_code', required('require_mailcode', @remote, @option).merge({:size=>'10'}) %></td>
+      <% if @option.use_country? && Country.active.count > 0 %>
+	<td align="left"><label for="camper_country"><b><%= I18n.t('camper.Country') %><%= manditory('require_country', @remote, @option) %></b></label></td>
+	<td align="left"><%= collection_select( :camper, :country_id, Country.active, :id, :name, {:prompt => true} ) %> </td>
+      <% end %>
+    </tr>
+    <tr>
+      <% if @option.no_phones > 0 %>
+	<td align="right"><label for="camper_phone"><b><%= I18n.t('camper.Phone') %><%= manditory('require_phone', @remote, @option) %></b></label></td>
+	<td align="left"><%= text_field 'camper', 'phone', required('require_phone', @remote, @option).merge({:size=>'12'}) %></td>
+	<% if @option.no_phones > 1 %>
+	  <td align="right"><label for="camper_phone_2"><b><%= I18n.t('camper.Phone2') %></b></label></td>
+	  <td align="left"><%= text_field 'camper', 'phone_2', {:size => '12', :autocomplete => 'off'}  %></td>
+	<% end %>
+      <% end %>
+      <td align="right"><label for="camper_email"><b><%= I18n.t('camper.Email') %><%= manditory('require_email', @remote, @option) %></b></label></td>
+      <td align="left"><%= text_field 'camper', 'email', required('require_email', @remote, @option).merge({:size=>'30'}) %></td>
+    </tr>
+    <% if @option.use_id? %>
+      <tr>
+	<td align="right"><label for="camper_idnumber"><b><%= I18n.t('camper.ID') %><%= manditory('require_id', @remote, @option) %></b></label></td>
+	<td align="left"><%= text_field 'camper', 'idnumber', required('require_id', @remote, @option).merge({:size=>'20'}) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <% unless @remote %>
+    <%= observe_field :camper_last_name,
+		      :frequency => 0.4,
+		      :update => 'campers',
+		      :url => {:action => 'partial_update', :only_path => false},
+		      :with => "'camper_last_name='+encodeURIComponent(value)" %>
+      <%#	            :before => "Element.show('spinner')",
+		      :complete => "Element.hide('spinner')", -%>
+    <% if @option.match_firstname? %>
+      <%= observe_field :camper_first_name,
+			:frequency => 0.4,
+			:update => 'campers',
+			:url => {:action => 'partial_update_first', :only_path => false},
+			:with => "'camper_first_name='+encodeURIComponent(value)" %>
+    <% end %>
+    <% if @option.match_city? %>
+      <%= observe_field :camper_city,
+			:frequency => 0.4,
+			:update => 'campers',
+			:url => {:action => 'partial_update_city', :only_path => false},
+			:with => "'camper_city='+encodeURIComponent(value)" %>
+    <% end %>
+    <% if @option.use_find_by_id? %>
+      <%= observe_field :camper_idnumber,
+			:frequency => 0.4,
+			:update => 'campers',
+			:url => {:action => 'partial_update_id', :only_path => false},
+			:with => "'camper_idnumber='+encodeURIComponent(value)" %>
+    <% end %>
+  <% else %>
+    <%= hidden_field 'camper', 'remote', :value => true %>
+  <% end %>
+  <%= manditory_label %>
+  <% unless @remote %>
+    <input type="hidden" name="reservation_id" value="<%= @reservation.id -%>" />
+  <% end %>
+  <table><tr> <td>
+  <% if @remote %>
+    <% if @option.require_gateway? %>
+      <%= submit_tag 'Continue to payment', :class => "payment_submit" %>
+    <% else %>
+      <%= submit_tag  I18n.t('general.Continue'), :class => "payment_submit" %>
+    <% end %>
+  <% else %>
+    <%= submit_tag I18n.t('camper.Create') %>
+  <% end %>
+<% end %> <!--[eoform:camper]-->
+</td>
+<% if @remote %>
+<td>
+  <%= button_to "Use \"#{@old_camper.full_name}\" as camper",{:action => :create_remote, 
+							    :id => @old_camper.id},
+							    {:class => "payment_submit", 
+							    :style => "display: inline;"} if defined?(@old_camper) %>
+  </td><td>
+  <%= button_to  I18n.t('reservation.Cancel'), {:controller => :remote, :action => :abandon_remote,
+						:reservation_id => @reservation.id},
+						{:confirm => I18n.t('reservation.CancelRes'),
+						:method => "post",
+						:class => "payment_submit",
+						:style => "display: inline;"} %>
+  </td></tr></table>
+  <%= set_focus_to_id 'camper_last_name' %>
+<% else %>
+  <br />
+  <div id='campers'>
+    <%= render :partial => 'campers' %>
+  </div>
+  <% if @option.use_find_by_id? %>
+    <%= set_focus_to_id 'camper_idnumber' %>
+  <% else %>
+    <%= set_focus_to_id 'camper_last_name' %>
+  <% end %>
+<% end %>

@@ -1,0 +1,37 @@
+<%= I18n.t('camper.Combine', :name => h(@combine.full_name), :place => h(@combine.address) + ',' + h(@combine.city) + ',' + h(@combine.state)) %>
+<table cellpadding="5" cellspacing="0">
+  <tr>
+    <th><%= I18n.t('camper.Name') %> </th>
+    <th><%= I18n.t('camper.Address') %> </th>
+    <% if @option.use_2nd_address? %>
+      <th></th>
+    <% end %>
+    <th><%= I18n.t('camper.City') %> </th>
+    <th><%= I18n.t('camper.State') %> </th>
+    <th><%= I18n.t('camper.Zip') %> </th>
+    <% if @option.use_country? %>
+      <th><%= I18n.t('camper.Country') %> </th>
+    <% end %>
+  </tr>
+  <% for camper in @campers %>
+    <% unless camper.id == @combine.id %>
+      <tr>
+	<td><%=h camper.full_name %></td>
+	<td><%=h camper.address %></td>
+	<% if @option.use_2nd_address? %>
+	  <td><%=h camper.address2 %></td>
+	<% end %>
+	<td><%=h camper.city %></td>
+	<td><%=h camper.state %></td>
+	<td><%=h camper.mail_code %></td>
+	<% if @option.use_country? %>
+	  <td>
+	  <%=h camper.country.name if camper.country_id? && camper.country.name? %>
+	  </td>
+	<% end %>
+	<td><%= link_to I18n.t('general.Combine'), { :action => 'do_combine', :camper_id => camper }, :confirm => I18n.t('camper.ConfirmCombine', :combine_name => @combine.full_name, :camper_name => camper.full_name), :method => 'post' %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<%= will_paginate @campers, :camper_id => @combine.id %>

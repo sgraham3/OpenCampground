@@ -1,0 +1,18 @@
+<% if @reservation.space_id? && @reservation.space_id > 0 %>
+<table class="keep_together">
+  <tbody>
+    <tr>
+      <th><b><%= I18n.t('reservation.SelectedSiteInfo') %>: </b></th>
+    </tr>
+    <tr>
+      <td valign="top" align="center"><%= render :partial => 'shared/site' %></td>
+    </tr>
+    <tr>
+      <th><b><%= I18n.t('reservation.RateInfo') %>: </b></th>
+    </tr>
+    <tr>
+      <td><%= render :partial => 'charges' %></td>
+    </tr>
+  </tbody>
+</table>
+<% end %>

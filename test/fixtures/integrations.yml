@@ -1,0 +1,16 @@
+--- 
+integrations_001: 
+  id: "1" 
+  name:        
+  pp_cert_id:
+  pp_business:
+  pp_currency_code: USD
+  pp_country: US 
+  pp_url: https://www.paypal.com/cgi-bin/webscr                                
+  fd_login: HCO-OPEN-797     
+  fd_transaction_key: nlYHoO14~3~OBIlFbHe_   
+  fd_response_key: k_u0gr00mGAjSNhOtLik 
+  fd_currency_code: USD
+  fd_country: US 
+  fd_url:  https://demo.globalgatewaye4.firstdata.com/payment                                              
+  cc_use_cvv: true

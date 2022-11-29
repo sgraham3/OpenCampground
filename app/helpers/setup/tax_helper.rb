@@ -1,0 +1,2 @@
+module Setup::TaxHelper
+end

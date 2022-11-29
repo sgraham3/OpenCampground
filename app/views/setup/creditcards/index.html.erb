@@ -1,0 +1,23 @@
+<%= error_messages_for 'creditcard' %>
+<%= render :partial => 'setup/buttons' %>
+<p>
+<%= button_to 'New Payment Type', new_setup_creditcard_path, :method => :get %>
+<p>
+<%= button_to 'Update Sort Order', sort_setup_creditcards_path, :method => :get %>
+<table border="1">
+  <tr> <th>Name</th><th>Active?</th> </tr>
+  <% for creditcard in @creditcards %>
+    <tr>
+      <td><%=h creditcard.name %></td>
+      <td><%= creditcard.active %></td>
+    <td><%= link_to 'Edit', edit_setup_creditcard_path(creditcard) %></td>
+    <% if creditcard.id > 1 %>
+      <td><%= link_to 'Delete', setup_creditcard_path(creditcard),
+				:confirm => "Are you sure you want to delete #{creditcard.name}?",
+				:method => :delete %></td>
+    <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
+<%= button_to 'Finished', setup_index_path, :method => :get %>

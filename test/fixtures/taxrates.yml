@@ -1,0 +1,36 @@
+# Read about fixturesat http://ar.rubyonrails.org/classes/Fixtures.html
+#
+# local tax 1.25% (applies to day, week)
+# sales tax 3.45% (applies to all)
+# room tax 4.25 per day (applies to day, week)
+#
+one:
+  apl_week: true
+  apl_month: false
+  is_percent: false
+  percent:
+  id: 1
+  apl_seasonal: false
+  name: "room tax"
+  apl_daily: true
+  amount: "4.25"
+two:
+  apl_week: true
+  apl_month: false
+  is_percent: true
+  percent: "1.25"
+  id: 2
+  apl_seasonal: false
+  name: "local tax"
+  apl_daily: true
+  amount:
+three:
+  apl_week: true
+  apl_month: true
+  is_percent: true
+  percent: "3.45"
+  id: 3
+  apl_seasonal: false
+  name: "sales tax"
+  apl_daily: true
+  amount:

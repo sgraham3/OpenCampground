@@ -1,0 +1,125 @@
+<% if @extra_charges_array.size == 0 %>
+  No records were found during the period requested.
+  <%= render :partial => 'report/shared/print' %>
+<% else %>
+  <%= render :partial => 'report/shared/print' %>
+<form method="post" action="<%= report_extras_path %>" class="button-to"><input type="hidden" name="csv" value="1" /> <input type="submit" value="<%= I18n.t('reservation.DownloadData')%>" /></form>
+<b>Subtotaled on: <%= @subtotal_on %></b>
+<p>
+<% Extra.all.each do |extra| %>
+  <% next unless @extra_charges_array[extra.id] %>
+  <% case extra.extra_type 
+     when Extra::MEASURED %>
+    <%     @subtotal = 0.0
+	   @total = 0.0
+	   @res = @extra_charges_array[extra.id][0].reservation_id
+	   @week = @extra_charges_array[extra.id][0].updated_on.cweek
+	   @month = @extra_charges_array[extra.id][0].updated_on.month
+    %>
+	 <table>
+	   <tr><th colspan="8" align="center"><b><%= extra.name %></b></th></tr>
+	   <tr> <th>Space</th> <th>Reservation</th> <th>Name</th> <th>Date</th> <th>Initial</th> <th>Final</th> <th>Used</th> <th>Charge</th> </tr>
+       <%  @extra_charges_array[extra.id].each do |extra_charge| %>
+      <%=    ex_totals(extra_charge) %>
+	     <tr>
+	       <td><%= extra_charge.reservation.space.name %></td>
+	       <td><%= extra_charge.reservation_id %></td>
+	       <td><%= extra_charge.reservation.camper.full_name %></td>
+	       <td><%= DateFmt.format_date(extra_charge.updated_on,'long') %></td>
+	       <td align="right"><%= extra_charge.initial %></td>
+	       <td align="right"><%= extra_charge.final %></td>
+	       <td align="right"><%= extra_charge.final - extra_charge.initial %></td>
+	       <td align="right"><%= number_2_currency(extra_charge.charge) %></td>
+	     </tr>
+      <%   end %>
+      <%   if @subtotal_on != 'None' %>
+	    <tr> <td>Subtotal</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@subtotal) %></b></td> </tr>
+      <%   end %>
+	   <tr> <td>Total</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@total) %></b></td> </tr>
+	 </table>
+  <% when Extra::STANDARD %>
+    <%     @subtotal = 0.0
+	   @total = 0.0
+	   @res = @extra_charges_array[extra.id][0].reservation_id
+	   @week = @extra_charges_array[extra.id][0].updated_on.cweek
+	   @month = @extra_charges_array[extra.id][0].updated_on.month
+    %>
+       <table>
+	 <tr><th colspan="5" align="center"><b><%= extra.name %></b></th></tr>
+         <tr> <th>Space</th> <th>Reservation</th> <th>Name</th> <th>Date</th><th>Charge</th> </tr>
+       <% @extra_charges_array[extra.id].each do |extra_charge| %>
+           <% extra_charge.charge = extra_charge.daily_charges + extra_charge.weekly_charges + extra_charge.monthly_charges %>
+    <%=    ex_totals(extra_charge) %>
+           <tr>
+             <td><%= extra_charge.reservation.space.name %></td>
+             <td><%= extra_charge.reservation_id %></td>
+             <td><%= extra_charge.reservation.camper.full_name %></td>
+             <td><%= DateFmt.format_date(extra_charge.updated_on,'long') %></td>
+             <td align="right"><%= number_2_currency(extra_charge.charge) %></td>
+           </tr>
+    <%   end %>
+    <%   if @subtotal_on != 'None' %>
+          <tr> <td>Subtotal</td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@subtotal) %></b></td> </tr>
+    <%   end %>
+         <tr> <td>Total</td>     <td></td> <td></td> <td></td> <td></td>  <td></td> <td align="right"><b><%= number_2_currency(@total) %></b></td> </tr>
+       </table>
+  <% when Extra::COUNTED %>
+  <%     @subtotal = 0.0
+         @total = 0.0
+         @res = @extra_charges_array[extra.id][0].reservation_id
+         @week = @extra_charges_array[extra.id][0].updated_on.cweek
+         @month = @extra_charges_array[extra.id][0].updated_on.month
+  %>
+       <table>
+	 <tr><th colspan="6" align="center"><b><%= extra.name %></b></th></tr>
+         <tr> <th>Space</th> <th>Reservation</th> <th>Name</th> <th>Date</th> <th>Count</th> <th>Charge</th> </tr>
+       <% @extra_charges_array[extra.id].each do |extra_charge| %>
+           <% extra_charge.charge = extra_charge.daily_charges + extra_charge.weekly_charges + extra_charge.monthly_charges %>
+    <%=    ex_totals(extra_charge) %>
+           <tr>
+             <td><%= extra_charge.reservation.space.name %></td>
+             <td><%= extra_charge.reservation_id %></td>
+             <td><%= extra_charge.reservation.camper.full_name %></td>
+             <td><%= DateFmt.format_date(extra_charge.updated_on,'long') %></td>
+             <td align="right"><%= extra_charge.number %></td>
+             <td align="right"><%= number_2_currency(extra_charge.charge) %></td>
+           </tr>
+
+    <%   end %>
+    <%   if @subtotal_on != 'None' %>
+          <tr> <td>Subtotal</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@subtotal) %></b></td> </tr>
+    <%   end %>
+         <tr> <td>Total</td>     <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@total) %></b></td> </tr>
+       </table>
+  <% when Extra::OCCASIONAL %>
+  <%     @subtotal = 0.0
+         @total = 0.0
+         @res = @extra_charges_array[extra.id][0].reservation_id
+         @week = @extra_charges_array[extra.id][0].updated_on.cweek
+         @month = @extra_charges_array[extra.id][0].updated_on.month
+  %>
+       <table>
+	 <tr><th colspan="6" align="center"><b><%= extra.name %></b></th></tr>
+         <tr> <th>Space</th> <th>Reservation</th> <th>Name</th> <th>Date</th> <th>count</th> <th>Charge</th> </tr>
+       <% @extra_charges_array[extra.id].each do |extra_charge| %>
+    <%=    ex_totals(extra_charge) %>
+           <tr>
+             <td><%= extra_charge.reservation.space.name %></td>
+             <td><%= extra_charge.reservation_id %></td>
+             <td><%= extra_charge.reservation.camper.full_name %></td>
+             <td><%= DateFmt.format_date(extra_charge.updated_on,'long') %></td>
+             <td align="right"><%= extra_charge.number %></td>
+             <td align="right"><%= number_2_currency(extra_charge.charge) %></td>
+           </tr>
+
+    <%   end %>
+    <%   if @subtotal_on != 'None' %>
+          <tr> <td>Subtotal</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@subtotal) %></b></td> </tr>
+    <%   end %>
+         <tr> <td>Total</td>     <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td align="right"><b><%= number_2_currency(@total) %></b></td> </tr>
+       </table>
+    <% end %>
+  <% end %>
+<% end %>
+
+

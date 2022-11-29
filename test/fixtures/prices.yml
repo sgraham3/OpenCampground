@@ -1,0 +1,19 @@
+--- 
+prices_006: 
+  id: "6"
+  name: Variable
+prices_005: 
+  name: Premium EWS 50
+  id: "5"
+prices_004: 
+  name: Regular EWS 50
+  id: "4"
+prices_003: 
+  name: No Monthly rates
+  id: "3"
+prices_002: 
+  name: No discount rates
+  id: "2"
+prices_001: 
+  name: Normal rates
+  id: "1"

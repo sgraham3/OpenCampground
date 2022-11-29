@@ -1,0 +1,72 @@
+<div id="columns">
+  <div id="side">
+    <% if @use_navigation %>
+      <% if @option.express? %>
+	<p><%= link_to I18n.t('titles.express'), {:controller => '/reservation', :action => 'express'}     %> </p>
+      <% end %>
+      <p><%= link_to I18n.t('titles.res_list'), {:controller => '/reservation', :action => 'list', :page => 1}     %> </p>
+      <p><%= link_to I18n.t('titles.in_park'), {:controller => '/reservation', :action => 'in_park', :page => 1}     %> </p>
+      <p><%= link_to I18n.t('titles.new_res'), {:controller => '/reservation', :action => 'new', :stage => 'new'}      %> </p>
+      <p><%= link_to I18n.t('titles.new_grp_res'), {:controller => '/group_res', :action => 'new', :stage => 'new'}      %> </p>
+      <p><%= link_to I18n.t('titles.find_res'), :controller => '/reservation', :action => 'find_reservation'      %> </p>
+      <p><%= link_to I18n.t('titles.campers'), :controller => '/camper', :action => 'list'      %> </p>
+      <p><%= link_to I18n.t('titles.find_camper'), :controller => '/camper', :action => 'find_camper'      %> </p>
+      <% if Group.count > 0 %>
+	<p><%= link_to I18n.t('reservation.Groups'), group_index_path  %> </p>
+      <% end %>
+      <p><%= link_to I18n.t('titles.site_av'), report_available_path(1), :method => :put  %> </p>
+      <% if(authorized?(@option.all_checkin_rpt?) || authorized?(@option.all_leave_rpt?) || authorized?(@option.all_arrival_rpt?) || authorized?(@option.all_departure_rpt?) || authorized?(@option.all_in_park_rpt?) || authorized?(@option.all_space_sum_rpt?) || authorized?(@option.all_occupancy_rpt?) || authorized?(@option.all_campers_rpt?) || authorized?(@option.all_transactions_rpt?) || authorized?(@option.all_payments_rpt?) || authorized?(@option.all_measured_rpt?)) %>
+	<p> <%= link_to 'Reports', report_index_path %> </p>
+	<% if Payment.count > 0 %>
+	  <p> <%= link_to 'Payments', payments_path %> </p>
+	<% end %>
+      <% end %>
+      <% if(authorized?(@option.all_backup?) ) %>
+	<p> <%= link_to 'Database Backup', maintenance_backup_index_path %> </p>
+      <% end %>
+      <p><%= link_to I18n.t('layout.side.admin'), admin_index_path %> </p>
+      <% if @option.use_login? %>
+	<p><%= link_to I18n.t('layout.side.logout'), :controller => '/login', :action => 'logout'    %> </p>
+	<p><%= link_to I18n.t('layout.side.chg_pwd'), edit_admin_user_path(session[:user_id]) %> </p>
+      <% end %>
+    <% else %>
+      <% if @option.express? %>
+	<p><%= I18n.t('titles.express') %></p>
+      <% end %>
+      <p><%= I18n.t('titles.res_list') %></p>
+      <p><%= I18n.t('titles.in_park') %></p>
+      <p><%= I18n.t('titles.new_res') %></p>
+      <p><%= I18n.t('titles.new_grp_res') %></p>
+      <p><%= I18n.t('titles.find_res') %></p>
+      <p><%= I18n.t('titles.campers') %></p>
+      <p><%= I18n.t('titles.find_camper') %></p>
+      <p><%= I18n.t('titles.site_av') %></p>
+      <p><%= I18n.t('layout.side.admin') %></p>
+      <% if @option.use_login? %>
+	<p><%= I18n.t('layout.side.logout') %></p>
+	<p><%= I18n.t('layout.side.chg_pwd') %></p>
+      <% end %>
+      <p>
+      <% if session[:change] == true %>
+	<%= link_to  I18n.t('layout.side.canx_chg', :change_action => @change_action),
+			    { :action => :show,
+			      :controller => 'reservation',
+			      :reservation_id => @reservation.id} %>
+      <% elsif session[:canx_action] == 'abandon' %>
+	<%= link_to   I18n.t('layout.side.canx_res'),
+			      { :action => :abandon,
+				:controller => 'reservation',
+				:reservation_id => @reservation.id},
+			      :confirm => I18n.t('layout.side.canx_res_conf') %>
+      <% else %>
+	<%= link_to   I18n.t('layout.side.canx_res'),
+			      { :action => :abandon,
+				:controller => 'reservation',
+				:reservation_id => @reservation.id},
+			      :confirm => I18n.t('layout.side.canx_res_conf') %>
+      <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
+<div id="main">

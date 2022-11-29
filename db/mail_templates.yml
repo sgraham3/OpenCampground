@@ -1,0 +1,83 @@
+--- 
+mail_templates_008: 
+  body: |-
+    Dear {{camper}},
+    
+    Your reservation {{number}} for {{start}} to {{departure}} has been canceled..  The reason for the cancellation is: {{reason}}.
+    
+    We look forward to serving you in the future.
+    Manager
+  name: reservation_cancel
+  id: "8"
+mail_templates_007: 
+  body: This is a test message
+  name: tst
+  id: "7"
+mail_templates_006: 
+  body: |-
+    Dear {{camper}},
+    
+    Your reservation for arrival on {{start}} and departure on {{departure}} has not been confirmed.  Please call us at (111) 555-1212 to resolve the problems.  
+    
+    We look forward to serving you
+    Ty Coon
+    Manager
+  name: remote_reservation_reject
+  id: "6"
+mail_templates_005: 
+  body: |-
+    Dear {{camper}},
+    
+    Thank you for making a reservation at My RV Park.  You are scheduled to arrive on {{start}} and depart on {{departure}}.  We have assigned you site {{space_name}}.  The total charges are estimated at {{charges}}.  Your reservation confirmation number is {{number}}. 
+    
+    We look forward to serving you
+    Ty Coon
+    Manager
+  name: remote_reservation_confirmation
+  id: "5"
+mail_templates_004: 
+  body: |-
+    Dear {{camper}},
+    
+    Thank you for making a reservation at My RV Park.  Your reservation will be reviewed by the management and you will sent a confirmation.  
+    
+    We look forward to serving you
+    Ty Coon
+    Manager
+  name: remote_reservation_received
+  id: "4"
+mail_templates_003: 
+  body: |-
+    Dear {{camper}},
+    
+    Thank you for staying at My RV Park.
+    
+    Please reply to this message and tell us how you enjoyed your stay and if there is anything we could do to make your next stay with us more enjoyable.
+    
+    We enjoyed having your company
+    Ty Coon
+    Manager
+  name: reservation_feedback
+  id: "3"
+mail_templates_002: 
+  body: |-
+    Dear {{camper}},
+    
+    Your reservation at My RV Park has been updated.  You are now scheduled to arrive on {{start}} and depart on {{departure}}.  We have assigned you site {{space_name}}.  The total charges are estimated at {{charges}}.  Your reservation confirmation number is {{number}}.
+    
+    We look forward to serving you
+    Ty Coon
+    Manager
+  name: reservation_update
+  id: "2"
+mail_templates_001: 
+  body: |-
+    Dear {{camper}},
+    
+    Thank you for making a reservation at My RV Park.  You are scheduled to arrive on {{start}} and depart on {{departure}}.  We have assigned you site {{space_name}}.  The total charges are estimated at {{charges}}.  Your reservation confirmation number is {{number}}.
+    
+    We look forward to serving you
+    Ty Coon
+    Manager
+  name: reservation_confirmation
+  id: "1"

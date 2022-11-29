@@ -1,0 +1,8 @@
+<% unless @remote %>
+  <% unless @reservation.editable? %>
+    <%= I18n.t('reservation.Notes') %>: <b><%= @reservation.special_request %></b><br />
+    <b><%= @reason %></b>
+  <% else %>
+    <%= I18n.t('reservation.Notes') %>: <b><%= in_place_editor_field_prompted :reservation, :special_request, {}, {:rows => 2, :cols => 33} %></b>
+  <% end %>
+<% end %>

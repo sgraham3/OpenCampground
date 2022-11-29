@@ -1,0 +1,11 @@
+<%= error_messages_for 'recommender' %>
+
+<!--[form:discount]-->
+<p><label for="recommender_name">Name</label><br/>
+<%= text_field :recommender, :name  %></p>
+<% unless controller.action_name == 'new' %>
+  <p><label for="recommender_active">Active?</label>
+  <%= check_box :recommender, :active  %></p>
+<% end %>
+
+<!--[eoform:discount]-->

@@ -1,0 +1,72 @@
+﻿Regression Tests
+On Linux:
+Test
+  1. cd to top of top system
+  2. rake test:units – all results should be pass
+Development
+Setup:
+  1. Cd to top of test system
+  2. rake db:migrate VERSION=0
+  3. script/server 
+Tests:
+  1. In browser connect to localhost:3000
+  2. go to setup
+  3. select initialize db  -- should end up in reservation list
+  4. select admin from sidebar, 
+  4a.in admin select "Database Backup", record file name created.
+  4b.sidebar select Reservation List
+  4c.select checkin for top listing - confirm checkin - should fail, space is occupied - should return to Res List
+  5. sidebar select In Park
+  6. select checkout for top listing – confirm checkout.. should end up back in In Park with confirmation of checkout.
+  7. Do same for all others scheduled to depart today
+  8. sidebar select Reservation List
+  9. select checkin for top listing – confirm checkin – should end up back in Reservation List with confirmation of checkin
+  10. do same for all others scheduled to arrive today
+  11. sidebar select new reservation
+  12. leave at defaults, select any site
+  13. select returning camper, select any
+  14. do immediate checkin – should return to Reservation List with confirmation of checkin
+  15. sidebar select new reservation
+  16. leave at defaults, select any site
+  17. select new camper, enter any details for camper
+  18. do not checkin now – should return to Reservation list with confirmation of reservation.
+  19. Select "change" on the reservation just created
+  20. select "change space" to any site
+  21. set departure date 10 days in future.  Do not change start date
+  22. select site – should return to reservation list with confirmation of change
+  23. checkin from reservation list – confirm checkin – should end up back in Reservation list with confirmation of checkin.
+  24. Select the reservation number on any reservation – should get a display of the reservation info
+  25. select finish.  Should return to reservation list
+  26. sidebar select top – select setup
+  27. select seasons
+  28. define a new season Summer start june 1 next end june 31 next and select "create"
+  28a.should return to season display with an error message "invalid end date"
+  28. define a new season Summer start june 1 next end aug 31 next and select "create"
+  29. select prices – select season Summer
+  30. edit each price to delete monthly and weekly rates – on each edit should return to summer display on price 
+  30a.sidebar select "new reservation"
+  31. create reservation starting in summer and extending for at least 5 weeks and no more than 8 weeks.
+  32. On site selection confirm that prices are not shown for weekly and monthly
+  33. select any site – on confirmation check that charges show days only
+  34. select any camper and confirm reservation – should return to reservation list 
+  35. select any camper name from reservation list – should show camper details and return to reservation list
+  36. sidebar select new group reservation – leave arrival today and set departure 2 days in future
+  37. select 5 sites then done
+  37a.Use any name for group name.
+  38. select any wagonmaster
+  39. save – review listing on reservation list – expand and review listing
+  40. select checkin on group reservation – should return to reservation list - each checkin should be listed as OK at top.
+  40a.sidebar select "site availability" - display should correspond to reservation and in park lists.
+Production
+Setup:
+  1. Cd to top of test system
+  2. (deleted)
+  3. script/server -e production
+Tests:
+Run steps 1 – 40 the same as in development replacing step 2 through 4a with below. Results should be the same. For the tests to run correctly development test 1-4 must be run the same day as production test.
+  2. select Reservations
+  3. select admin from sidebar, 
+  4. in admin select "Database Restore", 
+  4a.select the file with the name recorded in step 4a above
+
+Repeat whole process on Windows XP using both Firefox and Internet Explorer.

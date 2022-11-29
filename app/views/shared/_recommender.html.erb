@@ -1,0 +1,35 @@
+<% if ((@remote && @option.remote_recommendations?) ||
+       (controller.controller_name == 'reservation' && @option.use_recommend?)) &&
+       Recommender.active.count > 1 %>
+  <span id="recommender">
+  <% if !@reservation.editable? or (defined? envelope and envelope?) %>
+    <b>
+    <%= if @reservation.recommender_id? && @reservation.recommender_id > 0
+	  @reservation.recommender.name
+	else
+	  I18n.t('reservation.none')
+	end %></b>
+  <% else %>
+    <td><%= I18n.t('reservation.RecommendedBy') %>:</td>
+    <span class="noprint">
+      <td>
+      <% if @remote && @static %>
+        <%= @reservation.recommender.name %>
+      <% else %>
+	<%= collection_select(:reservation, :recommender_id, Recommender.active, :id, :name, {:prompt => true}) %> </td>
+      <% end %>
+    </span>
+    <span class="nodisplay">
+      <b>
+      <%= if @reservation.recommender_id? && @reservation.recommender_id > 0
+	    @reservation.recommender.name
+	  else
+	    I18n.t('reservation.none')
+	  end %></b>
+    </span>
+    <%= observe_field :reservation_recommender_id,
+		      :url => {:action => 'update_recommend', :only_path => false, :reservation_id => @reservation.id },
+		      :with => "'recommender_id='+encodeURIComponent(value)" %>
+  <% end %>
+  </span>
+<% end %>

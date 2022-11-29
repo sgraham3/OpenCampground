@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  extra_id: 5
+  reservation_id: 10
+two:
+  id: 2
+  extra_id: 6
+  reservation_id: 9
+  number: 4

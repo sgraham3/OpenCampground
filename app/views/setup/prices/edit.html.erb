@@ -1,0 +1,8 @@
+<% form_tag setup_price_path, :id => @price, :method => :put do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag 'Save' %>
+  </p>
+<% end %>
+
+<%= button_to 'Cancel', setup_prices_path, :method => :get %>

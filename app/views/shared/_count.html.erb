@@ -1,0 +1,10 @@
+<% if @option.show_available? %>
+  <span id="count">
+<% else %>
+  <span id="count" style="display: none">
+<% end %>
+<% if @count %>
+  <b><%= I18n.t('reservation.spaces_available')%>:</b> <%= @count %>
+  &nbsp;
+<% end %>
+</span>

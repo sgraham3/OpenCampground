@@ -1,0 +1,4 @@
+page[@item][:style][:color] = 'Black'
+page.show @select
+page.hide @deselect
+page[:num_spaces].replace_html "#{@num_selected}"

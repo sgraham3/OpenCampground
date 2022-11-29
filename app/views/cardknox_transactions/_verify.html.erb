@@ -1,0 +1,12 @@
+<form action="http://localemv.com:8887"  method="post">
+  <input type="hidden" name="xKey" value="<%=@integration.ck_api%>" />
+  <input type="hidden" name="xCommand" value="cc:sale" />
+  <input type="hidden" name="xVersion" value="4.5.9" />
+  <input type="hidden" name="xSoftwareName" value="Open Campground" />
+  <input type="hidden" name="xSoftwareVersion" value="1.11" />
+  <input type="hidden" name="xInvoice" value="<%=@ck_transaction.reservation_id %>" />
+  <input type="hidden" name="xCustom01" value="<%=@ck_transaction.id%>" />
+  <input type="hidden" name="xRedirectURL" value="<%=bbpos_cardknox_transactions_url%>"/>
+  Review Amount: <input type="text" name="xAmount" value="<%=@ck_transaction.amount%>" />
+  <input type="submit" value="Process Card" />
+</form>

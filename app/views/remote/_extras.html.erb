@@ -1,0 +1,26 @@
+<% unless @reservation && @reservation.archived? %>
+  <div id="extras" class="noprint">
+  <% if @extras.size > 0 %>
+    <% @extras.each do |e| %>
+      <% if e.remote_required %>
+	<input name="extra[extra<%=e.id%>]" type="hidden" value="1" />
+	<input name="extra[count<%=e.id%>]" type="hidden" value="1" />
+      <% else %>
+	<span class="extra">
+	<b><%= e.name %></b>
+	<%= check_box 'extra', "extra#{e.id}", {}, '1','0' %>
+	<% if e.extra_type == Extra::COUNTED || e.extra_type == Extra::OCCASIONAL %>
+	  <span id=<%="count_#{e.id}"%> <%= "style=\"display:none;\"" %>>
+	    <b><%= I18n.t('reservation.Count') %></b>
+	    <%= text_field_tag "extra[count#{e.id}]", 1, {:id => "count#{e.id}", :size => '1', :autocomplete => 'off'} %>
+	  </span>
+	  <%= observe_field "extra_extra#{e.id}",
+			    :url => {:action => 'update_counted', :only_path => false},
+			    :with => "'number='+encodeURIComponent(value)+'&extra_id='+#{e.id}" %>
+	<% end -%>
+	</span>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,644 @@
+# Sample localization file for Brazilian Portugese.
+# The items before the : are the keys, the string to be printed is in quotes
+# To create a new translation copy this file to a new file xx.yml for language xx
+# and replace the items in quotes with the correct translations.
+# Do not translate anything in curley brackets %{ } 
+
+pt_BR:
+  # Open Campground phrases
+  layout:
+    banner:
+      user: "Usuário"
+    side:
+      admin: "Administrador"
+      logout: "Saída"
+      chg_pwd: "Alterar Senha" 
+      canx_chg:  "Cancelar %{change_action} mudança"
+      canx_chg_conf: "Cancelar esta %{change_action} mudança?"
+      canx_res:  "Cancelar Reserva"
+      canx_res_conf: "Quer cancelar esta reserva?" 
+  titles:
+    express: "Express"
+    res_list: "Lista de Reservas"
+    in_park:  "Lista de Presença no Acampamento"
+    new_res:  "Nova Reserva"
+    new_grp_res: "Nova Reserva de Grupo"
+    find_res: "Buscar Reserva"
+    campers:  "Campista"
+    CamperName: "Insira Nome e Endereço de Campista"
+    find_camper: "Buscar Campista"
+    site_av:  "Disponibilidade de Lugar"
+    CamperByActivity: "Campista por Última Atividade"
+    CancelReservation: "Cancelar Reserva"
+    ChangeRes: "Alterar Reserva"
+    ChangeCamper: "Alterar Campista"
+    ChangeDates: "Alterar Datas"
+    ChangeSpace: "Alterar Espaço"
+    Checkin: "Check in %{name}"
+    CombineCampers: "Combinar campistas"
+    ConfirmRes: "Confirmar Reserva"
+    ConfirmResId: "Confirmar Reserva %{reservation_id}"
+    DateSel: "Seleção de Data"
+    EditExtraCharge: "Editar Cobrança Adicional sobre o Espaço %{space} para Reserva %{reservation_id}"
+    GroupName: "Grupo %{name}"
+    GroupResId: "Reserva %{reservation_id}, %{name} grupo"
+    GroupResSpaceSel: "Seleção de Espaço para Reserva de Grupo"
+    MeasuredCharges: "Cobrança Adicional de Medição por Espaço"
+    MeterReadings: "Leitura de Medição"
+    NoResFound: "Nenhuma reserva encontrada"
+    NoResFoundName: "Nenhuma reserva encontrada para %{name}"
+    ResId: "Reserva %{reservation_id}"
+    Review: "Revisar"
+    ReviewRes: "Revisar Reserva"
+    ResName: "Reservas para %{name}"
+    ReturningGroups: "Grupos Recorrentes"
+    SelCreateCamper: "Selecionar ou Criar Campista"
+    SelCreateGroup: "Selecionar ou Criar Grupo"
+    SelCreateWagonmaster: "Selecionar ou Criar Wagomaster"
+    SelSpace: "Selecionar Espaço"
+    ShowCamper: "Mostrar Campista"
+    UserList: "Listar Usuários"
+    UserNew: "Novo Usuário"
+    UserEdit: "Editar Usário"
+  general:
+    Select: "Selecionar"
+    Show: "Mostrar"
+    Update: "Atualizar"
+    List: "Listar"
+    Edit: "Editar"
+    Destroy: "Apagar"
+    ConfirmDestroy: "Você tem certeza?\nIsto apagará completamente a transação."
+    Combine: "Combinar"
+    Delete: "Deletar"
+    Finished: "Concluído"
+    Continue: "Continuar"
+    Print: "Imprimir"
+    Flash:
+      CheckedInDateChg: "Data inicial não foi modificada, data inicial não pode ser alterada após o  check in"
+      DateOverlap: "Datas não alteradas.  Datas propostas se sobrepõe a reservas: "
+      NotAuth: "Usuário não autorizado para a função selecionada"
+      WrongStart: "Data de Inicio de Reserva errada. "
+      WrongEnd: "Data de Final de Reserva wrong. "
+      EqualDates: "Data de Final de Reserva anterior ou igual à Data Inicial." 
+      DateAdj: "Data de Final de Reserva modificada para ser posterior à data Inicial"
+  camper:
+    Create: "Creiar"
+    Combine: "Combinar <b>%{name}</b> de <b>%{place}</b> com campista selecionado:"
+    ConfirmCombine: "Isto resultará em %{combine_name} ser deletado e %{camper_name} substituído em todas as instâncias.\nConfirma?"
+    Delete: "Tem certeza que quer deletar %{name}?"
+    Name: "Nome"
+    Last: "Sobrenome"
+    First: "Primeiro Nome"
+    Phone: "Número de Telefone"
+    Phone2: "Número de Telefone adicional"
+    Email: "Endereço de Email"
+    Address: "Endereço"
+    City: "Cidade"
+    State: "Estado"
+    Zip: "CEP"
+    Country: "País"
+    ID: "Número de Identificação"
+    FindByName: "Procurar por Sobrenome"
+    LastActivity: "Atividade Recente"
+    ListByName: "Listar por Nome"
+    NotFound: "Campista não encontrado"
+    Notes: "Anotações Privadas"
+    Addl: "Informação Adicional"
+    Flash:
+      Created: "Campista %{camper_name} criado"
+      CreateFail: "Campista %{camper_name} não pôde ser criado"
+      CannotDestroy: "%{camper_name} tem reservas ou grupos no sistema portanto o arquivo não pode ser apagado"
+      Deleted: "Campista %{camper_name} deletado."
+      DeleteFailed: "Remoção de campista %{camper_name} falhou."
+      ChangeFail: "Outra pessoa está modificando o mesmo campista, tente a modificação de novo"
+  remote:
+    ConfirmLater: "Confirme que deseja criar uma reserva com pagamento posterior"
+    Cancel: "Cancelar esta reserva?"
+    Redirect: "Você será redirecionado a  %{url}"
+    StartOver: "Iniciar de novo"
+    WaitingConfirm: "Aguardando confirmação de pagamento"
+  reservation:
+    Adults: "Adultos"
+    Amount: "Valor"
+    AmountDue: "Valor Devido"
+    Any: "any"
+    Archived: "Arquivado"
+    Arrival: "Chegada"
+    Cancel: "Cancelar"
+    CancelCancellation: "Cancelar Cancelamento"
+    CancelCheckin: "Cancelar Check in"
+    CancelChangeSpace: "Cancelar Mudança de Espaço"
+    CancelDateChg: "Cancelar Mudança de Data"
+    CancelOverride: "Cancel Override Total"
+    CancelRes: "Cancelar esta reserva?"
+    CardNumber: "Número de Cartão "
+    Checkin: "Check in"
+    CheckingInToday: "Fazendo o Check In hoje"
+    CheckingOutToday: "Fazendo o Check Out Hoje"
+    CheckInNow: "Check In Agora"
+    Checkout: "Check out"
+    Children: "Crianças"
+    CompleteCancellation: "Completar Cancelamento"
+    CompleteCheckin: "Completar Check in"
+    CompleteReservation: "Completar Reserva"
+    ConfirmCheckin: "Confirmar check in de %{name}"
+    ConfirmCheckinDate: "Confirmar check in de %{name} em data diferente da data de chegada"
+    ConfirmCancelCheckin: "Confirmar cancelamento de check in de %{name}"
+    ConfirmCheckout: "Confirmar check out de %{name}"
+    ConfirmCheckoutDate: "Confirmar check out de %{name} em %{enddate}"
+    ConfirmCancel: "Confirmar cancelamento de reserva para %{name}"
+    ConfirmPurge: "Confirmar remoção completa de reserva %{number} para %{name}"
+    ConfirmRes: "Confirmar reserva para %{name}"
+    ConfirmExtend: "Prorrogar %{name} por um dia?"
+    ConfirmExtendMonth: "Extend %{name} to %{enddate}?"
+    Count: "Contart"
+    Current: "Atual"
+    Daily: "Diário"
+    Date: "Data"
+    Days: "Dias"
+    Departure: "Saída"
+    Deposit: "Depósito"
+    Deselect: "Desfazer Seleção"
+    Discount: "Desconto"
+    DownloadData: "Baixar Dados"
+    Due: "Devido"
+    Each: "Cada"
+    EndDate: "Data Final"
+    Envelope: "Envelope Janela"
+    EWS: "EWS"
+    Expand: "Expandir"
+    Expires: "Vencimento"
+    Extend: "Extende"
+    ExtendMonth: "Extend Month"
+    Feedback: "Enviar email com comentários"
+    NoFeedback: "Não enviar email com comentários"
+    FindbyIdNumber: "Achar por Número de Identificação"
+    FindbyLastName: "Achar por Sobrenome"
+    FindbyPhoneNumber: "Find by Phone Number (last digits)"
+    FindbyReservationNumber: "Achar por Número de Reserva"
+    FindbySpace: "Find by Space"
+    FindSpace: "Achar Espaço"
+    Finished: "Concluído"
+    FullSeasonReservation: "Reserva de Temporada Integral"
+    Group: "Grupo"
+    Groups: "Grupos"
+    Inpark: "No Acampamento"
+    Item: "Item"
+    Length: "Comprimento"
+    Monthly: "Mensal"
+    Months: "Meses"
+    none: "Nenhum"
+    NotArrivingYet: "Ainda não chegou"
+    NotCheckedIn: "Ainda não fez o Check In"
+    Notes: "Anotações"
+    notspecified: "Não especificado"
+    nr_Adults: "No. de Adultos"
+    nr_Children: "No. de Crianças"
+    nr_Pets: "# Animais domésticos"
+    nr_Slides: "No. de Slides"
+    Number: "Number"
+    Occupied: "Ocupado"
+    Onetime_Discount: "Desconto único"
+    OverdueforCheckIn: "Atrasado para check in"
+    OverdueforCheckOut: "Atrasado para check out"
+    OverrideTotal: "Override Total"
+    Overstayed: "Excedeu tempo"
+    OverstayingReservation: "Excedendo reserva"
+    PaymentType: "Tipo de Pagamento"
+    Payment: "Pagamento"
+    PayNow: "Pague Agora"
+    Pets: "Animais Domésticos"
+    PreliminaryRateInfo: "Informação de Tarifa Preliminar"
+    Purge: "Apagar reserva"
+    RateInfo: "Informação de Tarifa"
+    ReasonforCancelation: "Motivo para Cancelamento"
+    RecalculateCharges: "Recalcular valores"
+    RecommendedBy: "Recomendado por"
+    Reservation: "Reserva"
+    ReservationNumber: "Número da Reserva"
+    Reserved: "Reservado"
+    Res_nr: "Número da Reserva"
+    Return: "Voltar"
+    RigAge: "Idade de Rig"
+    RigType: "Tipo de Rig"
+    ScheduledtoCheckInToday: "Programado para fazer o check in hoje"
+    ScheduledtoCheckOutToday: "Programado para fazer o check out hoje"
+    SeasonalRate: "Tarifa de Temporada"
+    Seasonal: "Sasonal"
+    Season: "Temporada"
+    SelectDatesforChangedSpace: "Selecionar datas para mudança de espaço"
+    SelectedSiteInfo: "Informação de Sitio Selecionada"
+    Select: "Selecionar"
+    Show: "Mostrar"
+    ShowLog: "Show/Hide Log"
+    SiteType: "Tipo de Sitio"
+    Size: "Tamanho"
+    Slides: "Slides"
+    Space: "Espaço"
+    spaces: "espaços"
+    spaces_available: "Espaços disponíveis"
+    SpacesSelected: "espaços selecionados"
+    Special: "Especial"
+    Start: "Iniciar"
+    StartDate: "Data Início"
+    Status: "Status"
+    Storage: "Armazenamento"
+    SubmitDateChange: "Submeter mudança de data"
+    SubTotal: "Sub Total"
+    To: " para "
+    Today: "Hoje"
+    TotaltoDisplay: "Total para visualização"
+    Total: "Total"
+    Type: "Tipo"
+    UndoCancel: "Desfazer cancelamento"
+    UndoCheckout: "Desfazer Checkout"
+    UpdateEmail: "Enviar Email de Atualização"
+    Vehicle2License: "Placa Veículo 2"
+    Vehicle2State: "Estado Veículo 2"
+    VehicleLicense: "Placa Veículo"
+    VehicleState: "Estado Veículo"
+    Weekly: "Semanal"
+    Weeks: "Semanas"
+    Year: "Ano"
+    Week: "Semanas"
+    WeekCount: "Número de semanas"
+    Flash:
+      UpdateSuccess: "Reserva %{reservation_id} para %{camper_name} foi atualizada com sucesso."
+      UpdateFail: "Reserva não pôde ser atualizada, tente de novo."
+      SpaceChgName: "Reserva %{reservation_id} para %{camper_name} alterada para espaço %{space}"
+      SpaceChg: "Reserva %{reservation_id} alterada para espaço %{space}"
+      SpaceUnavailable: "Espaço indisponível"
+      ClosedDates: "Acampamento fechado de %{closed} a %{open}"
+      ConfSent: "Email de confirmação enviado"
+      ConfErr: "Erro durante envio de email.  Confirmação de reserva não foi enviada"
+      ConfNotSent: "Endereço de email inválido. Confirmação de reserva não foi enviada."
+      NonConfSent: "Email de Não-confirmação enviado"
+      NonConfErr: "Erro durante envio de email. Email de Não-confirmação de Reserva não enviado."
+      NonConfNotSent: "Endereço de email inválido. Email de Não-confirmação de Reserva não enviado"
+      FeedbackSent: "Email de comentário enviado"
+      FeedbackErr: "Erro durante envio de email. Email de comentário não enviado."
+      FeedbackNotSent: "Endereço de email inválido. Email de comentário não enviado"
+      UpdateSent: "Email de atualização enviado"
+      UpdateErr: "Erro durante envio de email. Email de atualização não enviado"
+      UpdateNotSent: "Endereço de email inválido. Email de atualização não enviado"
+      CheckedIn: "%{camper_name} fez o check in no espaço  %{space}"
+      CheckinFail: "Check in de %{camper_name} no espaço %{space} falhou"
+      CheckinFailOcc: "Check in FALHOU.  Espaço %{space} está ocupado.<br/>Assignar outro espaço para %{camper_name} no no. de reserva #%{reservation_id} ou faça o check out de %{other_camper} em no. de reserva #%{other_reservation} e tente de novo o Check in."
+      CheckinFailUnavail: "Check in FALHOU.  Espaço  %{space} indisponível.<br/>Assignar outro espaço para  %{camper_name} em no. de reserva #%{reservation_id}."
+      CheckedOut: "%{camper_name} Check out concluído"
+      CheckoutFail: "Check out de %{camper_name} falhou"
+      Canceled: "%{camper_name} cancelamento de reserva %{reservation_id} concluída"
+      CanxFail: "Cancelamento de reserva %{reservation_id} falhou"
+      CheckinVer: "Data Inicial de reserva  %{reservation_id} para espaço %{space} é %{startdate}<br/>Verificar que esta é a data correta para o check in"
+      CamperLong: "Campista length é %{camper_length} e length do espaço é  %{space_length}.\nVerifique que o espaço assignado é o correto"
+      EarlyStart: "Data inicial é anterior a hoje"
+      Conflict: "Reserva de espaço indisponível, selecione de novo"
+      ExtendConflict: "Espaço %{space_name} está ocupado em %{enddate}. Veja o no. de reserva %{conflict_id}"
+      ExtendFail: "Prorrogação de reserva não permitida"
+      NotFound: "Número de Reserva %{id} não encontrado"
+      CardNoInvalid: "Cartão de crédito inválido"
+      CardExpired: "Cartão de crédito com data de validade vencida"
+      Purged: "Reserva %{id} completamento removida do sistema"
+      UndoCanxFail1: "Reservation %{reservation_id} conflicts with reservations "
+      UndoCFail2: "<br />another space must be selected"
+      UndoCanxOK: "Cancellation of reservation %{reservation_id} undone"
+      UndoCOno: "Reservation %{reservation_id} not checked in.  Checkout cannot be undone"
+      UndoCOFail1: "Reservation %{reservation_id} conflicts with reservations "
+      UndoCOOK: "Checkout of reservation %{reservation_id} undone"
+      CancelSent: "Reservation cancellation email sent"
+      CancelErr: "Error encountered, reservation cancellation email not sent"
+  group:
+    Create: "Criar novo Grupo"
+    GroupName: "Nome do Grupo"
+    Destroy: "Destruir"
+    CurrentReservations: "CurrentReservations"
+    DownloadCampers: "Download Campers"
+    ShowActiveGroups: "Show Active Groups"
+    ShowAllGroups: "Show All Groups"
+    ShowCampers: "Show Campers"
+    ShowReservations: "Show Reservations"
+    NumberReserved: "Número Reservado"
+    Wagonmaster: "Wagonmaster"
+    Flash:
+      Created: "Grupo %{name} criado"
+      CreateFail: "Grupo %{name} não pôde ser criado"
+      Selected: "Grupo %{name} selecionado"
+      Deleted: "Grupo %{name} deletado."
+      DeleteFailed: "Remoção de grupo %{name} falhou."
+      UpdateErr: "Outra pessoa está modificando o mesmo grupo, faça a modificação de novo"
+  group_res:
+    NumberofSpacesSelected: "Número de Espaços Selecionados"
+    SelectionsDone: "Seleções Efetuadas"
+    FindSpaces: "Encontrar Espaços"
+    DesignateGroup: "Designar Grupo"
+    ConfirmCancel: "Confirmar cancelamento de grupo %{name}"
+    ConfirmCheckout: "Confirmar check out de grupo %{name} on %{enddate}"
+    ConfirmCheckin: "Confirmar check in de grupo %{name} on %{startdate}"
+    Flash:
+      NoneSelected: "Precisa selecionar pelo menos um espaço.  Tente de novo"
+      CntSelected: "%{count} espaços selecionados"
+      ResCreated: "Reserva para %{count} espaços para %{name} foi criada com sucesso."
+      Canx: "Cancelar para "
+      Unavailable: "Espaços indisponíveis "
+      Correct: " Corrigir antes de fazer o checkin"
+      Checkin: "Check in para "
+      Checkout: "Check out para "
+      OK: "%{name} OK "
+      Fail: "%{name} FALHOU "
+  admin:
+    ConfirmDelete: "Tem certeza que quer deletar %{name}?"
+    ConfirmRestore: "Tem certeza que quer recuperar %{name}do backup ?\nTodos os dados atuais serão deletados e substituídos."
+    Confirm: "Tem certeza?"
+  user:
+    ChangeUser: "Alterar Dados de Usuário"
+    Admin: "Administrador"
+    Change: "Modificar"
+    Remove: "Deletar"
+    ConfirmRemove: "Tem certeza que quer deletar %{name}?"
+    New: "Novo Usuário"
+    Finished: "Concluído"
+    Details: "Insira Dados de Usuário"
+    AddUser: "Adicionar Usuário"
+    NewPasswd: "Inserir Nova Senha"
+    Name: "Nome"
+    Password: "Senha"
+    Confirm: "Confirmar"
+    Submit: "Submeter Mudança"
+    Cancel: "Cancelar"
+    Flash:
+      Created: "Usuário %{name} foi criado com sucesso."
+      CreateFailed: "Criação de Usuário falhou"
+      Destroyed: "Usuário deletado"
+      DestroyFailed: "Remoção de usuário falhou"
+      Updated: "Usuário %{name} foi atualizado com sucesso."
+      UpdateFailed: "Atualização de Usuário falhou"
+  login:
+    Login: "Por favor faça o Log In"
+    Remember: "Lembre de meus dados?"
+    SubmitLogin: "Login"
+    Flash:
+      BadPass: "Usuário inválido/ou senha incorreta"
+  extra:
+    Initial: "Valor inicial:"
+    Previous: "Valor anterior"
+    New: "Novo valor"
+    Final: "Valor final:"
+    Amount: "Valor:"
+    Consumed: "Consumido"
+    Rate: "Tarifa:"
+    Charge: "Charge:"
+    Created: "Data Criada:"
+    Updated: "Última atualização:"
+    Update: "Atualização"
+    Name: "Nome adicional"
+  payment:
+    Date: "Date de pagamento"
+    Type: "Tipo de pagamento"
+    Number: "Número"
+    Expire: "Vencimento"
+    Amount: "Valor"
+    Memo: "Memo"
+    Created: "Created"
+    Updated: "Updated"
+  update:
+    Desc: "You should backup your database before doing this update."
+    Fetch: "Resgatar atualização"
+    Finished: "Concluído"
+    Install: "Instalar Atualização"
+    Retry: "Tentar de novo"
+    Skip: "Ignore atualização"
+  day:
+    Sunday_i: "D"
+    Monday_i: "SEG"
+    Tuesday_i: "T"
+    Wednesday_i: "QUA"
+    Thursday_i: "QUI"
+    Friday_i: "SEX"
+    Saturday_i: "SAB"
+  notice:
+    Restart: "Pare e reinicie o seu servidor"
+    Required: "Campo obrigatório"
+  error:
+    Application: "Erro de aplicativo"
+    Conflict: "Outra pessoa está alterando a mesma reserva, faça a alteração de novo"
+  warning:
+    LastName: "Sobrenome obrigatório"
+    Email: "Email válido obrigatório"
+    Phone: "Número de telefone obrigatório"
+    FirstName: "Primeiro nome obrigatório"
+    Addr: "Endereço obrigatório"
+    City: "Cidade obrigatória"
+    State: "Estado obrigatório"
+    Zip: "CEP obrigatório"
+    Country: "País obrigatório"
+    IdNumber: "Número de identificação obrigatório"
+  will_paginate:
+    previous_label: "« anterior"
+    next_label: "próximo »"
+    page_gap: "…"
+  # standard Rails translations
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+      month: "%B"
+      month_year: "%B %y"
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year 
+    month_names:
+      - ~
+      - Janeiro
+      - Fevereiro
+      - Março
+      - Abril
+      - Maio
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
+    abbr_month_names:
+      - ~
+      - Jan
+      - Fev
+      - Mar
+      - Abr
+      - Mai
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Out
+      - Nov
+      - Dez
+    day_names: 
+      - Domingo
+      - Segunda-feira
+      - Terça-feira
+      - Quarta-feira
+      - Quinta-feira
+      - Sexta-feira
+      - Sábado
+    abbr_day_names: 
+      - Dom
+      - Seg
+      - Ter
+      - Qua
+      - Qui
+      - Sex
+      - Sab
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: ao redor e uma hora
+        other: ao redor de %{count} horas
+      about_x_months:
+        one: ao redor de 1 mês
+        other: ao redor de %{count} meses
+      about_x_years:
+        one: ao redor de 1 ano
+        other: ao redor de %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de  %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: '%{count} dias'
+      x_minutes:
+        one: 1 minuto
+        other: '%{count} minutos'
+      x_months:
+        one: 1 mês
+        other: '%{count} meses'
+      x_seconds:
+        one: 1 segundo
+        other: '%{count} segundos'
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      accepted: deve ser aceito
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: "não coincide %{attribute}"
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: está reservado
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual que %{count}
+      inclusion: não está incluso na lista
+      invalid: é inválido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual que %{count}
+      not_a_number: não é um número
+      not_an_integer: deve ser um número inteiro
+      odd: deve ser ímpar
+      record_invalid: 'Validação falhou: %{errors}'
+      restrict_dependent_destroy:
+      one: "Registro não pode ser deletado porque existe um registro dependente %{record}"
+      many: "Registro não pode ser deletado porque existem registros dependentes %{record}"
+      taken: já foi apropriado
+      too_long:
+      one: é muito comprido (maximum is 1 character)
+      other: são muito compridos (maximum is %{count} characters)
+      too_short:
+      one: é muito curto (minimum is 1 character)
+      other: são muito curtos (minimum is %{count} characters)
+      wrong_length:
+      one: é do comprimento errado (should be 1 character)
+      other: são do comprimento errado (should be %{count} characters)
+      other_than: "deve ser outro que %{count}"
+    template:
+      body: ‘Houveram problemas com os seguintes campos:'
+      header:
+        one: 1 erro impediu que este %{model} de ser salvo
+        other: '%{count} erros impediram este %{model} de ser salvo'
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Crie %{model}
+      submit: Submeta %{model}
+      update: Atualize %{model}
+  number:
+    currency:
+      format:
+        delimiter: ‘.’
+        format: '%u %n'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: '.'
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: '%n %u'
+        units:
+          billion: Bilhão
+          million: Milhão
+          quadrillion: Quadrilhão
+          thousand: Mil
+          trillion: Trilhão
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ', e '
+      two_words_connector: ' e '
+      words_connector: ', '
+  time:
+    am: am
+    formats:
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      long: '%B %d, %Y %H:%M'
+      short: '%d %b %H:%M'
+    pm: pm

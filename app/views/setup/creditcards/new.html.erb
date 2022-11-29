@@ -1,0 +1,8 @@
+<% form_tag setup_creditcards_path do %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= submit_tag "Create" %>
+  </p>
+<% end %>
+<%= set_focus_to_id 'creditcard_name' %>
+<%= button_to 'Cancel', setup_creditcards_path, :method => :get %>

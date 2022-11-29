@@ -1,0 +1,644 @@
+# localization file for Dutch.
+#
+#
+#
+#
+
+nl:
+  # Open Campground phrases
+  layout:
+    banner:
+      user: "User"
+    side:
+      admin: "Beheer"
+      logout: "Log uit"
+      chg_pwd: "Verander wachtwoord" 
+      canx_chg:  "Annuleer %{change_action} verander"
+      canx_chg_conf: "Annuleer actie %{change_action} change action?"
+      canx_res:  "Annuleer reservering"
+      canx_res_conf: "Wilt u zeker weten deze reservering annuleren?" 
+  titles:
+    express: "Express"
+    res_list: "Reserveringen"
+    in_park:  "Aanwezig"
+    new_res:  "Nieuwe reservering"
+    new_grp_res: "Nieuwe groepsreservering"
+    find_res: "Zoek reservering"
+    campers:  "Campinggasten"
+    CamperName: "Enter Camper Name and Address"
+    find_camper: "Zoek campinggast"
+    site_av:  "Beschikbaarheid"
+    CamperByActivity: "Laatste activiteiten gasten"
+    CancelReservation: "Annuleer reservering"
+    ChangeRes: "Wijzig reservering"
+    ChangeCamper: "Wijzig kampeerder"
+    ChangeDates: "Wijzig datum"
+    ChangeSpace: "Wijzig plaats"
+    Checkin: "Check in %{name}"
+    CombineCampers: "Combineer gasten"
+    ConfirmRes: "Bevestig reservering"
+    ConfirmResId: "Bevestig reservering %{reservation_id}"
+    DateSel: "Datum selectie"
+    EditExtraCharge: "Edit Extra Charge on Space %{space} for Reservation %{reservation_id}"
+    GroupName: "Groep %{name}"
+    GroupResId: "Reservering %{reservation_id}, %{name} groep"
+    GroupResSpaceSel: "Datum selectie groepsreservering"
+    MeasuredCharges: "Measured Extra Charges by Space"
+    MeterReadings: "Meter Readings"
+    NoResFound: "Geen reservering gevonden"
+    NoResFoundName: "Geen reservering gevonden voor %{name}"
+    ResId: "Reservering %{reservation_id}"
+    Review: "Bekijk"
+    ReviewRes: "Bekijk Reservering"
+    ResName: "Reserveringen voor %{name}"
+    ReturningGroups: "Terugkerende groepen"
+    SelCreateCamper: "Selecteer of maak nieuwe gast"
+    SelCreateGroup: "Selecteer of maak nieuwe groep"
+    SelCreateWagonmaster: "Selecteer of maak nieuwe groepsboeker"
+    SelSpace: "Selecteer plaats"
+    ShowCamper: "Toon gast"
+    UserList: "List Users"
+    UserNew: "New User"
+    UserEdit: "Edit User"
+  general:
+    Select: "Selecteer"
+    Show: "Toon"
+    Update: "Update"
+    List: "List"
+    Edit: "Edit"
+    Destroy: "Destroy"
+    ConfirmDestroy: "Are you sure?\nThis will completely delete this transaction."
+    Combine: "Combineer"
+    Delete: "Verwijder"
+    Finished: "Gereed"
+    Continue: "Volgend"
+    Print: "Druk af"
+    Flash:
+      CheckedInDateChg: "Start date not changed, cannot change start date when checked in"
+      DateOverlap: "Dates not changed.  Proposed dates overlap reservations: "
+      NotAuth: "User is not authorized for selected function"
+      WrongStart: "Reservation start date wrong. "
+      WrongEnd: "Reservation end date wrong. "
+      EqualDates: "Reservation end date earlier than or equal to start date." 
+      DateAdj: "Reservation end date adjusted to be later than start date"
+  camper:
+    Create: "Nieuw"
+    Combine: "Combine <b>%{name}</b> from <b>%{place}</b> with selected camper:"
+    ConfirmCombine: "This will result in %{combine_name} being deleted and %{camper_name} replacing him in all entries.\nIs this what you want?"
+    Delete: "Are you sure you want to delete %{name}?"
+    Name: "Naam"
+    Last: "Achternaam"
+    First: "Voornaam"
+    Phone: "Telefoonnummer"
+    Phone2: "Eventueel 2e telefoonnummer"
+    Email: "Emailadres"
+    Address: "Adres"
+    City: "Woonplaats"
+    State: "Provincie"
+    Zip: "Postcode"
+    Country: "Land"
+    ID: "ID Nummer"
+    FindByName: "Zoek op achternaam"
+    LastActivity: "Laatste actie"
+    ListByName: "Toon op basis van naam"
+    NotFound: "Camper not found "
+    Notes: "Notitie"
+    Addl: "Additional Info"
+    Flash:
+      Created: "Camper %{camper_name} created"
+      CreateFail: "Camper %{camper_name} could not be created"
+      CannotDestroy: "%{camper_name} has reservations or groups currently in the system so the record cannot be destroyed"
+      Deleted: "Camper %{camper_name} deleted."
+      DeleteFailed: "Deletion of camper %{camper_name} failed."
+      ChangeFail: "Someone else is changing the same camper, redo the change"
+  remote:
+    ConfirmLater: "Confirm you want to create a reservation with payment later"
+    Cancel: "Cancel this reservation?"
+    Redirect: "You will be redirected to %{url}"
+    StartOver: "Start Over"
+    WaitingConfirm: "Waiting for confirmation of payment"
+  reservation:
+    Adults: "Volwassen"
+    Amount: "Bedrag"
+    AmountDue: "Openstaand bedrag"
+    Any: "any"
+    Archived: "Archived"
+    Arrival: "Aankomst"
+    Cancel: "Annuleer"
+    CancelCancellation: "Annuleer annulering"
+    CancelCheckin: "Cancel Check in"
+    CancelChangeSpace: "Cancel Change Space"
+    CancelDateChg: "Cancel Date Change"
+    CancelOverride: "Cancel Override Total"
+    CancelRes: "Cancel this reservation?"
+    CardNumber: "Kaartnummer"
+    Checkin: "Check in"
+    CheckingInToday: "Wie checked er in vandaag"
+    CheckingOutToday: "Wie checked er uit vandaag"
+    CheckInNow: "Check direct in"
+    Checkout: "Check out"
+    Children: "Kinderen"
+    CompleteCancellation: "Bevestig annulering"
+    CompleteCheckin: "Complete Check in"
+    CompleteReservation: "Bevestig reservering"
+    ConfirmCheckin: "Confirm check in of %{name}"
+    ConfirmCheckinDate: "Confirm check in of %{name} not on scheduled arrival date"
+    ConfirmCancelCheckin: "Confirm cancellation of check in of %{name}"
+    ConfirmCheckout: "Confirm check out of %{name}"
+    ConfirmCheckoutDate: "Confirm check out of %{name} on %{enddate}"
+    ConfirmCancel: "Confirm cancel of reservation for %{name}"
+    ConfirmPurge: "Confirm complete removal of reservation %{number} for %{name}"
+    ConfirmRes: "Confirm reservation for %{name}"
+    ConfirmExtend: "Extend %{name} for one day?"
+    ConfirmExtendMonth: "Extend %{name} to %{enddate}?"
+    Count: "Aantal"
+    Current: "Current"
+    Daily: "Dagelijks"
+    Date: "Datum"
+    Days: "Dagen"
+    Departure: "Vertrek"
+    Deposit: "Aanbetaling"
+    Deselect: "Deselecteer"
+    Discount: "Kortin"
+    DownloadData: "Download Data"
+    Due: "Due"
+    Each: "Elk"
+    EndDate: "Einddatum"
+    Envelope: "Window Env"
+    EWS: "EWS"
+    Expand: "Vergroot"
+    Expires: "Verloopdatum"
+    Extend: "Verleng"
+    ExtendMonth: "Extend Month"
+    Feedback: "Send Feedback email"
+    NoFeedback: "Do not send Feedback email"
+    FindbyIdNumber: "Zoek op ID nummer"
+    FindbyLastName: "Zoek op achternaam"
+    FindbyPhoneNumber: "Find by Phone Number (last digits)"
+    FindbyReservationNumber: "Zoek op reserveringsnummer"
+    FindbySpace: "Find by Space"
+    FindSpace: "Zoek plaats / object"
+    Finished: "Gereed"
+    FullSeasonReservation: "Reservering geheel seizoen"
+    Group: "Groep"
+    Groups: "Groepen"
+    Inpark: "Aanwezig"
+    Item: "Object"
+    Length: "Lengte"
+    Monthly: "Maandelijks"
+    Months: "Maanden"
+    none: "geen"
+    NotArrivingYet: "Nog niet gearriveerd"
+    NotCheckedIn: "Nog niet ingechecked"
+    Notes: "Notitie"
+    notspecified: "niet gespecificeerd"
+    nr_Adults: "# Volwassen"
+    nr_Children: "# Kinderen"
+    nr_Pets: "# Huisdieren"
+    nr_Slides: "# Slides"
+    Number: "Number"
+    Occupied: "Bezet"
+    Onetime_Discount: "One-time Discount"
+    OverdueforCheckIn: "Te laat voor check in"
+    OverdueforCheckOut: "Te laat voor check out"
+    OverrideTotal: "Overrule totaal"
+    Overstayed: "Langer gebleven"
+    OverstayingReservation: "Openstaande (te laat) reservering"
+    PaymentType: "Betalingswijze"
+    Payment: "Betaling"
+    PayNow: "Pay Now"
+    Pets: "Dieren"
+    PreliminaryRateInfo: "Voorlopige tariefinformatie"
+    Purge: "Purge reservation"
+    RateInfo: "Tariefinformatie"
+    ReasonforCancelation: "Rede voor annulering"
+    RecalculateCharges: "Herbereken tarief"
+    RecommendedBy: "Aanbevolen door"
+    Reservation: "Reservation"
+    ReservationNumber: "Reserveringsnummer"
+    Reserved: "Gereserveerd"
+    Res_nr: "Resevering #"
+    Return: "Return"
+    RigAge: "Leeftijd voertuig"
+    RigType: "Type voertuig"
+    ScheduledtoCheckInToday: "Gepland voor incheck vandaag"
+    ScheduledtoCheckOutToday: "Gepland voor uitcheck vandaag"
+    SeasonalRate: "Seizoenstarief"
+    Seasonal: "Seizoen"
+    Season: "Seizoen"
+    SelectDatesforChangedSpace: "Selecteer datums voor de gewijzigde plaats"
+    SelectedSiteInfo: "Geselecteerde plaatsinformatie"
+    Select: "Selecteer"
+    Show: "Toon"
+    ShowLog: "Show/Hide Log"
+    SiteType: "Type plaats"
+    Size: "Grootte"
+    Slides: "Slides"
+    Space: "Plaats"
+    spaces: "plaatsen"
+    spaces_available: "Spaces available"
+    SpacesSelected: "spaces selected"
+    Special: "Speciaal"
+    Start: "Start"
+    StartDate: "Startdatum"
+    Status: "Status"
+    Storage: "Storage"
+    SubmitDateChange: "Bevestig andere datum"
+    SubTotal: "Subtotaal"
+    To: " aan "
+    Today: "Today"
+    TotaltoDisplay: "Totaal weergegeven"
+    Total: "Totaal"
+    Type: "Type"
+    UndoCancel: "Undo Cancel"
+    UndoCheckout: "Undo Checkout"
+    UpdateEmail: "Send Update Email"
+    Vehicle2License: "Voertuig aan rijbewijs"
+    Vehicle2State: "Voertuig aan provincie"
+    VehicleLicense: "Voertuig licentie"
+    VehicleState: "Voertuig Status"
+    Weekly: "Wekelijks"
+    Weeks: "Weken"
+    Year: "Year"
+    Week: "Week number"
+    WeekCount: "Number of weeks"
+    Flash:
+      UpdateSuccess: "Reservering %{reservation_id} voor %{camper_name} is succesvol bijgewerkt."
+      UpdateFail: "Reservation could not be updated, please try again."
+      SpaceChgName: "Reservering %{reservation_id} voor %{camper_name} is verander naar plaats %{space}"
+      SpaceChg: "Reservation %{reservation_id} changed to space %{space}"
+      SpaceUnavailable: "Space Unavailable"
+      ClosedDates: "Park is closed from %{closed} to %{open}"
+      ConfSent: "Confirmation email sent"
+      ConfErr: "Error encountered when sending email. Reservation confirmation email not sent"
+      ConfNotSent: "No email address. Reservation confirmation email not sent."
+      NonConfSent: "Non-confirmation email sent"
+      NonConfErr: "Error encountered sending email. Reservation non-confirmation email not sent."
+      NonConfNotSent: "No email address. Reservation non-confirmation email not sent"
+      FeedbackSent: "Feedback email sent"
+      FeedbackErr: "Error encountered sending email. Feedback email not sent."
+      FeedbackNotSent: "No email address. Feedback email not sent"
+      UpdateSent: "Update email sent"
+      UpdateErr: "Error encountered sending email. Update email not sent"
+      UpdateNotSent: "No email address. Update email not sent"
+      CheckedIn: "%{camper_name} checked in to space %{space}"
+      CheckinFail: "Check in of %{camper_name} to space %{space} failed"
+      CheckinFailOcc: "Check in FAILED.  Space %{space} is occupied.<br/>Assign another space to %{camper_name} on reservation#%{reservation_id} or check %{other_camper} on reservation #%{other_reservation} out and retry Check in."
+      CheckinFailUnavail: "Check in FAILED.  Space %{space} unavailable.<br/>Assign another space to %{camper_name} on reservation #%{reservation_id}."
+      CheckedOut: "%{camper_name} check out completed"
+      CheckoutFail: "Check out of %{camper_name} failed"
+      Canceled: "%{camper_name} cancellation of reservation %{reservation_id} completed"
+      CanxFail: "Cancellation of reservation %{reservation_id} failed"
+      CheckinVer: "Start date of reservation %{reservation_id} for space %{space} is %{startdate}<br/>Verify that it is the correct check in date"
+      CamperLong: "Camper length is %{camper_length} and space length is %{space_length}.\nCheck that the space assignment is correct"
+      EarlyStart: "Start date is earlier than today"
+      Conflict: "Conflicting reservation for space, select again"
+      ExtendConflict: "Space %{space_name} is occupied on %{enddate}. See reservation # %{conflict_id}"
+      ExtendFail: "Unable to extend reservation"
+      NotFound: "Reservation %{id} not found"
+      CardNoInvalid: "Credit card number is invalid"
+      CardExpired: "Credit card is past expiration date"
+      Purged: "Reservation %{id} completely removed from the system"
+      UndoCanxFail1: "Reservation %{reservation_id} conflicts with reservations "
+      UndoCFail2: "<br />another space must be selected"
+      UndoCanxOK: "Cancellation of reservation %{reservation_id} undone"
+      UndoCOno: "Reservation %{reservation_id} not checked in.  Checkout cannot be undone"
+      UndoCOFail1: "Reservation %{reservation_id} conflicts with reservations "
+      UndoCOOK: "Checkout of reservation %{reservation_id} undone"
+      CancelSent: "Reservation cancellation email sent"
+      CancelErr: "Error encountered, reservation cancellation email not sent"
+  group:
+    Create: "Create new Group"
+    GroupName: "Groepsnaam"
+    Destroy: "Verwijder"
+    CurrentReservations: "CurrentReservations"
+    DownloadCampers: "Download Campers"
+    ShowActiveGroups: "Show Active Groups"
+    ShowAllGroups: "Show All Groups"
+    ShowCampers: "Show Campers"
+    ShowReservations: "Show Reservations"
+    NumberReserved: "Nummer gereserveerd"
+    Wagonmaster: "Persoon aansprakelijk voor groep"
+    Flash:
+      Created: "Group %{name} created"
+      CreateFail: "Group %{name} could not be created"
+      Selected: "Group %{name} selected"
+      Deleted: "Group %{name} deleted."
+      DeleteFailed: "Deletion of group %{name} failed."
+      UpdateErr: "Someone else is changing the same group, redo the change"
+  group_res:
+    NumberofSpacesSelected: "Totaal aantal plaatsen geselecteerd"
+    SelectionsDone: "Selectie klaar"
+    FindSpaces: "Zoek plaatsen"
+    DesignateGroup: "Hernoem groep"
+    ConfirmCancel: "Confirm cancel of group %{name}"
+    ConfirmCheckout: "Confirm check out of group %{name} on %{enddate}"
+    ConfirmCheckin: "Confirm check in of group %{name} on %{startdate}"
+    Flash:
+      NoneSelected: "Must select at least one space.  Try again"
+      CntSelected: "%{count} spaces selected"
+      ResCreated: "Reservation for %{count} spaces for %{name} was successfully created."
+      Canx: "Cancel for "
+      Unavailable: "Spaces unavailable "
+      Correct: " Correct before checkin"
+      Checkin: "Check in for "
+      Checkout: "Check out for "
+      OK: "%{name} OK "
+      Fail: "%{name} FAILED "
+  admin:
+    ConfirmDelete: "Are you sure you want to delete %{name}?"
+    ConfirmRestore: "Are you sure you want to restore from the backup %{name}?\nAll current data will be destroyed and replaced."
+    Confirm: "Are you sure?"
+  user:
+    ChangeUser: "Change User Details"
+    Admin: "Admin"
+    Change: "Change"
+    Remove: "Remove"
+    ConfirmRemove: "Are you sure you want to remove %{name}?"
+    New: "New User"
+    Finished: "Finished"
+    Details: "Enter User Details"
+    AddUser: "Add User"
+    NewPasswd: "Enter New Password"
+    Name: "Name"
+    Password: "Password"
+    Confirm: "Confirm"
+    Submit: "Submit Change"
+    Cancel: "Cancel"
+    Flash:
+      Created: "User %{name} was successfully created."
+      CreateFailed: "User creation failed"
+      Destroyed: "User destroyed"
+      DestroyFailed: "User destroy failed"
+      Updated: "User %{name} was successfully updated."
+      UpdateFailed: "User update failed"
+  login:
+    Login: "Please Log In"
+    Remember: "Remember me?"
+    SubmitLogin: "Login"
+    Flash:
+      BadPass: "invalid user/password combination"
+  extra:
+    Initial: "Initial value:"
+    Previous: "Previous value"
+    New: "New value"
+    Final: "Final value:"
+    Amount: "Amount:"
+    Consumed: "Consumed"
+    Rate: "Rate:"
+    Charge: "Charge:"
+    Created: "Date Created:"
+    Updated: "Last Updated:"
+    Update: "Update"
+    Name: "Extra Name"
+  payment:
+    Date: "Payment date"
+    Type: "Payment type"
+    Number: "Number"
+    Expire: "Expire"
+    Amount: "Amount"
+    Memo: "Memo"
+    Created: "Created"
+    Updated: "Updated"
+  update:
+    Desc: "You should backup your database before doing this update."
+    Fetch: "Fetch Update"
+    Finished: "Finished"
+    Install: "Install Update"
+    Retry: "Try Again"
+    Skip: "Skip Update"
+  day:
+    Sunday_i: "Z"
+    Monday_i: "m"
+    Tuesday_i: "d"
+    Wednesday_i: "w"
+    Thursday_i: "d"
+    Friday_i: "v"
+    Saturday_i: "z"
+  notice:
+    Restart: "U dient uw server te herstarten"
+    Required: "Required Field"
+  error:
+    Application: "Applicatiefout"
+    Conflict: "Iemand anders is dezelfde reservering aan het bewerken. Doe de bewerking opnieuw."
+  warning:
+    LastName: "De achternaam dient ingevuld te worden"
+    Email: "Valid address is required"
+    Phone: "Number is required"
+    FirstName: " - Camper must have a First name"
+    Addr: "is required"
+    City: "is required"
+    State: "is required"
+    Zip: "is required"
+    Country: "is required"
+    IdNumber: "is required"
+  will_paginate:
+    previous_label: "« Vorige pagina"
+    next_label: "Volgende pagina »"
+    page_gap: "…"
+  # standard Rails translations
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      long: "%e %B %Y"
+      short: "%e %b"
+      month: "%B"
+      month_year: "%B %y"
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year 
+    month_names:
+      - ~
+      - januari
+      - feburari
+      - maart
+      - april
+      - mei
+      - juni
+      - juli
+      - augustus
+      - september
+      - oktober
+      - november
+      - december
+    abbr_month_names:
+      - ~
+      - jan
+      - feb
+      - mrt
+      - apr
+      - mei
+      - jun
+      - jul
+      - aug
+      - sep
+      - okt
+      - nov
+      - dec
+    day_names: 
+      - zondag
+      - maandag
+      - dinsdag
+      - woensdag
+      - donderdag
+      - vrijdag
+      - zaterdag
+    abbr_day_names: 
+      - zo
+      - ma
+      - di
+      - wo
+      - do
+      - vr
+      - za
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: ongeveer een uur
+        other: ongeveer %{count} uur
+      about_x_months:
+        one: ongeveer een maand
+        other: ongeveer %{count} maanden
+      about_x_years:
+        one: ongeveer een jaar
+        other: ongeveer %{count} jaar
+      almost_x_years:
+        one: bijna een jaar
+        other: bijna %{count} jaar
+      half_a_minute: een halve minuut
+      less_than_x_minutes:
+        one: minder dan een minuut
+        other: minder dan %{count} minuten
+      less_than_x_seconds:
+        one: minder dan een seconde
+        other: minder dan %{count} seconden
+      over_x_years:
+        one: meer dan een jaar
+        other: meer dan %{count} jaar
+      x_days:
+        one: 1 dag
+        other: ! '%{count} dagen'
+      x_minutes:
+        one: 1 minuut
+        other: ! '%{count} minuten'
+      x_months:
+        one: 1 maand
+        other: ! '%{count} maanden'
+      x_seconds:
+        one: 1 seconde
+        other: ! '%{count} seconden'
+      prompts:
+        day: dag
+        hour: uur
+        minute: minuut
+        month: maand
+        second: seconde
+        year: jaar
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: moet worden geaccepteerd
+      blank: moet opgegeven zijn
+      present: moet leeg zijn
+      confirmation: ! "komt niet overeen met %{attribute}"
+      empty: moet opgegeven zijn
+      equal_to: moet gelijk zijn aan %{count}
+      even: moet even zijn
+      exclusion: is niet beschikbaar
+      greater_than: moet groter zijn dan %{count}
+      greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}
+      inclusion: is niet in de lijst opgenomen
+      invalid: is ongeldig
+      less_than: moet minder zijn dan %{count}
+      less_than_or_equal_to: moet minder dan of gelijk zijn aan %{count}
+      not_a_number: is geen getal
+      not_an_integer: moet een geheel getal zijn
+      odd: moet oneven zijn
+      record_invalid: ! 'Validatie mislukt: %{errors}'
+      restrict_dependent_destroy:
+      one: "Kan item niet verwijderen omdat %{record} afhankelijk is"
+      many: "Kan item niet verwijderen omdat afhankelijke %{record} bestaan"
+      taken: is al in gebruik
+      too_long:
+      one: is te lang (maximaal %{count} teken)
+      other: is te lang (maximaal %{count} tekens)
+      too_short:
+      one: is te kort (minimaal %{count} teken)
+      other: is te kort (minimaal %{count} tekens)
+      wrong_length:
+      one: heeft onjuiste lengte (moet %{count} teken lang zijn)
+      other: heeft onjuiste lengte (moet %{count} tekens lang zijn)
+      other_than: "moet anders zijn dan %{count}"
+    template:
+      body: ! 'Controleer de volgende velden:'
+      header:
+        one: ! '%{model} niet opgeslagen: 1 fout gevonden'
+        other: ! '%{model} niet opgeslagen: %{count} fouten gevonden'
+  helpers:
+    select:
+      prompt: Selecteer
+    submit:
+      create: ! '%{model} toevoegen'
+      submit: ! '%{model} opslaan'
+      update: ! '%{model} bewaren'
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%u %n'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: .
+      precision: 2
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: miljard
+          million: miljoen
+          quadrillion: biljard
+          thousand: duizend
+          trillion: biljoen
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+      percentage:
+        format:
+          delimiter: ''
+          format: "%n%"
+      precision:
+        format:
+          delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' en '
+      two_words_connector: ! ' en '
+      words_connector: ! ', '
+  time:
+    am: ! '''s ochtends'
+    formats:
+      default: ! '%a %d %b %Y %H:%M:%S %Z'
+      long: ! '%d %B %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: ! '''s middags'

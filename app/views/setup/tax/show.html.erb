@@ -1,0 +1,88 @@
+<%= render :partial => 'setup/buttons' %>
+
+<table>
+  <tr>
+    <td>
+    <b>Room tax amount:</b>
+    </td>
+    <td>
+    $<%= @tax.room_tax_amount %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <b>Room tax percent:</b>
+    </td>
+    <td>
+    <%= number_to_percentage(@tax.room_tax_percent) %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Sales tax percent:
+    </b></td>
+    <td>
+    <%= number_to_percentage(@tax.sales_tax_percent) %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Local sales tax percent:
+    </b></td>
+    <td>
+    <%= number_to_percentage(@tax.local_tax_percent) %>
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td><b>
+    Room tax applies to weekly rate:
+    </b></td>
+    <td>
+    <%= @tax.rmt_apl_week %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Room tax applies to monthly rate:
+    </b></td>
+    <td>
+    <%= @tax.rmt_apl_month %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Sales tax applies to weekly rate:
+    </b></td>
+    <td>
+    <%= @tax.st_apl_week %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Sales tax applies to monthly rate:
+    </b></td>
+    <td>
+    <%= @tax.st_apl_month %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Local tax applies to weekly rate:
+    </b></td>
+    <td>
+    <%= @tax.lt_apl_week %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>
+    Local tax applies to monthly rate:
+    </b></td>
+    <td>
+    <%= @tax.lt_apl_month %>
+    </td>
+  </tr>
+</table>
+
+<%= button_to 'Edit', :action => 'edit', :id => @tax %> 

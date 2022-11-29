@@ -1,0 +1,21 @@
+--- 
+taxrates_002: 
+  apl_week: true
+  apl_month: false
+  is_percent: false
+  percent: 
+  id: "2"
+  apl_seasonal: false
+  name: Room tax
+  apl_daily: true
+  amount: "1.25"
+taxrates_001: 
+  apl_week: true
+  apl_month: true
+  is_percent: true
+  percent: "4.75"
+  id: "1"
+  apl_seasonal: false
+  name: Sales tax
+  apl_daily: true
+  amount: 
